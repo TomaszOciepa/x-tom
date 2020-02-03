@@ -62,4 +62,8 @@ public class UserService {
             return credentials;
         }
     }
+
+    public User getUserById(Long id){
+        return userRepository.findById(id).get();
+    }
 }

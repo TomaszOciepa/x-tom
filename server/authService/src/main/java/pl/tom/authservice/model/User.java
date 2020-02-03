@@ -1,11 +1,14 @@
 package pl.tom.authservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class User {
+
 
     @Id
     @GeneratedValue
@@ -45,6 +48,7 @@ public class User {
         this.street = street;
     }
 
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     public Long getId() {
         return id;
     }
