@@ -11,14 +11,14 @@ import pl.tom.authservice.model.UserRepository;
 @Component
 public class ConfigRootApp {
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
 
     private UserRepository userRepository;
 
     @Autowired
-    public ConfigRootApp(UserRepository userRepository) {
+    public ConfigRootApp(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @EventListener(ApplicationReadyEvent.class)

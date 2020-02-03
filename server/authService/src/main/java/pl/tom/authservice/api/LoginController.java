@@ -16,16 +16,15 @@ import java.util.Optional;
 @RestController
 public class LoginController {
 
-    @Autowired
     private PasswordEncoder passwordEncoder;
-
     private UserService userService;
     private TokenGenerator tokenGenerator;
 
     @Autowired
-    public LoginController(UserService userService, TokenGenerator tokenGenerator) {
+    public LoginController(UserService userService, TokenGenerator tokenGenerator, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.tokenGenerator = tokenGenerator;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @PostMapping("/login")
