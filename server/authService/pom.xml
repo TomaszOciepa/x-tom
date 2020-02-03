@@ -26,7 +26,12 @@
             <version>2.2.4.RELEASE</version>
             <scope>test</scope>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
 
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
