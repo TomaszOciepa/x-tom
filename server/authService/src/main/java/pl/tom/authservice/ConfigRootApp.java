@@ -24,7 +24,6 @@ public class ConfigRootApp {
     @EventListener(ApplicationReadyEvent.class)
     public void run() {
         User root = new User("tom.ociepa@gmail.com", passwordEncoder.encode("Pass123!"), "ADMIN");
-
         userRepository.save(root);
     }
 }
