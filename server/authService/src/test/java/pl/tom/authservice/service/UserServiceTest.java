@@ -65,6 +65,7 @@ public class UserServiceTest {
         users.add(new User("developer2000@gmail.com", "haslo123", "USER"));
         users.add(new User("user20@gmail.com", "haslo123", "USER"));
 
+        
         return users;
     }
 }
