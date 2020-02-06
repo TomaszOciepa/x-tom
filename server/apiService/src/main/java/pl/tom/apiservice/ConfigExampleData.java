@@ -3,24 +3,33 @@ package pl.tom.apiservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import pl.tom.apiservice.model.Product;
 import pl.tom.apiservice.model.ProductRepository;
+import pl.tom.apiservice.model.User;
+import pl.tom.apiservice.model.UserRepository;
 
 import java.time.LocalDateTime;
 
 @Component
-public class ConfigExampleProduct {
+public class ConfigExampleData {
 
     private ProductRepository repo;
 
+    private PasswordEncoder passwordEncoder;
+
+    private UserRepository userRepository;
+
     @Autowired
-    public ConfigExampleProduct(ProductRepository repo) {
+    public ConfigExampleData(ProductRepository repo, PasswordEncoder passwordEncoder, UserRepository userRepository) {
         this.repo = repo;
+        this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
     }
 
     @EventListener(ApplicationReadyEvent.class)
-    public void run() {
+    public void runProducts() {
         Product product1 = new Product("Dell Vostro", "Laptop", "Komputer biznesowy", 3500, 20, LocalDateTime.now());
         repo.save(product1);
 
@@ -35,5 +44,11 @@ public class ConfigExampleProduct {
 
         Product product5 = new Product("Słuchawki Marshall", "Akcesoria", "Słuchawki bezprzewodowe", 500, 60, LocalDateTime.now());
         repo.save(product5);
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
+    public void runRoot() {
+        User root = new User("tom.ociepa@gmail.com", passwordEncoder.encode("Pass123!"), "ADMIN");
+        userRepository.save(root);
     }
 }
