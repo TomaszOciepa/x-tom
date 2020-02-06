@@ -8,8 +8,6 @@ import pl.tom.apiservice.model.Product;
 import pl.tom.apiservice.service.ProductService;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/product")
@@ -21,20 +19,6 @@ public class ProductRestController {
     @Autowired
     public ProductRestController(ProductService productService) {
         this.productService = productService;
-    }
-
-    @GetMapping("/all")
-    public List<Product> getAll(HttpServletResponse response){
-        LOG.info("method: getAll. Trying get all products");
-        response.setStatus(200);
-        return productService.getAll();
-    }
-
-    @GetMapping("/{id}")
-    public Optional<Product> getById(@PathVariable(value = "id") Long id, HttpServletResponse response){
-        LOG.info("method: getById. Trying get product with {}", id);
-        response.setStatus(200);
-        return productService.getProductById(id);
     }
 
     @PostMapping("/create")

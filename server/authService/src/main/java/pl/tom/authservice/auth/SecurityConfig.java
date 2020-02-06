@@ -12,7 +12,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers(HttpMethod.POST, "/sing-up").permitAll();
+                .antMatchers(HttpMethod.POST, "/sing-up").permitAll()
+                .antMatchers(HttpMethod.GET, "/product/all").permitAll()
+                .antMatchers(HttpMethod.GET, "/product/{id}").permitAll();
 
         http.csrf().disable();
     }

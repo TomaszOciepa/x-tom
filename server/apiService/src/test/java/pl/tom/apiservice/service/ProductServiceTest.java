@@ -13,7 +13,7 @@ import pl.tom.apiservice.model.ProductRepository;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 import static org.mockito.BDDMockito.given;
 
@@ -31,44 +31,6 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void should_return_true_getAll() {
-        Assert.assertTrue(3 == productService.getAll().size());
-    }
-
-    @Test
-    public void should_return_false_getAll() {
-        Assert.assertFalse(4 == productService.getAll().size());
-    }
-
-    @Test
-    public void should_return_true_getProductById() {
-        Product product = new Product("Dell Vostro", "Laptop", "Komputer biznesowy", 3500, 20, LocalDateTime.now());
-        product.setId(1L);
-        Optional<Product> mockProduct = Optional.of(new Product("Dell Vostro", "Laptop", "Komputer biznesowy", 3500, 20, LocalDateTime.now()));
-        mockProduct.get().setId(1L);
-
-        given(productRepository.findById(1L)).willReturn(mockProduct);
-
-        String name = productService.getProductById(1L).get().getName();
-
-        Assert.assertTrue(product.getName().equals(name));
-    }
-
-    @Test
-    public void should_return_false_getProductById() {
-        Product product = new Product("HP", "Laptop", "Komputer biznesowy", 3500, 20, LocalDateTime.now());
-        product.setId(1L);
-        Optional<Product> mockProduct = Optional.of(new Product("Dell Vostro", "Laptop", "Komputer biznesowy", 3500, 20, LocalDateTime.now()));
-        mockProduct.get().setId(1L);
-
-        given(productRepository.findById(1L)).willReturn(mockProduct);
-
-        String name = productService.getProductById(1L).get().getName();
-
-        Assert.assertFalse(product.getName().equals(name));
-    }
-
-    @Test
     public void save() {
         Product mockProduct = new Product("ASUS", "Laptop", "Komputer biznesowy", 3500, 20, LocalDateTime.now());
 
@@ -77,7 +39,6 @@ public class ProductServiceTest {
         Product saveProduct = productService.save(mockProduct);
 
         Assert.assertTrue(mockProduct.getName().equals(saveProduct.getName()));
-
     }
 
 

@@ -24,6 +24,13 @@ public class UserRestController {
         this.userService = userService;
     }
 
+    @GetMapping("/all")
+    public List<User> getAllUser(HttpServletResponse response) {
+        LOG.info("method: getAllUser. Trying find all users");
+        response.setStatus(200);
+        return userService.getAllUser();
+    }
+
     @GetMapping("/{id}")
     public Optional<User> getUserById(@PathVariable(value = "id") Long id, HttpServletResponse response) {
         LOG.info("method: getUserById(). Trying find userId: {}", id);
@@ -38,13 +45,6 @@ public class UserRestController {
         }
 
         return user;
-    }
-
-    @GetMapping("/all")
-    public List<User> getAllUser(HttpServletResponse response) {
-        LOG.info("method: getAllUser. Trying find all users");
-        response.setStatus(200);
-        return userService.getAllUser();
     }
 
     @DeleteMapping("/{id}")
