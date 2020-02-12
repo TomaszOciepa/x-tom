@@ -6,6 +6,7 @@ import pl.tom.authservice.model.ProductRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -16,12 +17,18 @@ public class ProductService {
         this.repo = repo;
     }
 
-    public List<Product> getAll(){
+    public List<Product> getAll() {
         return repo.findAll();
     }
 
-    public Optional<Product> getProductById(Long id){
+    public Optional<Product> getProductById(Long id) {
         return repo.findById(id);
+    }
+
+    public List<Product> getByDescription(String query) {
+        List<Product> allProducts = repo.findAll();
+
+        return allProducts.stream().filter(product -> product.getDescription().contains(query)).collect(Collectors.toList());
     }
 
 }
