@@ -18,7 +18,7 @@ public class TokenGenerator {
                 .claim("password", user.getPassword())
                 .claim("role", user.getRole())
                 .setIssuedAt(new Date(currentTimeMillis))
-                .setExpiration(new Date(currentTimeMillis + 300000))
+                .setExpiration(new Date(currentTimeMillis + 30000))
                 .signWith(SignatureAlgorithm.HS512, "BS*z_=D8{(o%{*X")
                 .compact();
     }

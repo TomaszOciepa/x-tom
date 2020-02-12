@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.auth.TokenGenerator;
+import pl.tom.authservice.model.Credentials;
 import pl.tom.authservice.model.User;
 import pl.tom.authservice.model.UserRepository;
 
@@ -47,18 +48,18 @@ public class UserService {
          return email.matches(regex);
     }
 
-    public Optional<User> login(User client){
+    public Credentials login(User client){
+        Credentials credentials = new Credentials();
         if(emailExists(client)){
             Optional<User> user = findByEmail(client.getEmail());
             if(passwordEncoder.matches(client.getPassword(), user.get().getPassword())){
-                user.get().setToken(tokenGenerator.createToken(user.get()));
-                return user;
+                credentials.setUser(user.get());
+                credentials.setToken(tokenGenerator.createToken(user.get()));
+                return credentials;
             }else {
-                Optional<User> credentials = Optional.empty();
                 return credentials;
             }
         }else {
-            Optional<User> credentials = Optional.empty();
             return credentials;
         }
     }

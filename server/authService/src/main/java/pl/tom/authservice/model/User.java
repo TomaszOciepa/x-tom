@@ -13,7 +13,6 @@ public class User {
     private String email;
     private String password;
     private String role;
-    private String token;
     private String firstName;
     private String lastName;
     private Long phoneNumber;
@@ -34,10 +33,9 @@ public class User {
         this.role = role;
     }
 
-    public User(String email, String role, String token, String firstName, String lastName, Long phoneNumber, String city, String street) {
+    public User(String email, String role, String firstName, String lastName, Long phoneNumber, String city, String street) {
         this.email = email;
         this.role = role;
-        this.token = token;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -75,14 +73,6 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public String getFirstName() {
@@ -132,7 +122,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
-                ", token='" + token + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber=" + phoneNumber +

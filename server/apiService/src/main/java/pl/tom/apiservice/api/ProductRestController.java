@@ -9,6 +9,7 @@ import pl.tom.apiservice.service.ProductService;
 
 import javax.servlet.http.HttpServletResponse;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/product")
 public class ProductRestController {

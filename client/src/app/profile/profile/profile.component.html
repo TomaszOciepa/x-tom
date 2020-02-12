@@ -1,0 +1,24 @@
+
+<div *ngIf="profile">
+    <h2>User</h2>
+    <dl class="row">
+        <dt class="col-3">id</dt>
+        <dd class="col-9">{{profile.id}}</dd>
+        <dt class="col-3">email</dt>
+        <dd class="col-9">{{profile.email}}</dd>
+        <dt class="col-3">hasło</dt>
+        <dd class="col-9">{{profile.password}}</dd>
+        <dt class="col-3">role</dt>
+        <dd class="col-9">{{profile.role}}</dd>
+        <dt class="col-3">imię</dt>
+        <dd class="col-9">{{profile.firstName}}</dd>
+        <dt class="col-3">nazwisko</dt>
+        <dd class="col-9">{{profile.lastName}}</dd>
+        <dt class="col-3">numer tel</dt>
+        <dd class="col-9">{{profile.phoneNumber}}</dd>
+        <dt class="col-3">miasto</dt>
+        <dd class="col-9">{{profile.city}}</dd>
+        <dt class="col-3">ulica</dt>
+        <dd class="col-9">{{profile.street}}</dd>
+    </dl>
+</div>
