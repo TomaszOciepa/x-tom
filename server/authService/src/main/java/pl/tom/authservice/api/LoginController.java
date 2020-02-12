@@ -3,9 +3,11 @@ package pl.tom.authservice.api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import pl.tom.authservice.model.Credentials;
 import pl.tom.authservice.model.User;
 import pl.tom.authservice.service.UserService;
 
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class LoginController {
 
@@ -22,12 +25,14 @@ public class LoginController {
     private UserService userService;
 
     @PostMapping("/login")
-    public Optional<User> login(@RequestBody User client, HttpServletResponse response) throws IOException {
+    public Optional<Credentials> login(@RequestBody User client, HttpServletResponse response) throws IOException {
         LOG.info("Trying login: {}", client.getEmail());
+        Optional<Credentials> credentials1 = Optional.empty();
         if (userService.emailExists(client)) {
             LOG.info("User {} exists", client.getEmail());
-            Optional<User> credentials = userService.login(client);
-            if (credentials.isPresent()) {
+            Optional<Credentials> credentials = Optional.ofNullable(userService.login(client));
+
+            if (credentials.get().getUser() != null) {
                 LOG.info("Login {} succeeded", client.getEmail());
                 response.setStatus(200);
             }else {
@@ -39,8 +44,8 @@ public class LoginController {
         } else {
             LOG.warn("Login {} failed. Incorrect login or User does not exist: ", client.getEmail());
             response.sendError(403, "Incorrect login or password");
-            Optional<User> credentials = Optional.empty();
-            return credentials;
+
+            return credentials1;
         }
     }
 }

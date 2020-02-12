@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import pl.tom.apiservice.model.Product;
 import pl.tom.apiservice.model.ProductRepository;
 
+import java.time.LocalDateTime;
+
 @Service
 public class ProductService {
 
@@ -14,6 +16,7 @@ public class ProductService {
     }
 
     public Product save(Product product){
+        product.setDateAdded(LocalDateTime.now());
         return repo.save(product);
     }
 

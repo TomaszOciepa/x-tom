@@ -1,0 +1,32 @@
+<p>Dodaj produkt</p>
+
+<div class="alert alert-danger" *ngIf="error">{{error}}</div>
+
+<form [formGroup]="addProductForm" (submit)="addProduct()">
+    <div class="form-group">
+        <label for="Name">Nazwa</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+
+    <div class="form-group">
+        <label for="Category">Kategoria</label>
+        <input type="text" class="form-control" formControlName="category">
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Opis</label>
+        <input type="text" class="form-control" formControlName="description">
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Cena</label>
+        <input type="text" class="form-control" formControlName="price">
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Ilość</label>
+        <input type="text" class="form-control" formControlName="amount">
+    </div>
+
+    <input type="submit" class="btn btn-danger mx-auto">
+</form>
