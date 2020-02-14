@@ -1,10 +1,23 @@
 <p>products works!</p>
 
-
+<div class="input-group">
+    <input type="text" class="form-control" (keyup.enter)="search($event.target.value)" placeholder="Szukaj">
+</div>
+<hr>
+<hr>
 <div *ngFor="let product of productsList">
     <div>
         <p>nazwa: <strong>{{product.name}}</strong><span> opis: <strong>{{product.description}}</strong></span><span> cena: <strong>{{product.price}} zł</strong></span></p>
         
+    </div>
+</div>
+
+
+<div class="input-group">
+    <div class="input-group-prepend">
+        <div class="input-group-text" *ngIf="productsList">
+            {{ productsList.length }}
+        </div>
     </div>
 </div>
 

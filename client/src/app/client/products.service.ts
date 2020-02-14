@@ -17,9 +17,16 @@ export class ProductsService {
     return this.http.get<ProductList>("http://localhost:8090/product/all")
   }
 
-  url = "http://localhost:8080/product/create"
 
   create(product:Partial<Product>){
-    return this.http.post<Product>(this.url, product)
+    return this.http.post<Product>("http://localhost:8080/product/create", product)
+  }
+
+  searchByDescription(query){
+    return this.http.get<ProductList>("http://localhost:8090/product/",{
+      params:{
+        query:query
+      }
+    })
   }
 }

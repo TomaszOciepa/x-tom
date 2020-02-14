@@ -38,8 +38,8 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-    @GetMapping("/desc/{query}")
-    public List<Product> getByDescription(@PathVariable(value = "query") String query, HttpServletResponse response){
+    @GetMapping("")
+    public List<Product> getByDescription(@RequestParam String query, HttpServletResponse response){
         LOG.info("method: getByDescription. Trying get product with {} description", query);
         response.setStatus(200);
         return productService.getByDescription(query);

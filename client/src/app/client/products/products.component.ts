@@ -11,6 +11,12 @@ export class ProductsComponent implements OnInit {
 
   productsList: ProductList
 
+  search(query){
+    this.http.searchByDescription(query).subscribe(response =>{
+      this.productsList = response
+    })
+  }
+
   getAllProducts(){
     this.http.getAll().subscribe(response =>{
       this.productsList = response;
@@ -20,7 +26,7 @@ export class ProductsComponent implements OnInit {
   constructor(private http: ProductsService) { }
 
   ngOnInit() {
-    this.getAllProducts()
+    // this.getAllProducts()
   }
 
 }
