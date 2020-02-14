@@ -25,11 +25,11 @@ public class UserService {
     }
 
     public Optional<User> findByEmail(String email) {
-        return userRepository.findAll().stream().filter(user -> user.getEmail().equals(email.toLowerCase())).findFirst();
+        return userRepository.findAll().stream().filter(user -> user.getUser_email().equals(email.toLowerCase())).findFirst();
     }
 
     public boolean emailExists(User user) {
-        if (!findByEmail(user.getEmail()).isPresent()) {
+        if (!findByEmail(user.getUser_email()).isPresent()) {
             return false;
         } else {
             return true;
@@ -37,9 +37,9 @@ public class UserService {
     }
 
     public void save(User user){
-        user.setEmail(user.getEmail().toLowerCase());
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("USER");
+        user.setUser_email(user.getUser_email().toLowerCase());
+        user.setUser_password(passwordEncoder.encode(user.getUser_password()));
+        user.setUser_role("USER");
         userRepository.save(user);
     }
 
@@ -51,8 +51,8 @@ public class UserService {
     public Credentials login(User client){
         Credentials credentials = new Credentials();
         if(emailExists(client)){
-            Optional<User> user = findByEmail(client.getEmail());
-            if(passwordEncoder.matches(client.getPassword(), user.get().getPassword())){
+            Optional<User> user = findByEmail(client.getUser_email());
+            if(passwordEncoder.matches(client.getUser_password(), user.get().getUser_password())){
                 credentials.setUser(user.get());
                 credentials.setToken(tokenGenerator.createToken(user.get()));
                 return credentials;
