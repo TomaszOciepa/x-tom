@@ -51,8 +51,8 @@ public class UserServiceTest {
 
         given(userRepository.findById(1L)).willReturn(mockUser);
 
-        String s = userService.getUserById(1L).get().getEmail();
-        Assert.assertTrue(user.getEmail().equals(s));
+        String s = userService.getUserById(1L).get().getUser_email();
+        Assert.assertTrue(user.getUser_email().equals(s));
     }
 
     @Test
@@ -62,8 +62,8 @@ public class UserServiceTest {
 
         given(userRepository.findById(1L)).willReturn(mockUser);
 
-        String s = userService.getUserById(1L).get().getEmail();
-        Assert.assertFalse(user.getEmail().equals(s));
+        String s = userService.getUserById(1L).get().getUser_email();
+        Assert.assertFalse(user.getUser_email().equals(s));
     }
 
 
