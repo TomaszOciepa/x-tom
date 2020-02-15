@@ -1,13 +1,13 @@
 package pl.tom.apiservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@Table(name="USER")
 public class User {
 
-@Id
+    @Id
     @GeneratedValue
     private Long user_id;
     private String user_email;
@@ -19,11 +19,16 @@ public class User {
     private String user_zipCode;
     private String user_city;
     private String user_street;
+    @OneToMany(mappedBy = "user")
+    Set<OrderLaptop> orderLaptops;
+
+    @OneToMany(mappedBy = "user")
+    Set<OrderSmartphone> orderSmartphone;
 
     public User() {
     }
 
-    public User(Long user_id, String user_email,  String user_password, String user_role) {
+    public User(Long user_id, String user_email, String user_password, String user_role) {
         this.user_id = user_id;
         this.user_email = user_email;
         this.user_password = user_password;
@@ -41,9 +46,8 @@ public class User {
         this.user_role = user_role;
     }
 
-    public User(String user_email, String user_password, String user_role, String user_firstName, String user_lastName, Long user_phoneNumber, String user_zipCode, String user_city, String user_street) {
-        this.user_email = user_email;
-        this.user_password = user_password;
+    public User(Long user_id, String user_role, String user_firstName, String user_lastName, Long user_phoneNumber, String user_zipCode, String user_city, String user_street, Set<OrderLaptop> orderLaptops, Set<OrderSmartphone> orderSmartphone) {
+        this.user_id = user_id;
         this.user_role = user_role;
         this.user_firstName = user_firstName;
         this.user_lastName = user_lastName;
@@ -51,6 +55,8 @@ public class User {
         this.user_zipCode = user_zipCode;
         this.user_city = user_city;
         this.user_street = user_street;
+        this.orderLaptops = orderLaptops;
+        this.orderSmartphone = orderSmartphone;
     }
 
     public Long getUser_id() {
@@ -133,6 +139,22 @@ public class User {
         this.user_street = user_street;
     }
 
+    public Set<OrderLaptop> getOrderLaptops() {
+        return orderLaptops;
+    }
+
+    public void setOrderLaptops(Set<OrderLaptop> orderLaptops) {
+        this.orderLaptops = orderLaptops;
+    }
+
+    public Set<OrderSmartphone> getOrderSmartphone() {
+        return orderSmartphone;
+    }
+
+    public void setOrderSmartphone(Set<OrderSmartphone> orderSmartphone) {
+        this.orderSmartphone = orderSmartphone;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -146,6 +168,8 @@ public class User {
                 ", user_zipCode='" + user_zipCode + '\'' +
                 ", user_city='" + user_city + '\'' +
                 ", user_street='" + user_street + '\'' +
+                ", orderLaptops=" + orderLaptops +
+                ", orderSmartphone=" + orderSmartphone +
                 '}';
     }
 }

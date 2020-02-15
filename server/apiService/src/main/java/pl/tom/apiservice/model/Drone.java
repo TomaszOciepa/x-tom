@@ -1,10 +1,10 @@
 package pl.tom.apiservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@Table(name="DRONE")
 public class Drone {
 
     @Id
@@ -17,6 +17,8 @@ public class Drone {
     private int drone_range;
     private String drone_camera;
     private int drone_amount_available;
+    @OneToMany(mappedBy = "drone")
+    Set<OrderDrone> orderDrone;
 
     public Drone() {
     }
@@ -29,6 +31,17 @@ public class Drone {
         this.drone_range = drone_range;
         this.drone_camera = drone_camera;
         this.drone_amount_available = drone_amount_available;
+    }
+
+    public Drone(String drone_mark, double drone_price, String drone_status, int drone_time_work, int drone_range, String drone_camera, int drone_amount_available, Set<OrderDrone> orderDrone) {
+        this.drone_mark = drone_mark;
+        this.drone_price = drone_price;
+        this.drone_status = drone_status;
+        this.drone_time_work = drone_time_work;
+        this.drone_range = drone_range;
+        this.drone_camera = drone_camera;
+        this.drone_amount_available = drone_amount_available;
+        this.orderDrone = orderDrone;
     }
 
     public Long getDrone_id() {
@@ -95,6 +108,14 @@ public class Drone {
         this.drone_amount_available = drone_amount_available;
     }
 
+    public Set<OrderDrone> getOrderDrone() {
+        return orderDrone;
+    }
+
+    public void setOrderDrone(Set<OrderDrone> orderDrone) {
+        this.orderDrone = orderDrone;
+    }
+
     @Override
     public String toString() {
         return "Drone{" +
@@ -106,6 +127,7 @@ public class Drone {
                 ", drone_range=" + drone_range +
                 ", drone_camera='" + drone_camera + '\'' +
                 ", drone_amount_available=" + drone_amount_available +
+                ", orderDrone=" + orderDrone +
                 '}';
     }
 }

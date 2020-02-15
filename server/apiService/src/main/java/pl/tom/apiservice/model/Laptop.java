@@ -1,10 +1,10 @@
 package pl.tom.apiservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@Table(name="LAPTOP")
 public class Laptop {
 
     @Id
@@ -21,6 +21,9 @@ public class Laptop {
     private String laptop_graphics_card;
     private double laptop_screen_diagonal;
     private int laptop_amount_available;
+    @OneToMany(mappedBy = "laptop")
+    Set<OrderLaptop> orderLaptops;
+
 
     public Laptop() {
     }
@@ -37,6 +40,21 @@ public class Laptop {
         this.laptop_graphics_card = laptop_graphics_card;
         this.laptop_screen_diagonal = laptop_screen_diagonal;
         this.laptop_amount_available = laptop_amount_available;
+    }
+
+    public Laptop(String laptop_mark, double laptop_price, String laptop_status, String laptop_system, String laptop_processor, double laptop_ram_size, String laptop_disc_type, double laptop_disc_size, String laptop_graphics_card, double laptop_screen_diagonal, int laptop_amount_available, Set<OrderLaptop> orderLaptops) {
+        this.laptop_mark = laptop_mark;
+        this.laptop_price = laptop_price;
+        this.laptop_status = laptop_status;
+        this.laptop_system = laptop_system;
+        this.laptop_processor = laptop_processor;
+        this.laptop_ram_size = laptop_ram_size;
+        this.laptop_disc_type = laptop_disc_type;
+        this.laptop_disc_size = laptop_disc_size;
+        this.laptop_graphics_card = laptop_graphics_card;
+        this.laptop_screen_diagonal = laptop_screen_diagonal;
+        this.laptop_amount_available = laptop_amount_available;
+        this.orderLaptops = orderLaptops;
     }
 
     public Long getLaptop_id() {
@@ -135,6 +153,14 @@ public class Laptop {
         this.laptop_amount_available = laptop_amount_available;
     }
 
+    public Set<OrderLaptop> getOrderLaptops() {
+        return orderLaptops;
+    }
+
+    public void setOrderLaptops(Set<OrderLaptop> orderLaptops) {
+        this.orderLaptops = orderLaptops;
+    }
+
     @Override
     public String toString() {
         return "Laptop{" +
@@ -150,6 +176,7 @@ public class Laptop {
                 ", laptop_graphics_card='" + laptop_graphics_card + '\'' +
                 ", laptop_screen_diagonal=" + laptop_screen_diagonal +
                 ", laptop_amount_available=" + laptop_amount_available +
+                ", orderLaptops=" + orderLaptops +
                 '}';
     }
 }
