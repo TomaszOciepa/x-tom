@@ -62,19 +62,19 @@ public class ConfigExampleData {
         Product product5 = new Product("Słuchawki Marshall", "Akcesoria", "Słuchawki bezprzewodowe", 500, 60, LocalDateTime.now());
         repo.save(product5);
 
-        Laptop laptop1 = new Laptop("Dell", 3000, "Promocja", "Windows", "i7", 8, "SSD", 250, "NIVIDIA",17, 200);
+        Laptop laptop1 = new Laptop("Dell", "Komputer Laptop Dell i7", 3000, "Promocja", "Windows", "i7", 8, "SSD", 250, "NIVIDIA",17, 200);
         laptopRepository.save(laptop1);
 
         OrderLaptop orderLaptop = new OrderLaptop(LocalDateTime.now(), 2, "Zaplacono", root, laptop1);
         orderLaptopRepository.save(orderLaptop);
 
-        Smartphone smartphone1 = new Smartphone("Samsung", 2000, "Promocja", "Android", 7, 16, 8, 20, 300);
+        Smartphone smartphone1 = new Smartphone("Samsung", "Smartphone telefon smasung s9",2000, "Promocja", "Android", 7, 16, 8, 20, 300);
         smartphoneRepository.save(smartphone1);
 
         OrderSmartphone orderSmartphone = new OrderSmartphone(LocalDateTime.now(), 1, "Czeka na platnosc", root, smartphone1);
         orderSmartphoneRepository.save(orderSmartphone);
 
-        Drone drone1 = new Drone("DJI", 4000, "Wyprzedaz", 20, 3000, "Tak", 300);
+        Drone drone1 = new Drone("DJI","Dron DJI super promocja", 4000, "Wyprzedaz", 20, 3000, "Tak", 300);
         droneRepository.save(drone1);
 
         OrderDrone orderDrone = new OrderDrone(LocalDateTime.now(), 3, "Zaplacono", root, drone1);

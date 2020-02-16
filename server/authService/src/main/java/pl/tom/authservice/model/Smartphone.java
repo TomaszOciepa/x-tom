@@ -11,6 +11,7 @@ public class Smartphone {
     @GeneratedValue
     private Long smartphone_id;
     private String smartphone_mark;
+    private String smartphone_description;
     private double smartphone_price;
     private String smartphone_status;
     private String smartphone_system;
@@ -23,8 +24,9 @@ public class Smartphone {
     public Smartphone() {
     }
 
-    public Smartphone(String smartphone_mark, double smartphone_price, String smartphone_status, String smartphone_system, double smartphone_screen_diagonal, double smartphone_disc_size, double smartphone_ram_size, int smartphone_camera_resolution, int smartphone_amount_available) {
+    public Smartphone(String smartphone_mark, String smartphone_description, double smartphone_price, String smartphone_status, String smartphone_system, double smartphone_screen_diagonal, double smartphone_disc_size, double smartphone_ram_size, int smartphone_camera_resolution, int smartphone_amount_available) {
         this.smartphone_mark = smartphone_mark;
+        this.smartphone_description = smartphone_description;
         this.smartphone_price = smartphone_price;
         this.smartphone_status = smartphone_status;
         this.smartphone_system = smartphone_system;
@@ -115,11 +117,20 @@ public class Smartphone {
         this.smartphone_amount_available = smartphone_amount_available;
     }
 
+    public String getSmartphone_description() {
+        return smartphone_description;
+    }
+
+    public void setSmartphone_description(String smartphone_description) {
+        this.smartphone_description = smartphone_description;
+    }
+
     @Override
     public String toString() {
         return "Smartphone{" +
                 "smartphone_id=" + smartphone_id +
                 ", smartphone_mark='" + smartphone_mark + '\'' +
+                ", smartphone_description='" + smartphone_description + '\'' +
                 ", smartphone_price=" + smartphone_price +
                 ", smartphone_status='" + smartphone_status + '\'' +
                 ", smartphone_system='" + smartphone_system + '\'' +

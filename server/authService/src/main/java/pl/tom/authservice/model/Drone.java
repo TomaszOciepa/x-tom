@@ -11,6 +11,7 @@ public class Drone {
     @GeneratedValue
     private Long drone_id;
     private String drone_mark;
+    private String drone_description;
     private double drone_price;
     private String drone_status;
     private int drone_time_work;
@@ -21,8 +22,9 @@ public class Drone {
     public Drone() {
     }
 
-    public Drone(String drone_mark, double drone_price, String drone_status, int drone_time_work, int drone_range, String drone_camera, int drone_amount_available) {
+    public Drone(String drone_mark, String drone_description, double drone_price, String drone_status, int drone_time_work, int drone_range, String drone_camera, int drone_amount_available) {
         this.drone_mark = drone_mark;
+        this.drone_description = drone_description;
         this.drone_price = drone_price;
         this.drone_status = drone_status;
         this.drone_time_work = drone_time_work;
@@ -95,11 +97,20 @@ public class Drone {
         this.drone_amount_available = drone_amount_available;
     }
 
+    public String getDrone_description() {
+        return drone_description;
+    }
+
+    public void setDrone_description(String drone_description) {
+        this.drone_description = drone_description;
+    }
+
     @Override
     public String toString() {
         return "Drone{" +
                 "drone_id=" + drone_id +
                 ", drone_mark='" + drone_mark + '\'' +
+                ", drone_description='" + drone_description + '\'' +
                 ", drone_price=" + drone_price +
                 ", drone_status='" + drone_status + '\'' +
                 ", drone_time_work=" + drone_time_work +

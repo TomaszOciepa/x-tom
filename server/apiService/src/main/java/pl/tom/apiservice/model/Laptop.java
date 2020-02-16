@@ -11,6 +11,7 @@ public class Laptop {
     @GeneratedValue
     private Long laptop_id;
     private String laptop_mark;
+    private String laptop_description;
     private double laptop_price;
     private String laptop_status;
     private String laptop_system;
@@ -28,8 +29,9 @@ public class Laptop {
     public Laptop() {
     }
 
-    public Laptop(String laptop_mark, double laptop_price, String laptop_status, String laptop_system, String laptop_processor, double laptop_ram_size, String laptop_disc_type, double laptop_disc_size, String laptop_graphics_card, double laptop_screen_diagonal, int laptop_amount_available) {
+    public Laptop(String laptop_mark, String laptop_description, double laptop_price, String laptop_status, String laptop_system, String laptop_processor, double laptop_ram_size, String laptop_disc_type, double laptop_disc_size, String laptop_graphics_card, double laptop_screen_diagonal, int laptop_amount_available) {
         this.laptop_mark = laptop_mark;
+        this.laptop_description = laptop_description;
         this.laptop_price = laptop_price;
         this.laptop_status = laptop_status;
         this.laptop_system = laptop_system;
@@ -42,8 +44,9 @@ public class Laptop {
         this.laptop_amount_available = laptop_amount_available;
     }
 
-    public Laptop(String laptop_mark, double laptop_price, String laptop_status, String laptop_system, String laptop_processor, double laptop_ram_size, String laptop_disc_type, double laptop_disc_size, String laptop_graphics_card, double laptop_screen_diagonal, int laptop_amount_available, Set<OrderLaptop> orderLaptops) {
+    public Laptop(String laptop_mark, String laptop_description, double laptop_price, String laptop_status, String laptop_system, String laptop_processor, double laptop_ram_size, String laptop_disc_type, double laptop_disc_size, String laptop_graphics_card, double laptop_screen_diagonal, int laptop_amount_available, Set<OrderLaptop> orderLaptops) {
         this.laptop_mark = laptop_mark;
+        this.laptop_description = laptop_description;
         this.laptop_price = laptop_price;
         this.laptop_status = laptop_status;
         this.laptop_system = laptop_system;
@@ -161,11 +164,20 @@ public class Laptop {
         this.orderLaptops = orderLaptops;
     }
 
+    public String getLaptop_description() {
+        return laptop_description;
+    }
+
+    public void setLaptop_description(String laptop_description) {
+        this.laptop_description = laptop_description;
+    }
+
     @Override
     public String toString() {
         return "Laptop{" +
                 "laptop_id=" + laptop_id +
                 ", laptop_mark='" + laptop_mark + '\'' +
+                ", laptop_description='" + laptop_description + '\'' +
                 ", laptop_price=" + laptop_price +
                 ", laptop_status='" + laptop_status + '\'' +
                 ", laptop_system='" + laptop_system + '\'' +
