@@ -18,6 +18,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE, "/user/{id}").hasRole("ADMIN")
                 .antMatchers(HttpMethod.POST, "/product/create").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/product/{id}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/product/drone/create").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/product/drone/{id}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/product/drone/{id}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/product/laptop/create").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/product/laptop/{id}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/product/laptop/{id}").hasRole("ADMIN")
                 .and()
                 .addFilter(new JwtFilter(authenticationManager()));
     }

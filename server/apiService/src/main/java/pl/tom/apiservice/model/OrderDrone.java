@@ -1,5 +1,7 @@
 package pl.tom.apiservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -14,10 +16,12 @@ public class OrderDrone {
     private int order_drone_amount;
     private String order_drone_status;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id")
     User user;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "drone_id")
     Drone drone;

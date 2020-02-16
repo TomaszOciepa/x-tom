@@ -1,5 +1,7 @@
 package pl.tom.apiservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -19,9 +21,10 @@ public class User {
     private String user_zipCode;
     private String user_city;
     private String user_street;
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     Set<OrderLaptop> orderLaptops;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     Set<OrderSmartphone> orderSmartphone;
 

@@ -25,9 +25,9 @@ public class UserRestController {
     }
 
     @GetMapping("/all")
-    public List<User> getAllUser(HttpServletResponse response) {
+    public List<User> getAllUser() {
         LOG.info("method: getAllUser. Trying find all users");
-        response.setStatus(200);
+//        response.setStatus(200);
         return userService.getAllUser();
     }
 
