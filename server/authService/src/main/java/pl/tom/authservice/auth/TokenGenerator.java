@@ -3,7 +3,7 @@ package pl.tom.authservice.auth;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
-import pl.tom.authservice.model.User;
+import pl.tom.authservice.model.user.User;
 
 import java.util.Date;
 
