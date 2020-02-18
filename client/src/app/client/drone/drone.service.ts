@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { DroneList } from '../model/droneList';
+import { Drone } from '../model/drone';
 
 
 @Injectable({
@@ -12,6 +13,10 @@ export class DroneService {
 
   getAll(){
     return this.http.get<DroneList>("http://localhost:8090/drone/all")
+  }
+
+  create(drone:Partial<Drone>){
+    return this.http.post<Drone>("http://localhost:8080/drone/create", drone)
   }
 
 }

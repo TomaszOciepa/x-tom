@@ -75,18 +75,46 @@
      </div> 
      
      <div class="col-10 mx-auto" *ngIf="tab == 'drone' ">
-      <h1>Tu DRONY</h1>
-      <drone></drone>
+       <div class="row">
+        <ng-container *ngIf="auth.isAuthenticated">
+            <div class="col-4">
+                <add-drone></add-drone>
+            </div>
+        </ng-container>
+          <div class="col-8">
+            <h1>Tu DRONY</h1>
+            <drone></drone>
+          </div>
+       </div>
     </div>
 
     <div class="col-10 mx-auto" *ngIf="tab == 'laptop' ">
-      <h1>Tu Laptopy</h1>
-      <laptop></laptop>
+      <div class="row">
+        <ng-container *ngIf="auth.isAuthenticated">
+          <div class="col-4">
+            <add-laptop></add-laptop>
+          </div>
+        </ng-container>
+        <div class="col-8">
+            <h1>Tu Laptopy</h1>
+            <laptop></laptop>
+        </div>
+      </div>
     </div>
+    
 
     <div class="col-10 mx-auto" *ngIf="tab == 'smartphone' ">
-      <h1>Tu smartphone</h1>
-      <smartphone></smartphone>
+      <div class="row">
+        <ng-container *ngIf="auth.isAuthenticated">
+          <div class="col-4">
+            <add-smartphone></add-smartphone>
+          </div>
+        </ng-container>
+        <div class="col-8">
+          <h1>Tu smartphone</h1>
+          <smartphone></smartphone>
+        </div>
+      </div>
     </div>
     
 </div>

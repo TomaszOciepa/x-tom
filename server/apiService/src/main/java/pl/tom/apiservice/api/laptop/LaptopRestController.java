@@ -10,7 +10,7 @@ import pl.tom.apiservice.service.laptop.LaptopService;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/laptop")
 public class LaptopRestController {

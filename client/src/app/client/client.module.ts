@@ -10,6 +10,8 @@ import { DroneComponent } from './drone/drone.component';
 import { LaptopComponent } from './laptop/laptop.component';
 import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { AddDroneComponent } from './drone/add-drone/add-drone.component';
+import { AddLaptopComponent } from './laptop/add-laptop/add-laptop.component';
+import { AddSmartphoneComponent } from './smartphone/add-smartphone/add-smartphone.component';
 
 
 
@@ -23,6 +25,8 @@ import { AddDroneComponent } from './drone/add-drone/add-drone.component';
     LaptopComponent,
     SmartphoneComponent,
     AddDroneComponent,
+    AddLaptopComponent,
+    AddSmartphoneComponent,
   ],
   imports: [
     CommonModule,

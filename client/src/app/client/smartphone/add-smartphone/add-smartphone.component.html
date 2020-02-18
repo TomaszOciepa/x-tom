@@ -1,0 +1,57 @@
+<p>Dodaj Smartfona</p>
+
+<div class="alert alert-danger" *ngIf="error">{{error}}</div>
+
+<form [formGroup]="addSmartphoneForm" (submit)="addSmartphone()">
+    <div class="form-group">
+        <label for="Name">Producent</label>
+        <input type="Mark" class="form-control" formControlName="smartphone_mark">
+    </div>
+
+    <div class="form-group">
+        <label for="Descripton">Opis</label>
+        <input type="text" class="form-control" formControlName="smartphone_description">
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Cena</label>
+        <input type="text" class="form-control" formControlName="smartphone_price">
+    </div>
+
+    <div class="form-group">
+        <label for="Status">Status</label>
+        <input type="text" class="form-control" formControlName="smartphone_status">
+    </div>
+
+    <div class="form-group">
+        <label for="System">System operacyjny</label>
+        <input type="text" class="form-control" formControlName="smartphone_system">
+    </div>
+
+    <div class="form-group">
+        <label for="ScreenDiagonal">Przekątna ekranu</label>
+        <input type="text" class="form-control" formControlName="smartphone_screen_diagonal">
+    </div>
+
+    <div class="form-group">
+        <label for="DyskSize">Rozmiar dysku</label>
+        <input type="text" class="form-control" formControlName="smartphone_disc_size">
+    </div>
+
+    <div class="form-group">
+        <label for="Ram">Pamięć RAM</label>
+        <input type="text" class="form-control" formControlName="smartphone_ram_size">
+    </div>
+
+    <div class="form-group">
+        <label for="CameraResolution">Roździelczość kamery</label>
+        <input type="text" class="form-control" formControlName="smartphone_camera_resolution">
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Dostępna ilość</label>
+        <input type="text" class="form-control" formControlName="smartphone_amount_available">
+    </div>
+
+    <input type="submit" class="btn btn-danger mx-auto">
+</form>
