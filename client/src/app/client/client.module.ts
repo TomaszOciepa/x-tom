@@ -6,6 +6,10 @@ import { AuthModule } from '../auth/auth.module';
 import { ProfileModule } from '../profile/profile.module';
 import { AddProductComponent } from './products/add-product/add-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DroneComponent } from './drone/drone.component';
+import { LaptopComponent } from './laptop/laptop.component';
+import { SmartphoneComponent } from './smartphone/smartphone.component';
+import { AddDroneComponent } from './drone/add-drone/add-drone.component';
 
 
 
@@ -15,6 +19,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClientComponent,
     ProductsComponent,
     AddProductComponent,
+    DroneComponent,
+    LaptopComponent,
+    SmartphoneComponent,
+    AddDroneComponent,
   ],
   imports: [
     CommonModule,
