@@ -3,7 +3,7 @@ package pl.tom.authservice.auth;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
-import pl.tom.authservice.model.User;
+import pl.tom.authservice.model.user.User;
 
 import java.util.Date;
 
@@ -14,11 +14,11 @@ public class TokenGenerator {
         long currentTimeMillis = System.currentTimeMillis();
 
         return Jwts.builder()
-                .setSubject(user.getEmail())
-                .claim("password", user.getPassword())
-                .claim("role", user.getRole())
+                .setSubject(user.getUser_email())
+                .claim("password", user.getUser_password())
+                .claim("role", user.getUser_role())
                 .setIssuedAt(new Date(currentTimeMillis))
-                .setExpiration(new Date(currentTimeMillis + 30000))
+                .setExpiration(new Date(currentTimeMillis + 30000000))
                 .signWith(SignatureAlgorithm.HS512, "BS*z_=D8{(o%{*X")
                 .compact();
     }

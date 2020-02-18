@@ -1,4 +1,4 @@
-package pl.tom.authservice.model;
+package pl.tom.authservice.model.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -5,8 +5,8 @@ import { map, tap } from 'rxjs/internal/operators';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 interface Credentials{
-  email: String;
-  password: String;
+  user_email: String;
+  user_password: String;
 }
 
 interface Session{

@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import pl.tom.apiservice.model.User;
-import pl.tom.apiservice.model.UserRepository;
+import pl.tom.apiservice.model.user.User;
+import pl.tom.apiservice.model.user.UserRepository;
+import pl.tom.apiservice.service.user.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,8 +52,8 @@ public class UserServiceTest {
 
         given(userRepository.findById(1L)).willReturn(mockUser);
 
-        String s = userService.getUserById(1L).get().getEmail();
-        Assert.assertTrue(user.getEmail().equals(s));
+        String s = userService.getUserById(1L).get().getUser_email();
+        Assert.assertTrue(user.getUser_email().equals(s));
     }
 
     @Test
@@ -62,8 +63,8 @@ public class UserServiceTest {
 
         given(userRepository.findById(1L)).willReturn(mockUser);
 
-        String s = userService.getUserById(1L).get().getEmail();
-        Assert.assertFalse(user.getEmail().equals(s));
+        String s = userService.getUserById(1L).get().getUser_email();
+        Assert.assertFalse(user.getUser_email().equals(s));
     }
 
 

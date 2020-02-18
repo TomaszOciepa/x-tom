@@ -37,4 +37,12 @@ public class ProductController {
         response.setStatus(200);
         return productService.getProductById(id);
     }
+
+    @GetMapping("")
+    public List<Product> getByDescription(@RequestParam String query, HttpServletResponse response){
+        LOG.info("method: getByDescription. Trying get product with {} description", query);
+        response.setStatus(200);
+        return productService.getByDescription(query);
+    }
+
 }

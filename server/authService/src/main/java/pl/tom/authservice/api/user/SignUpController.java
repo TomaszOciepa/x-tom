@@ -1,16 +1,18 @@
-package pl.tom.authservice.api;
+package pl.tom.authservice.api.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import pl.tom.authservice.model.User;
-import pl.tom.authservice.service.UserService;
+import pl.tom.authservice.model.user.User;
+import pl.tom.authservice.service.user.UserService;
 
 import javax.servlet.http.HttpServletResponse;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class SignUpController {
 
@@ -21,19 +23,19 @@ public class SignUpController {
 
     @PostMapping("/sing-up")
     public String singUp(@RequestBody User user, HttpServletResponse response){
-        LOG.info("Trying sing-up: {}", user.getEmail());
+        LOG.info("Trying sing-up: {}", user.getUser_email());
         if (userService.emailExists(user)){
-            LOG.warn("Email {} is taken", user.getEmail());
+            LOG.warn("Email {} is taken", user.getUser_email());
             response.setStatus(HttpServletResponse.SC_CONFLICT);
             return "Email is taken";
         } else {
-            if (userService.emailValid(user.getEmail()) && user.getPassword().length() >= 6){
+            if (userService.emailValid(user.getUser_email()) && user.getUser_password().length() >= 6){
                 userService.save(user);
                 response.setStatus(HttpServletResponse.SC_CREATED);
-                LOG.info("Account {} has been created", user.getEmail());
+                LOG.info("Account {} has been created", user.getUser_email());
                 return "Account has been created";
             }else {
-                LOG.warn("Email {} is invalid", user.getEmail());
+                LOG.warn("Email {} is invalid", user.getUser_email());
                 return "Email invalid";
             }
 

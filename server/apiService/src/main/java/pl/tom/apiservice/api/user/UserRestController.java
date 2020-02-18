@@ -1,11 +1,11 @@
-package pl.tom.apiservice.api;
+package pl.tom.apiservice.api.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.tom.apiservice.service.UserService;
-import pl.tom.apiservice.model.User;
+import pl.tom.apiservice.service.user.UserService;
+import pl.tom.apiservice.model.user.User;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -25,9 +25,8 @@ public class UserRestController {
     }
 
     @GetMapping("/all")
-    public List<User> getAllUser(HttpServletResponse response) {
+    public List<User> getAllUser() {
         LOG.info("method: getAllUser. Trying find all users");
-        response.setStatus(200);
         return userService.getAllUser();
     }
 
@@ -45,6 +44,12 @@ public class UserRestController {
         }
 
         return user;
+    }
+
+    @PutMapping("/{id}")
+    public Optional<User> edit(@PathVariable(value = "id") Long id, @RequestBody User userEdited, HttpServletResponse response) {
+        LOG.info("method: edit. Edit user");
+        return userService.edit(id, userEdited);
     }
 
     @DeleteMapping("/{id}")
