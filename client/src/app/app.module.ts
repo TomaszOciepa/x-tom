@@ -7,6 +7,7 @@ import { ClientModule } from './client/client.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
+import { NaviModule } from './navi/navi.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileModule } from './profile/profile.module';
     ClientModule,
     HttpClientModule,
     AuthModule,
-    ProfileModule
+    ProfileModule,
+    NaviModule
   ],
   providers: [],
   bootstrap: [AppComponent]

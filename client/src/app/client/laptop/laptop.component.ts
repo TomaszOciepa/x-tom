@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LaptopService } from './laptop.service';
 import { LaptopList } from '../model/laptopList';
+import { AuthService } from 'src/app/auth/auth.service';
+
 
 @Component({
   selector: 'laptop',
@@ -17,7 +19,10 @@ export class LaptopComponent implements OnInit {
     })
   }
 
-  constructor(private http:LaptopService) { }
+  constructor(private http:LaptopService, protected auth:AuthService) { 
+    this.auth.state.subscribe()
+  }
+  
 
   ngOnInit() {
 

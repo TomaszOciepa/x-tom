@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DroneService} from './drone.service';
 import { DroneList } from '../model/droneList';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'drone',
@@ -17,7 +18,9 @@ export class DroneComponent implements OnInit {
     })
   }
 
-  constructor(private http:DroneService) { }
+  constructor(private http:DroneService, protected auth:AuthService) {
+    this.auth.state.subscribe()
+   }
 
   ngOnInit() {
     this.getAllDrone()

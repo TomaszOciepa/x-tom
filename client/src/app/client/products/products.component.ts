@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { ProductList } from '../model/productList';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'products',
@@ -23,7 +24,11 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  constructor(private http: ProductsService) { }
+
+
+  constructor(private http: ProductsService, protected auth:AuthService) {
+    this.auth.state.subscribe()
+   }
 
   ngOnInit() {
     // this.getAllProducts()

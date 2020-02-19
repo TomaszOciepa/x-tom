@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SmartphoneService } from './smartphone.service';
 import { SmartphoneList } from '../model/smartphoneList';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'smartphone',
@@ -18,7 +19,10 @@ export class SmartphoneComponent implements OnInit {
     })
   }
 
-  constructor(private http:SmartphoneService) { }
+  constructor(private http:SmartphoneService,protected auth:AuthService) {
+    this.auth.state.subscribe()
+   }
+  
 
   ngOnInit() {
     this.getAllSmartphone();

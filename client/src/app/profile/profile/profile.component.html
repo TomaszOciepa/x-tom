@@ -1,26 +1,29 @@
 
 <div *ngIf="profile">
     <h2>User</h2>
-    <dl class="row">
-        <dt class="col-3">id</dt>
-        <dd class="col-9">{{profile.user_id}}</dd>
-        <dt class="col-3">email</dt>
-        <dd class="col-9">{{profile.user_email}}</dd>
-        <dt class="col-3">hasło</dt>
-        <dd class="col-9">{{profile.user_password}}</dd>
-        <dt class="col-3">role</dt>
-        <dd class="col-9">{{profile.user_role}}</dd>
-        <dt class="col-3">imię</dt>
-        <dd class="col-9">{{profile.user_firstName}}</dd>
-        <dt class="col-3">nazwisko</dt>
-        <dd class="col-9">{{profile.user_lastName}}</dd>
-        <dt class="col-3">numer tel</dt>
-        <dd class="col-9">{{profile.user_phoneNumber}}</dd>
-        <dt class="col-3">kod pocztowy</dt>
-        <dd class="col-9">{{profile.user_zipCode}}</dd>
-        <dt class="col-3">miasto</dt>
-        <dd class="col-9">{{profile.user_city}}</dd>
-        <dt class="col-3">ulica</dt>
-        <dd class="col-9">{{profile.user_street}}</dd>
-    </dl>
+    <ng-container *ngIf="auth.isAuthenticated">
+        <dl class="row">
+            <dt class="col-3">id</dt>
+            <dd class="col-9">{{profile.user_id}}</dd>
+            <dt class="col-3">email</dt>
+            <dd class="col-9">{{profile.user_email}}</dd>
+            <dt class="col-3">hasło</dt>
+            <dd class="col-9">{{profile.user_password}}</dd>
+            <dt class="col-3">role</dt>
+            <dd class="col-9">{{profile.user_role}}</dd>
+            <dt class="col-3">imię</dt>
+            <dd class="col-9">{{profile.user_firstName}}</dd>
+            <dt class="col-3">nazwisko</dt>
+            <dd class="col-9">{{profile.user_lastName}}</dd>
+            <dt class="col-3">numer tel</dt>
+            <dd class="col-9">{{profile.user_phoneNumber}}</dd>
+            <dt class="col-3">kod pocztowy</dt>
+            <dd class="col-9">{{profile.user_zipCode}}</dd>
+            <dt class="col-3">miasto</dt>
+            <dd class="col-9">{{profile.user_city}}</dd>
+            <dt class="col-3">ulica</dt>
+            <dd class="col-9">{{profile.user_street}}</dd>
+        </dl>
+    </ng-container>
+    
 </div>
