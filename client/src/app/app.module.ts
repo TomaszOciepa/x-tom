@@ -15,12 +15,12 @@ import { NaviModule } from './navi/navi.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ClientModule,
     HttpClientModule,
     AuthModule,
     ProfileModule,
-    NaviModule
+    NaviModule,
+    ClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

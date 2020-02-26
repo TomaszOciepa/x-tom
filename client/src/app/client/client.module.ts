@@ -12,6 +12,7 @@ import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { AddDroneComponent } from './drone/add-drone/add-drone.component';
 import { AddLaptopComponent } from './laptop/add-laptop/add-laptop.component';
 import { AddSmartphoneComponent } from './smartphone/add-smartphone/add-smartphone.component';
+import { ProductsRoutingModule } from './products/products.routing.module';
 
 
 
@@ -29,13 +30,14 @@ import { AddSmartphoneComponent } from './smartphone/add-smartphone/add-smartpho
     AddSmartphoneComponent,
   ],
   imports: [
+    ProductsRoutingModule,
     CommonModule,
     AuthModule,
     ProfileModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
-    ClientComponent
+    ClientComponent,
   ]
 })
 export class ClientModule { }
