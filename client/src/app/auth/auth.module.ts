@@ -5,13 +5,15 @@ import { AuthInterceptorService } from './auth-interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthRoutingModule } from './auth.routing.module';
 
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthRoutingModule
   ],
   providers: [
     AuthService,

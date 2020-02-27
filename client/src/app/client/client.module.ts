@@ -10,6 +10,14 @@ import { DroneComponent } from './drone/drone.component';
 import { LaptopComponent } from './laptop/laptop.component';
 import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { AddDroneComponent } from './drone/add-drone/add-drone.component';
+import { AddLaptopComponent } from './laptop/add-laptop/add-laptop.component';
+import { AddSmartphoneComponent } from './smartphone/add-smartphone/add-smartphone.component';
+import { ProductsRoutingModule } from './products/products.routing.module';
+import { DroneRoutingModule } from './drone/drone.routing.module';
+import { LaptopRoutingModule } from './laptop/laptop.routing.module';
+import { SmartphoneRoutingModule } from './smartphone/smartphone.routing.module';
+
+
 
 
 
@@ -23,15 +31,21 @@ import { AddDroneComponent } from './drone/add-drone/add-drone.component';
     LaptopComponent,
     SmartphoneComponent,
     AddDroneComponent,
+    AddLaptopComponent,
+    AddSmartphoneComponent,
   ],
   imports: [
+    ProductsRoutingModule,
+    DroneRoutingModule,
+    LaptopRoutingModule,
+    SmartphoneRoutingModule,
     CommonModule,
     AuthModule,
     ProfileModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
-    ClientComponent
+    ClientComponent,
   ]
 })
 export class ClientModule { }

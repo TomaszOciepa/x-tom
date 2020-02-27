@@ -8,13 +8,15 @@ import { AuthService } from '../auth/auth.service';
 })
 export class ClientComponent implements OnInit {
 
-  tab = '';
+  // tab = '';
 
-  constructor(protected auth:AuthService) { 
-    this.auth.state.subscribe(
-      authorized => this.tab = authorized? 'profile': 'login'
-    )
-  }
+  constructor(){}
+
+  // constructor(protected auth:AuthService) { 
+  //   this.auth.state.subscribe(
+  //     authorized => this.tab = authorized? 'profile': 'login'
+  //   )
+  // }
 
   ngOnInit() {
   }

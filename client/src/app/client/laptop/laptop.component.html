@@ -1,8 +1,21 @@
 <p>laptop works!</p>
 
-<div *ngFor="let laptop of laptopList">
-    <div>
-        <p>nazwa: <strong>{{laptop.laptop_mark}}</strong><span> opis: <strong>{{laptop.laptop_description}}</strong></span><span> cena: <strong>{{laptop.laptop_price}} zł</strong></span></p>
-        
+
+<div class="row">
+    <ng-container *ngIf="auth.isAuthenticated">
+        <div class="col-4">
+          <add-laptop></add-laptop>
+        </div>
+      </ng-container>
+
+
+    <div class="col-8">
+        <div *ngFor="let laptop of laptopList">
+            <div>
+                <p>nazwa: <strong>{{laptop.laptop_mark}}</strong><span> opis: <strong>{{laptop.laptop_description}}</strong></span><span> cena: <strong>{{laptop.laptop_price}} zł</strong></span></p>
+                
+            </div>
+        </div>
     </div>
 </div>
+
