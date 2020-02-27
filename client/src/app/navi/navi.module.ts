@@ -5,7 +5,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MenuComponent } from './menu/menu.component';
 import { AuthModule } from '../auth/auth.module';
 import { ProfileModule } from '../profile/profile.module';
-
+import { NaviRoutingModule } from './navi.routing.module';
 
 
 @NgModule({
@@ -18,6 +18,7 @@ import { ProfileModule } from '../profile/profile.module';
     CommonModule,
     AuthModule,
     ProfileModule,
+    NaviRoutingModule,
   ],
   exports: [
     HomeComponent, PageNotFoundComponent, MenuComponent
