@@ -1,13 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SmartphoneComponent } from './smartphone.component';
-<<<<<<< HEAD
-
-const routes: Routes = [
-  {
-    path: 'smartphone',
-    component: SmartphoneComponent
-=======
 import { SmartphoneByIdComponent } from './smartphone-by-id/smartphone-by-id.component';
 
 const routes: Routes = [
@@ -18,7 +11,6 @@ const routes: Routes = [
   {
     path: 'smartphone/:smartphone_id',
     component: SmartphoneByIdComponent
->>>>>>> routing
   }
 ]
 
@@ -29,10 +21,6 @@ const routes: Routes = [
   ],
   exports:[
     RouterModule
-<<<<<<< HEAD
-  ]
-=======
   ],
->>>>>>> routing
 })
 export class SmartphoneRoutingModule { }

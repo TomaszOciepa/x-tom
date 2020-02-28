@@ -17,11 +17,8 @@ export class SmartphoneService {
   create(smartphone:Partial<Smartphone>){
     return this.http.post<Smartphone>("http://localhost:8080/smartphone/create", smartphone)
   }
-<<<<<<< HEAD
-=======
 
   getById(id:number){
     return this.http.get<Smartphone>("http://localhost:8090/smartphone/"+id)
   }
->>>>>>> routing
 }
