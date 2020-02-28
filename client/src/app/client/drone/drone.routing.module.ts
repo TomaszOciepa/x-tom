@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DroneComponent } from './drone.component';
+import { DroneByIdComponent } from './drone-by-id/drone-by-id.component';
 
 const routes: Routes = [
   {
-    path: 'drone',
+    path: 'drones',
     component: DroneComponent
+  },
+  {
+    path: 'drone/:drone_id',
+    component: DroneByIdComponent
   }
 ]
 
@@ -16,6 +21,8 @@ const routes: Routes = [
   ],
   exports:[
     RouterModule
-  ]
+  ],
 })
-export class DroneRoutingModule { }
+export class DroneRoutingModule { 
+  
+}

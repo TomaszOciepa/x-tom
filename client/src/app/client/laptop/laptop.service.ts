@@ -18,4 +18,8 @@ export class LaptopService {
   create(laptop:Partial<Laptop>){
     return this.http.post<Laptop>("http://localhost:8080/laptop/create", laptop)
   }
+
+  getById(id:number){
+    return this.http.get<Laptop>("http://localhost:8090/laptop/"+id)
+  }
 }

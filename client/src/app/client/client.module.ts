@@ -16,6 +16,9 @@ import { ProductsRoutingModule } from './products/products.routing.module';
 import { DroneRoutingModule } from './drone/drone.routing.module';
 import { LaptopRoutingModule } from './laptop/laptop.routing.module';
 import { SmartphoneRoutingModule } from './smartphone/smartphone.routing.module';
+import { DroneByIdComponent } from './drone/drone-by-id/drone-by-id.component';
+import { LaptopByIdComponent } from './laptop/laptop-by-id/laptop-by-id.component';
+import { SmartphoneByIdComponent } from './smartphone/smartphone-by-id/smartphone-by-id.component';
 
 
 
@@ -33,6 +36,9 @@ import { SmartphoneRoutingModule } from './smartphone/smartphone.routing.module'
     AddDroneComponent,
     AddLaptopComponent,
     AddSmartphoneComponent,
+    DroneByIdComponent,
+    LaptopByIdComponent,
+    SmartphoneByIdComponent
   ],
   imports: [
     ProductsRoutingModule,
