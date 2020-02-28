@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p>drone works!</p>
 <div class="row">
     <ng-container *ngIf="auth.isAuthenticated">
@@ -14,4 +15,33 @@
             </div>
         </div>
     </div>
+=======
+<h2>DRONY</h2>
+
+<ng-container *ngIf="auth.isAuthenticated">
+    <div class="row">
+        <add-drone></add-drone>
+    </div>    
+</ng-container>
+
+<div class="row">
+        <div *ngFor="let drone of droneList">
+            <div class="col-4">
+                <div class="drone">
+                    <a href="/#/drone/{{drone.drone_id}}">
+                        <div class="card" style="width: 12rem;">
+                            <h4 class="card-title">{{drone.drone_mark}}</h4>
+                            <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="drone">
+                            <div class="card-body my-card-body">
+                                <p class="card-text">kamera: {{drone.drone_camera}}</p>
+                                <p class="card-text">zasięg: {{drone.drone_range}} m</p>
+                                <p class="card-text">czas pracy: {{drone.drone_time_work}} min</p>
+                                <h5 class="card-text">{{drone.drone_price}} zł</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+>>>>>>> routing
 </div>

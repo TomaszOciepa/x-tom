@@ -1,0 +1,20 @@
+a{
+ color: #000000;
+ text-decoration: none;   
+}
+
+a:hover{
+color: green;
+}
+
+.drone{
+    margin-bottom: 10px;
+}
+
+.my-card-body p{
+margin: 0;
+}
+
+.my-card-body h5{
+    margin-top: 20px;
+    }

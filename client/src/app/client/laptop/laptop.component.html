@@ -1,5 +1,27 @@
-<p>laptop works!</p>
+<h2>LAPTOPY</h2>
+<ng-container *ngIf="auth.isAuthenticated">
+    <div class="row">
+        <add-laptop></add-laptop>
+    </div>
+</ng-container>
 
+<div class="row">
+    <div *ngFor="let laptop of laptopList">
+        <div class="col-4">
+            <div class="laptop">
+                <a href="/#/laptop/{{laptop.laptop_id}}">
+                    <div class="card" style="width: 12rem;">
+                        <h5 class="card-title">{{laptop.laptop_mark}}</h5>
+                        <img src="../../../assets/img/laptop.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{laptop.laptop_description}}</p>
+                            <p class="card-text">{{laptop.laptop_price}} zł</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+<<<<<<< HEAD
 
 <div class="row">
     <ng-container *ngIf="auth.isAuthenticated">
@@ -15,6 +37,8 @@
                 <p>nazwa: <strong>{{laptop.laptop_mark}}</strong><span> opis: <strong>{{laptop.laptop_description}}</strong></span><span> cena: <strong>{{laptop.laptop_price}} zł</strong></span></p>
                 
             </div>
+=======
+>>>>>>> routing
         </div>
     </div>
 </div>

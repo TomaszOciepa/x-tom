@@ -19,4 +19,10 @@ export class DroneService {
     return this.http.post<Drone>("http://localhost:8080/drone/create", drone)
   }
 
+<<<<<<< HEAD
+=======
+  getById(id:number){
+    return this.http.get<Drone>("http://localhost:8090/drone/"+id)
+  }
+>>>>>>> routing
 }

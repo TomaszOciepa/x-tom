@@ -1,0 +1,34 @@
+<ng-container *ngIf="drone | async as drone">
+    <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/img/drone22.png" class="card-img-top" alt="drone">
+        </div>
+        <div class="col-8">
+            <div class="mark">
+                <h2>{{drone.drone_mark}}</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="parameters">
+                        <p>dostępna ilość: {{drone.drone_amount_available}} szt</p>
+                        <p>opis: {{drone.drone_description}}</p>
+                        <p>kamera: {{drone.drone_camera}}</p>
+                        <p>zasięg: {{drone.drone_range}} m</p>
+                        <p>czas pracy: {{drone.drone_time_work}} min</p>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="basket">
+
+                    </div>
+                   <h3>{{drone.drone_price}} zł</h3>
+                   <button type="button" class="btn btn-secondary">Dodaj do kozyka</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+

@@ -1,5 +1,12 @@
-<p>smartphone works!</p>
+<h2>SMARTFONY</h2>
+<ng-container *ngIf="auth.isAuthenticated">
+    <div class="row">
+        <add-smartphone></add-smartphone>
+    </div>
+</ng-container>
 
+
+<<<<<<< HEAD
 
 <div class="row">
 
@@ -14,6 +21,22 @@
             <div>
                 <p>nazwa: <strong>{{smartphone.smartphone_mark}}</strong><span> opis: <strong>{{smartphone.smartphone_description}}</strong></span><span> cena: <strong>{{smartphone.smartphone_price}} zł</strong></span></p>
                 
+=======
+<div class="row">
+    <div *ngFor="let smartphone of smartphoneList">
+        <div class="col-4">
+            <div class="smartphone">
+                <a href="/#/smartphone/{{smartphone.smartphone_id}}">
+                    <div class="card" style="width: 12rem;">
+                        <h5 class="card-title">{{smartphone.smartphone_mark}}</h5>
+                        <img src="../../../assets/img/nokia.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{smartphone.smartphone_description}}</p>
+                            <p class="card-text">{{smartphone.smartphone_price}} zł</p>
+                        </div>
+                    </div>
+                </a>
+>>>>>>> routing
             </div>
         </div>
     </div>
