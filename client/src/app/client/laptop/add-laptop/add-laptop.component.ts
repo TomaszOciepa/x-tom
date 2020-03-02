@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { LaptopService } from '../laptop.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'add-laptop',
@@ -25,18 +26,22 @@ export class AddLaptopComponent implements OnInit {
   })
   
   error: boolean;
+  save: boolean = false;
 
   addLaptop(){
     console.log(this.addLaptopForm.value)
     this.http.create(this.addLaptopForm.value)
     .subscribe(()=>{
       console.log("Success")
+      this.save = true
     },err=>{
       this.error = err.message
     })
   }
 
-  constructor(private fb:FormBuilder, private http:LaptopService) { }
+  constructor(private fb:FormBuilder, private http:LaptopService, protected auth:AuthService) { 
+    this.auth.state.subscribe()
+  }
 
   ngOnInit() {
   }

@@ -29,6 +29,15 @@
                     </div>
                    <h3>{{laptop.laptop_price}} zł</h3>
                    <button type="button" class="btn btn-secondary">Dodaj do kozyka</button>
+                   
+                   <ng-container *ngIf="auth.isAuthenticated">
+                    <div class="options">
+                        <a class="btn btn-danger" href="/#/edit-laptop/{{laptop.laptop_id}}">Edytuj</a>
+                    </div>
+                    <div class="options">
+                        <a class="btn btn-danger" href="/#/delete-laptop/{{laptop.laptop_id}}">Usuń</a>
+                    </div>
+               </ng-container>             
                 </div>
             </div>
         </div>

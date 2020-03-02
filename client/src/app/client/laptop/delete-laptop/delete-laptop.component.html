@@ -1,0 +1,20 @@
+<ng-container *ngIf="auth.isAuthenticated">
+
+    <ng-container *ngIf="!remove">
+        <p>
+            Czy napewo chcesz usunąć wybrany product?
+        </p>
+        
+        <a class="btn btn-success" href="/#/laptop/{{id}}">Nie</a>
+        <button type="button" class="btn btn-danger" (click)="delete()">Tak</button>
+    </ng-container>
+
+    <ng-container *ngIf="remove">
+        <div class="alert alert-success" role="alert">
+            Usunięto
+          </div>
+        <a class="btn btn-success" href="/#/laptops">Ok</a>
+    </ng-container>
+</ng-container>
+
+ 

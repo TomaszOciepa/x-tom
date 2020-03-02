@@ -1,17 +1,17 @@
-a{
+.laptop a{
     color: #000000;
     text-decoration: none;   
    }
    
-   a:hover{
+.laptop a:hover{
    color: green;
    }
    
-   .laptop{
-       margin-bottom: 10px;
+.laptop{
+       margin: 10px;
    }
 
-   .card{
+.card{
     padding: 10px;
 }
 

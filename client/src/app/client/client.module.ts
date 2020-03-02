@@ -21,6 +21,8 @@ import { LaptopByIdComponent } from './laptop/laptop-by-id/laptop-by-id.componen
 import { SmartphoneByIdComponent } from './smartphone/smartphone-by-id/smartphone-by-id.component';
 import { DeleteDroneComponent } from './drone/delete-drone/delete-drone.component';
 import { EditDroneComponent } from './drone/edit-drone/edit-drone.component';
+import { DeleteLaptopComponent } from './laptop/delete-laptop/delete-laptop.component';
+import { EditLaptopComponent } from './laptop/edit-laptop/edit-laptop.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { EditDroneComponent } from './drone/edit-drone/edit-drone.component';
     SmartphoneByIdComponent,
     DeleteDroneComponent,
     EditDroneComponent,
+    DeleteLaptopComponent,
+    EditLaptopComponent
   ],
   imports: [
     ProductsRoutingModule,
@@ -51,7 +55,7 @@ import { EditDroneComponent } from './drone/edit-drone/edit-drone.component';
     ReactiveFormsModule,
   ],
   exports: [
-    ClientComponent,  AddDroneComponent, DroneComponent, DeleteDroneComponent, EditDroneComponent
+    ClientComponent,  AddDroneComponent, DroneComponent, DeleteDroneComponent, EditDroneComponent, DeleteLaptopComponent, EditLaptopComponent
   ]
 })
 export class ClientModule { }
