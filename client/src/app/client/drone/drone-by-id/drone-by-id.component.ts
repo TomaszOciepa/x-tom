@@ -20,7 +20,10 @@ export class DroneByIdComponent implements OnInit {
     switchMap(id => this.http.getById(id))
   )
    id:number
-
+  
+   deleteDrone(id: number){
+     console.log("Usuwm drona HAHAHA "+id)
+   }
   ngOnInit(){}
 
 }
