@@ -21,4 +21,12 @@ export class SmartphoneService {
   getById(id:number){
     return this.http.get<Smartphone>("http://localhost:8090/smartphone/"+id)
   }
+
+  update(id:number, smartphone:Partial<Smartphone>){
+    return this.http.put<Smartphone>("http://localhost:8080/smartphone/"+id, smartphone)
+  }
+
+  delete(id:number){
+    return this.http.delete("http://localhost:8080/smartphone/"+id)
+  }
 }

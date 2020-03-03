@@ -1,14 +1,14 @@
-a{
+.smartphone a{
     color: #000000;
     text-decoration: none;   
    }
    
-   a:hover{
+.smartphone a:hover{
    color: green;
    }
    
    .smartphone{
-       margin-bottom: 10px;
+       margin: 10px;
    }
 
    .card{

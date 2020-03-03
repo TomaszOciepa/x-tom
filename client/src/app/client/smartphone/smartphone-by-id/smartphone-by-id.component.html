@@ -26,7 +26,16 @@
 
                     </div>
                    <h3>{{smartphone.smartphone_price}} zł</h3>
-                   <button type="button" class="btn btn-secondary">Dodaj do kozyka</button>
+                   <button type="button" class="btn btn-secondary">Dodaj do koszyka</button>
+
+                   <ng-container *ngIf="auth.isAuthenticated">
+                    <div class="options">
+                        <a class="btn btn-danger" href="/#/edit-smartphone/{{smartphone.smartphone_id}}">Edytuj</a>
+                    </div>
+                    <div class="options">
+                        <a class="btn btn-danger" href="/#/delete-smartphone/{{smartphone.smartphone_id}}">Usuń</a>
+                    </div>
+               </ng-container>      
                 </div>
             </div>
         </div>

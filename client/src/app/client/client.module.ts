@@ -23,6 +23,8 @@ import { DeleteDroneComponent } from './drone/delete-drone/delete-drone.componen
 import { EditDroneComponent } from './drone/edit-drone/edit-drone.component';
 import { DeleteLaptopComponent } from './laptop/delete-laptop/delete-laptop.component';
 import { EditLaptopComponent } from './laptop/edit-laptop/edit-laptop.component';
+import { DeleteSmartphoneComponent } from './smartphone/delete-smartphone/delete-smartphone.component';
+import { EditSmartphoneComponent } from './smartphone/edit-smartphone/edit-smartphone.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { EditLaptopComponent } from './laptop/edit-laptop/edit-laptop.component'
     DeleteDroneComponent,
     EditDroneComponent,
     DeleteLaptopComponent,
-    EditLaptopComponent
+    EditLaptopComponent,
+    DeleteSmartphoneComponent,
+    EditSmartphoneComponent
   ],
   imports: [
     ProductsRoutingModule,
@@ -55,7 +59,9 @@ import { EditLaptopComponent } from './laptop/edit-laptop/edit-laptop.component'
     ReactiveFormsModule,
   ],
   exports: [
-    ClientComponent,  AddDroneComponent, DroneComponent, DeleteDroneComponent, EditDroneComponent, DeleteLaptopComponent, EditLaptopComponent
+    ClientComponent,  AddDroneComponent, DroneComponent, DeleteDroneComponent, 
+    EditDroneComponent, DeleteLaptopComponent, EditLaptopComponent, DeleteSmartphoneComponent, 
+    EditSmartphoneComponent
   ]
 })
 export class ClientModule { }
