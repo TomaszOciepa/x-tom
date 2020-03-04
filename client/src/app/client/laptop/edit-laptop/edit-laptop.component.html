@@ -1,4 +1,4 @@
-<ng-container *ngIf="auth.isAuthenticated">
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
 
 <div class="form" *ngIf='editedLaptop'>
     <ng-container *ngIf="saved">
@@ -124,7 +124,7 @@
         </div>
 
         <input *ngIf="!saved" type="submit" class="btn btn-danger" value="zapisz">
-        <a *ngIf="saved" class="btn btn-success" href="/#/laptop/{{editedLaptop.laptop_id}}">powrót</a>
+        <a *ngIf="saved" class="btn btn-success" [routerLink]="['/laptop', editedLaptop.laptop_id]">powrót</a>
     </form>
     
 </div>

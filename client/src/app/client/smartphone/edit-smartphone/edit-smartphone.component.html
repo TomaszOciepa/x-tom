@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="auth.isAuthenticated">
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
     <div class="alert alert-danger" *ngIf="error">{{error}}</div>
 
     <div class="alert alert-success" role="alert" *ngIf="saved">
@@ -108,7 +108,7 @@
             </div>
 
             <input *ngIf="!saved" type="submit" class="btn btn-danger" value="zapisz">
-        <a *ngIf="saved" class="btn btn-success" href="/#/smartphones">powrót</a>
+        <a *ngIf="saved" class="btn btn-success" [routerLink]="['/smartphones']">powrót</a>
         </form>
         
     </div>

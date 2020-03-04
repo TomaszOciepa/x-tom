@@ -5,6 +5,7 @@ import { DroneByIdComponent } from './drone-by-id/drone-by-id.component';
 import { DeleteDroneComponent } from './delete-drone/delete-drone.component';
 import { AddDroneComponent } from './add-drone/add-drone.component';
 import { EditDroneComponent } from './edit-drone/edit-drone.component';
+import { AuthorizedGuard } from 'src/app/auth/authorized.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'add-drone',
-    component: AddDroneComponent
+    component: AddDroneComponent,
+    canActivate:[
+      AuthorizedGuard
+    ]
   },
   {
     path: 'drone/:drone_id',

@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthRoutingModule } from './auth.routing.module';
+import { AuthorizedGuard } from './authorized.guard';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AuthRoutingModule } from './auth.routing.module';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true
-    }
+    },
+    AuthorizedGuard
   ],
   exports: [LoginComponent]
 })

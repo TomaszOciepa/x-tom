@@ -10,22 +10,14 @@ import { map } from 'rxjs/operators';
 })
 export class ListComponent implements OnInit {
 
-
   albums = this.http.getAll();
   
-  selectedId:number
-  
-
   constructor(private http:AlbumsService, private route:ActivatedRoute) { 
 
   }
 
   ngOnInit() {
-    this.route.paramMap.pipe(
-      map(params => params.get('id'))
-    ).subscribe(id=>{
-      this.selectedId = +id
-    })
+
   }
 
 }

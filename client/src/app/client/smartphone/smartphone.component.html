@@ -1,6 +1,6 @@
 
-<ng-container *ngIf="auth.isAuthenticated">
-    <a class="btn btn-secondary" href="/#/add-smartphone">Dodaj smartfon</a>
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <a class="btn btn-secondary" [routerLink]="['/add-smartphone']">Dodaj smartfon</a>
 </ng-container>
 
 
@@ -8,7 +8,7 @@
     <div *ngFor="let smartphone of smartphoneList">
         <div class="col-4">
             <div class="smartphone">
-                <a href="/#/smartphone/{{smartphone.smartphone_id}}">
+                <a [routerLink]="['/smartphone', smartphone.smartphone_id]">
                     <div class="card" style="width: 12rem;">
                         <h5 class="card-title">{{smartphone.smartphone_mark}}</h5>
                         <img src="../../../assets/img/nokia.jpg" class="card-img-top" alt="...">

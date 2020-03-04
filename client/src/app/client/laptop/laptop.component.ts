@@ -21,6 +21,11 @@ export class LaptopComponent implements OnInit {
 
   constructor(private http:LaptopService, protected auth:AuthService) { 
     this.auth.state.subscribe()
+
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
+    
   }
   
 

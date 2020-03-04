@@ -13,6 +13,10 @@ export class DeleteSmartphoneComponent implements OnInit {
   constructor(private http:SmartphoneService, protected auth:AuthService, private route:ActivatedRoute) { 
     this.auth.state.subscribe()
     
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
+
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('smartphone_id')
     })

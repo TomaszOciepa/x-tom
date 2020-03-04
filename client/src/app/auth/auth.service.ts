@@ -31,6 +31,12 @@ export class AuthService {
     tap( state => this.isAuthenticated = state)
   )
 
+  role:string
+
+  checkRole = this.session.pipe(
+    map(role => this.role = role.user.user_role)
+  )
+
   logout(message?:String){
     this.session.next({
       ...this.session.getValue(),
@@ -69,4 +75,5 @@ export class AuthService {
   }
 
   constructor(private http:HttpClient) { }
+
 }

@@ -15,6 +15,10 @@ export class EditDroneComponent implements OnInit {
   constructor(private fb:FormBuilder, private http:DroneService, protected auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
 
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
+
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('drone_id')
     })

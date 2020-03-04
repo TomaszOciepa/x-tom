@@ -1,66 +1,70 @@
-<div class="form" *ngIf='editedDrone'>
-    <ng-container *ngIf="saved">
-        <div class="alert alert-success" role="alert">
-            Zmiany zostały zapisane
-          </div>
-    </ng-container>
-    <form class="contact100-form" [formGroup]="editDroneForm" (submit)="saveDrone()">
-        <span class="contact100-form-title">
-            Edycja drona
-        </span>
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Name">Producent</label>
-            <input class="input100" type="Mark" class="form-control" [(ngModel)]="editedDrone.drone_mark" formControlName="drone_mark">
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Price">Cena</label>
-            <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_price' formControlName="drone_price">
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Status">Status</label>
-            <select class="form-control" [(ngModel)]='editedDrone.drone_status' formControlName="drone_status">
-                <option>promocja</option>
-                <option>wyprzedaż</option>
-                <option>nowość</option>
-                <option>polecamy</option>
-                <option>przedłużona gwarancja</option>
-            </select>
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Time">Czas pracy</label>
-            <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_time_work' formControlName="drone_time_work">
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Range">Zasięg</label>
-            <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_range' formControlName="drone_range">
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Kamera">Kamera</label>
-            <select class="form-control" [(ngModel)]='editedDrone.drone_camera' formControlName="drone_camera" required>
-                <option>tak</option>
-                <option>nie</option>
-            </select>
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Amount">Dostępna ilość</label>
-            <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_amount_available' formControlName="drone_amount_available">
-        </div>
-    
-        <div class="form-group wrap-input100">
-            <label class="label-input100" for="Descripton">Opis</label>
-            <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]='editedDrone.drone_description' formControlName="drone_description"> </textarea>
-        </div>
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <div class="form" *ngIf='editedDrone'>
+        <ng-container *ngIf="saved">
+            <div class="alert alert-success" role="alert">
+                Zmiany zostały zapisane
+              </div>
+        </ng-container>
+        <form class="contact100-form" [formGroup]="editDroneForm" (submit)="saveDrone()">
+            <span class="contact100-form-title">
+                Edycja drona
+            </span>
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Name">Producent</label>
+                <input class="input100" type="Mark" class="form-control" [(ngModel)]="editedDrone.drone_mark" formControlName="drone_mark">
+            </div>
         
-        <input *ngIf="!saved" value="zapisz" type="submit" class="btn btn-danger">
-        <a *ngIf="saved" href="/#/drone/{{editedDrone.drone_id}}" class="btn btn-success">powrót</a>
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Price">Cena</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_price' formControlName="drone_price">
+            </div>
         
-    </form>
-</div>
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Status">Status</label>
+                <select class="form-control" [(ngModel)]='editedDrone.drone_status' formControlName="drone_status">
+                    <option>promocja</option>
+                    <option>wyprzedaż</option>
+                    <option>nowość</option>
+                    <option>polecamy</option>
+                    <option>przedłużona gwarancja</option>
+                </select>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Time">Czas pracy</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_time_work' formControlName="drone_time_work">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Range">Zasięg</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_range' formControlName="drone_range">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Kamera">Kamera</label>
+                <select class="form-control" [(ngModel)]='editedDrone.drone_camera' formControlName="drone_camera" required>
+                    <option>tak</option>
+                    <option>nie</option>
+                </select>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Amount">Dostępna ilość</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='editedDrone.drone_amount_available' formControlName="drone_amount_available">
+            </div>
+        
+            <div class="form-group wrap-input100">
+                <label class="label-input100" for="Descripton">Opis</label>
+                <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]='editedDrone.drone_description' formControlName="drone_description"> </textarea>
+            </div>
+            
+            <input *ngIf="!saved" value="zapisz" type="submit" class="btn btn-danger">
+            <a *ngIf="saved" class="btn btn-success" [routerLink]="['/drone', editedDrone.drone_id]">powrót</a>
+            
+        </form>
+    </div>
+</ng-container>
+
+
 
 

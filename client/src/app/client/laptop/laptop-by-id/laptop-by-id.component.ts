@@ -13,6 +13,10 @@ export class LaptopByIdComponent implements OnInit {
 
   constructor(private http:LaptopService, protected auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
+
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
    }
 
    laptop = this.route.paramMap.pipe(

@@ -1,11 +1,11 @@
-<ng-container *ngIf="auth.isAuthenticated">
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
 
     <ng-container *ngIf="!remove">
         <p>
             Czy napewo chcesz usunąć wybrany product?
         </p>
         
-        <a class="btn btn-success" href="/#/smartphone/{{id}}">Nie</a>
+        <a class="btn btn-success" [routerLink]="['/smartphone', id]">Nie</a>
         <button type="button" class="btn btn-danger" (click)="delete()">Tak</button>
     </ng-container>
 
@@ -13,6 +13,6 @@
         <div class="alert alert-success" role="alert">
             Usunięto
           </div>
-        <a class="btn btn-success" href="/#/smartphones">Ok</a>
+        <a class="btn btn-success" [routerLink]="['/smartphones']">Ok</a>
     </ng-container>
 </ng-container>

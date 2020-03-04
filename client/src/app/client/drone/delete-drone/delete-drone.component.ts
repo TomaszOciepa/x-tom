@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { DroneService } from '../drone.service';
 import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-delete-drone',
@@ -14,6 +13,10 @@ export class DeleteDroneComponent implements OnInit {
   constructor(private http:DroneService, protected auth:AuthService, private route:ActivatedRoute) { 
     this.auth.state.subscribe()
     
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
+
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('drone_id')
     })

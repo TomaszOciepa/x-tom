@@ -20,6 +20,11 @@ export class DroneComponent implements OnInit {
 
   constructor(private http:DroneService, protected auth:AuthService) {
     this.auth.state.subscribe()
+    
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
+    
    }
 
   ngOnInit() {

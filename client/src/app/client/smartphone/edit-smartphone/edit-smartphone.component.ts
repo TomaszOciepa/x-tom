@@ -13,10 +13,17 @@ import { Smartphone } from '../../model/smartphone';
 export class EditSmartphoneComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private http:SmartphoneService, protected auth:AuthService, private route:ActivatedRoute) { 
+    
+    this.auth.state.subscribe()
+    
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
+    
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('smartphone_id')
     })
-
+    
     this.http.getById(this.id).subscribe(response =>{
       this.editedSmartphone = response
     })

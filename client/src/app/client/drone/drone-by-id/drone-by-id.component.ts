@@ -13,6 +13,10 @@ export class DroneByIdComponent implements OnInit {
 
   constructor(private http:DroneService, protected auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
+
+    if(this.auth.isAuthenticated){
+      this.auth.checkRole.subscribe()
+    }
    }
 
    drone = this.route.paramMap.pipe(

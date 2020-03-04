@@ -1,11 +1,11 @@
-<ng-container *ngIf="auth.isAuthenticated">
-    <a class="btn btn-secondary" href="/#/add-laptop">Dodaj laptop</a>
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <a class="btn btn-secondary" [routerLink]="['/add-laptop']">Dodaj laptop</a>
 </ng-container>
 <div class="row">
     <div *ngFor="let laptop of laptopList">
         <div class="col-4">
             <div class="laptop">
-                <a href="/#/laptop/{{laptop.laptop_id}}">
+                <a [routerLink]="['/laptop', laptop.laptop_id]">
                     <div class="card" style="width: 12rem;">
                         <h5 class="card-title">{{laptop.laptop_mark}}</h5>
                         <img src="../../../assets/img/laptop.jpg" class="card-img-top" alt="...">

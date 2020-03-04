@@ -1,11 +1,9 @@
 <p>list works!</p>
 {{selectedId}} 
 <div class="list-group">
-    <div class="list-group-item"
-     [class.active]="album.drone_id == selectedId" *ngFor="let album of albums | async">
+    <div class="list-group-item" routerLinkActive="active"
+     *ngFor="let album of albums | async">
         <a class="text-dark"
-        
-        [href]="'#/albums/'+album.drone_id">{{album.drone_mark}}</a>
-        
+        [routerLink]="['/albums', album.drone_id]">{{album.drone_mark}}</a>
     </div>
 </div>

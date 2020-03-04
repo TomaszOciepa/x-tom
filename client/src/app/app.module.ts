@@ -8,8 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
 import { NaviModule } from './navi/navi.module';
-import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AlbumsModule } from './albums/albums.module';
+import { AuthService } from './auth/auth.service';
+import { Router, NavigationEnd } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -28,4 +30,21 @@ import { AlbumsModule } from './albums/albums.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(private auth:AuthService, private router:Router){
+      this.auth.state.subscribe(state =>{
+        if(this.auth.isAuthenticated){
+          // this.router.navigate(['/'])
+        }else{
+          // this.router.navigate(['/login'])
+        }
+      })
+
+      this.router.events.subscribe(event =>{
+        if(event instanceof NavigationEnd){
+          //...
+        }
+      })
+  }
+}

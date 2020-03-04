@@ -43,6 +43,7 @@ export class AddDroneComponent implements OnInit {
    }
 
   ngOnInit() {
+
   }
 
 }

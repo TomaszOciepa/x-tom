@@ -28,12 +28,12 @@
                    <h3>{{smartphone.smartphone_price}} zł</h3>
                    <button type="button" class="btn btn-secondary">Dodaj do koszyka</button>
 
-                   <ng-container *ngIf="auth.isAuthenticated">
+                   <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
                     <div class="options">
-                        <a class="btn btn-danger" href="/#/edit-smartphone/{{smartphone.smartphone_id}}">Edytuj</a>
+                        <a class="btn btn-danger" [routerLink]="['/edit-smartphone', smartphone.smartphone_id]">Edytuj</a>
                     </div>
                     <div class="options">
-                        <a class="btn btn-danger" href="/#/delete-smartphone/{{smartphone.smartphone_id}}">Usuń</a>
+                        <a class="btn btn-danger" [routerLink]="['/delete-smartphone', smartphone.smartphone_id]">Usuń</a>
                     </div>
                </ng-container>      
                 </div>
