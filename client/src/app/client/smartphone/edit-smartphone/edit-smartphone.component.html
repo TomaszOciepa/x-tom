@@ -6,7 +6,7 @@
         Zmiany zostały zapisane
       </div>
     
-    <div class="form">
+    <div class="form" *ngIf='editedSmartphone'>
         <form class="contact100-form" [formGroup]="editSmartphoneForm" (submit)="saveSmartphone()">
             <span class="contact100-form-title">
                 Edycja smartfona
