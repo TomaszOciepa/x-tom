@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
 import { NaviModule } from './navi/navi.module';
-import { AlbumsModule } from './albums/albums.module';
 import { AuthService } from './auth/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
 
@@ -24,7 +23,6 @@ import { Router, NavigationEnd } from '@angular/router';
     ProfileModule,
     NaviModule,
     ClientModule,
-    AlbumsModule,
     AppRoutingModule,
   ],
   providers: [],
