@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
 import { NaviModule } from './navi/navi.module';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { AlbumsModule } from './albums/albums.module';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     ProfileModule,
     NaviModule,
     ClientModule,
+    AlbumsModule,
     AppRoutingModule,
-    TabsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

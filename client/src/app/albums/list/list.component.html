@@ -1,0 +1,10 @@
+<p>list works!</p>
+<div class="list-group">
+    <!-- {{selectedId |async}}   -->
+    <div class="list-group-item" [class.active]="album.drone_id == selectedId" *ngFor="let album of albums | async">
+        <a class="text-dark"
+        
+        [href]="'#/albums/'+album.drone_id">{{album.drone_mark}}</a>
+        
+    </div>
+</div>
