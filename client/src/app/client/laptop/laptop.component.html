@@ -1,10 +1,6 @@
-<h2>LAPTOPY</h2>
 <ng-container *ngIf="auth.isAuthenticated">
-    <div class="row">
-        <add-laptop></add-laptop>
-    </div>
+    <a class="btn btn-secondary" href="/#/add-laptop">Dodaj laptop</a>
 </ng-container>
-
 <div class="row">
     <div *ngFor="let laptop of laptopList">
         <div class="col-4">

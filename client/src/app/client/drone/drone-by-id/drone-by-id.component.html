@@ -24,7 +24,19 @@
 
                     </div>
                    <h3>{{drone.drone_price}} zł</h3>
-                   <button type="button" class="btn btn-secondary">Dodaj do kozyka</button>
+
+                   <div class="options">
+                    <button type="button" class="btn btn-secondary">Dodaj do koszyka</button>
+                   </div>
+
+                   <ng-container *ngIf="auth.isAuthenticated">
+                        <div class="options">
+                            <a class="btn btn-danger" href="/#/edit-drone/{{drone.drone_id}}">Edytuj</a>
+                        </div>
+                        <div class="options">
+                            <a class="btn btn-danger" href="/#/delete-drone/{{drone.drone_id}}">Usuń</a>
+                        </div>
+                   </ng-container>                   
                 </div>
             </div>
         </div>

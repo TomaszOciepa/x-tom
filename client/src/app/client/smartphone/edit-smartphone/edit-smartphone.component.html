@@ -1,18 +1,19 @@
+
 <ng-container *ngIf="auth.isAuthenticated">
     <div class="alert alert-danger" *ngIf="error">{{error}}</div>
 
-    <div class="alert alert-success" role="alert" *ngIf="save">
-        Zapisano
+    <div class="alert alert-success" role="alert" *ngIf="saved">
+        Zmiany zostały zapisane
       </div>
     
-    <div class="form">
-        <form class="contact100-form" [formGroup]="addSmartphoneForm" (submit)="addSmartphone()">
+    <div class="form" *ngIf='editedSmartphone'>
+        <form class="contact100-form" [formGroup]="editSmartphoneForm" (submit)="saveSmartphone()">
             <span class="contact100-form-title">
-                Dodaj smartfon
+                Edycja smartfona
             </span>
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Name">Producent</label>
-                <select class="input100" class="form-control" formControlName="smartphone_mark">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_mark" formControlName="smartphone_mark">
                     <option>Samsung</option>
                     <option>Apple</option>
                     <option>Huawei</option>
@@ -26,12 +27,12 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Price">Cena</label>
-                <input class="input100" type="text" class="form-control" formControlName="smartphone_price">
+                <input class="input100" type="text" class="form-control"[(ngModel)]="editedSmartphone.smartphone_price" formControlName="smartphone_price">
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Status">Status</label>
-                <select class="input100" class="form-control" formControlName="smartphone_status">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_status" formControlName="smartphone_status">
                     <option>promocja</option>
                     <option>wyprzedaż</option>
                     <option>nowość</option>
@@ -42,7 +43,7 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="System">System operacyjny</label>
-                <select class="input100" class="form-control" formControlName="smartphone_system">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_system" formControlName="smartphone_system">
                     <option>Android</option>
                     <option>iOs</option>
                 </select>
@@ -50,7 +51,7 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="ScreenDiagonal">Przekątna ekranu</label>
-                <select class="input100" class="form-control" formControlName="smartphone_screen_diagonal">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_screen_diagonal" formControlName="smartphone_screen_diagonal">
                     <option>4</option>
                     <option>4.7</option>
                     <option>5.7</option>
@@ -61,7 +62,7 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="DyskSize">Rozmiar dysku</label>
-                <select class="input100" class="form-control" formControlName="smartphone_disc_size">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_disc_size" formControlName="smartphone_disc_size">
                     <option>8</option>
                     <option>16</option>
                     <option>32</option>
@@ -74,7 +75,7 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Ram">Pamięć RAM</label>
-                <select class="input100" class="form-control" formControlName="smartphone_ram_size">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_ram_size" formControlName="smartphone_ram_size">
                     <option>2</option>
                     <option>4</option>
                     <option>6</option>
@@ -86,7 +87,7 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="CameraResolution">Roździelczość kamery</label>
-                <select class="input100" class="form-control" formControlName="smartphone_camera_resolution">
+                <select class="input100" class="form-control" [(ngModel)]="editedSmartphone.smartphone_camera_resolution" formControlName="smartphone_camera_resolution">
                     <option>7</option>
                     <option>8</option>
                     <option>13</option>
@@ -98,16 +99,16 @@
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Amount">Dostępna ilość</label>
-                <input class="input100" type="text" class="form-control" formControlName="smartphone_amount_available">
+                <input class="input100" type="text" class="form-control" [(ngModel)]="editedSmartphone.smartphone_amount_available" formControlName="smartphone_amount_available">
             </div>
             
             <div class="form-group wrap-input100">
                 <label class="label-input100" for="Descripton">Opis</label>
-                <textarea class="input100" rows="4" cols="50" class="form-control" formControlName="smartphone_description"> </textarea>
+                <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]="editedSmartphone.smartphone_description" formControlName="smartphone_description"> </textarea>
             </div>
 
-            <input *ngIf="!save" type="submit" class="btn btn-danger" value="zapisz">
-        <a *ngIf="save" class="btn btn-success" href="/#/smartphones">powrót</a>
+            <input *ngIf="!saved" type="submit" class="btn btn-danger" value="zapisz">
+        <a *ngIf="saved" class="btn btn-success" href="/#/smartphones">powrót</a>
         </form>
         
     </div>

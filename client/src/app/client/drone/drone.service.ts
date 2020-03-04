@@ -22,4 +22,13 @@ export class DroneService {
   getById(id:number){
     return this.http.get<Drone>("http://localhost:8090/drone/"+id)
   }
+
+  update(id:number, drone:Partial<Drone>){
+    return this.http.put<Drone>("http://localhost:8080/drone/"+id, drone)
+  }
+
+  delete(id:number){
+    return this.http.delete("http://localhost:8080/drone/"+id)
+  }
+
 }

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
 import { ProfileModule } from './profile/profile.module';
 import { NaviModule } from './navi/navi.module';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NaviModule } from './navi/navi.module';
     NaviModule,
     ClientModule,
     AppRoutingModule,
+    TabsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

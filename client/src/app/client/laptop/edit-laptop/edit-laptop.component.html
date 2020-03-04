@@ -1,18 +1,21 @@
 <ng-container *ngIf="auth.isAuthenticated">
-    <div class="alert alert-danger" *ngIf="error">{{error}}</div>
 
-    <div class="alert alert-success" role="alert" *ngIf="save">
-        Zapisano
+<div class="form" *ngIf='editedLaptop'>
+    <ng-container *ngIf="saved">
+        <div class="alert alert-danger" *ngIf="error">{{error}}</div>
+
+    <div class="alert alert-success" role="alert" *ngIf="saved">
+        Zmiany zostały zapisane
       </div>
-
-<div class="form">
-    <form class="contact100-form" [formGroup]="addLaptopForm" (submit)="addLaptop()">
+    </ng-container>
+    
+    <form class="contact100-form" [formGroup]="editLaptopForm" (submit)="saveLaptop()">
         <span class="contact100-form-title">
-            Dodaj laptop
+            Edycja laptopa
         </span>
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="Name">Producent</label>
-            <select class="input100" class="form-control" formControlName="laptop_mark">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_mark" formControlName="laptop_mark">
                 <option>Lenovo</option>
                 <option>HP</option>
                 <option>Dell</option>
@@ -27,12 +30,12 @@
         
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="Price">Cena</label>
-            <input class="input100" type="text" class="form-control" formControlName="laptop_price">
+            <input class="input100" type="text" class="form-control" [(ngModel)]="editedLaptop.laptop_price" formControlName="laptop_price">
         </div>
 
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="Status">Status</label>
-            <select class="input100" class="form-control" formControlName="laptop_status">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_status" formControlName="laptop_status">
                 <option>promocja</option>
                 <option>wyprzedaż</option>
                 <option>nowość</option>
@@ -43,7 +46,7 @@
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="System">System operacyjny</label>
-            <select class="input100" class="form-control" formControlName="laptop_system">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_system" formControlName="laptop_system">
                 <option>Windows 10</option>
                 <option>macOS</option>
                 <option>Ubuntu</option>
@@ -53,7 +56,7 @@
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="Processor">Processor</label>
-            <select class="input100" class="form-control" formControlName="laptop_processor">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_processor" formControlName="laptop_processor">
                 <option>Intel Core i3</option>
                 <option>Intel Core i5</option>
                 <option>Intel Core i7</option>
@@ -66,12 +69,12 @@
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="Ram">Pamięć RAM</label>
-            <input class="input100" type="text" class="form-control" formControlName="laptop_ram_size">
+            <input class="input100" type="text" class="form-control" [(ngModel)]="editedLaptop.laptop_ram_size" formControlName="laptop_ram_size">
         </div>
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="DyskType">Rodzaj dysku</label>
-            <select class="input100" class="form-control" formControlName="laptop_disc_type">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_disc_type" formControlName="laptop_disc_type">
                 <option>SSD</option>
                 <option>HDD</option>
             </select>
@@ -79,12 +82,12 @@
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="DyskSize">Rozmiar dysku</label>
-            <input class="input100" type="text" class="form-control" formControlName="laptop_disc_size">
+            <input class="input100" type="text" class="form-control" [(ngModel)]="editedLaptop.laptop_disc_size" formControlName="laptop_disc_size">
         </div>
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="GraphicsCard">Karta graficzna</label>
-            <select class="input100" class="form-control" formControlName="laptop_graphics_card">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_graphics_card" formControlName="laptop_graphics_card">
                 <option>Zintegrowana Intel</option>
                 <option>DEDYKOWANA NVIDIA Geforce</option>
                 <option>Zintegrowana AMD</option>
@@ -94,7 +97,7 @@
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="ScreenDiagonal">Przekątna ekranu</label>
-            <select class="input100" class="form-control" formControlName="laptop_screen_diagonal">
+            <select class="input100" class="form-control" [(ngModel)]="editedLaptop.laptop_screen_diagonal" formControlName="laptop_screen_diagonal">
                 <option>11.6</option>
                 <option>12.5</option>
                 <option>13.3</option>
@@ -112,19 +115,20 @@
     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label class="label-input100" for="Amount">Dostępna ilość</label>
-            <input class="input100" type="text" class="form-control" formControlName="laptop_amount_available">
+            <input class="input100" type="text" class="form-control" [(ngModel)]="editedLaptop.laptop_price" formControlName="laptop_amount_available">
         </div>
         
         <div class="form-group wrap-input100">
             <label class="label-input100" for="Descripton">Opis</label>
-            <textarea class="input100" rows="4" cols="50" class="form-control" formControlName="laptop_description"> </textarea>
+            <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]="editedLaptop.laptop_amount_available" formControlName="laptop_description"> </textarea>
         </div>
 
-        <input *ngIf="!save" type="submit" class="btn btn-danger" value="zapisz">
-        <a *ngIf="save" class="btn btn-success" href="/#/laptops">powrót</a>
+        <input *ngIf="!saved" type="submit" class="btn btn-danger" value="zapisz">
+        <a *ngIf="saved" class="btn btn-success" href="/#/laptop/{{editedLaptop.laptop_id}}">powrót</a>
     </form>
     
 </div>
 
 </ng-container>
+
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { SmartphoneService } from '../smartphone.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'add-smartphone',
@@ -24,18 +25,22 @@ export class AddSmartphoneComponent implements OnInit {
   })
   
   error: boolean;
+  save: boolean = false;
 
   addSmartphone(){
     console.log(this.addSmartphoneForm.value)
     this.http.create(this.addSmartphoneForm.value)
     .subscribe(()=>{
       console.log("Success")
+      this.save = true
     },err=>{
       this.error = err.message
     })
   }
 
-  constructor(private fb:FormBuilder, private http:SmartphoneService) { }
+  constructor(private fb:FormBuilder, private http:SmartphoneService,  protected auth:AuthService) { 
+    this.auth.state.subscribe()
+  }
 
   ngOnInit() {
   }

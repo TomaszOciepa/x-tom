@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { DroneService } from '../drone.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'add-drone',
@@ -10,29 +11,36 @@ import { DroneService } from '../drone.service';
 export class AddDroneComponent implements OnInit {
 
   addDroneForm = this.fb.group({
-    drone_mark:[''],
-    drone_description:[''],
-    drone_price:[''],
-    drone_status:[''],
-    drone_time_work:[''],
-    drone_range:[''],
-    drone_camera:[''],
-    drone_amount_available:[''],
+    drone_mark: this.fb.control('', [
+      Validators.required,
+      Validators.minLength(3)
+    ]),
+    drone_description: this.fb.control(''),
+    drone_price: this.fb.control(''),
+    drone_status: this.fb.control(''),
+    drone_time_work: this.fb.control(''),
+    drone_range: this.fb.control(''),
+    drone_camera: this.fb.control(''),
+    drone_amount_available: this.fb.control(''),
   })
 
-  error: boolean;
+  error: boolean
+  save: boolean = false;
 
   addDrone(){
     console.log(this.addDroneForm.value)
     this.http.create(this.addDroneForm.value)
     .subscribe(()=>{
       console.log("Success")
+      this.save = true
     },err=>{
       this.error = err.message
     })
   }
 
-  constructor(private fb:FormBuilder, private http:DroneService) { }
+  constructor(private fb:FormBuilder, private http:DroneService, protected auth:AuthService,) {
+    this.auth.state.subscribe()
+   }
 
   ngOnInit() {
   }

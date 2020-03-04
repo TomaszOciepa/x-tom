@@ -19,6 +19,12 @@ import { SmartphoneRoutingModule } from './smartphone/smartphone.routing.module'
 import { DroneByIdComponent } from './drone/drone-by-id/drone-by-id.component';
 import { LaptopByIdComponent } from './laptop/laptop-by-id/laptop-by-id.component';
 import { SmartphoneByIdComponent } from './smartphone/smartphone-by-id/smartphone-by-id.component';
+import { DeleteDroneComponent } from './drone/delete-drone/delete-drone.component';
+import { EditDroneComponent } from './drone/edit-drone/edit-drone.component';
+import { DeleteLaptopComponent } from './laptop/delete-laptop/delete-laptop.component';
+import { EditLaptopComponent } from './laptop/edit-laptop/edit-laptop.component';
+import { DeleteSmartphoneComponent } from './smartphone/delete-smartphone/delete-smartphone.component';
+import { EditSmartphoneComponent } from './smartphone/edit-smartphone/edit-smartphone.component';
 
 
 @NgModule({
@@ -34,7 +40,13 @@ import { SmartphoneByIdComponent } from './smartphone/smartphone-by-id/smartphon
     AddSmartphoneComponent,
     DroneByIdComponent,
     LaptopByIdComponent,
-    SmartphoneByIdComponent
+    SmartphoneByIdComponent,
+    DeleteDroneComponent,
+    EditDroneComponent,
+    DeleteLaptopComponent,
+    EditLaptopComponent,
+    DeleteSmartphoneComponent,
+    EditSmartphoneComponent
   ],
   imports: [
     ProductsRoutingModule,
@@ -47,7 +59,9 @@ import { SmartphoneByIdComponent } from './smartphone/smartphone-by-id/smartphon
     ReactiveFormsModule,
   ],
   exports: [
-    ClientComponent,
+    ClientComponent,  AddDroneComponent, DroneComponent, DeleteDroneComponent, 
+    EditDroneComponent, DeleteLaptopComponent, EditLaptopComponent, DeleteSmartphoneComponent, 
+    EditSmartphoneComponent
   ]
 })
 export class ClientModule { }

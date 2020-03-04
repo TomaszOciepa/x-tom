@@ -22,4 +22,12 @@ export class LaptopService {
   getById(id:number){
     return this.http.get<Laptop>("http://localhost:8090/laptop/"+id)
   }
+
+  update(id:number, laptop:Partial<Laptop>){
+    return this.http.put<Laptop>("http://localhost:8080/laptop/"+id, laptop)
+  }
+
+  delete(id:number){
+    return this.http.delete("http://localhost:8080/laptop/"+id)
+  }
 }
