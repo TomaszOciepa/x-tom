@@ -38,12 +38,17 @@ export class AuthService {
     map(role => this.role = role.user.user_role)
   )
 
+  clearRole(){
+    this.role = ""
+  }
+
   logout(message?:String){
     this.session.next({
       ...this.session.getValue(),
       token: null,
       message
     })
+    this.clearRole()
   }
 
   getToken(){
@@ -67,6 +72,7 @@ export class AuthService {
     .subscribe((session:Session) =>{
       this.session.next(session)
       console.log(session.token)
+      this.role = session.user.user_role
     },error =>{
       if(error instanceof HttpErrorResponse){
         console.error(error.error)

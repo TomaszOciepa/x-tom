@@ -21,10 +21,6 @@ export class SmartphoneComponent implements OnInit {
 
   constructor(private http:SmartphoneService,protected auth:AuthService) {
     this.auth.state.subscribe()
-
-    if(this.auth.isAuthenticated){
-      this.auth.checkRole.subscribe()
-    }
    }
   
 

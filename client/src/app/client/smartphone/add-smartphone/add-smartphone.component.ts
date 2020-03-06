@@ -40,10 +40,6 @@ export class AddSmartphoneComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private http:SmartphoneService,  protected auth:AuthService) { 
     this.auth.state.subscribe()
-
-    if(this.auth.isAuthenticated){
-      this.auth.checkRole.subscribe()
-    }
   }
 
   ngOnInit() {

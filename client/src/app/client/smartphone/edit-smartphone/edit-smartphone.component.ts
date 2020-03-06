@@ -16,10 +16,6 @@ export class EditSmartphoneComponent implements OnInit {
     
     this.auth.state.subscribe()
     
-    if(this.auth.isAuthenticated){
-      this.auth.checkRole.subscribe()
-    }
-    
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('smartphone_id')
     })
