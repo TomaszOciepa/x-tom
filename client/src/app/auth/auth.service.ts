@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from '../client/model/user';
 import { map, tap } from 'rxjs/internal/operators';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { JsonPipe } from '@angular/common';
 
 interface Credentials{
   user_email: String;
@@ -72,6 +73,10 @@ export class AuthService {
       }
       
     })
+  }
+
+  register(user:User){
+    return this.http.post<User>("http://localhost:8090/sing-up", user)
   }
 
   constructor(private http:HttpClient) { }

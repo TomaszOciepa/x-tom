@@ -7,10 +7,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthRoutingModule } from './auth.routing.module';
 import { AuthorizedGuard } from './authorized.guard';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -25,6 +26,6 @@ import { AuthorizedGuard } from './authorized.guard';
     },
     AuthorizedGuard
   ],
-  exports: [LoginComponent]
+  exports: [LoginComponent, RegisterComponent]
 })
 export class AuthModule { }

@@ -33,7 +33,11 @@
           
           <ng-container *ngIf="!auth.isAuthenticated">
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" [routerLink]="['/login']">Login</a>
+              <a class="nav-link" [routerLink]="['/login']">Zaloguj</a>
+            </li>
+
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/register']">Załóż konto</a>
             </li>
           </ng-container>
           
