@@ -5,14 +5,17 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileBarComponent } from './profile-bar/profile-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileRoutingModule } from './profile.routing.module';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ProfileComponent, ProfileBarComponent],
+  declarations: [ProfileComponent, ProfileBarComponent, EditUserComponent],
   imports: [
     CommonModule,
     HttpClientModule,
-    ProfileRoutingModule
+    ReactiveFormsModule,
+    ProfileRoutingModule,
   ],
   exports: [
     ProfileComponent, ProfileBarComponent
