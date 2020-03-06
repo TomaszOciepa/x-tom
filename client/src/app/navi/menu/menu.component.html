@@ -30,7 +30,11 @@
             </li>
           </ng-container>
           
-          
+          <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/users']">Użytkownicy</a>
+            </li>
+          </ng-container>
           <ng-container *ngIf="!auth.isAuthenticated">
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" [routerLink]="['/login']">Zaloguj</a>

@@ -1,5 +1,5 @@
 
 <ng-container *ngIf="profile">
-    Zalogowano <strong>{{profile.user_firstName}}</strong> !
+    Zalogowano {{auth.role}} <strong>{{profile.user_firstName}}</strong> !
     <span (click)="auth.logout()"> | wyloguj</span>
  </ng-container>

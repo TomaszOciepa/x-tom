@@ -41,10 +41,6 @@ export class AddLaptopComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private http:LaptopService, protected auth:AuthService) { 
     this.auth.state.subscribe()
-
-    if(this.auth.isAuthenticated){
-      this.auth.checkRole.subscribe()
-    }
   }
 
   ngOnInit() {
