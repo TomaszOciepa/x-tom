@@ -79,10 +79,10 @@ public class ConfigExampleData {
         Product product5 = new Product("Słuchawki Marshall", "Akcesoria", "Słuchawki bezprzewodowe", 500, 60, LocalDateTime.now());
         repo.save(product5);
 
-        Laptop laptop1 = new Laptop("Dell", "Komputer Laptop Dell i7", 3000, "Promocja", "Windows", "i7", 8, "SSD", 250, "NIVIDIA",17, 200);
+        Laptop laptop1 = new Laptop("Dell", "Komputer Laptop Dell i7", 3000, "promocja", "Windows", "i7", 8, "SSD", 250, "NIVIDIA",17, 200);
         laptopRepository.save(laptop1);
 
-        Laptop laptop2 = new Laptop("Think", "Komputer Laptop ThinkPad", 3000, "Polecany", "Windows", "i7", 8, "SSD", 250, "NIVIDIA",17, 200);
+        Laptop laptop2 = new Laptop("Think", "Komputer Laptop ThinkPad", 3000, "polecamy", "Windows", "i7", 8, "SSD", 250, "NIVIDIA",17, 200);
         laptopRepository.save(laptop2);
 
         OrderLaptop orderLaptop = new OrderLaptop(LocalDateTime.now(), 2, "Zaplacono", root, laptop1);
@@ -91,10 +91,10 @@ public class ConfigExampleData {
         OrderLaptop orderLaptop1 = new OrderLaptop(LocalDateTime.now(), 2, "Zaplacono", root, laptop2);
         orderLaptopRepository.save(orderLaptop1);
 
-        Smartphone smartphone1 = new Smartphone("Samsung", "Smartphone telefon smasung s9",2000, "Promocja", "Android", 7, 16, 8, 20, 300);
+        Smartphone smartphone1 = new Smartphone("Samsung", "Smartphone telefon smasung s9",2000, "promocja", "Android", 7, 16, 8, 20, 300);
         smartphoneRepository.save(smartphone1);
 
-        Smartphone smartphone2 = new Smartphone("Iphone", "Smartphone telefon Iphone X",9000, "Promocja", "Android", 7, 16, 8, 20, 300);
+        Smartphone smartphone2 = new Smartphone("Iphone", "Smartphone telefon Iphone X",9000, "promocja", "Android", 7, 16, 8, 20, 300);
         smartphoneRepository.save(smartphone2);
 
         OrderSmartphone orderSmartphone = new OrderSmartphone(LocalDateTime.now(), 1, "Czeka na platnosc", root, smartphone1);
@@ -103,10 +103,10 @@ public class ConfigExampleData {
         OrderSmartphone orderSmartphone1 = new OrderSmartphone(LocalDateTime.now(), 1, "Czeka na platnosc", root, smartphone2);
         orderSmartphoneRepository.save(orderSmartphone1);
 
-        Drone drone1 = new Drone("DJI","Dron DJI super promocja", 4000, "Wyprzedaz", 20, 3000, "Tak", 300);
+        Drone drone1 = new Drone("DJI","Dron DJI super promocja", 4000, "wyprzedaż", 20, 3000, "Tak", 300);
         droneRepository.save(drone1);
 
-        Drone drone2 = new Drone("DJI PRO","Dron DJI PRO promocja", 6000, "Promocja", 20, 3000, "Tak", 300);
+        Drone drone2 = new Drone("DJI PRO","Dron DJI PRO promocja", 6000, "promocja", 20, 3000, "Tak", 300);
         droneRepository.save(drone2);
 
         OrderDrone orderDrone = new OrderDrone(LocalDateTime.now(), 3, "Zaplacono", root, drone1);
