@@ -10,6 +10,7 @@ import { ProfileModule } from './profile/profile.module';
 import { NaviModule } from './navi/navi.module';
 import { AuthService } from './auth/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
+import { UsersModule } from './users/users.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { Router, NavigationEnd } from '@angular/router';
     ProfileModule,
     NaviModule,
     ClientModule,
+    UsersModule,
     AppRoutingModule,
   ],
   providers: [],

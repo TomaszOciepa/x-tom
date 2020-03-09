@@ -1,0 +1,63 @@
+
+<ng-container *ngIf="auth.isAuthenticated">
+    <div class="form" *ngIf='editedUser'>
+        <ng-container *ngIf="saved">
+            <div class="alert alert-success" role="alert">
+                Zmiany zostały zapisane
+              </div>
+        </ng-container>
+        <div class="alert alert-danger" *ngIf="message">{{message}}</div>
+        <form class="contact100-form" [formGroup]="editUserForm" (submit)="edit()">
+            
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="FirstName">Imię</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_firstName" formControlName="user_firstName">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="LastName">Nazwisko</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_lastName" formControlName="user_lastName">
+            </div>
+
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_email" formControlName="user_email">
+            </div>
+            
+            <div class="form-group form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="PhoneNumber">Numer telefonu</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_phoneNumber" formControlName="user_phoneNumber">
+            </div>
+
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Password">Hasło</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_password" formControlName="user_password">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Password2">Powtórz hasło</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_password" formControlName="user_password2">
+            </div>
+                     
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="ZipCode">Kod pocztowy</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_zipCode" formControlName="user_zipCode">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="City">Miasto</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_city" formControlName="user_city">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Street">Ulica</label>
+                <input type="text" class="form-control" [(ngModel)]="editedUser.user_street" formControlName="user_street">
+            </div>
+            
+            <input *ngIf="!saved" type="submit" class="btn btn-danger input100-submit" value="zapisz">
+            <a *ngIf="saved" class="btn btn-success input100-ok" [routerLink]="['/profile']">powrót</a>
+        </form>    
+    </div>
+
+</ng-container>
+ 

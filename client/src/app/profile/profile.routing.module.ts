@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthorizedGuard } from '../auth/authorized.guard';
-import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {
@@ -13,8 +13,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'edit-user/:user_id',
-    component: EditUserComponent,
+    path: 'edit-profile/:user_id',
+    component: EditProfileComponent,
     canActivate:[
       AuthorizedGuard
     ]

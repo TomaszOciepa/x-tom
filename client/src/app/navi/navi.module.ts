@@ -6,6 +6,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AuthModule } from '../auth/auth.module';
 import { ProfileModule } from '../profile/profile.module';
 import { NaviRoutingModule } from './navi.routing.module';
+import { UsersModule } from '../users/users.module';
 
 
 @NgModule({

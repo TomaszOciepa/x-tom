@@ -1,0 +1,21 @@
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">lp</th>
+        <th scope="col">imię</th>
+        <th scope="col">nazwisko</th>
+        <th scope="col">email</th>
+        <th scope="col">info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersList let i = index;">
+        <th scope="row">{{i+1}}</th>
+        <td>{{user.user_firstName}}</td>
+        <td>{{user.user_lastName}}</td>
+        <td>{{user.user_email}}</td>
+        <a [routerLink]="['/user', user.user_id]" class="btn btn-info">więcej</a>
+      </tr>
+    </tbody>
+  </table>

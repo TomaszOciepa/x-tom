@@ -1,0 +1,112 @@
+.form{
+    margin: 10px;
+}
+.contact100-form {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contact100-form-title {
+    display: block;
+    width: 100%;
+    font-family: Raleway-Black;
+    font-size: 30px;
+    color: #333333;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: 32px;
+  }
+  
+  .wrap-input100 {
+    width: 100%;
+    position: relative;
+    background-color: transparent;
+    margin-bottom: 35px;
+  }
+
+  .rs1-wrap-input100 {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .label-input100 {
+    font-family: Raleway-SemiBold;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+  }
+
+  .input100 {
+    display: block;
+    width: 100%;
+    background: #f2f2f2;
+    border-radius: 2px;
+  
+    font-family: Raleway-SemiBold;
+    font-size: 20px;
+    color: #686868;
+    line-height: 1.2;
+    padding: 0 28px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    margin-top: 10px;
+  }
+
+  .input100-submit {
+    display: block;
+    width: 100%;
+    background: #bd2130;
+    border-radius: 2px;
+    height: 60px;
+    font-family: Raleway-SemiBold;
+    font-size: 20px;
+    color: #f2f2f2;
+    line-height: 1.2;
+    padding: 0 28px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    margin-top: 10px;
+  }
+
+  .input100-submit:hover{
+    background-color:#e46774;
+  }
+
+  .input100-ok{
+    display: block;
+    width: 100%;
+    background: #1e7e34;
+    border-radius: 2px;
+    height: 60px;
+    font-family: Raleway-SemiBold;
+    font-size: 20px;
+    color: #f2f2f2;
+    line-height: 1.2;
+    padding: 16px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    margin-top: 10px;
+  }
+  
+  .input100-ok:hover{
+    background-color: #98e7aa;
+    
+  }

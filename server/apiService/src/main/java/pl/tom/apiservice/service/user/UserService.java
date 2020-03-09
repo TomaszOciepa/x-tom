@@ -38,6 +38,7 @@ public class UserService {
             updateUser.get().setUser_zipCode(userEdited.getUser_zipCode());
             updateUser.get().setUser_city(userEdited.getUser_city());
             updateUser.get().setUser_street(userEdited.getUser_street());
+            updateUser.get().setUser_role(userEdited.getUser_role() );
             return updateUser = Optional.of(repo.save(updateUser.get()));
 
         } else {

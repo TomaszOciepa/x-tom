@@ -91,7 +91,7 @@ public class ConfigExampleData {
         OrderLaptop orderLaptop1 = new OrderLaptop(LocalDateTime.now(), 2, "Zaplacono", root, laptop2);
         orderLaptopRepository.save(orderLaptop1);
 
-        Smartphone smartphone1 = new Smartphone("Samsung", "Smartphone telefon smasung s9",2000, "promocja", "Android", 7, 16, 8, 20, 300);
+        Smartphone smartphone1 = new Smartphone("Samsung", "Smartphone telefon smasung s9",2000, "polecamy", "Android", 7, 16, 8, 20, 300);
         smartphoneRepository.save(smartphone1);
 
         Smartphone smartphone2 = new Smartphone("Iphone", "Smartphone telefon Iphone X",9000, "promocja", "Android", 7, 16, 8, 20, 300);
@@ -103,10 +103,10 @@ public class ConfigExampleData {
         OrderSmartphone orderSmartphone1 = new OrderSmartphone(LocalDateTime.now(), 1, "Czeka na platnosc", root, smartphone2);
         orderSmartphoneRepository.save(orderSmartphone1);
 
-        Drone drone1 = new Drone("DJI","Dron DJI super promocja", 4000, "wyprzedaż", 20, 3000, "Tak", 300);
+        Drone drone1 = new Drone("DJI","Dron DJI super promocja", 4000, "polecamy", 20, 3000, "Tak", 300);
         droneRepository.save(drone1);
 
-        Drone drone2 = new Drone("DJI PRO","Dron DJI PRO promocja", 6000, "promocja", 20, 3000, "Tak", 300);
+        Drone drone2 = new Drone("DJI PRO","Dron DJI PRO polecamy", 6000, "promocja", 20, 3000, "Tak", 300);
         droneRepository.save(drone2);
 
         OrderDrone orderDrone = new OrderDrone(LocalDateTime.now(), 3, "Zaplacono", root, drone1);
