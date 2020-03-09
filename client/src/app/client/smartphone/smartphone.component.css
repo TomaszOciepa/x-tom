@@ -18,3 +18,11 @@
 .card:hover{
     border: 1px solid green;
 }
+
+.my-card-body p{
+    margin: 0;
+}
+    
+.my-card-body h5{
+    margin-top: 20px;
+}

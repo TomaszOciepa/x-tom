@@ -30,4 +30,13 @@ export class LaptopService {
   delete(id:number){
     return this.http.delete("http://localhost:8080/laptop/"+id)
   }
+
+
+  getByStatus(status:string){
+    return this.http.get<LaptopList>("http://localhost:8090/laptop/status/",{
+      params:{
+        status:status
+      }
+    })
+  }
 }

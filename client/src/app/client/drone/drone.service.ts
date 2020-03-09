@@ -31,4 +31,12 @@ export class DroneService {
     return this.http.delete("http://localhost:8080/drone/"+id)
   }
 
+  getByStatus(status:string){
+    return this.http.get<DroneList>("http://localhost:8090/drone/status/",{
+      params:{
+        status:status
+      }
+    })
+  }
+
 }
