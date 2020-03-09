@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.tom.authservice.model.product.Drone;
 import pl.tom.authservice.model.product.Laptop;
 import pl.tom.authservice.service.product.LaptopService;
 
@@ -44,5 +45,11 @@ public class LaptopRestController {
         LOG.info("method: getByDescription. Trying get laptop with {} description", query);
         response.setStatus(200);
         return laptopService.getByDescription(query);
+    }
+
+    @GetMapping("/status")
+    public List<Laptop> getByStatus(@RequestParam String status, HttpServletResponse response){
+        LOG.info("method: getByStatus. Trying get Laptop with status {}", status);
+        return laptopService.getLaptopByStatus(status);
     }
 }

@@ -1,6 +1,7 @@
 package pl.tom.authservice.service.product;
 
 import org.springframework.stereotype.Service;
+import pl.tom.authservice.model.product.Drone;
 import pl.tom.authservice.model.product.Laptop;
 import pl.tom.authservice.model.product.LaptopRepository;
 
@@ -31,4 +32,8 @@ public class LaptopService {
         return laptopRepository.findAll();
     }
 
+    public List<Laptop> getLaptopByStatus (String status){
+
+        return laptopRepository.getLaptopByStatus(status);
+    }
 }

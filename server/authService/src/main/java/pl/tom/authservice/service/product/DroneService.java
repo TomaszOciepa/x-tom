@@ -31,4 +31,9 @@ public class DroneService {
     public List<Drone> getAll() {
         return droneRepository.findAll();
     }
+
+    public List<Drone> getDroneByStatus (String status){
+
+        return droneRepository.getDroneByStatus(status);
+    }
 }

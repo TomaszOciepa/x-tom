@@ -46,4 +46,10 @@ public class DroneRestController {
         return droneService.getByDescription(query);
     }
 
+    @GetMapping("/status")
+    public List<Drone> getByStatus(@RequestParam String status, HttpServletResponse response){
+        LOG.info("method: getByStatus. Trying get drone with status {}", status);
+        return droneService.getDroneByStatus(status);
+    }
+
 }

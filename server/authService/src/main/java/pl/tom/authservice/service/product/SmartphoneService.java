@@ -1,6 +1,7 @@
 package pl.tom.authservice.service.product;
 
 import org.springframework.stereotype.Service;
+import pl.tom.authservice.model.product.Laptop;
 import pl.tom.authservice.model.product.Smartphone;
 import pl.tom.authservice.model.product.SmartphoneRepository;
 
@@ -29,5 +30,10 @@ public class SmartphoneService {
 
     public List<Smartphone> getAll() {
         return smartphoneRepository.findAll();
+    }
+
+    public List<Smartphone> getSmartphoneByStatus (String status){
+
+        return smartphoneRepository.getSmartphoneByStatus(status);
     }
 }

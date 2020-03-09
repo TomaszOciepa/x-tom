@@ -43,4 +43,6 @@ public class DroneRestController {
         droneService.deleteById(id);
         return "Remove drone about id: " + id;
     }
+
+
 }
