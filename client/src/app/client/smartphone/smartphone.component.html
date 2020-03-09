@@ -12,9 +12,11 @@
                     <div class="card" style="width: 12rem;">
                         <h5 class="card-title">{{smartphone.smartphone_mark}}</h5>
                         <img src="../../../assets/img/nokia.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <p class="card-text">{{smartphone.smartphone_description}}</p>
-                            <p class="card-text">{{smartphone.smartphone_price}} zł</p>
+                        <div class="card-body my-card-body">
+                            <p class="card-text">ekran: {{smartphone.smartphone_screen_diagonal}}"</p>
+                            <p class="card-text">system: {{smartphone.smartphone_system}}</p>
+                            <p class="card-text">pamięć: {{smartphone.smartphone_disc_size}} GB</p>
+                            <h5 class="card-text">{{smartphone.smartphone_price}} zł</h5>
                         </div>
                     </div>
                 </a>

@@ -29,4 +29,13 @@ export class SmartphoneService {
   delete(id:number){
     return this.http.delete("http://localhost:8080/smartphone/"+id)
   }
+
+  getByStatus(status:string){
+    return this.http.get<SmartphoneList>("http://localhost:8090/smartphone/status/",{
+      params:{
+        status:status
+      }
+    })
+  }
+
 }
