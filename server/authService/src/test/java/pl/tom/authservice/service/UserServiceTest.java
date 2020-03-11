@@ -9,7 +9,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import pl.tom.authservice.model.user.User;
 import pl.tom.authservice.model.user.UserRepository;
-import pl.tom.authservice.service.user.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

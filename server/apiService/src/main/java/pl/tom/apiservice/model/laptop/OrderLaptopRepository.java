@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface OrderLaptopRepository extends JpaRepository<OrderLaptop, Long> {
+public interface OrderLaptopRepository {
 
-    @Query("SELECT o FROM OrderLaptop o, Laptop l where o.laptop.laptop_id = l.laptop_id and l.laptop_mark = 'Think'")
-    List<OrderLaptop> getLaptopOrders();
+//    @Query("SELECT o FROM OrderLaptop o, Laptop l where o.laptop.laptop_id = l.laptop_id and l.laptop_mark = 'Think'")
+//    List<OrderLaptop> getLaptopOrders();
 }

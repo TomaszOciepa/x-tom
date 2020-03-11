@@ -1,5 +1,6 @@
 package pl.tom.apiservice.model.user;
 
+import pl.tom.apiservice.model.Orders;
 import pl.tom.apiservice.model.drone.OrderDrone;
 import pl.tom.apiservice.model.laptop.OrderLaptop;
 import pl.tom.apiservice.model.smartphone.OrderSmartphone;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="USER")
+@Table(name = "USER")
 public class User {
 
     @Id
@@ -24,14 +25,17 @@ public class User {
     private String user_city;
     private String user_street;
 
-    @OneToMany(mappedBy = "user")
-    Set<OrderDrone> orderDrone;
+//    @OneToMany(mappedBy = "user")
+//    Set<OrderDrone> orderDrone;
+//
+//    @OneToMany(mappedBy = "user")
+//    Set<OrderLaptop> orderLaptop;
+//
+//    @OneToMany(mappedBy = "user")
+//    Set<OrderSmartphone> orderSmartphone;
 
     @OneToMany(mappedBy = "user")
-    Set<OrderLaptop> orderLaptop;
-
-    @OneToMany(mappedBy = "user")
-    Set<OrderSmartphone> orderSmartphone;
+    Set<Orders> order;
 
     public User() {
     }
@@ -53,7 +57,6 @@ public class User {
         this.user_password = user_password;
         this.user_role = user_role;
     }
-
 
 
     public Long getUser_id() {

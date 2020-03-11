@@ -24,6 +24,10 @@
             <a class="nav-link" [routerLink]="['/smartphones']">Smartfony</a>
           </li>
           
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/koszyk']">Koszyk</a>
+            </li>
+
           <ng-container *ngIf="auth.isAuthenticated">
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" [routerLink]="['/profile']">Profil</a>

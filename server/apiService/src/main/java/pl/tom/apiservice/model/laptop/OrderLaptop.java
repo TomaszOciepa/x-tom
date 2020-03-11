@@ -5,8 +5,8 @@ import pl.tom.apiservice.model.user.User;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name="ORDER_LAPTOP")
+//@Entity
+//@Table(name="ORDER_LAPTOP")
 public class OrderLaptop {
 
     @Id
@@ -16,24 +16,24 @@ public class OrderLaptop {
     private int order_laptop_amount;
     private String order_laptop_status;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "laptop_id")
-    private Laptop laptop;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "laptop_id")
+//    private Laptop laptop;
 
     public OrderLaptop() {
     }
 
-    public OrderLaptop(LocalDateTime order_laptop_date, int order_laptop_amount, String order_laptop_status, User user, Laptop laptop) {
-        this.order_laptop_date = order_laptop_date;
-        this.order_laptop_amount = order_laptop_amount;
-        this.order_laptop_status = order_laptop_status;
-        this.user = user;
-        this.laptop = laptop;
-    }
+//    public OrderLaptop(LocalDateTime order_laptop_date, int order_laptop_amount, String order_laptop_status, User user, Laptop laptop) {
+//        this.order_laptop_date = order_laptop_date;
+//        this.order_laptop_amount = order_laptop_amount;
+//        this.order_laptop_status = order_laptop_status;
+//        this.user = user;
+//        this.laptop = laptop;
+//    }
 
     public Long getOrder_laptop_id() {
         return order_laptop_id;
@@ -67,21 +67,21 @@ public class OrderLaptop {
         this.order_laptop_status = order_laptop_status;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Laptop getLaptop() {
-        return laptop;
-    }
-
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+//
+//    public Laptop getLaptop() {
+//        return laptop;
+//    }
+//
+//    public void setLaptop(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
 
     @Override
     public String toString() {

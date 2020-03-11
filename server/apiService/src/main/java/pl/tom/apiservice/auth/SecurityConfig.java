@@ -48,8 +48,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PUT, "/order/smartphone/{}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.DELETE, "/order/smartphone/{id}").hasAnyRole("ADMIN", "USER")
 
-                .antMatchers(HttpMethod.POST, "/product/create").hasRole("ADMIN") // to remove
-                .antMatchers(HttpMethod.DELETE, "/product/{id}").hasRole("ADMIN")   //to remove
+                .antMatchers(HttpMethod.POST, "/product/create").hasRole("ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/product/{id}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/product/{}").hasRole("ADMIN")
+
+                .antMatchers(HttpMethod.GET, "/orders/all").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.GET, "/orders/{id}").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.POST, "/orders/create").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.PUT, "/orders/{}").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.DELETE, "/orders/{id}").hasAnyRole("ADMIN", "USER")
+
                 .and()
                 .addFilter(new JwtFilter(authenticationManager()));
     }

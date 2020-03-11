@@ -26,7 +26,7 @@
                    <h3>{{drone.drone_price}} zł</h3>
 
                    <div class="options">
-                    <button type="button" class="btn btn-secondary">Dodaj do koszyka</button>
+                    <a  type="button" class="btn btn-secondary" (click)='addToCart(drone)'>Dodaj do koszyka</a>
                    </div>
 
                    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">

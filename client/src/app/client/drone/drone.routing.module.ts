@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DroneComponent } from './drone.component';
+import { DronesComponent } from './drones.component';
 import { DroneByIdComponent } from './drone-by-id/drone-by-id.component';
 import { DeleteDroneComponent } from './delete-drone/delete-drone.component';
 import { AddDroneComponent } from './add-drone/add-drone.component';
 import { EditDroneComponent } from './edit-drone/edit-drone.component';
 import { AuthorizedGuard } from 'src/app/auth/authorized.guard';
+import { DroneComponent } from './drone/drone.component';
+
 
 const routes: Routes = [
   {
     path: 'drones',
+    component: DronesComponent
+  },
+  {
+    path: 'drone/:drone_id',
     component: DroneComponent
   },
   {
@@ -20,7 +26,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'drone/:drone_id',
+    path: 'droneById/:drone_id',
     component: DroneByIdComponent
   },
   {

@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface OrderDroneRepository extends JpaRepository<OrderDrone, Long> {
+public interface OrderDroneRepository  {
 
 
-    @Query("SELECT o FROM OrderDrone o, Drone d where o.drone.drone_id = d.drone_id and d.drone_mark = 'DJI PRO'")
-    List<OrderDrone>getDronesOrders();
+//    @Query("SELECT o FROM OrderDrone o, Drone d where o.drone.drone_id = d.drone_id and d.drone_mark = 'DJI PRO'")
+//    List<OrderDrone>getDronesOrders();
 }

@@ -23,15 +23,21 @@ public class ProductRestController {
     }
 
     @PostMapping("/create")
-    public Product create(@RequestBody Product product, HttpServletResponse response){
+    public Product create(@RequestBody Product product, HttpServletResponse response) {
         LOG.info("method: create. Creating new product");
         return productService.save(product);
     }
 
+    @PutMapping("/{id}")
+    public String edit(@PathVariable(value = "id") Long id, @RequestBody Product productEdited, HttpServletResponse response) {
+        LOG.info("method: edit. Add new dron to database");
+
+        return productService.edit(id, productEdited);
+    }
+
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable(value = "id") Long id, HttpServletResponse response){
+    public void deleteById(@PathVariable(value = "id") Long id, HttpServletResponse response) {
         LOG.info("method: deleteById. Deleting product about id {}", id);
         productService.deleteById(id);
-        response.setStatus(200);
     }
 }

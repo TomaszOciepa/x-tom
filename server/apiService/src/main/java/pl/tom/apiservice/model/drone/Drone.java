@@ -3,12 +3,12 @@ package pl.tom.apiservice.model.drone;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Table(name="DRONE")
+//@Entity
+//@Table(name="DRONE")
 public class Drone {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long drone_id;
     private String drone_mark;
     private String drone_description;
@@ -19,8 +19,8 @@ public class Drone {
     private String drone_camera;
     private int drone_amount_available;
 
-    @OneToMany(mappedBy = "drone")
-    Set<OrderDrone> orderDrone;
+//    @OneToMany(mappedBy = "drone")
+//    Set<OrderDrone> orderDrone;
 
     public Drone() {
     }

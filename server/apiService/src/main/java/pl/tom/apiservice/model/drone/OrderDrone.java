@@ -5,35 +5,35 @@ import pl.tom.apiservice.model.user.User;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "ORDER_DRONE")
+//@Entity
+//@Table(name = "ORDER_DRONE")
 public class OrderDrone {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_drone_id;
     private LocalDateTime order_drone_date;
     private int order_drone_amount;
     private String order_drone_status;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "drone_id")
-    private Drone drone;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "drone_id")
+//    private Drone drone;
 
     public OrderDrone() {
     }
 
-    public OrderDrone(LocalDateTime order_drone_date, int order_drone_amount, String order_drone_status, User user, Drone drone) {
-        this.order_drone_date = order_drone_date;
-        this.order_drone_amount = order_drone_amount;
-        this.order_drone_status = order_drone_status;
-        this.user = user;
-        this.drone = drone;
-    }
+//    public OrderDrone(LocalDateTime order_drone_date, int order_drone_amount, String order_drone_status, User user, Drone drone) {
+//        this.order_drone_date = order_drone_date;
+//        this.order_drone_amount = order_drone_amount;
+//        this.order_drone_status = order_drone_status;
+//        this.user = user;
+//        this.drone = drone;
+//    }
 
     public Long getOrder_drone_id() {
         return order_drone_id;
@@ -67,21 +67,21 @@ public class OrderDrone {
         this.order_drone_status = order_drone_status;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Drone getDrone() {
-        return drone;
-    }
-
-    public void setDrone(Drone drone) {
-        this.drone = drone;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+//
+//    public Drone getDrone() {
+//        return drone;
+//    }
+//
+//    public void setDrone(Drone drone) {
+//        this.drone = drone;
+//    }
 
     @Override
     public String toString() {

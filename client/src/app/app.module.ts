@@ -11,6 +11,7 @@ import { NaviModule } from './navi/navi.module';
 import { AuthService } from './auth/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { UsersModule } from './users/users.module';
+import { BasketModule } from './basket/basket.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UsersModule } from './users/users.module';
     NaviModule,
     ClientModule,
     UsersModule,
+    BasketModule,
     AppRoutingModule,
   ],
   providers: [],

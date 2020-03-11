@@ -15,34 +15,34 @@ import java.util.Optional;
 @RequestMapping("/drone")
 public class DroneRestController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DroneRestController.class);
-
-    private DroneService droneService;
-
-    @Autowired
-    public DroneRestController(DroneService droneService) {
-        this.droneService = droneService;
-    }
-
-    @PostMapping("/create")
-    public Drone create(@RequestBody Drone drone, HttpServletResponse response) {
-        LOG.info("method: create. Add new dron to database");
-        return droneService.save(drone);
-    }
-
-    @PutMapping("/{id}")
-    public Optional<Drone> edit(@PathVariable(value = "id") Long id, @RequestBody Drone droneEdited, HttpServletResponse response) {
-        LOG.info("method: edit. Add new dron to database");
-
-        return droneService.edit(id, droneEdited);
-    }
-
-    @DeleteMapping("/{id}")
-    public String deleteById(@PathVariable(value = "id") Long id, HttpServletResponse response) {
-        LOG.info("method: deleteById. Deleting drone about id {}", id);
-        droneService.deleteById(id);
-        return "Remove drone about id: " + id;
-    }
+//    private static final Logger LOG = LoggerFactory.getLogger(DroneRestController.class);
+//
+//    private DroneService droneService;
+//
+//    @Autowired
+//    public DroneRestController(DroneService droneService) {
+//        this.droneService = droneService;
+//    }
+//
+//    @PostMapping("/create")
+//    public Drone create(@RequestBody Drone drone, HttpServletResponse response) {
+//        LOG.info("method: create. Add new dron to database");
+//        return droneService.save(drone);
+//    }
+//
+//    @PutMapping("/{id}")
+//    public Optional<Drone> edit(@PathVariable(value = "id") Long id, @RequestBody Drone droneEdited, HttpServletResponse response) {
+//        LOG.info("method: edit. Add new dron to database");
+//
+//        return droneService.edit(id, droneEdited);
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    public String deleteById(@PathVariable(value = "id") Long id, HttpServletResponse response) {
+//        LOG.info("method: deleteById. Deleting drone about id {}", id);
+//        droneService.deleteById(id);
+//        return "Remove drone about id: " + id;
+//    }
 
 
 }

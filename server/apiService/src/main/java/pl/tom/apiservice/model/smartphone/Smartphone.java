@@ -3,8 +3,8 @@ package pl.tom.apiservice.model.smartphone;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Table(name="SMARTPHONE")
+//@Entity
+//@Table(name="SMARTPHONE")
 public class Smartphone {
 
     @Id
@@ -21,8 +21,8 @@ public class Smartphone {
     private int smartphone_camera_resolution;
     private int smartphone_amount_available;
 
-    @OneToMany(mappedBy = "smartphone")
-    Set<OrderSmartphone> orderSmartphone;
+//    @OneToMany(mappedBy = "smartphone")
+//    Set<OrderSmartphone> orderSmartphone;
 
     public Smartphone() {
     }

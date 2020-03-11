@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.util.Set;
 
 
-@Entity
-@Table(name="LAPTOP")
+//@Entity
+//@Table(name="LAPTOP")
 public class Laptop {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long laptop_id;
     private String laptop_mark;
     private String laptop_description;
@@ -24,8 +24,8 @@ public class Laptop {
     private double laptop_screen_diagonal;
     private int laptop_amount_available;
 
-    @OneToMany(mappedBy = "laptop")
-    Set<OrderLaptop> orderLaptop;
+//    @OneToMany(mappedBy = "laptop")
+//    Set<OrderLaptop> orderLaptop;
 
     public Laptop() {
     }

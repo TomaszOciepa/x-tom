@@ -6,7 +6,6 @@ import { AuthModule } from '../auth/auth.module';
 import { ProfileModule } from '../profile/profile.module';
 import { AddProductComponent } from './products/add-product/add-product.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { DroneComponent } from './drone/drone.component';
 import { LaptopComponent } from './laptop/laptop.component';
 import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { AddDroneComponent } from './drone/add-drone/add-drone.component';
@@ -25,6 +24,9 @@ import { DeleteLaptopComponent } from './laptop/delete-laptop/delete-laptop.comp
 import { EditLaptopComponent } from './laptop/edit-laptop/edit-laptop.component';
 import { DeleteSmartphoneComponent } from './smartphone/delete-smartphone/delete-smartphone.component';
 import { EditSmartphoneComponent } from './smartphone/edit-smartphone/edit-smartphone.component';
+import { BasketModule } from '../basket/basket.module';
+import { DronesComponent } from './drone/drones.component';
+import { DroneComponent } from './drone/drone/drone.component';
 
 
 @NgModule({
@@ -32,7 +34,7 @@ import { EditSmartphoneComponent } from './smartphone/edit-smartphone/edit-smart
     ClientComponent,
     ProductsComponent,
     AddProductComponent,
-    DroneComponent,
+    DronesComponent,
     LaptopComponent,
     SmartphoneComponent,
     AddDroneComponent,
@@ -46,7 +48,8 @@ import { EditSmartphoneComponent } from './smartphone/edit-smartphone/edit-smart
     DeleteLaptopComponent,
     EditLaptopComponent,
     DeleteSmartphoneComponent,
-    EditSmartphoneComponent
+    EditSmartphoneComponent,
+    DroneComponent,
   ],
   imports: [
     ProductsRoutingModule,
@@ -56,12 +59,13 @@ import { EditSmartphoneComponent } from './smartphone/edit-smartphone/edit-smart
     CommonModule,
     AuthModule,
     ProfileModule,
+    BasketModule,
     ReactiveFormsModule,
   ],
   exports: [
-    ClientComponent,  AddDroneComponent, DroneComponent, DeleteDroneComponent, 
+    ClientComponent,  AddDroneComponent, DronesComponent, DeleteDroneComponent, 
     EditDroneComponent, DeleteLaptopComponent, EditLaptopComponent, DeleteSmartphoneComponent, 
-    EditSmartphoneComponent
+    EditSmartphoneComponent, DroneComponent
   ]
 })
 export class ClientModule { }

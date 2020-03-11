@@ -5,8 +5,8 @@ import pl.tom.apiservice.model.user.User;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name="ORDER_SMARTPHONE")
+//@Entity
+//@Table(name="ORDER_SMARTPHONE")
 public class OrderSmartphone {
 
     @Id
@@ -16,24 +16,24 @@ public class OrderSmartphone {
     private int order_smartphone_amount;
     private String order_smartphone_status;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "smartphone_id")
-    private Smartphone smartphone;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "smartphone_id")
+//    private Smartphone smartphone;
 
     public OrderSmartphone() {
     }
 
-    public OrderSmartphone(LocalDateTime order_smartphone_date, int order_smartphone_amount, String order_smartphone_status, User user, Smartphone smartphone) {
-        this.order_smartphone_date = order_smartphone_date;
-        this.order_smartphone_amount = order_smartphone_amount;
-        this.order_smartphone_status = order_smartphone_status;
-        this.user = user;
-        this.smartphone = smartphone;
-    }
+//    public OrderSmartphone(LocalDateTime order_smartphone_date, int order_smartphone_amount, String order_smartphone_status, User user, Smartphone smartphone) {
+//        this.order_smartphone_date = order_smartphone_date;
+//        this.order_smartphone_amount = order_smartphone_amount;
+//        this.order_smartphone_status = order_smartphone_status;
+//        this.user = user;
+//        this.smartphone = smartphone;
+//    }
 
     public Long getOrder_smartphone_id() {
         return order_smartphone_id;
@@ -67,21 +67,21 @@ public class OrderSmartphone {
         this.order_smartphone_status = order_smartphone_status;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Smartphone getSmartphone() {
-        return smartphone;
-    }
-
-    public void setSmartphone(Smartphone smartphone) {
-        this.smartphone = smartphone;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+//
+//    public Smartphone getSmartphone() {
+//        return smartphone;
+//    }
+//
+//    public void setSmartphone(Smartphone smartphone) {
+//        this.smartphone = smartphone;
+//    }
 
     @Override
     public String toString() {
