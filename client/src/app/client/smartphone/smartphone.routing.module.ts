@@ -7,26 +7,26 @@ import { DeleteSmartphoneComponent } from './delete-smartphone/delete-smartphone
 import { EditSmartphoneComponent } from './edit-smartphone/edit-smartphone.component';
 
 const routes: Routes = [
-  {
-    path: 'smartphones',
-    component: SmartphoneComponent
-  },
-  {
-    path: 'add-smartphone',
-    component: AddSmartphoneComponent
-  },
-  {
-    path: 'smartphone/:smartphone_id',
-    component: SmartphoneByIdComponent
-  },
-  {
-    path: 'edit-smartphone/:smartphone_id',
-    component: EditSmartphoneComponent
-  },
-  {
-    path: 'delete-smartphone/:smartphone_id',
-    component: DeleteSmartphoneComponent
-  }
+  // {
+  //   path: 'smartphones',
+  //   component: SmartphoneComponent
+  // },
+  // {
+  //   path: 'add-smartphone',
+  //   component: AddSmartphoneComponent
+  // },
+  // {
+  //   path: 'smartphone/:smartphone_id',
+  //   component: SmartphoneByIdComponent
+  // },
+  // {
+  //   path: 'edit-smartphone/:smartphone_id',
+  //   component: EditSmartphoneComponent
+  // },
+  // {
+  //   path: 'delete-smartphone/:smartphone_id',
+  //   component: DeleteSmartphoneComponent
+  // }
 
 ]
 

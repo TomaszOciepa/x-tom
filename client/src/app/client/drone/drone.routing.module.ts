@@ -10,33 +10,33 @@ import { DroneComponent } from './drone/drone.component';
 
 
 const routes: Routes = [
-  {
-    path: 'drones',
-    component: DronesComponent
-  },
-  {
-    path: 'drone/:drone_id',
-    component: DroneComponent
-  },
-  {
-    path: 'add-drone',
-    component: AddDroneComponent,
-    canActivate:[
-      AuthorizedGuard
-    ]
-  },
-  {
-    path: 'droneById/:drone_id',
-    component: DroneByIdComponent
-  },
-  {
-    path: 'edit-drone/:drone_id',
-    component: EditDroneComponent
-  },
-  {
-    path: 'delete-drone/:drone_id',
-    component: DeleteDroneComponent
-  }
+  // {
+  //   path: 'dronesdwdw',
+  //   component: DronesComponent
+  // },
+  // {
+  //   path: 'drone/:drone_id',
+  //   component: DroneComponent
+  // },
+  // {
+  //   path: 'add-drone',
+  //   component: AddDroneComponent,
+  //   canActivate:[
+  //     AuthorizedGuard
+  //   ]
+  // },
+  // {
+  //   path: 'droneById/:drone_id',
+  //   component: DroneByIdComponent
+  // },
+  // {
+  //   path: 'edit-drone/:drone_id',
+  //   component: EditDroneComponent
+  // },
+  // {
+  //   path: 'delete-drone/:drone_id',
+  //   component: DeleteDroneComponent
+  // }
 ]
 
 

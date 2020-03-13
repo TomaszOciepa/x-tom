@@ -1,0 +1,70 @@
+<!-- <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'"> -->
+    <div class="form" *ngIf='product'>
+        <!-- <ng-container *ngIf="saved">
+            <div class="alert alert-success" role="alert">
+                Zmiany zostały zapisane
+              </div>
+        </ng-container> -->
+        <form class="contact100-form" [formGroup]="editedDroneForm" (submit)="saveDrone()">
+            <span class="contact100-form-title">
+                Edycja drona
+            </span>
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Name">Producent</label>
+                <input class="input100" type="Mark" class="form-control" [(ngModel)]="product.product_mark" formControlName="product_mark">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Price">Cena</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='product.product_price' formControlName="product_price">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Status">Status</label>
+                <select class="form-control" [(ngModel)]='product.product_status' formControlName="product_status">
+                    <option>promocja</option>
+                    <option>wyprzedaż</option>
+                    <option>nowość</option>
+                    <option>polecamy</option>
+                    <option>przedłużona gwarancja</option>
+                </select>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Time">Czas pracy</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='product.product_time_work' formControlName="product_time_work">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Range">Zasięg</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='product.product_range' formControlName="product_range">
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Kamera">Kamera</label>
+                <select class="form-control" [(ngModel)]='product.product_camera' formControlName="product_camera" required>
+                    <option>tak</option>
+                    <option>nie</option>
+                </select>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Amount">Dostępna ilość</label>
+                <input class="input100" type="text" class="form-control" [(ngModel)]='product.product_amount_available' formControlName="product_amount_available">
+            </div>
+        
+            <div class="form-group wrap-input100">
+                <label class="label-input100" for="Descripton">Opis</label>
+                <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]='product.product_description' formControlName="product_description"> </textarea>
+            </div>
+            
+            <!-- <input *ngIf="!saved" value="zapisz" type="submit" class="btn btn-danger">
+            <a *ngIf="saved" class="btn btn-success" [routerLink]="['/product', product.product_id]">powrót</a> -->
+            
+        </form>
+    </div>
+<!-- </ng-container> -->
+
+
+
+

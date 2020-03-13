@@ -16,7 +16,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.GET, "/product/all").permitAll()
                 .antMatchers(HttpMethod.GET, "/product/{id}").permitAll()
-                .antMatchers(HttpMethod.GET, "/product/").permitAll();
+                .antMatchers(HttpMethod.GET, "/product/type").permitAll()
+                .antMatchers(HttpMethod.GET, "/product/status").permitAll();
 
         http.csrf().disable();
     }

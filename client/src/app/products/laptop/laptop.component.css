@@ -1,0 +1,28 @@
+.laptop a{
+    color: #000000;
+    text-decoration: none;   
+   }
+   
+.laptop a:hover{
+   color: green;
+   }
+   
+.laptop{
+       margin: 10px;
+   }
+
+.card{
+    padding: 10px;
+}
+
+.card:hover{
+    border: 1px solid green;
+}
+
+.my-card-body p{
+    margin: 0;
+}
+    
+.my-card-body h5{
+    margin-top: 20px;
+}

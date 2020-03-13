@@ -1,0 +1,11 @@
+<ng-container *ngIf="typeProduct == 'drone'">
+    <drone-form [getProduct]="editedProduct"></drone-form>
+</ng-container>
+
+<ng-container *ngIf="typeProduct == 'laptop'">
+    <h1>Laptop</h1>
+</ng-container>
+
+<ng-container *ngIf="typeProduct == 'smartphone'">
+    <h1>Smartphone</h1>
+</ng-container>

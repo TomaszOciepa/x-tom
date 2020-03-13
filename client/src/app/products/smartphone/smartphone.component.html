@@ -1,0 +1,25 @@
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <a class="btn btn-secondary" [routerLink]="['/add-smartphone']">Dodaj smartfon</a>
+</ng-container>
+
+
+<div class="row">
+    <div *ngFor="let smartphone of smartphones">
+        <div class="col-4">
+            <div class="smartphone">
+                <a [routerLink]="['/product', smartphone.product_id]">
+                    <div class="card" style="width: 12rem;">
+                        <h5 class="card-title">{{smartphone.product_mark}}</h5>
+                        <img src="../../../assets/img/nokia.jpg" class="card-img-top" alt="smartphone">
+                        <div class="card-body my-card-body">
+                            <p class="card-text">ekran: {{smartphone.product_screen_diagonal}}"</p>
+                            <p class="card-text">system: {{smartphone.product_system}}</p>
+                            <p class="card-text">pamięć: {{smartphone.product_disc_size}} GB</p>
+                            <h5 class="card-text">{{smartphone.product_price}} zł</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

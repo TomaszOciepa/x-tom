@@ -7,26 +7,26 @@ import { DeleteLaptopComponent } from './delete-laptop/delete-laptop.component';
 import { EditLaptopComponent } from './edit-laptop/edit-laptop.component';
 
 const routes: Routes = [
-  {
-    path: 'laptops',
-    component: LaptopComponent
-  },
-  {
-    path: 'add-laptop',
-    component: AddLaptopComponent
-  },
-  {
-    path: 'laptop/:laptop_id',
-    component: LaptopByIdComponent
-  },
-  {
-    path: 'edit-laptop/:laptop_id',
-    component: EditLaptopComponent
-  },
-  {
-    path: 'delete-laptop/:laptop_id',
-    component: DeleteLaptopComponent
-  }
+  // {
+  //   path: 'laptops',
+  //   component: LaptopComponent
+  // },
+  // {
+  //   path: 'add-laptop',
+  //   component: AddLaptopComponent
+  // },
+  // {
+  //   path: 'laptop/:laptop_id',
+  //   component: LaptopByIdComponent
+  // },
+  // {
+  //   path: 'edit-laptop/:laptop_id',
+  //   component: EditLaptopComponent
+  // },
+  // {
+  //   path: 'delete-laptop/:laptop_id',
+  //   component: DeleteLaptopComponent
+  // }
 
 ]
 

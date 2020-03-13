@@ -10,5 +10,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT p FROM Product p where p.product_type =  ?1")
     List<Product> getProductByType(String type);
+
+    @Query("SELECT p FROM Product p where p.product_status =  ?1")
+    List<Product> getProductByStatus(String status);
 }
 

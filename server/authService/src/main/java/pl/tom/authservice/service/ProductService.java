@@ -29,6 +29,10 @@ public class ProductService {
         return repo.getProductByType(type);
     }
 
+    public List<Product> getProductByStatus(String status) {
+        return repo.getProductByStatus(status);
+    }
+
 //    public List<Product> getByDescription(String query) {
 //        List<Product> allProducts = repo.findAll();
 //

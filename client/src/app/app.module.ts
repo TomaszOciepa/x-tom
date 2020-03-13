@@ -12,6 +12,9 @@ import { AuthService } from './auth/auth.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { UsersModule } from './users/users.module';
 import { BasketModule } from './basket/basket.module';
+import { ProductsModule } from './products/products.module';
+import { FormModule } from './form/form.module';
+
 
 
 @NgModule({
@@ -27,6 +30,8 @@ import { BasketModule } from './basket/basket.module';
     ClientModule,
     UsersModule,
     BasketModule,
+    ProductsModule,
+    FormModule,
     AppRoutingModule,
   ],
   providers: [],

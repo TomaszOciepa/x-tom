@@ -8,6 +8,7 @@ import pl.tom.authservice.model.Product;
 import pl.tom.authservice.service.ProductService;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,10 +39,16 @@ public class ProductRestController {
         return productService.getProductById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping("/type")
     public List<Product> getByType(@RequestParam String type, HttpServletResponse response){
-        LOG.info("method: getBytype(). Trying get products with type {}", type);
+        LOG.info("method: getByType(). Trying get products with type {}", type);
         return productService.getProductByType(type);
+    }
+
+    @GetMapping("/status")
+    public List<Product> getByStatus(@RequestParam String status, HttpServletResponse response){
+        LOG.info("method: getByStatus(). Trying get products with status {}", status);
+        return productService.getProductByStatus(status);
     }
 
 
