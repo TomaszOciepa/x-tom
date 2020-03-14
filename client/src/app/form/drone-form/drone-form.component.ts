@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
+import { ProductTest } from 'src/app/model/productTest';
 
 @Component({
   selector: 'drone-form',
@@ -8,7 +10,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class DroneFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,) { }
+  constructor(private fb:FormBuilder, protected auth:AuthService) { 
+    this.auth.state.subscribe()
+  }
   
   editedDroneForm = this.fb.group({    
     
@@ -35,10 +39,23 @@ export class DroneFormComponent implements OnInit {
   })
 
   product
+  saved:boolean = false
+
+  updateProduct:ProductTest
 
   @Input("getProduct")
   set getId(product){
     this.product = product
+  }
+
+  @Output('saveProduct')
+  emiterSaveProduct = new EventEmitter()
+
+  saveProduct(){
+    console.log("zaktualizowany: "+this.editedDroneForm.value)
+    this.updateProduct = this.editedDroneForm.value
+    this.emiterSaveProduct.emit(this.updateProduct)
+    this.saved = true;
   }
 
   ngOnInit() {

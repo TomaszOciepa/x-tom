@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../client/model/user';
+import { User } from '../model/user';
 import { filter, map } from 'rxjs/internal/operators';
 
 @Injectable({

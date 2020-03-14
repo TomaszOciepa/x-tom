@@ -65,7 +65,7 @@ public class ConfigExampleData {
         Product drone = new Product("drone", "dj pro", "promocja", "kupuj lata szybko", "tak", 2999, 100, 20, 2000);
         productRepository.save(drone);
 
-        Product laptop = new Product("laptop", "dell", "polecamy", "biznesowy", "i7", "windows 10", "ssd", "nvidia", 4000, 16, 256, 17, 200);
+        Product laptop = new Product("laptop", "dell", "polecamy", "biznesowy", "intel core i7", "windows 10", "ssd", "dedykowana nvidia geforce", 4000, 16, 256, 17, 200);
         productRepository.save(laptop);
 
         Product smartphone = new Product("smartphone", "nokia", "promocja", "Najlepsza nokia wszechczasów", "android", 2000, 8, 64, 6, 100, 22);

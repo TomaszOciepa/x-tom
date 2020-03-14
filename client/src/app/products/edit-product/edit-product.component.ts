@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/products/products.service';
-import { ProductTest } from 'src/app/client/model/productTest';
+import { ProductTest } from 'src/app/model/productTest';
 
 @Component({
   selector: 'app-edit-product',
@@ -29,20 +29,17 @@ export class EditProductComponent implements OnInit {
    editedProduct:ProductTest
    typeProduct:string
    error:boolean
-   saved:boolean = false
 
-
-
-  // saveDrone(){
-  //   console.log(this.editDroneForm.value)
-  //   this.http.update(this.id, this.editDroneForm.value)
-  //   .subscribe(()=>{
-  //     console.log("Success")
-  //     this.saved = true
-  //   },err=>{
-  //     this.error = err.message
-  //   })
-  // }
+   saveProduct(product){
+       console.log(product)
+         this.http.update(this.id, product)
+    .subscribe(()=>{
+      console.log("Success")
+    },err=>{
+      this.error = err.message
+      console.log("error: "+this.error.valueOf)
+    })
+   }
 
   ngOnInit() {
       

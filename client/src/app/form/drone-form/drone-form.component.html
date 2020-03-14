@@ -1,11 +1,11 @@
-<!-- <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'"> -->
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
     <div class="form" *ngIf='product'>
-        <!-- <ng-container *ngIf="saved">
+        <ng-container *ngIf="saved">
             <div class="alert alert-success" role="alert">
                 Zmiany zostały zapisane
               </div>
-        </ng-container> -->
-        <form class="contact100-form" [formGroup]="editedDroneForm" (submit)="saveDrone()">
+        </ng-container>
+        <form class="contact100-form" [formGroup]="editedDroneForm" (submit)="saveProduct()">
             <span class="contact100-form-title">
                 Edycja drona
             </span>
@@ -58,12 +58,12 @@
                 <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]='product.product_description' formControlName="product_description"> </textarea>
             </div>
             
-            <!-- <input *ngIf="!saved" value="zapisz" type="submit" class="btn btn-danger">
-            <a *ngIf="saved" class="btn btn-success" [routerLink]="['/product', product.product_id]">powrót</a> -->
+            <input *ngIf="!saved" value="zapisz" type="submit" class="btn btn-danger">
+            <a *ngIf="saved" class="btn btn-success" [routerLink]="['/product', product.product_id]">powrót</a>
             
         </form>
     </div>
-<!-- </ng-container> -->
+</ng-container>
 
 
 

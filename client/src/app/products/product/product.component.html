@@ -1,6 +1,17 @@
-<product-by-id [getProduct]="product" (addToCart)="addtoCart($event)"></product-by-id>
+<!-- <product-by-id [getProduct]="product" (addToCart)="addtoCart($event)"></product-by-id> -->
 
+<ng-container *ngIf="productType == 'drone'">
+    <drone-by-id [getProduct]="product" (addToCart)="addtoCart($event)"></drone-by-id>
+</ng-container>
+
+<ng-container *ngIf="productType == 'laptop'">
+    <laptop-by-id [getProduct]="product" (addToCart)="addtoCart($event)"></laptop-by-id>
+</ng-container>
+
+<ng-container *ngIf="productType == 'smartphone'">
+    <smartphone-by-id [getProduct]="product" (addToCart)="addtoCart($event)"></smartphone-by-id>
+</ng-container>
 
 <div class="row">
-    <basket [addToCart]="productCart"></basket>
+    <cart [addToCart]="productCart"></cart>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { User } from '../client/model/user';
+import { User } from '../model/user';
 import { map, tap } from 'rxjs/internal/operators';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { JsonPipe } from '@angular/common';

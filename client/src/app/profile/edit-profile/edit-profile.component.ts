@@ -3,7 +3,7 @@ import { ProfileService } from '../profile.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
-import { User } from 'src/app/client/model/user';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-edit-user',
