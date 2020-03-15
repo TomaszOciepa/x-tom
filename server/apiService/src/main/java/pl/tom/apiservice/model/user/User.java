@@ -1,9 +1,6 @@
 package pl.tom.apiservice.model.user;
 
-import pl.tom.apiservice.model.Orders;
-import pl.tom.apiservice.model.drone.OrderDrone;
-import pl.tom.apiservice.model.laptop.OrderLaptop;
-import pl.tom.apiservice.model.smartphone.OrderSmartphone;
+import pl.tom.apiservice.model.orders.Orders;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -24,15 +21,6 @@ public class User {
     private String user_zipCode;
     private String user_city;
     private String user_street;
-
-//    @OneToMany(mappedBy = "user")
-//    Set<OrderDrone> orderDrone;
-//
-//    @OneToMany(mappedBy = "user")
-//    Set<OrderLaptop> orderLaptop;
-//
-//    @OneToMany(mappedBy = "user")
-//    Set<OrderSmartphone> orderSmartphone;
 
     @OneToMany(mappedBy = "user")
     Set<Orders> order;

@@ -14,7 +14,7 @@ export class LaptopFormComponent implements OnInit {
     this.auth.state.subscribe()
   }
   
-  editedLaptopForm = this.fb.group({    
+  productForm = this.fb.group({    
     
     product_type: this.fb.control('laptop'), 
     product_mark: this.fb.control('', [
@@ -39,6 +39,7 @@ export class LaptopFormComponent implements OnInit {
   })
 
   product
+  productType = "laptops"
   saved:boolean = false
 
   updateProduct:ProductTest
@@ -54,8 +55,8 @@ export class LaptopFormComponent implements OnInit {
   emiterSaveProduct = new EventEmitter()
 
   saveProduct(){
-    console.log("zaktualizowany: "+this.editedLaptopForm.value)
-    this.updateProduct = this.editedLaptopForm.value
+    console.log("zaktualizowany: "+this.productForm.value)
+    this.updateProduct = this.productForm.value
     this.changeProductMarkOnString()
     this.changeProductStatusOnString()
     this.emiterSaveProduct.emit(this.updateProduct)

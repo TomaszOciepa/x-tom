@@ -1,7 +1,6 @@
 package pl.tom.authservice.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name="PRODUCT")

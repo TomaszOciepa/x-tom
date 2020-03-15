@@ -1,11 +1,14 @@
 <ng-container *ngIf="typeProduct == 'drone'">
-    <drone-form [getProduct]="editedProduct" (saveProduct)="saveProduct($event)"></drone-form>
+    <h3>Edycja drona</h3>
+    <drone-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></drone-form>
 </ng-container>
 
 <ng-container *ngIf="typeProduct == 'laptop'">
-    <laptop-form [getProduct]="editedProduct" (saveProduct)="saveProduct($event)"></laptop-form>
+    <h3>Edycja laptopa</h3>
+    <laptop-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></laptop-form>
 </ng-container>
 
 <ng-container *ngIf="typeProduct == 'smartphone'">
-    <smartphone-form [getProduct]="editedProduct" (saveProduct)="saveProduct($event)"></smartphone-form>
+    <h3>Edycja smartfona</h3>
+    <smartphone-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></smartphone-form>
 </ng-container>

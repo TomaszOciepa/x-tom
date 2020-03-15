@@ -1,9 +1,9 @@
 package pl.tom.apiservice.service;
 
 import org.springframework.stereotype.Service;
-import pl.tom.apiservice.model.Orders;
-import pl.tom.apiservice.model.OrdersRepository;
-import pl.tom.apiservice.model.drone.Drone;
+import pl.tom.apiservice.model.orders.Orders;
+import pl.tom.apiservice.model.orders.OrdersRepository;
+
 
 import java.util.List;
 import java.util.Optional;

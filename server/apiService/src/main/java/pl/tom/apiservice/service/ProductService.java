@@ -1,13 +1,9 @@
 package pl.tom.apiservice.service;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import pl.tom.apiservice.api.ProductRestController;
-import pl.tom.apiservice.model.Product;
-import pl.tom.apiservice.model.ProductRepository;
+import pl.tom.apiservice.model.product.Product;
+import pl.tom.apiservice.model.product.ProductRepository;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service

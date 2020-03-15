@@ -1,4 +1,4 @@
-package pl.tom.apiservice.model;
+package pl.tom.apiservice.model.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package pl.tom.apiservice.service.user;
+package pl.tom.apiservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.tom.apiservice.model.user.User;

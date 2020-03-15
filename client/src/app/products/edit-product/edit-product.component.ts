@@ -30,7 +30,7 @@ export class EditProductComponent implements OnInit {
    typeProduct:string
    error:boolean
 
-   saveProduct(product){
+   updateProduct(product){
        console.log(product)
          this.http.update(this.id, product)
     .subscribe(()=>{

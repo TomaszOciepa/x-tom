@@ -1,21 +1,11 @@
 package pl.tom.apiservice.service;
 
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import pl.tom.apiservice.model.Product;
-import pl.tom.apiservice.model.ProductRepository;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-
-import static org.mockito.BDDMockito.given;
+import pl.tom.apiservice.model.product.ProductRepository;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ProductServiceTest {

@@ -1,129 +1,247 @@
 <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-
-    <div class="form" *ngIf='product'>
+        <div class="form">
         <ng-container *ngIf="saved">
         <div class="alert alert-success" role="alert" *ngIf="saved">
-            Zmiany zostały zapisane
+            Zapisano!!!
           </div>
         </ng-container>
         
-        <form class="contact100-form" [formGroup]="editedLaptopForm" (submit)="saveProduct()">
-            <span class="contact100-form-title">
-                Edycja laptopa
-            </span>
+        <form class="contact100-form" [formGroup]="productForm" (submit)="saveProduct()">
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Name">Producent</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_mark" formControlName="product_mark">
-                    <option value="1">Lenovo</option>
-                    <option value="2">HP</option>
-                    <option value="3">Dell</option>
-                    <option value="4">ASUS</option>
-                    <option value="5">ACER</option>
-                    <option value="6">MSI</option>
-                    <option value="7">APPLE</option>
-                    <option value="8">HUAWEI</option>
-                    <option>brak</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_mark" formControlName="product_mark">
+                        <option value="1">Lenovo</option>
+                        <option value="2">HP</option>
+                        <option value="3">Dell</option>
+                        <option value="4">ASUS</option>
+                        <option value="5">ACER</option>
+                        <option value="6">MSI</option>
+                        <option value="7">APPLE</option>
+                        <option value="8">HUAWEI</option>
+                        <option>brak</option>
+                    </select>
+                </ng-container>
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_mark">
+                        <option value="1">Lenovo</option>
+                        <option value="2">HP</option>
+                        <option value="3">Dell</option>
+                        <option value="4">ASUS</option>
+                        <option value="5">ACER</option>
+                        <option value="6">MSI</option>
+                        <option value="7">APPLE</option>
+                        <option value="8">HUAWEI</option>
+                        <option>brak</option>
+                    </select>
+                </ng-container>
             </div>
             
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Price">Cena</label>
-                <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_price" formControlName="product_price">
+                <ng-container *ngIf="product">
+                    <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_price" formControlName="product_price">
+                </ng-container>
+                
+                <ng-container *ngIf="!product">
+                    <input class="input100" type="text" class="form-control" formControlName="product_price">
+                </ng-container>
             </div>
     
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Status">Status</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_status" formControlName="product_status">
-                    <option value="1">Promocja</option>
-                    <option value="2">Wyprzedaż</option>
-                    <option value="3">Nowość</option>
-                    <option value="4">Polecamy</option>
-                    <option value="5">Przedłużona gwarancja</option>
-                    <option>brak</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_status" formControlName="product_status">
+                        <option value="1">Promocja</option>
+                        <option value="2">Wyprzedaż</option>
+                        <option value="3">Nowość</option>
+                        <option value="4">Polecamy</option>
+                        <option value="5">Przedłużona gwarancja</option>
+                        <option>brak</option>
+                    </select>
+                </ng-container>
+
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_status">
+                        <option value="1">Promocja</option>
+                        <option value="2">Wyprzedaż</option>
+                        <option value="3">Nowość</option>
+                        <option value="4">Polecamy</option>
+                        <option value="5">Przedłużona gwarancja</option>
+                        <option>brak</option>
+                    </select>
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="System">System operacyjny</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_system" formControlName="product_system">
-                    <option value="windows 10">Windows 10</option>
-                    <option value="macOs">MacOS</option>
-                    <option value="ubuntu">Ubuntu</option>
-                    <option value="brak systemu">Brak systemu</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_system" formControlName="product_system">
+                        <option value="windows 10">Windows 10</option>
+                        <option value="macOs">MacOS</option>
+                        <option value="ubuntu">Ubuntu</option>
+                        <option value="brak systemu">Brak systemu</option>
+                    </select>
+                </ng-container>
+
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_system">
+                        <option value="windows 10">Windows 10</option>
+                        <option value="macOs">MacOS</option>
+                        <option value="ubuntu">Ubuntu</option>
+                        <option value="brak systemu">Brak systemu</option>
+                    </select>
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Processor">Processor</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_processor" formControlName="product_processor">
-                    <option value="intel core i3">Intel Core i3</option>
-                    <option value="intel core i5">Intel Core i5</option>
-                    <option value="intel core i7">Intel Core i7</option>
-                    <option value="intel core i9">Intel Core i9</option>
-                    <option value="intel pentium">Intel Pentium</option>
-                    <option value="amd ryzen 5">AMD Ryzen 5</option>
-                    <option value="amd ryzen 7">AMD Ryzen 7</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_processor" formControlName="product_processor">
+                        <option value="intel core i3">Intel Core i3</option>
+                        <option value="intel core i5">Intel Core i5</option>
+                        <option value="intel core i7">Intel Core i7</option>
+                        <option value="intel core i9">Intel Core i9</option>
+                        <option value="intel pentium">Intel Pentium</option>
+                        <option value="amd ryzen 5">AMD Ryzen 5</option>
+                        <option value="amd ryzen 7">AMD Ryzen 7</option>
+                    </select>
+                </ng-container>
+
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_processor">
+                        <option value="intel core i3">Intel Core i3</option>
+                        <option value="intel core i5">Intel Core i5</option>
+                        <option value="intel core i7">Intel Core i7</option>
+                        <option value="intel core i9">Intel Core i9</option>
+                        <option value="intel pentium">Intel Pentium</option>
+                        <option value="amd ryzen 5">AMD Ryzen 5</option>
+                        <option value="amd ryzen 7">AMD Ryzen 7</option>
+                    </select>
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Ram">Pamięć RAM</label>
-                <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_ram_size" formControlName="product_ram_size">
+                <ng-container *ngIf="product">
+                    <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_ram_size" formControlName="product_ram_size">
+                </ng-container>
+                
+                <ng-container *ngIf="!product">
+                    <input class="input100" type="text" class="form-control" formControlName="product_ram_size">
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="DyskType">Rodzaj dysku</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_disc_type" formControlName="product_disc_type">
-                    <option value="ssd">SSD</option>
-                    <option value="hdd">HDD</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_disc_type" formControlName="product_disc_type">
+                        <option value="ssd">SSD</option>
+                        <option value="hdd">HDD</option>
+                    </select>
+                </ng-container>
+                
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_disc_type">
+                        <option value="ssd">SSD</option>
+                        <option value="hdd">HDD</option>
+                    </select>
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="DyskSize">Rozmiar dysku</label>
-                <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_disc_size" formControlName="product_disc_size">
+                <ng-container *ngIf="product">
+                    <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_disc_size" formControlName="product_disc_size">
+                </ng-container>
+                <ng-container *ngIf="!product">
+                    <input class="input100" type="text" class="form-control" formControlName="product_disc_size">
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="GraphicsCard">Karta graficzna</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_graphics_card" formControlName="product_graphics_card">
-                    <option value="zintegrowana intel">Zintegrowana Intel</option>
-                    <option value="dedykowana nvidia geforce">DEDYKOWANA NVIDIA Geforce</option>
-                    <option value="zintegrowana amd">Zintegrowana AMD</option>
-                    <option value="dedykowana amd">DEDYKOWANA AMD</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_graphics_card" formControlName="product_graphics_card">
+                        <option value="zintegrowana intel">Zintegrowana Intel</option>
+                        <option value="dedykowana nvidia geforce">DEDYKOWANA NVIDIA Geforce</option>
+                        <option value="zintegrowana amd">Zintegrowana AMD</option>
+                        <option value="dedykowana amd">DEDYKOWANA AMD</option>
+                    </select>
+                </ng-container>
+                
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_graphics_card">
+                        <option value="zintegrowana intel">Zintegrowana Intel</option>
+                        <option value="dedykowana nvidia geforce">DEDYKOWANA NVIDIA Geforce</option>
+                        <option value="zintegrowana amd">Zintegrowana AMD</option>
+                        <option value="dedykowana amd">DEDYKOWANA AMD</option>
+                    </select>
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="ScreenDiagonal">Przekątna ekranu</label>
-                <select class="input100" class="form-control" [(ngModel)]="product.product_screen_diagonal" formControlName="product_screen_diagonal">
-                    <option>11.6</option>
-                    <option>12.5</option>
-                    <option>13.3</option>
-                    <option>13.9</option>
-                    <option>14.0</option>
-                    <option>14.1</option>
-                    <option>15.0</option>
-                    <option>15.4</option>
-                    <option>15.6</option>
-                    <option>16</option>
-                    <option>17</option>
-                    <option>17.3</option>
-                </select>
+                <ng-container *ngIf="product">
+                    <select class="input100" class="form-control" [(ngModel)]="product.product_screen_diagonal" formControlName="product_screen_diagonal">
+                        <option>11.6</option>
+                        <option>12.5</option>
+                        <option>13.3</option>
+                        <option>13.9</option>
+                        <option>14.0</option>
+                        <option>14.1</option>
+                        <option>15.0</option>
+                        <option>15.4</option>
+                        <option>15.6</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>17.3</option>
+                    </select>
+                </ng-container>
+
+                <ng-container *ngIf="!product">
+                    <select class="input100" class="form-control" formControlName="product_screen_diagonal">
+                        <option>11.6</option>
+                        <option>12.5</option>
+                        <option>13.3</option>
+                        <option>13.9</option>
+                        <option>14.0</option>
+                        <option>14.1</option>
+                        <option>15.0</option>
+                        <option>15.4</option>
+                        <option>15.6</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>17.3</option>
+                    </select>
+                </ng-container>
             </div>
         
             <div class="form-group wrap-input100 rs1-wrap-input100">
                 <label class="label-input100" for="Amount">Dostępna ilość</label>
-                <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_amount_available" formControlName="product_amount_available">
+                <ng-container *ngIf="product">
+                    <input class="input100" type="text" class="form-control" [(ngModel)]="product.product_amount_available" formControlName="product_amount_available">
+                </ng-container>
+                
+                <ng-container *ngIf="!product">
+                    <input class="input100" type="text" class="form-control" formControlName="product_amount_available">
+                </ng-container>
             </div>
             
             <div class="form-group wrap-input100">
                 <label class="label-input100" for="Descripton">Opis</label>
-                <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]="product.product_description" formControlName="product_description"> </textarea>
+                <ng-container *ngIf="product">
+                    <textarea class="input100" rows="4" cols="50" class="form-control" [(ngModel)]="product.product_description" formControlName="product_description"> </textarea>
+                </ng-container>
+                
+                <ng-container *ngIf="!product">
+                    <textarea class="input100" rows="4" cols="50" class="form-control" formControlName="product_description"> </textarea>
+                </ng-container>
             </div>
     
             <input *ngIf="!saved" type="submit" class="btn btn-danger" value="zapisz">
-            <a *ngIf="saved" class="btn btn-success" [routerLink]="['/product', product.product_id]">powrót</a>
+            <a *ngIf="saved && product" class="btn btn-success" [routerLink]="['/product', product.product_id]">powrót</a>
+            <a *ngIf="saved && !product" class="btn btn-success" [routerLink]="['/products', productType]">powrót</a>
         </form>
         
     </div>

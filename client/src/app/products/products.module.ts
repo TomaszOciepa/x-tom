@@ -8,10 +8,7 @@ import { DronesComponent } from './products/drones/drones.component';
 import { AuthModule } from '../auth/auth.module';
 
 import { SmartphonesComponent } from './products/smartphones/smartphones.component';
-import { AddDroneComponent } from './products/drones/add-drone/add-drone.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddLaptopComponent } from './products/laptops/add-laptop/add-laptop.component';
-import { AddSmartphoneComponent } from './products/smartphones/add-smartphone/add-smartphone.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { FormModule } from '../form/form.module';
@@ -19,10 +16,11 @@ import { LaptopsComponent } from './products/laptops/laptops.component';
 import { DroneByIdComponent } from './product/drone-by-id/drone-by-id.component';
 import { LaptopByIdComponent } from './product/laptop-by-id/laptop-by-id.component';
 import { SmartphoneByIdComponent } from './product/smartphone-by-id/smartphone-by-id.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent, DronesComponent, LaptopsComponent,
-     SmartphonesComponent, AddDroneComponent, AddLaptopComponent, AddSmartphoneComponent, DeleteProductComponent, EditProductComponent, DroneByIdComponent, LaptopByIdComponent, SmartphoneByIdComponent,
+     SmartphonesComponent, DeleteProductComponent, EditProductComponent, DroneByIdComponent, LaptopByIdComponent, SmartphoneByIdComponent, AddProductComponent,
     ],
   imports: [
     ReactiveFormsModule,

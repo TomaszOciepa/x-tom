@@ -6,12 +6,8 @@ import { FormRoutingModule } from './form.routing.module';
 import { LaptopFormComponent } from './laptop-form/laptop-form.component';
 import { SmartphoneFormComponent } from './smartphone-form/smartphone-form.component';
 
-
-
-
-
 @NgModule({
-  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent],
+  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent,],
   imports: [
     CommonModule,
     ReactiveFormsModule,

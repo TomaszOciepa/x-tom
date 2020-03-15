@@ -4,9 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.tom.apiservice.model.Orders;
-import pl.tom.apiservice.model.OrdersRepository;
-import pl.tom.apiservice.model.drone.Drone;
+import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.service.OrdersService;
 
 import javax.servlet.http.HttpServletResponse;

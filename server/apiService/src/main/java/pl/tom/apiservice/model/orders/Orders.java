@@ -1,5 +1,6 @@
-package pl.tom.apiservice.model;
+package pl.tom.apiservice.model.orders;
 
+import pl.tom.apiservice.model.product.Product;
 import pl.tom.apiservice.model.user.User;
 
 import javax.persistence.*;

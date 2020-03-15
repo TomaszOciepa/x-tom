@@ -1,5 +1,5 @@
 <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-    <a class="btn btn-secondary" [routerLink]="['/add-laptop']">Dodaj laptop</a>
+    <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
 </ng-container>
 <div class="row">
     <div *ngFor="let laptop of laptops">

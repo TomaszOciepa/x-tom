@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.tom.apiservice.model.Product;
+import pl.tom.apiservice.model.product.Product;
 import pl.tom.apiservice.service.ProductService;
 
 import javax.servlet.http.HttpServletResponse;

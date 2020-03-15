@@ -1,4 +1,6 @@
-package pl.tom.apiservice.model;
+package pl.tom.apiservice.model.product;
+
+import pl.tom.apiservice.model.orders.Orders;
 
 import javax.persistence.*;
 import java.util.Set;

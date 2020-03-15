@@ -14,7 +14,7 @@ export class DroneFormComponent implements OnInit {
     this.auth.state.subscribe()
   }
   
-  editedDroneForm = this.fb.group({    
+  productForm = this.fb.group({    
     
     product_type: this.fb.control('drone'), 
     product_mark: this.fb.control('', [
@@ -40,7 +40,7 @@ export class DroneFormComponent implements OnInit {
 
   product
   saved:boolean = false
-
+  productType = "drones"
   updateProduct:ProductTest
 
   @Input("getProduct")
@@ -52,8 +52,8 @@ export class DroneFormComponent implements OnInit {
   emiterSaveProduct = new EventEmitter()
 
   saveProduct(){
-    console.log("zaktualizowany: "+this.editedDroneForm.value)
-    this.updateProduct = this.editedDroneForm.value
+    console.log("zaktualizowany: "+this.productForm.value)
+    this.updateProduct = this.productForm.value
     this.emiterSaveProduct.emit(this.updateProduct)
     this.saved = true;
   }
