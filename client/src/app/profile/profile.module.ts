@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileRoutingModule } from './profile.routing.module';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormModule } from '../form/form.module';
 
 
 @NgModule({
   declarations: [ProfileComponent, ProfileBarComponent, EditProfileComponent],
   imports: [
     CommonModule,
+    FormModule,
     HttpClientModule,
     ReactiveFormsModule,
     ProfileRoutingModule,

@@ -7,7 +7,7 @@ import { CartRoutingModule } from './cart.routing.module';
   declarations: [CartComponent],
   imports: [
     CommonModule,
-    CartRoutingModule
+    CartRoutingModule,
   ],
   exports:[
     CartComponent

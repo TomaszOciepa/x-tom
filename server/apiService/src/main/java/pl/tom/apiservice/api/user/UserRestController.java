@@ -52,6 +52,12 @@ public class UserRestController {
         return userService.edit(id, userEdited);
     }
 
+    @PutMapping("role/{id}")
+    public Optional<User> editRole(@PathVariable(value = "id") Long id, @RequestBody User userEdited, HttpServletResponse response) {
+        LOG.info("method: editRole. Edit user");
+        return userService.editRole(id, userEdited);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable(value = "id") Long id, HttpServletResponse response){
         LOG.info("method: deleteById. Deleting user about id {}", id);

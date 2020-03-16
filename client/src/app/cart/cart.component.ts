@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Drone } from '../model/drone';
 import { ProductTest } from '../model/productTest';
+
 
 @Component({
   selector: 'cart',
@@ -19,10 +19,11 @@ export class CartComponent implements OnInit {
     }
     
   }
-
+  
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

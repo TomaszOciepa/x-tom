@@ -22,6 +22,10 @@ export class UsersService {
     return this.http.put<User>("http://localhost:8080/user/"+id, user)
   }
   
+  updateRole(id:number, user:Partial<User>){
+    return this.http.put<User>("http://localhost:8080/user/role/"+id, user)
+  }
+
   delete(id:number){
     return this.http.delete("http://localhost:8080/user/"+id)
   }

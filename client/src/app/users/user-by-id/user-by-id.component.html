@@ -1,8 +1,9 @@
 
 <ng-container *ngIf="user | async as user">
 
-    <ng-container *ngIf="auth.isAuthenticated">
+    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
         <a class="btn btn-info" [routerLink]="['/edit-user', user.user_id]">Edytuj</a>
+        <a class="btn btn-info" [routerLink]="['/role-user', user.user_id]">Uprawnienia</a>
         <a class="btn btn-danger" [routerLink]="['/delete-user', user.user_id]">Usuń</a>
         <dl class="row">
             <dt class="col-3">email</dt>

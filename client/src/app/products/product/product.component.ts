@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../products.service';
 import { ProductTest } from 'src/app/model/productTest';
 import { map, switchMap } from 'rxjs/operators';
+import { ProductTestList } from 'src/app/model/productTestList';
+import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Component({
   selector: 'app-product',
@@ -26,11 +28,19 @@ export class ProductComponent implements OnInit {
   id:number
   product:ProductTest
   productType:String
-  productCart:ProductTest
+  productCart:ProductTestList[] = []
   
   addtoCart(productCart){
-    this.productCart = productCart
-    console.log("właśnie dodałem: "+this.productCart.product_mark)
+    this.productCart.push(productCart)
+    console.log("właśnie dodałem: "+ JSON.stringify(this.productCart))
+    if(localStorage.getItem('products') == null){
+      localStorage.setItem('products', JSON.stringify(this.productCart))
+    }else{
+      localStorage.setItem('products', JSON.stringify(this.productCart))
+      console.log("wielkość :D "+localStorage.length)
+      this.productCart = localStorage.getItem['products']
+    }
+    
   }
 
   ngOnInit() {

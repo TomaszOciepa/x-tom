@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/model/user';
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.css']
+  selector: 'app-role-user',
+  templateUrl: './role-user.component.html',
+  styleUrls: ['./role-user.component.css']
 })
-export class EditUserComponent implements OnInit {
+export class RoleUserComponent implements OnInit {
 
   constructor(private http:UsersService, protected auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
@@ -31,7 +31,7 @@ export class EditUserComponent implements OnInit {
 
    updateUser(user){
     console.log(user)
-    this.http.update(this.id, user)
+    this.http.updateRole(this.id, user)
     .subscribe(()=>{
       console.log("Success")
     },err=>{
