@@ -1,11 +1,15 @@
 <h2>Koszyk</h2>
-
+<div style="margin-bottom: 10px;">
+    razem do zapłaty: {{cartSum}} zł
+    <button class="btn btn-success">zamów</button>
+</div>
 <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">Lp</th>
         <th scope="col">Produkt</th>
         <th scope="col">Cena</th>
+        <th scope="col">ilość</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -14,15 +18,8 @@
         <th scope="row">{{i+1}}</th>
         <td><a [routerLink]="['/product', product.product_id]">{{product.product_mark}}</a></td>
         <td>{{product.product_price}} zł</td>
+        <td>?   </td>
         <button class="btn btn-danger" (click)="deleteItems(i)">usuń</button>
       </tr>
     </tbody>
-    <tfoot>
-        <tr>
-          <th>razem</th>
-          <td></td>
-          <td>{{cartSum}} zł</td>
-          <td><button class="btn btn-success">zamów</button></td>
-        </tr>
-      </tfoot>
   </table>
