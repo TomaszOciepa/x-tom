@@ -1,9 +1,28 @@
 <h2>Koszyk</h2>
 
-<div *ngFor="let product of cartList" style="background-color: aqua;">
-    <ng-container *ngIf="product">
-        {{product.product_mark}}
-    </ng-container>
-</div>
-
-
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Lp</th>
+        <th scope="col">Produkt</th>
+        <th scope="col">Cena</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of cartList let i = index;">
+        <th scope="row">{{i+1}}</th>
+        <td><a [routerLink]="['/product', product.product_id]">{{product.product_mark}}</a></td>
+        <td>{{product.product_price}} zł</td>
+        <button class="btn btn-danger" (click)="deleteItems(i)">usuń</button>
+      </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+          <th>razem</th>
+          <td></td>
+          <td>{{cartSum}} zł</td>
+          <td><button class="btn btn-success">zamów</button></td>
+        </tr>
+      </tfoot>
+  </table>

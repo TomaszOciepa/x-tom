@@ -21,15 +21,10 @@ export class SmartphoneByIdComponent implements OnInit {
      this.product = product
    }
 
-   deleteDrone(id: number){
-    console.log("Usuwm product HAHAHA "+id)
-  }
-
   @Output('addToCart')
   emiterSetProduct = new EventEmitter()
 
   addToCart(product){
-    console.log("dodałem: "+product.product_id)
     this.emiterSetProduct.emit(product)
   }
 

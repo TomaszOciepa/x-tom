@@ -31,9 +31,7 @@ export class ProductComponent implements OnInit {
   productsCart:ProductTest
   
   addtoCart(selectedProduct:ProductTest){
-    console.log("dodaje: "+selectedProduct.product_mark)
     this.productsCart = selectedProduct
-    console.log("Lista: "+JSON.stringify(this.productsCart))
   }
 
   ngOnInit() {
