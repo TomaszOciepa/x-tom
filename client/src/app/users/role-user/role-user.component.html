@@ -1,2 +1,3 @@
-<p>role-user works!</p>
-<user-role-form [getUser]="editedUser" (saveUser)="updateUser($event)"></user-role-form>
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <user-role-form [getUser]="editedUser" (saveUser)="updateUser($event)"></user-role-form>
+</ng-container>

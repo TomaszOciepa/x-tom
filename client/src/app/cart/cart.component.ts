@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductTest } from '../model/productTest';
 
 
@@ -9,20 +9,30 @@ import { ProductTest } from '../model/productTest';
 })
 export class CartComponent implements OnInit {
 
-  product = []
+  cartList:ProductTest[] = []
 
   @Input("addToCart")
-  set setProduct(p:ProductTest){
-    this.product.push(p)
+  set setProduct(p){
     if(p){
-      console.log("dodany: "+p.product_mark)
+      this.cartList.push(p)
+    localStorage.setItem('products', JSON.stringify(this.cartList))
     }
     
   }
   
-  constructor() { }
+  constructor() { 
+
+  }
 
   ngOnInit() {
+    console.log('siema init cart')
+    
+    console.log("storage after: "+localStorage.getItem('products'))
+    if(localStorage.getItem('products') == null){
+      localStorage.setItem('products', JSON.stringify(this.cartList))
+    }
+    console.log("storage before: "+localStorage.getItem('products'))
+    this.cartList = JSON.parse(localStorage.getItem('products'))
     
   }
 

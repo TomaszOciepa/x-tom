@@ -28,19 +28,12 @@ export class ProductComponent implements OnInit {
   id:number
   product:ProductTest
   productType:String
-  productCart:ProductTestList[] = []
+  productsCart:ProductTest
   
-  addtoCart(productCart){
-    this.productCart.push(productCart)
-    console.log("właśnie dodałem: "+ JSON.stringify(this.productCart))
-    if(localStorage.getItem('products') == null){
-      localStorage.setItem('products', JSON.stringify(this.productCart))
-    }else{
-      localStorage.setItem('products', JSON.stringify(this.productCart))
-      console.log("wielkość :D "+localStorage.length)
-      this.productCart = localStorage.getItem['products']
-    }
-    
+  addtoCart(selectedProduct:ProductTest){
+    console.log("dodaje: "+selectedProduct.product_mark)
+    this.productsCart = selectedProduct
+    console.log("Lista: "+JSON.stringify(this.productsCart))
   }
 
   ngOnInit() {

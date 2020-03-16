@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { ProductTest } from 'src/app/model/productTest';
 
 @Component({
   selector: 'drone-by-id',
@@ -29,7 +30,7 @@ export class DroneByIdComponent implements OnInit {
   @Output('addToCart')
   emiterSetProduct = new EventEmitter()
 
-  addToCart(product){
+  addToCart(product:ProductTest){
     console.log("dodałem: "+product.product_id)
     this.emiterSetProduct.emit(product)
   }

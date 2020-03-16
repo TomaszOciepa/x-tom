@@ -1,8 +1,8 @@
 <h2>Koszyk</h2>
 
-<div *ngFor="let p of product">
-    <ng-container *ngIf="p">
-        {{p.product_mark}}
+<div *ngFor="let product of cartList" style="background-color: aqua;">
+    <ng-container *ngIf="product">
+        {{product.product_mark}}
     </ng-container>
 </div>
 
