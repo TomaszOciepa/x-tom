@@ -1,7 +1,6 @@
-
-<div *ngIf="profile">
-    <ng-container *ngIf="auth.isAuthenticated">
-        <a class="btn btn-secondary" [routerLink]="['/edit-profile', profile.user_id]">Edytuj</a>
+<ng-container *ngIf="auth.isAuthenticated">
+    <div *ngIf="profile">
+    <a class="btn btn-secondary" [routerLink]="['/edit-profile', profile.user_id]">Edytuj</a>
         <dl class="row">
             <dt class="col-3">email</dt>
             <dd class="col-9">{{profile.user_email}}</dd>
@@ -21,7 +20,13 @@
             <dd class="col-9">{{profile.user_city}}</dd>
             <dt class="col-3">ulica</dt>
             <dd class="col-9">{{profile.user_street}}</dd>
-        </dl>
-    </ng-container>
-    
+        </dl>    
 </div>
+</ng-container>
+
+<ng-container *ngIf="!auth.isAuthenticated">
+    <div class="alert alert-warning" role="alert">
+        <h3>Nie jesteś zalogowany</h3>
+        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+      </div>
+  </ng-container>

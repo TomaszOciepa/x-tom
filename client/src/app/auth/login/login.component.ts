@@ -16,7 +16,9 @@ export class LoginComponent implements OnInit {
 
   message:String
 
-  constructor(private fb:FormBuilder, private auth:AuthService) { }
+  constructor(private fb:FormBuilder, private auth:AuthService) { 
+    this.auth.state.subscribe()
+  }
 
   login(){
     this.auth.login(this.loginForm.value)

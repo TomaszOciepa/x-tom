@@ -17,3 +17,10 @@
         <a class="btn btn-success" [routerLink]="['/users']">Ok</a>
     </ng-container>
 </ng-container>
+
+<ng-container *ngIf="!auth.isAuthenticated">
+    <div class="alert alert-warning" role="alert">
+        <h3>Nie jesteś zalogowany</h3>
+        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+      </div>
+  </ng-container>

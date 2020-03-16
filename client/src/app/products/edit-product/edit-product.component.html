@@ -1,14 +1,23 @@
-<ng-container *ngIf="typeProduct == 'drone'">
-    <h3>Edycja drona</h3>
-    <drone-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></drone-form>
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <ng-container *ngIf="typeProduct == 'drone'">
+        <h3>Edycja drona</h3>
+        <drone-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></drone-form>
+    </ng-container>
+    
+    <ng-container *ngIf="typeProduct == 'laptop'">
+        <h3>Edycja laptopa</h3>
+        <laptop-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></laptop-form>
+    </ng-container>
+    
+    <ng-container *ngIf="typeProduct == 'smartphone'">
+        <h3>Edycja smartfona</h3>
+        <smartphone-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></smartphone-form>
+    </ng-container>
 </ng-container>
 
-<ng-container *ngIf="typeProduct == 'laptop'">
-    <h3>Edycja laptopa</h3>
-    <laptop-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></laptop-form>
-</ng-container>
-
-<ng-container *ngIf="typeProduct == 'smartphone'">
-    <h3>Edycja smartfona</h3>
-    <smartphone-form [getProduct]="editedProduct" (saveProduct)="updateProduct($event)"></smartphone-form>
-</ng-container>
+<ng-container *ngIf="!auth.isAuthenticated">
+    <div class="alert alert-warning" role="alert">
+        <h3>Nie jesteś zalogowany</h3>
+        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+      </div>
+  </ng-container>

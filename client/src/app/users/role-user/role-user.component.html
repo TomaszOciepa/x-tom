@@ -1,3 +1,10 @@
 <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
     <user-role-form [getUser]="editedUser" (saveUser)="updateUser($event)"></user-role-form>
 </ng-container>
+
+<ng-container *ngIf="!auth.isAuthenticated">
+    <div class="alert alert-warning" role="alert">
+        <h3>Nie jesteś zalogowany</h3>
+        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+      </div>
+  </ng-container>
