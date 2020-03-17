@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../products.service';
 import { ProductTest } from 'src/app/model/productTest';
-import { map, switchMap } from 'rxjs/operators';
-import { ProductTestList } from 'src/app/model/productTestList';
-import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
+import { CartItem } from 'src/app/model/cartItem';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product',
@@ -12,29 +11,35 @@ import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/rende
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-  constructor(private http:ProductsService, private route:ActivatedRoute) {
+  
+  constructor(protected auth:AuthService,private http:ProductsService, private route:ActivatedRoute) {
 
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('product_id')
     })
-
+    
     this.http.getById(this.id).subscribe(response =>{
       this.product = response
       this.productType = response.product_type
     })
+
    }
-  
-  id:number
-  product:ProductTest
-  productType:String
-  productsCart:ProductTest
-  
-  addtoCart(selectedProduct:ProductTest){
-    this.productsCart = selectedProduct
+
+   ngOnInit() {
+    if(localStorage.getItem('products') == null){
+      localStorage.setItem('products', JSON.stringify(this.cartList))
+    }
+    this.cartList = JSON.parse(localStorage.getItem('products'))
   }
 
-  ngOnInit() {
+  id:number
+  product:ProductTest
+  productType:String  
+  cartList:CartItem[] = []
+
+  addtoCart(selectedProduct:CartItem){
+    this.cartList.push(selectedProduct)
+    localStorage.setItem('products', JSON.stringify(this.cartList))
   }
 
 }

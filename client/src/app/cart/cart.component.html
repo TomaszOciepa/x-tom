@@ -1,25 +1,34 @@
 <h2>Koszyk</h2>
-<div style="margin-bottom: 10px;">
-    razem do zapłaty: {{cartSum}} zł
-    <button class="btn btn-success">zamów</button>
-</div>
+<ng-container *ngIf="!isEmpty">
+  <button class="btn btn-danger" (click)="removeCartInLocalStorage()">usuń wszystko</button>
 <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">Lp</th>
-        <th scope="col">Produkt</th>
-        <th scope="col">Cena</th>
+        <th scope="col">lp</th>
+        <th scope="col">produkt</th>
+        <th scope="col">cena</th>
         <th scope="col">ilość</th>
+        <th scope="col">razem</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let product of cartList let i = index;">
         <th scope="row">{{i+1}}</th>
-        <td><a [routerLink]="['/product', product.product_id]">{{product.product_mark}}</a></td>
-        <td>{{product.product_price}} zł</td>
-        <td>?   </td>
-        <button class="btn btn-danger" (click)="deleteItems(i)">usuń</button>
+        <td><a [routerLink]="['/product', product.product.product_id]">{{product.product.product_mark}}</a></td>
+        <td>{{product.product.product_price}} zł</td>
+        <td>{{product.amount}}</td>
+        <td>{{product.product.product_price * product.amount}} zł</td>
+        <td><button class="btn btn-danger" (click)="deleteItems(i)">usuń</button></td>
       </tr>
     </tbody>
   </table>
+  <div style="margin-bottom: 10px;">
+    razem do zapłaty: {{cartSum}} zł
+    <button class="btn btn-success">zamów</button>
+</div>
+</ng-container>
+
+<ng-container *ngIf="isEmpty">
+  <h2>Pusty</h2>
+</ng-container>
