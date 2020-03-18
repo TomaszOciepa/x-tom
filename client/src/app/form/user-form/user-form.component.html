@@ -1,0 +1,94 @@
+    <div class="form">
+        <ng-container *ngIf="saved">
+            <div class="alert alert-success" role="alert">
+                Zaoisano!!!
+              </div>
+        </ng-container>
+        <div class="alert alert-danger" *ngIf="message">{{message}}</div>
+        <form class="contact100-form" [formGroup]="userForm" (submit)="saveUser()">
+            <span class="contact100-form-title">
+                Edycja użytkownika
+            </span>
+            
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="FirstName">Imię</label>
+                <ng-container *ngIf="user">
+                    <input type="text" class="form-control" [(ngModel)]="user.user_firstName" formControlName="user_firstName">
+                </ng-container>
+                <ng-container *ngIf="!user">
+                    <input type="text" class="form-control" formControlName="user_firstName">
+                </ng-container>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="LastName">Nazwisko</label>
+                <ng-container *ngIf="user">
+                    <input type="text" class="form-control" [(ngModel)]="user.user_lastName" formControlName="user_lastName">
+                </ng-container>
+                <ng-container *ngIf="!user">
+                    <input type="text" class="form-control" formControlName="user_lastName">
+                </ng-container>
+            </div>
+            
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Name">Email</label>
+                <ng-container *ngIf="user">
+                    <input class="input100" type="text" class="form-control" [(ngModel)]="user.user_email" formControlName="user_email">
+                </ng-container>
+                
+                <ng-container *ngIf="!user">
+                    <input class="input100" type="text" class="form-control" formControlName="user_email">
+                </ng-container>
+            </div>
+
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="PhoneNumber">Numer telefonu</label>
+                <ng-container *ngIf="user">
+                    <input type="text" class="form-control" [(ngModel)]="user.user_phoneNumber" formControlName="user_phoneNumber">
+                </ng-container>
+                
+                <ng-container *ngIf="!user">
+                    <input type="text" class="form-control" formControlName="user_phoneNumber">
+                </ng-container>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="ZipCode">Kod pocztowy</label>
+                <ng-container *ngIf="user">
+                    <input type="text" class="form-control" [(ngModel)]="user.user_zipCode" formControlName="user_zipCode">
+                </ng-container>
+                
+                <ng-container *ngIf="!user">
+                    <input type="text" class="form-control" formControlName="user_zipCode">
+                </ng-container>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="City">Miasto</label>
+                <ng-container *ngIf="user">
+                    <input type="text" class="form-control" [(ngModel)]="user.user_city" formControlName="user_city">
+                </ng-container>
+                <ng-container *ngIf="!user">
+                    <input type="text" class="form-control" formControlName="user_city">
+                </ng-container>
+            </div>
+        
+            <div class="form-group wrap-input100 rs1-wrap-input100">
+                <label class="label-input100" for="Street">Ulica</label>
+                <ng-container *ngIf="user">
+                    <input type="text" class="form-control" [(ngModel)]="user.user_street" formControlName="user_street">
+                </ng-container>
+                
+                <ng-container *ngIf="!user">
+                    <input type="text" class="form-control" formControlName="user_street">
+                </ng-container>
+            </div>
+
+            <input *ngIf="!saved" value="zapisz" type="submit"  class="btn btn-danger input100-submit">
+            <a *ngIf="saved && returnPath == 'user'"  class="btn btn-success input100-ok" [routerLink]="['/user', user.user_id]">powrót</a>
+            <a *ngIf="saved && returnPath == 'profile'"  class="btn btn-success input100-ok" [routerLink]="['/profile']">powrót</a>
+        </form>
+    </div>
+
+
+

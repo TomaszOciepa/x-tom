@@ -1,0 +1,24 @@
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
+</ng-container>
+
+<div class="row">
+<div *ngFor="let drone of drones">
+    <div class="col-4">
+        <div class="drone">
+            <a [routerLink]="['/product', drone.product_id]">
+                <div class="card" style="width: 12rem;">
+                    <h4 class="card-title">{{drone.product_mark}}</h4>
+                    <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="drone">
+                    <div class="card-body my-card-body">
+                        <p class="card-text">kamera: {{drone.product_camera}}</p>
+                        <p class="card-text">zasięg: {{drone.product_range}} m</p>
+                        <p class="card-text">czas pracy: {{drone.product_time_work}} min</p>
+                        <h5 class="card-text">{{drone.product_price}} zł</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</div>

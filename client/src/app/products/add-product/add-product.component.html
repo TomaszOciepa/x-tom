@@ -1,0 +1,36 @@
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+    <form class="contact100-form" [formGroup]="selectProductForm">        
+        <div class="form-group wrap-input100 rs1-wrap-input100">
+            <label class="label-input100" for="Status">Wybierz typ produktu, który chcesz dodać:</label>
+            <select class="form-control" ngModel formControlName="product_type">
+                <option value="drone">Dron</option>
+                <option value="laptop">Laptop</option>
+                <option value="smartphone">Smartphone</option>
+            </select>
+        </div>
+    </form>
+
+
+<ng-container *ngIf="selectProductForm.value.product_type == 'drone'">
+    <p>Dodawanie drona</p>
+    <drone-form (saveProduct)="addProduct($event)"></drone-form>
+</ng-container>
+
+<ng-container *ngIf="selectProductForm.value.product_type == 'laptop'">
+    <p>Dodawanie laptopa</p>
+    <laptop-form (saveProduct)="addProduct($event)"></laptop-form>
+</ng-container>
+
+<ng-container *ngIf="selectProductForm.value.product_type == 'smartphone'">
+    <p>Dodawanie smartfona</p>
+    <smartphone-form (saveProduct)="addProduct($event)"></smartphone-form>
+</ng-container>
+
+</ng-container>
+
+<ng-container *ngIf="!auth.isAuthenticated">
+    <div class="alert alert-warning" role="alert">
+        <h3>Nie jesteś zalogowany</h3>
+        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+      </div>
+  </ng-container>

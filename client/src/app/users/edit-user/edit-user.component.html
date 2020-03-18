@@ -1,63 +1,10 @@
 <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-    <div class="form" *ngIf='editedUser'>
-        <ng-container *ngIf="saved">
-            <div class="alert alert-success" role="alert">
-                Zmiany zostały zapisane
-              </div>
-        </ng-container>
-        <div class="alert alert-danger" *ngIf="message">{{message}}</div>
-        <form class="contact100-form" [formGroup]="editUserForm" (submit)="saveUser()">
-            <span class="contact100-form-title">
-                Edycja użytkownika
-            </span>
-            
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="FirstName">Imię</label>
-                <input type="text" class="form-control" [(ngModel)]="editedUser.user_firstName" formControlName="user_firstName">
-            </div>
-        
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="LastName">Nazwisko</label>
-                <input type="text" class="form-control" [(ngModel)]="editedUser.user_lastName" formControlName="user_lastName">
-            </div>
-            
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="Name">Email</label>
-                <input class="input100" type="text" class="form-control" [(ngModel)]="editedUser.user_email" formControlName="user_email">
-            </div>
-
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="PhoneNumber">Numer telefonu</label>
-                <input type="text" class="form-control" [(ngModel)]="editedUser.user_phoneNumber" formControlName="user_phoneNumber">
-            </div>
-        
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="ZipCode">Kod pocztowy</label>
-                <input type="text" class="form-control" [(ngModel)]="editedUser.user_zipCode" formControlName="user_zipCode">
-            </div>
-        
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="City">Miasto</label>
-                <input type="text" class="form-control" [(ngModel)]="editedUser.user_city" formControlName="user_city">
-            </div>
-        
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="Street">Ulica</label>
-                <input type="text" class="form-control" [(ngModel)]="editedUser.user_street" formControlName="user_street">
-            </div>
-
-            <div class="form-group wrap-input100 rs1-wrap-input100">
-                <label class="label-input100" for="role">Uprawnienia</label>
-                <select class="form-control" [(ngModel)]='editedUser.user_role' formControlName="user_role" required>
-                    <option>ADMIN</option>
-                    <option>USER</option>
-                </select>
-            </div>
-
-            <input *ngIf="!saved" value="zapisz" type="submit"  class="btn btn-danger input100-submit">
-            <a *ngIf="saved"  class="btn btn-success input100-ok" [routerLink]="['/user', editedUser.user_id]">powrót</a>
-            
-        </form>
-    </div>
+    <user-form [getPath]="returnPath" [getUser]="editedUser" (saveUser)="updateUser($event)"></user-form>
 </ng-container>
 
+<ng-container *ngIf="!auth.isAuthenticated">
+    <div class="alert alert-warning" role="alert">
+        <h3>Nie jesteś zalogowany</h3>
+        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+      </div>
+  </ng-container>

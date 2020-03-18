@@ -1,5 +1,5 @@
-
-<table class="table table-striped">
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">lp</th>
@@ -19,3 +19,11 @@
       </tr>
     </tbody>
   </table>
+</ng-container>
+
+<ng-container *ngIf="!auth.isAuthenticated">
+  <div class="alert alert-warning" role="alert">
+      <h3>Nie jesteś zalogowany</h3>
+      <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+    </div>
+</ng-container>

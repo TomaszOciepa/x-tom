@@ -25,10 +25,18 @@ public class ProductService {
         return repo.findById(id);
     }
 
-    public List<Product> getByDescription(String query) {
-        List<Product> allProducts = repo.findAll();
-
-        return allProducts.stream().filter(product -> product.getDescription().contains(query)).collect(Collectors.toList());
+    public List<Product> getProductByType(String type) {
+        return repo.getProductByType(type);
     }
+
+    public List<Product> getProductByStatus(String status) {
+        return repo.getProductByStatus(status);
+    }
+
+//    public List<Product> getByDescription(String query) {
+//        List<Product> allProducts = repo.findAll();
+//
+//        return allProducts.stream().filter(product -> product.getDescription().contains(query)).collect(Collectors.toList());
+//    }
 
 }

@@ -4,6 +4,7 @@ import { UsersComponent } from './users/users.component';
 import { UserByIdComponent } from './user-by-id/user-by-id.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { RoleUserComponent } from './role-user/role-user.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'edit-user/:user_id',
     component: EditUserComponent
+  },
+  {
+    path: 'role-user/:user_id',
+    component: RoleUserComponent
   },
   {
     path: 'delete-user/:user_id',

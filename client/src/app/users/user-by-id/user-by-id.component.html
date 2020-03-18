@@ -1,28 +1,36 @@
 
-<ng-container *ngIf="user | async as user">
 
-    <ng-container *ngIf="auth.isAuthenticated">
-        <a class="btn btn-info" [routerLink]="['/edit-user', user.user_id]">Edytuj</a>
-        <a class="btn btn-danger" [routerLink]="['/delete-user', user.user_id]">Usuń</a>
-        <dl class="row">
-            <dt class="col-3">email</dt>
-            <dd class="col-9">{{user.user_email}}</dd>
-            <dt class="col-3">role</dt>
-            <dd class="col-9">{{user.user_role}}</dd>
-            <dt class="col-3">imię</dt>
-            <dd class="col-9">{{user.user_firstName}}</dd>
-            <dt class="col-3">nazwisko</dt>
-            <dd class="col-9">{{user.user_lastName}}</dd>
-            <dt class="col-3">numer tel</dt>
-            <dd class="col-9">{{user.user_phoneNumber}}</dd>
-            <dt class="col-3">kod pocztowy</dt>
-            <dd class="col-9">{{user.user_zipCode}}</dd>
-            <dt class="col-3">miasto</dt>
-            <dd class="col-9">{{user.user_city}}</dd>
-            <dt class="col-3">ulica</dt>
-            <dd class="col-9">{{user.user_street}}</dd>
-        </dl>
+
+    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+        <ng-container *ngIf="user | async as user">
+            <a class="btn btn-info" [routerLink]="['/edit-user', user.user_id]">Edytuj</a>
+            <a class="btn btn-info" [routerLink]="['/role-user', user.user_id]">Uprawnienia</a>
+            <a class="btn btn-danger" [routerLink]="['/delete-user', user.user_id]">Usuń</a>
+            <dl class="row">
+                <dt class="col-3">email</dt>
+                <dd class="col-9">{{user.user_email}}</dd>
+                <dt class="col-3">role</dt>
+                <dd class="col-9">{{user.user_role}}</dd>
+                <dt class="col-3">imię</dt>
+                <dd class="col-9">{{user.user_firstName}}</dd>
+                <dt class="col-3">nazwisko</dt>
+                <dd class="col-9">{{user.user_lastName}}</dd>
+                <dt class="col-3">numer tel</dt>
+                <dd class="col-9">{{user.user_phoneNumber}}</dd>
+                <dt class="col-3">kod pocztowy</dt>
+                <dd class="col-9">{{user.user_zipCode}}</dd>
+                <dt class="col-3">miasto</dt>
+                <dd class="col-9">{{user.user_city}}</dd>
+                <dt class="col-3">ulica</dt>
+                <dd class="col-9">{{user.user_street}}</dd>
+            </dl>
+        </ng-container>
+
     </ng-container>
 
-
-</ng-container>
+    <ng-container *ngIf="!auth.isAuthenticated">
+        <div class="alert alert-warning" role="alert">
+            <h3>Nie jesteś zalogowany</h3>
+            <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+          </div>
+      </ng-container>

@@ -1,0 +1,72 @@
+<ng-container *ngIf="product">
+    <h3>Smartphone</h3>
+    <div class="row">
+        <div class="col-4">
+            <img src="../../../assets/img/drone22.png" class="card-img-top" alt="product">
+        </div>
+        <div class="col-8">
+            <div class="mark">
+                <h2>{{product.product_mark}}</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <div class="parameters">
+                        <p>dostępna ilość: {{product.product_amount_available}} szt</p>
+                        <p>opis: {{product.product_description}}</p>
+                        <p>kamera: {{product.product_camera}}</p>
+                        <p>zasięg: {{product.product_range}} m</p>
+                        <p>czas pracy: {{product.product_time_work}} min</p>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="basket">
+
+                    </div>
+                   <h3>{{product.product_price}} zł</h3>
+
+                   <div class="options">
+                       <ng-container *ngIf="cart">
+                        <form class="contact100-form" [formGroup]="addProductForm">        
+                            <div class="form-group wrap-input100 rs1-wrap-input100">
+                                <label>Ilość:</label>
+                                <select class="form-control" [(ngModel)]="amount" formControlName="amount">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                            <a  type="button" class="btn btn-secondary" (click)='addToCart(product)'>Dodaj do koszyka</a>
+                        </form>
+                       </ng-container>
+                       <ng-container *ngIf="!cart">
+                            <div class="alert alert-success" role="alert">
+                                dodano!!!
+                              </div>
+                            <a class="btn btn-info" [routerLink]="['/koszyk']">przejdz do koszyka</a>
+                       </ng-container>
+                    
+                   </div>
+
+                   <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+                            <div class="options">
+                                <a class="btn btn-danger" [routerLink]="['/edit-product', product.product_id]">Edytuj</a>
+                            </div>
+                            <div class="options">
+                                <a class="btn btn-danger" [routerLink]="['/delete-product', product.product_id]">Usuń</a>
+                            </div>
+                   </ng-container>                   
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+
+
+
