@@ -1,6 +1,8 @@
 import { ProductTest } from './productTest';
+import { User } from './user';
 
 export interface CartItem{
-    product:ProductTest,
     amount:number
+    product:ProductTest,
+    user:User
 }

@@ -1,5 +1,6 @@
 package pl.tom.apiservice.model.user;
 
+import pl.tom.apiservice.model.cart.Cart;
 import pl.tom.apiservice.model.orders.Orders;
 
 import javax.persistence.*;
@@ -24,6 +25,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     Set<Orders> order;
+
+    @OneToMany(mappedBy = "user")
+    Set<Cart> cart;
 
     public User() {
     }

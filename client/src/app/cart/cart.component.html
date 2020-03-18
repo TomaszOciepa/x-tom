@@ -19,7 +19,17 @@
         <td>{{product.product.product_price}} zł</td>
         <td>{{product.amount}}</td>
         <td>{{product.product.product_price * product.amount}} zł</td>
-        <td><button class="btn btn-danger" (click)="deleteItems(i)">usuń</button></td>
+        <td>
+          <ng-container *ngIf="!auth.isAuthenticated">
+            <button class="btn btn-danger" (click)="deleteCartItemInLocalStorage(i)">usuń</button>
+          </ng-container>
+  
+          <ng-container *ngIf="auth.isAuthenticated">
+            <button class="btn btn-danger" (click)="deleteCartItemInDatabase(product.product.product_id, i)">usuń z bazy</button>
+          </ng-container>
+        </td>
+  
+        
       </tr>
     </tbody>
   </table>

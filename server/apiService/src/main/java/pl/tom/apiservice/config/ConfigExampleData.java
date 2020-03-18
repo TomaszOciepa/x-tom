@@ -6,6 +6,8 @@ import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import pl.tom.apiservice.model.cart.Cart;
+import pl.tom.apiservice.model.cart.CartRepository;
 import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.model.orders.OrdersRepository;
 import pl.tom.apiservice.model.product.Product;
@@ -26,12 +28,15 @@ public class ConfigExampleData {
 
     private OrdersRepository ordersRepository;
 
+    private CartRepository cartRepository;
+
     @Autowired
-    public ConfigExampleData(ProductRepository productRepository, PasswordEncoder passwordEncoder, UserRepository userRepository, OrdersRepository ordersRepository) {
+    public ConfigExampleData(ProductRepository productRepository, PasswordEncoder passwordEncoder, UserRepository userRepository, OrdersRepository ordersRepository, CartRepository cartRepository) {
         this.productRepository = productRepository;
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.ordersRepository = ordersRepository;
+        this.cartRepository = cartRepository;
     }
 
     @EventListener(ApplicationReadyEvent.class)
@@ -58,6 +63,14 @@ public class ConfigExampleData {
         Orders orders2 = new Orders(LocalDateTime.now(), "wysłano", 1, user, smartphone);
         ordersRepository.save(orders2);
 
+        Cart cart1 = new Cart(1, drone, root);
+        cartRepository.save(cart1);
+
+        Cart cart2 = new Cart(1, laptop, root);
+        cartRepository.save(cart2);
+
+        Cart cart3 = new Cart(2, smartphone, user);
+        cartRepository.save(cart3);
     }
 
 }

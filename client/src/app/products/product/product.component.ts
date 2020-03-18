@@ -4,6 +4,7 @@ import { ProductsService } from '../products.service';
 import { ProductTest } from 'src/app/model/productTest';
 import { CartItem } from 'src/app/model/cartItem';
 import { AuthService } from 'src/app/auth/auth.service';
+import { CartService } from 'src/app/cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -12,7 +13,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class ProductComponent implements OnInit {
   
-  constructor(protected auth:AuthService,private http:ProductsService, private route:ActivatedRoute) {
+  constructor(protected auth:AuthService, private http:ProductsService, private cartService:CartService, private route:ActivatedRoute) {
 
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('product_id')
@@ -29,7 +30,13 @@ export class ProductComponent implements OnInit {
     if(localStorage.getItem('products') == null){
       localStorage.setItem('products', JSON.stringify(this.cartList))
     }
-    this.cartList = JSON.parse(localStorage.getItem('products'))
+
+    if(this.auth.isAuthenticated){
+      this.getMyCartWithDatabase()
+    }else{
+      this.cartList = JSON.parse(localStorage.getItem('products'))
+      
+    }
   }
 
   id:number
@@ -40,6 +47,14 @@ export class ProductComponent implements OnInit {
   addtoCart(selectedProduct:CartItem){
     this.cartList.push(selectedProduct)
     localStorage.setItem('products', JSON.stringify(this.cartList))
+    if(this.auth.isAuthenticated){
+      this.auth.getCurrentUser()
+      this.cartService.setMyCartItem()
+    }
   }
 
+  getMyCartWithDatabase(){
+    this.cartService.getMyCartItems() // pobieram
+                                        // zapisuje do localStorage
+  }
 }

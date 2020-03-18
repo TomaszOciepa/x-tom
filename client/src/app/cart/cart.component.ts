@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CartItem } from '../model/cartItem';
+import { AuthService } from '../auth/auth.service';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'cart',
@@ -9,15 +11,24 @@ import { CartItem } from '../model/cartItem';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(protected auth:AuthService, private cartService:CartService ,private fb:FormBuilder) { 
+    this.auth.state.subscribe()
+  }
 
   ngOnInit() {
+    console.log("siema cart")
     if(localStorage.getItem('products') == null){
       localStorage.setItem('products', JSON.stringify(this.cartList))
     }
-    this.cartList = JSON.parse(localStorage.getItem('products'))
-    this.calculatePrice()
-    this.checkCartIsEmpty()
+
+    if(this.auth.isAuthenticated){
+      this.getMyCartWithDatabase()
+    }else{
+      this.cartList = JSON.parse(localStorage.getItem('products'))
+    }
+    
+      this.checkCartIsEmpty()
+      this.calculatePrice()
   }
   
   selectProductForm = this.fb.group({    
@@ -27,16 +38,6 @@ export class CartComponent implements OnInit {
   cartList:CartItem[] = []
   cartSum:number
   isEmpty:boolean
-
-  @Input("addToCart")
-  set setProduct(p:CartItem){
-    if(p){
-    this.cartList.push(p)
-    localStorage.setItem('products', JSON.stringify(this.cartList))
-    this.calculatePrice()
-    this.checkCartIsEmpty()
-    }  
-  }
 
   checkCartIsEmpty(){
     if(this.cartList.length > 0){
@@ -54,7 +55,7 @@ export class CartComponent implements OnInit {
     this.cartSum = sum
   }
 
-  deleteItems(id){
+  deleteCartItemInLocalStorage(id){
     delete this.cartList[id]
     var newFavorit =[]
     this.cartList.forEach((index)=>{
@@ -75,4 +76,13 @@ export class CartComponent implements OnInit {
     console.log("wyczyszczono koszyk :)")
   }
 
+  getMyCartWithDatabase(){
+    this.cartService.getMyCartItems() // pobieram
+                                        // zapisuje do localStorage
+  }
+
+  deleteCartItemInDatabase(idDatabase, idList){
+    this.cartService.deleteMyCartItem()
+    this.deleteCartItemInLocalStorage(idList)
+  }
 }

@@ -1,4 +1,4 @@
-package pl.tom.apiservice.api;
+package pl.tom.apiservice.api.orders;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
