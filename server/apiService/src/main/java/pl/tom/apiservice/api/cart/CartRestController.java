@@ -5,13 +5,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.tom.apiservice.model.cart.Cart;
-import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.service.CartService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/cart")
 public class CartRestController {
@@ -24,8 +23,8 @@ public class CartRestController {
         this.cartService = cartService;
     }
 
-    @GetMapping("/all")
-    public List<Cart> getCartByUserId(@RequestParam Long id, HttpServletResponse response){
+    @GetMapping("/{id}")
+    public List<Cart> getCartByUserId(@PathVariable(value = "id") Long id, HttpServletResponse response){
         LOG.info("method: getCartByUserId(). Trying get cart with user id {}", id);
         return cartService.getCartByUserId(id);
     }

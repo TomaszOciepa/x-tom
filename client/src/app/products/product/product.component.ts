@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../products.service';
 import { ProductTest } from 'src/app/model/productTest';
-import { CartItem } from 'src/app/model/cartItem';
 import { AuthService } from 'src/app/auth/auth.service';
 import { CartService } from 'src/app/cart/cart.service';
+import { CartItemLocalStorage } from 'src/app/model/cartItemLocalStorage';
+import { CartItemUser } from 'src/app/model/cartItemUser';
 
 @Component({
   selector: 'app-product',
@@ -28,33 +29,42 @@ export class ProductComponent implements OnInit {
 
    ngOnInit() {
     if(localStorage.getItem('products') == null){
-      localStorage.setItem('products', JSON.stringify(this.cartList))
-    }
-
-    if(this.auth.isAuthenticated){
-      this.getMyCartWithDatabase()
+      localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
     }else{
-      this.cartList = JSON.parse(localStorage.getItem('products'))
-      
+      this.cartLocalItemList = JSON.parse(localStorage.getItem('products'))  
     }
   }
 
+  error
   id:number
   product:ProductTest
   productType:String  
-  cartList:CartItem[] = []
+  cartLocalItemList:CartItemLocalStorage[] = []
+  
 
-  addtoCart(selectedProduct:CartItem){
-    this.cartList.push(selectedProduct)
-    localStorage.setItem('products', JSON.stringify(this.cartList))
+  cartUserItem:CartItemUser = {
+    cart_amount: 0,
+    product: this.product,
+    user: this.auth.getCurrentUser()
+  }
+
+  addtoCart(cartItem:CartItemLocalStorage){
+    
     if(this.auth.isAuthenticated){
-      this.auth.getCurrentUser()
-      this.cartService.setMyCartItem()
+      this.cartUserItem.cart_amount = cartItem.cart_amount
+      this.cartUserItem.product = cartItem.product
+      this.cartUserItem.user = this.auth.getCurrentUser()
+
+      this.cartService.setMyCartItem(this.cartUserItem).subscribe(()=>{
+      console.log("Success")   
+    },err=>{
+      this.error = err.message
+    })
+    }else{
+      this.cartLocalItemList.push(cartItem)
+      localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
     }
+    
   }
 
-  getMyCartWithDatabase(){
-    this.cartService.getMyCartItems() // pobieram
-                                        // zapisuje do localStorage
-  }
 }

@@ -1,6 +1,14 @@
 <h2>Koszyk</h2>
+{{cartItemUserList}}
 <ng-container *ngIf="!isEmpty">
-  <button class="btn btn-danger" (click)="removeCartInLocalStorage()">usuń wszystko</button>
+  <ng-container *ngIf="!auth.isAuthenticated">
+    <button class="btn btn-danger" (click)="removeCartInLocalStorage()">usuń wszystko</button>
+  </ng-container>
+  
+  <ng-container *ngIf="auth.isAuthenticated">
+    <button class="btn btn-danger" (click)="removeCartInDatabase()">wyczyść koszyk</button>
+  </ng-container>
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -13,19 +21,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of cartList let i = index;">
+      <tr *ngFor="let cartItem of cartLocalItemList let i = index;">
         <th scope="row">{{i+1}}</th>
-        <td><a [routerLink]="['/product', product.product.product_id]">{{product.product.product_mark}}</a></td>
-        <td>{{product.product.product_price}} zł</td>
-        <td>{{product.amount}}</td>
-        <td>{{product.product.product_price * product.amount}} zł</td>
+        <td><a [routerLink]="['/product', cartItem.product.product_id]">{{cartItem.product.product_mark}}</a></td>
+        <td>{{cartItem.product.product_price}} zł</td>
+        <td>{{cartItem.cart_amount}}</td>
+        <td>{{cartItem.product.product_price * cartItem.cart_amount}} zł</td>
         <td>
           <ng-container *ngIf="!auth.isAuthenticated">
             <button class="btn btn-danger" (click)="deleteCartItemInLocalStorage(i)">usuń</button>
           </ng-container>
   
           <ng-container *ngIf="auth.isAuthenticated">
-            <button class="btn btn-danger" (click)="deleteCartItemInDatabase(product.product.product_id, i)">usuń z bazy</button>
+            <button class="btn btn-danger" (click)="deleteCartItemInDatabase(cartItem.cart_id, i)">usuń</button>
           </ng-container>
         </td>
   

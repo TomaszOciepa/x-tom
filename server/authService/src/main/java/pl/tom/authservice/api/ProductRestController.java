@@ -8,7 +8,6 @@ import pl.tom.authservice.model.Product;
 import pl.tom.authservice.service.ProductService;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

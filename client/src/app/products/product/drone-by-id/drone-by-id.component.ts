@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ProductTest } from 'src/app/model/productTest';
 import { FormBuilder } from '@angular/forms';
-import { CartItem } from 'src/app/model/cartItem';
+import { CartItemLocalStorage } from 'src/app/model/cartItemLocalStorage';
 
 @Component({
   selector: 'drone-by-id',
@@ -22,9 +22,10 @@ export class DroneByIdComponent implements OnInit {
    cart = true
    amount:number = 1
 
-   cartItem:CartItem = {
+   cartItem:CartItemLocalStorage = {
+     cart_id: 0,
     product: this.product,
-    amount: 1  
+    cart_amount: 1  
   }
 
   addProductForm = this.fb.group({    
@@ -41,7 +42,7 @@ export class DroneByIdComponent implements OnInit {
 
   addToCart(product:ProductTest){
     this.cartItem.product = product
-    this.cartItem.amount = this.amount
+    this.cartItem.cart_amount = this.amount
     this.emiterSetProduct.emit(this.cartItem)
     this.cart = false
   }

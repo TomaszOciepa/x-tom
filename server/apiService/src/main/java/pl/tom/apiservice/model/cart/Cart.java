@@ -1,7 +1,5 @@
 package pl.tom.apiservice.model.cart;
 
-import ch.qos.logback.core.joran.action.Action;
-import ch.qos.logback.core.joran.action.NOPAction;
 import pl.tom.apiservice.model.product.Product;
 import pl.tom.apiservice.model.user.User;
 

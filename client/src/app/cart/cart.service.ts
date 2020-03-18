@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CartItemUser } from '../model/cartItemUser';
+import { CartItemLocalStorage } from '../model/cartItemLocalStorage';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +11,19 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
 
-  getMyCartItems(){
-    console.log("pobieram koszyk z bazy :)")
-  }
-  setMyCartItem(){
-    console.log("zapisuje pozycje z koszyka do bazy :)")
+  getMyCartItems(id:number){
+    return this.http.get<CartItemLocalStorage[]>("http://localhost:8080/cart/"+id)
   }
 
-  deleteMyCartItem(){
-    console.log("usunełem pozycje z koszyka w bazie :)")
+  setMyCartItem(cartItem:Partial<CartItemUser>){
+    return this.http.post<CartItemUser>("http://localhost:8080/cart/create", cartItem)
   }
 
-  deleteMyCart(){
-    console.log("usunełem koszyk z bazy :)")
+  deleteMyCartItem(id:number){
+    return this.http.delete("http://localhost:8080/cart/"+id)
+  }
+
+  deleteMyCart(id:number){
+    return this.http.delete("http://localhost:8080/cart/clear/"+id)
   }
 }

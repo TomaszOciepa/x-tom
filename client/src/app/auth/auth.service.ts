@@ -49,6 +49,7 @@ export class AuthService {
       message
     })
     this.clearRole()
+    window.location.reload()      
   }
 
   getToken(){

@@ -1,8 +1,8 @@
-import { Component, OnInit, Input, } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { CartItem } from '../model/cartItem';
 import { AuthService } from '../auth/auth.service';
 import { CartService } from './cart.service';
+import { CartItemLocalStorage } from '../model/cartItemLocalStorage';
 
 @Component({
   selector: 'cart',
@@ -16,73 +16,105 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("siema cart")
     if(localStorage.getItem('products') == null){
-      localStorage.setItem('products', JSON.stringify(this.cartList))
+      localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
     }
 
     if(this.auth.isAuthenticated){
       this.getMyCartWithDatabase()
     }else{
-      this.cartList = JSON.parse(localStorage.getItem('products'))
+      this.cartLocalItemList = JSON.parse(localStorage.getItem('products'))
     }
     
-      this.checkCartIsEmpty()
-      this.calculatePrice()
+    this.checkCartIsEmpty()
+    this.calculatePrice()
   }
   
   selectProductForm = this.fb.group({    
     product_type: this.fb.control(''), 
   })
 
-  cartList:CartItem[] = []
+  cartLocalItemList:CartItemLocalStorage[] = []
+
   cartSum:number
   isEmpty:boolean
+  error: boolean;
 
   checkCartIsEmpty(){
-    if(this.cartList.length > 0){
+    if(this.cartLocalItemList.length > 0){
       this.isEmpty = false
-    }else if(this.cartList.length == 0){
+    }else if(this.cartLocalItemList.length == 0){
       this.isEmpty = true
     }
   }
 
   calculatePrice(){
     var sum:number = 0
-    this.cartList.forEach((i)=>{
-      sum += (i.product.product_price * i.amount)
+    this.cartLocalItemList.forEach((i)=>{
+      sum += (i.product.product_price * i.cart_amount)
     })
     this.cartSum = sum
   }
 
   deleteCartItemInLocalStorage(id){
-    delete this.cartList[id]
+    delete this.cartLocalItemList[id]
     var newFavorit =[]
-    this.cartList.forEach((index)=>{
+    this.cartLocalItemList.forEach((index)=>{
       if(id !== index){
           newFavorit.push(index)
       }
     })
-    this.cartList = newFavorit
-    localStorage.setItem('products', JSON.stringify(this.cartList))
+    this.cartLocalItemList = newFavorit
+    if(!this.auth.isAuthenticated){
+      localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
+    }
+    
     this.calculatePrice()
     this.checkCartIsEmpty()
   }
 
   removeCartInLocalStorage(){
-    this.cartList = []
-    localStorage.setItem('products', JSON.stringify(this.cartList))
+    this.cartLocalItemList = []
+    localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
     this.checkCartIsEmpty()
-    console.log("wyczyszczono koszyk :)")
   }
 
   getMyCartWithDatabase(){
-    this.cartService.getMyCartItems() // pobieram
-                                        // zapisuje do localStorage
+    
+    this.cartService.getMyCartItems(this.auth.getCurrentUser().user_id).subscribe(
+      
+      response =>{
+          response.forEach((item)=>{
+            this.cartLocalItemList.push(item)    
+          })
+
+          this.cartLocalItemList.forEach((i)=>{
+          })
+          this.checkCartIsEmpty()
+          this.calculatePrice()
+      } 
+    )
+    
   }
 
-  deleteCartItemInDatabase(idDatabase, idList){
-    this.cartService.deleteMyCartItem()
-    this.deleteCartItemInLocalStorage(idList)
+  deleteCartItemInDatabase(idInDatabase, idInList){
+    this.cartService.deleteMyCartItem(idInDatabase).subscribe(()=>{
+        console.log("Success")
+      },err=>{
+        this.error = err.message
+      })
+
+      this. deleteCartItemInLocalStorage(idInList)
   }
+
+  removeCartInDatabase(){
+    this.cartService.deleteMyCart(this.auth.getCurrentUser().user_id).subscribe(()=>{
+      console.log("Success")
+    },err=>{
+      this.error = err.message
+    })
+    this.cartLocalItemList = []
+    this.checkCartIsEmpty()
+  }
+
 }
