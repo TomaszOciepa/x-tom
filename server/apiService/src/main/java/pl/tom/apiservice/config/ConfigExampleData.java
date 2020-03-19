@@ -57,10 +57,10 @@ public class ConfigExampleData {
         Product smartphone = new Product("smartphone", "nokia", "promocja", "Najlepsza nokia wszechczasów", "android", 2000, 8, 64, 6, 100, 22);
         productRepository.save(smartphone);
 
-        Orders orders1 = new Orders(LocalDateTime.now(), "oczekuje na zapłatę", 2, root, drone);
+        Orders orders1 = new Orders(3000, 1, "wysłano", "kurier", "przelew", LocalDateTime.now(), LocalDateTime.now().plusDays(4), root, drone);
         ordersRepository.save(orders1);
 
-        Orders orders2 = new Orders(LocalDateTime.now(), "wysłano", 1, user, smartphone);
+        Orders orders2 = new Orders(4000, 1, "oczekuje na płatność", "kurier", "przelew", LocalDateTime.now(), LocalDateTime.now().plusDays(4), user, laptop);
         ordersRepository.save(orders2);
 
         Cart cart1 = new Cart(1, drone, root);
