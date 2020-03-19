@@ -43,7 +43,14 @@
   </table>
   <div style="margin-bottom: 10px;">
     razem do zapłaty: {{cartSum}} zł
-    <button class="btn btn-success">zamów</button>
+    <ng-container *ngIf="auth.isAuthenticated">
+      <button [routerLink]="['/zamowienie']" class="btn btn-success">zamów</button>
+    </ng-container>
+
+    <ng-container *ngIf="!auth.isAuthenticated">
+      <button [routerLink]="['/logowanie', 1]" class="btn btn-success">zamów</button>
+    </ng-container>
+    
 </div>
 </ng-container>
 

@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
 import { CartModule } from './cart/cart.module';
 import { ProductsModule } from './products/products.module';
 import { FormModule } from './form/form.module';
+import { OrdersModule } from './orders/orders.module';
 
 
 
@@ -31,7 +32,7 @@ import { FormModule } from './form/form.module';
     CartModule,
     ProductsModule,
     FormModule,
-    
+    OrdersModule,
     AppRoutingModule,
   ],
   providers: [],
