@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
 import pl.tom.apiservice.model.cart.Cart;
 import pl.tom.apiservice.model.cart.CartRepository;
+import pl.tom.apiservice.model.order.OrderItem;
+import pl.tom.apiservice.model.order.OrderItemRepository;
 import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.model.orders.OrdersRepository;
 import pl.tom.apiservice.model.product.Product;
@@ -30,13 +32,16 @@ public class ConfigExampleData {
 
     private CartRepository cartRepository;
 
+    private OrderItemRepository orderItemRepository;
+
     @Autowired
-    public ConfigExampleData(ProductRepository productRepository, PasswordEncoder passwordEncoder, UserRepository userRepository, OrdersRepository ordersRepository, CartRepository cartRepository) {
+    public ConfigExampleData(ProductRepository productRepository, PasswordEncoder passwordEncoder, UserRepository userRepository, OrdersRepository ordersRepository, CartRepository cartRepository, OrderItemRepository orderItemRepository) {
         this.productRepository = productRepository;
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.ordersRepository = ordersRepository;
         this.cartRepository = cartRepository;
+        this.orderItemRepository = orderItemRepository;
     }
 
     @EventListener(ApplicationReadyEvent.class)
@@ -57,11 +62,11 @@ public class ConfigExampleData {
         Product smartphone = new Product("smartphone", "nokia", "promocja", "Najlepsza nokia wszechczasów", "android", 2000, 8, 64, 6, 100, 22);
         productRepository.save(smartphone);
 
-        Orders orders1 = new Orders(3000, 1, "wysłano", "kurier", "przelew", LocalDateTime.now(), LocalDateTime.now().plusDays(4), root, drone);
+        Orders orders1 = new Orders(2000, 0, "nowe", "kurier", "przelew", "Tomek", "Ociepa", "Jana Pawła 99", "89-600", "Sopot", "tom.sopot@gmail.com", 888888999);
         ordersRepository.save(orders1);
 
-        Orders orders2 = new Orders(4000, 1, "oczekuje na płatność", "kurier", "przelew", LocalDateTime.now(), LocalDateTime.now().plusDays(4), user, laptop);
-        ordersRepository.save(orders2);
+        OrderItem orderItem1 = new OrderItem(2, drone);
+        orderItemRepository.save(orderItem1);
 
         Cart cart1 = new Cart(1, drone, root);
         cartRepository.save(cart1);

@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, Input, } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { CartService } from './cart.service';
@@ -38,8 +38,14 @@ export class CartComponent implements OnInit {
 
   cartSum:number
   isEmpty:boolean
-  error: boolean;
-
+  error: boolean
+  pathOrder:boolean = false
+  
+  @Input("setPathOrder")
+  set path(path:boolean){
+    this.pathOrder = path
+  }
+  
   checkCartIsEmpty(){
     if(this.cartLocalItemList.length > 0){
       this.isEmpty = false

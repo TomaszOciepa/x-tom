@@ -37,9 +37,9 @@ public class OrdersRestController {
     }
 
     @PostMapping("/create")
-    public void create(@RequestBody List<Orders> ordersList, HttpServletResponse response) {
+    public void create(@RequestBody Orders order, HttpServletResponse response) {
         LOG.info("method: create(). Add new order to database");
-         ordersService.create(ordersList);
+         ordersService.create(order);
     }
 
     @PutMapping("/{id}")

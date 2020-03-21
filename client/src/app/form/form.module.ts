@@ -7,16 +7,17 @@ import { LaptopFormComponent } from './laptop-form/laptop-form.component';
 import { SmartphoneFormComponent } from './smartphone-form/smartphone-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserRoleFormComponent } from './user-role-form/user-role-form.component';
+import { OrderFormComponent } from './order-form/order-form.component';
 
 @NgModule({
-  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent,],
+  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormRoutingModule,
   ],
   exports: [
-    DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent
+    DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent
   ]
 })
 export class FormModule { }

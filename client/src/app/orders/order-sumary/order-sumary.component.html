@@ -1,0 +1,22 @@
+
+<ng-container *ngIf="!saved">
+    <h3>Podsumowanie</h3>
+
+<div class="row">
+    <div class="col-7">
+        <pre>
+            {{orderData | json}}
+        </pre>
+    </div>
+
+    <div class="col-5">
+        <cart [setPathOrder]="pathOrder"></cart>
+    </div>
+</div>
+
+<a class="btn btn-success" (click)="save()">Kupuję i płacę</a>
+</ng-container>
+
+<ng-container *ngIf="saved">
+<h3>Dziękujemy za zakupy!!! :)</h3>
+</ng-container>

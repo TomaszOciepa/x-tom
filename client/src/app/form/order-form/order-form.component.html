@@ -1,0 +1,102 @@
+
+    <form [formGroup]="addOrderForm" (submit)="saveOrderSummary()">
+        <span class="contact100-form-title">
+            Dostawa i płatność
+        </span>
+        <h3>1.Sposób dostawy</h3>
+        <div class="form-group ">
+                <select class="form-control" formControlName="orders_delivery_method">
+                    <option value="kurier">Dostawa kurierem</option>
+                    <option value="osobisty">Odbiór osobisty</option>
+                </select>
+        </div>
+
+        <h3>2.Metoda płatności</h3>
+        <div class="form-group ">
+                    <select class="form-control" formControlName="orders_payments_method">
+                    <option value="przy odbiorze">Przy odbiorze</option>
+                    <option value="przelew gotówkowy">Przelew gotówkowy</option>
+                </select>
+        </div>
+
+        <h3>3.Dane odbiorcy</h3>
+        <div class="form-group">
+            <label for="FirstName">Imię</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_firstName" formControlName="orders_firstName">
+            </ng-container>
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_firstName">
+
+            </ng-container>
+        </div>
+    
+        <div class="form-group">
+            <label for="LastName">Nazwisko</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_lastName" formControlName="orders_lastName">
+            </ng-container>
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_lastName">
+            </ng-container>
+        </div>
+
+        <div class="form-group">
+            <label for="Street">Ulica</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_street" formControlName="orders_street">
+            </ng-container>
+            
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_street">
+            </ng-container>
+        </div>
+
+        <div class="form-group">
+            <label for="ZipCode">Kod pocztowy</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_zipCode" formControlName="orders_zipCode">
+            </ng-container>
+            
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_zipCode">
+            </ng-container>
+        </div>
+
+        <div class="form-group">
+            <label for="City">Miasto</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_city" formControlName="orders_city">
+            </ng-container>
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_city">
+            </ng-container>
+        </div>
+        
+        <div class="form-group">
+            <label for="Name">Email</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_email" formControlName="orders_email">
+            </ng-container>
+            
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_email">
+            </ng-container>
+        </div>
+
+        <div class="form-group">
+            <label for="PhoneNumber">Numer telefonu</label>
+            <ng-container *ngIf="user">
+                <input type="text" class="form-control" [(ngModel)]="user.user_phoneNumber" formControlName="orders_phoneNumber">
+            </ng-container>
+            
+            <ng-container *ngIf="!user">
+                <input type="text" class="form-control" formControlName="orders_phoneNumber">
+            </ng-container>
+        </div>
+        <input value="zapisz" type="submit" value="kupuję i płacę" class="btn btn-danger">
+    </form>
+
+
+
+

@@ -23,13 +23,9 @@ public class OrdersService {
     }
 
 
-    public void create(List<Orders> ordersList) {
-        int orderNumber = orderNumberGenerator();
-        ordersList.stream().forEach(order -> {
-            order.setOrders_number(orderNumber);
-            ordersRepository.save(order);
-        });
-
+    public void create(Orders order) {
+        order.setOrders_date_time(LocalDateTime.now());
+        ordersRepository.save(order);
     }
 
     public String edit(Long id, Orders ordersEdited) {
@@ -52,35 +48,6 @@ public class OrdersService {
 
     public Orders getById(Long id) {
         return ordersRepository.findById(id).get();
-    }
-
-
-    private int orderNumberGenerator() {
-
-        List<Orders> ordersList = getAll();
-        int ordersListSize = ordersList.size();
-
-        if (ordersListSize == 0) {
-            return numberGenerator(0);
-        } else {
-            int lastItemOrder = (ordersListSize - 1);
-            int lastOrderNumber = ordersList.get(lastItemOrder).getOrders_number();
-
-            return numberGenerator(lastOrderNumber);
-        }
-    }
-
-    private int numberGenerator(int n) {
-
-        if (n == 0) {
-            int year = LocalDateTime.now().getYear();
-            int month = LocalDateTime.now().getMonthValue();
-            String joinNumber = Integer.toString(year) + Integer.toString(month) + Integer.toString(1);
-            int number = Integer.parseInt(joinNumber);
-            return number;
-        } else {
-            return n + 1;
-        }
     }
 
 }
