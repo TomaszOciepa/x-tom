@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthRoutingModule } from './auth.routing.module';
-import { AuthorizedGuard } from './authorized.guard';
+// import { AuthorizedGuard } from './authorized.guard';
 import { RegisterComponent } from './register/register.component';
 
 
@@ -24,7 +24,7 @@ import { RegisterComponent } from './register/register.component';
       useClass: AuthInterceptorService,
       multi: true
     },
-    AuthorizedGuard
+    // AuthorizedGuard
   ],
   exports: [LoginComponent, RegisterComponent]
 })

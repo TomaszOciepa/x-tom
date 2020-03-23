@@ -10,5 +10,9 @@ export class ProfileBarComponent implements OnInit {
 
   constructor(protected auth:AuthService) {}
   
-  ngOnInit() {}
+  ngOnInit() {
+    this.name = this.auth.name
+  }
+  
+  name:String
 }

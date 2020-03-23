@@ -3,6 +3,7 @@ import { ProfileService } from '../profile.service';
 import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UsersService } from 'src/app/users/users.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'profile',
@@ -11,33 +12,24 @@ import { UsersService } from 'src/app/users/users.service';
 })
 export class ProfileComponent implements OnInit {
 
-  id:number
-  profile:User
-
-  constructor(private userService:UsersService, private profileService:ProfileService, protected auth:AuthService) { 
+  constructor(private userService:UsersService, private profileService:ProfileService, protected auth:AuthService, private http:HttpClient) { 
     this.auth.state.subscribe()
-
-
-    
-
-    // this.userService.getById(this.id).subscribe(response =>{
-    //   this.profile = response
-    // })
   }
 
   ngOnInit() {
-    // const profile$ = this.profileService.getUserProfile()
 
-    // profile$.subscribe(user =>{
-    //   this.profile = user
-    // })
-    console.log("I'm in Profile :)")
+    if(this.auth.isAuthenticated){
+      this.id = this.auth.getCurrentUser().user_id  
 
-    if(!this.auth.getCurrentUser()){
-      console.log("user nie istnieje")
-    }
-
-    this.profile = this.auth.getCurrentUser()
+      this.http.get<User>("http://localhost:8080/user/"+this.id).subscribe(
+        response =>{
+          this.profile = response
+        }
+      )
+    } 
   }
+
+  id:number
+  profile:User
 
 }

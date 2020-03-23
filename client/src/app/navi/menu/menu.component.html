@@ -20,12 +20,6 @@
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" [routerLink]="['/koszyk']">Koszyk</a>
             </li>
-
-          <ng-container *ngIf="auth.isAuthenticated">
-            <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" [routerLink]="['/profile']">Profil</a>
-            </li>
-          </ng-container>
           
           <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
             <li class="nav-item" routerLinkActive="active">
@@ -35,6 +29,13 @@
               <a class="nav-link" [routerLink]="['/users']">Użytkownicy</a>
             </li>
           </ng-container>
+
+          <ng-container *ngIf="auth.isAuthenticated">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/profile']">Twoje konto</a>
+            </li>
+          </ng-container>
+
           <ng-container *ngIf="!auth.isAuthenticated">
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" [routerLink]="['/logowanie']">Zaloguj</a>
@@ -47,7 +48,7 @@
           
         </ul>
       </div>
-        <span class="navbar-text" *ngIf="auth.isAuthenticated">
+        <div class="navbar-text" *ngIf="auth.isAuthenticated">
             <profile-bar></profile-bar>
-        </span>
+        </div>
   </nav>
