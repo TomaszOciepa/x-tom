@@ -9,14 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  loginForm = this.fb.group({
-    user_email:[''],
-    user_password:['']
-  })
-
-  message:String
-
+  
   constructor(private fb:FormBuilder, private auth:AuthService, private route:ActivatedRoute) { 
     this.auth.state.subscribe()
     
@@ -25,14 +18,22 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  ngOnInit() {
+    this.message =  this.auth.getMessage()
+   }
+
+  loginForm = this.fb.group({
+    user_email:[''],
+    user_password:['']
+  })
+
+  message:String
   options = 0
 
   login(){
     this.auth.login(this.loginForm.value)
   }
 
-  ngOnInit() {
-   this.message =  this.auth.getMessage()
-  }
+  
 
 }

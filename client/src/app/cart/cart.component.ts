@@ -87,19 +87,23 @@ export class CartComponent implements OnInit {
 
   getMyCartWithDatabase(){
     
-    this.cartService.getMyCartItems(this.auth.getCurrentUser().user_id).subscribe(
+    if(this.auth.getCurrentUser()){
+      this.cartService.getMyCartItems(this.auth.getCurrentUser().user_id).subscribe(
       
-      response =>{
-          response.forEach((item)=>{
-            this.cartLocalItemList.push(item)    
-          })
+        response =>{
+            response.forEach((item)=>{
+              this.cartLocalItemList.push(item)    
+            })
+  
+            this.cartLocalItemList.forEach((i)=>{
+            })
+            this.checkCartIsEmpty()
+            this.calculatePrice()
+        } 
+      )
+    }
 
-          this.cartLocalItemList.forEach((i)=>{
-          })
-          this.checkCartIsEmpty()
-          this.calculatePrice()
-      } 
-    )
+
     
   }
 

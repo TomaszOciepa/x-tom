@@ -23,6 +23,8 @@ export class EditProfileComponent implements OnInit {
     this.http.getById(this.id).subscribe(response =>{
       this.editedUser = response
     }) 
+
+    
   }
 
   id:number

@@ -16,22 +16,28 @@ export class ProfileComponent implements OnInit {
 
   constructor(private userService:UsersService, private profileService:ProfileService, protected auth:AuthService) { 
     this.auth.state.subscribe()
-    this.profileService.getUserProfile().subscribe(response =>{
-      this.id = response.user_id
-    })
 
-    this.userService.getById(this.id).subscribe(response =>{
-      this.profile = response
-    })
+
+    
+
+    // this.userService.getById(this.id).subscribe(response =>{
+    //   this.profile = response
+    // })
   }
 
   ngOnInit() {
-    console.log("siema profil")
     // const profile$ = this.profileService.getUserProfile()
 
     // profile$.subscribe(user =>{
     //   this.profile = user
     // })
+    console.log("I'm in Profile :)")
+
+    if(!this.auth.getCurrentUser()){
+      console.log("user nie istnieje")
+    }
+
+    this.profile = this.auth.getCurrentUser()
   }
 
 }
