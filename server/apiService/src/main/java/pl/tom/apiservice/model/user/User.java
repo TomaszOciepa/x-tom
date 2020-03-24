@@ -50,6 +50,17 @@ public class User {
         this.user_role = user_role;
     }
 
+    public User(String user_email, String user_password, String user_role, String user_firstName, String user_lastName, Long user_phoneNumber, String user_zipCode, String user_city, String user_street) {
+        this.user_email = user_email;
+        this.user_password = user_password;
+        this.user_role = user_role;
+        this.user_firstName = user_firstName;
+        this.user_lastName = user_lastName;
+        this.user_phoneNumber = user_phoneNumber;
+        this.user_zipCode = user_zipCode;
+        this.user_city = user_city;
+        this.user_street = user_street;
+    }
 
     public Long getUser_id() {
         return user_id;

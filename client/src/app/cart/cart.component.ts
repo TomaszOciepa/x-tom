@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { CartService } from './cart.service';
@@ -28,6 +28,8 @@ export class CartComponent implements OnInit {
     
     this.checkCartIsEmpty()
     this.calculatePrice()
+    this.setOrderItem()
+    // this.setOrderSum()
   }
   
   selectProductForm = this.fb.group({    
@@ -46,6 +48,13 @@ export class CartComponent implements OnInit {
     this.pathOrder = path
   }
   
+  @Output('setOrderItem')
+  emiterSetItem = new EventEmitter()
+  
+  setOrderItem(){
+    this.emiterSetItem.emit(this.cartLocalItemList)
+  }
+
   checkCartIsEmpty(){
     if(this.cartLocalItemList.length > 0){
       this.isEmpty = false
@@ -57,7 +66,7 @@ export class CartComponent implements OnInit {
   calculatePrice(){
     var sum:number = 0
     this.cartLocalItemList.forEach((i)=>{
-      sum += (i.product.product_price * i.cart_amount)
+      sum += (i.product.product_price * i.order_item_amount)
     })
     this.cartSum = sum
   }
@@ -92,6 +101,7 @@ export class CartComponent implements OnInit {
       
         response =>{
             response.forEach((item)=>{
+              console.log("moj koszyk: "+JSON.stringify(item))
               this.cartLocalItemList.push(item)    
             })
   

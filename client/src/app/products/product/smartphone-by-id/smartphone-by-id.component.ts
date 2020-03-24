@@ -23,9 +23,9 @@ export class SmartphoneByIdComponent implements OnInit {
   amount:number = 1
   
   cartItem:CartItemLocalStorage = {
-    cart_id: 0,
+    order_item_id: 0,
     product: this.product,
-    cart_amount: 1  
+    order_item_amount: 1  
   }
 
   addProductForm = this.fb.group({    
@@ -42,7 +42,7 @@ export class SmartphoneByIdComponent implements OnInit {
  
   addToCart(product:ProductTest){
     this.cartItem.product = product
-    this.cartItem.cart_amount = this.amount
+    this.cartItem.order_item_amount = this.amount
     this.emiterSetProduct.emit(this.cartItem)
     this.cart = false
   }

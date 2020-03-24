@@ -1,9 +1,9 @@
 package pl.tom.authservice.model.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import pl.tom.authservice.model.orders.Orders;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -20,6 +20,9 @@ public class User {
     private String user_zipCode;
     private String user_city;
     private String user_street;
+
+    @OneToMany(mappedBy = "user")
+    Set<Orders> order;
 
     public User() {
     }

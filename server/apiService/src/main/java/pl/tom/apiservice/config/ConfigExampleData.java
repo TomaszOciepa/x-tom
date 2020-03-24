@@ -47,10 +47,10 @@ public class ConfigExampleData {
     @EventListener(ApplicationReadyEvent.class)
     public void runProducts() {
 
-        User root = new User("tom.ociepa@gmail.com", passwordEncoder.encode("Pass123!"), "ADMIN");
+        User root = new User("tom.ociepa@gmail.com", passwordEncoder.encode("Pass123!"), "ADMIN", "Tomasz", "Ociepa", 882945985L, "80-169", "Gdańsk", "Jana Pawła 999");
         userRepository.save(root);
 
-        User user = new User("tomek021@wp.pl", passwordEncoder.encode("Pass123!"), "USER");
+        User user = new User("tomek021@wp.pl", passwordEncoder.encode("Pass123!"), "USER", "Tom", "Kowalski", 882923243L, "80-169", "Sopot", "Monciak 1");
         userRepository.save(user);
 
         Product drone = new Product("drone", "dj pro", "promocja", "kupuj lata szybko", "tak", 2999, 100, 20, 2000);

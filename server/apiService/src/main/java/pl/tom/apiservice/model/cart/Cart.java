@@ -13,7 +13,7 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cart_id;
-    private int cart_amount;
+    private int order_item_amount;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -26,8 +26,8 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(int cart_amount, Product product, User user) {
-        this.cart_amount = cart_amount;
+    public Cart(int order_item_amount, Product product, User user) {
+        this.order_item_amount = order_item_amount;
         this.product = product;
         this.user = user;
     }
@@ -40,12 +40,12 @@ public class Cart {
         this.cart_id = cart_id;
     }
 
-    public int getCart_amount() {
-        return cart_amount;
+    public int getOrder_item_amount() {
+        return order_item_amount;
     }
 
-    public void setCart_amount(int cart_amount) {
-        this.cart_amount = cart_amount;
+    public void setOrder_item_amount(int order_item_amount) {
+        this.order_item_amount = order_item_amount;
     }
 
     public Product getProduct() {
@@ -68,7 +68,7 @@ public class Cart {
     public String toString() {
         return "Cart{" +
                 "cart_id=" + cart_id +
-                ", cart_amount=" + cart_amount +
+                ", order_item_amount=" + order_item_amount +
                 ", product=" + product +
                 ", user=" + user +
                 '}';

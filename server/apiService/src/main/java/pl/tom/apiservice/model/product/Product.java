@@ -28,6 +28,7 @@ public class Product {
     private double product_disc_size;
     private double product_screen_diagonal;
     private int product_amount_available;
+    private int product_amount_sold;
     private int product_camera_resolution;
     private int product_time_work;
     private int product_range;
@@ -41,7 +42,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String product_type, String product_mark, String product_status, String product_description, String product_processor, String product_system, String product_camera, String product_disc_type, String product_graphics_card, double product_price, double product_ram_size, double product_disc_size, double product_screen_diagonal, int product_amount_available, int product_camera_resolution, int product_time_work, int product_range) {
+    public Product(String product_type, String product_mark, String product_status, String product_description, String product_processor, String product_system, String product_camera, String product_disc_type, String product_graphics_card, double product_price, double product_ram_size, double product_disc_size, double product_screen_diagonal, int product_amount_available, int product_amount_sold, int product_camera_resolution, int product_time_work, int product_range) {
         this.product_type = product_type;
         this.product_mark = product_mark;
         this.product_status = product_status;
@@ -56,6 +57,7 @@ public class Product {
         this.product_disc_size = product_disc_size;
         this.product_screen_diagonal = product_screen_diagonal;
         this.product_amount_available = product_amount_available;
+        this.product_amount_sold = product_amount_sold;
         this.product_camera_resolution = product_camera_resolution;
         this.product_time_work = product_time_work;
         this.product_range = product_range;
@@ -247,6 +249,14 @@ public class Product {
         this.product_range = product_range;
     }
 
+    public int getProduct_amount_sold() {
+        return product_amount_sold;
+    }
+
+    public void setProduct_amount_sold(int product_amount_sold) {
+        this.product_amount_sold = product_amount_sold;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -265,6 +275,7 @@ public class Product {
                 ", product_disc_size=" + product_disc_size +
                 ", product_screen_diagonal=" + product_screen_diagonal +
                 ", product_amount_available=" + product_amount_available +
+                ", product_amount_sold=" + product_amount_sold +
                 ", product_camera_resolution=" + product_camera_resolution +
                 ", product_time_work=" + product_time_work +
                 ", product_range=" + product_range +
