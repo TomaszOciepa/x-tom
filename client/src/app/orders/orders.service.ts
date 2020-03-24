@@ -10,6 +10,17 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
+  getOrdersById(id:number){
+    return this.http.get<Order>("http://localhost:8080/orders/"+id)
+  }
+
+  getOrdersByUserId(id:number){
+    return this.http.get<Order[]>("http://localhost:8080/orders/user/"+id)
+  }
+
+  getOrderItemByOrderNumber(number:number){
+    return this.http.get<OrderItem[]>("http://localhost:8080/order/number/"+number)
+  }
 
   createOrderItem(item:Partial<OrderItem>[]){
     return this.http.post<Number>("http://localhost:8090/order/create", item)

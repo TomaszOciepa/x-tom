@@ -26,6 +26,10 @@ public class OrderItemService {
         return orderItemRepository.findById(id).get();
     }
 
+    public List<OrderItem> getOrderItemByOrderNumber(int number){
+        return orderItemRepository.getOrderItemByOrderNumber(number);
+    }
+
     public int create(List<OrderItem> orderItemList) {
         int orderNumber = orderNumberGenerator();
         orderItemList.stream().forEach(order -> {

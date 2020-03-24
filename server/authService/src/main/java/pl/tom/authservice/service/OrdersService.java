@@ -17,6 +17,7 @@ public class OrdersService {
 
     public void create(Orders order) {
         order.setOrders_date_time(LocalDateTime.now());
+        order.setOrders_status("przyjęto do realizacji");
         ordersRepository.save(order);
     }
 

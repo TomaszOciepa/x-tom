@@ -13,6 +13,7 @@ public class OrderItem {
     private Long order_item_id;
     private int order_item_number;
     private int order_item_amount;
+    private double order_item_price;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -21,14 +22,16 @@ public class OrderItem {
     public OrderItem() {
     }
 
-    public OrderItem(int order_item_amount, Product product) {
+    public OrderItem(int order_item_amount, double order_item_price, Product product) {
         this.order_item_amount = order_item_amount;
+        this.order_item_price = order_item_price;
         this.product = product;
     }
 
-    public OrderItem(int order_item_number, int order_item_amount, Product product) {
+    public OrderItem(int order_item_number, int order_item_amount, double order_item_price, Product product) {
         this.order_item_number = order_item_number;
         this.order_item_amount = order_item_amount;
+        this.order_item_price = order_item_price;
         this.product = product;
     }
 
@@ -56,6 +59,14 @@ public class OrderItem {
         this.order_item_amount = order_item_amount;
     }
 
+    public double getOrder_item_price() {
+        return order_item_price;
+    }
+
+    public void setOrder_item_price(double order_item_price) {
+        this.order_item_price = order_item_price;
+    }
+
     public Product getProduct() {
         return product;
     }
@@ -70,6 +81,7 @@ public class OrderItem {
                 "order_item_id=" + order_item_id +
                 ", order_item_number=" + order_item_number +
                 ", order_item_amount=" + order_item_amount +
+                ", order_item_price=" + order_item_price +
                 ", product=" + product +
                 '}';
     }

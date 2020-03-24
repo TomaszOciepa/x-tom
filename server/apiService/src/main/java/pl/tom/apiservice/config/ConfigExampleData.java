@@ -65,7 +65,7 @@ public class ConfigExampleData {
         Orders orders1 = new Orders(2000, 0, "nowe", "kurier", "przelew", "Tomek", "Ociepa", "Jana Pawła 99", "89-600", "Sopot", "tom.sopot@gmail.com", 888888999);
         ordersRepository.save(orders1);
 
-        OrderItem orderItem1 = new OrderItem(2, drone);
+        OrderItem orderItem1 = new OrderItem(2, 2000,drone);
         orderItemRepository.save(orderItem1);
 
         Cart cart1 = new Cart(1, drone, root);

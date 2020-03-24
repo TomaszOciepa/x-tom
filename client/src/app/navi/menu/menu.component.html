@@ -32,6 +32,9 @@
 
           <ng-container *ngIf="auth.isAuthenticated">
             <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/moje-zamowienia']">Zamówienia</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" [routerLink]="['/profile']">Twoje konto</a>
             </li>
           </ng-container>

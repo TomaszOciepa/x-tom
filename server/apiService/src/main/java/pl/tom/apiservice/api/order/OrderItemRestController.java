@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.tom.apiservice.model.order.OrderItem;
+import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.service.OrderItemService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -34,6 +35,12 @@ public class OrderItemRestController {
     public OrderItem getById(@PathVariable(value = "id") Long id, HttpServletResponse response) {
         LOG.info("method: getById(). Trying get orderItem with {}", id);
         return orderItemService.getById(id);
+    }
+
+    @GetMapping("/number/{number}")
+    public List<OrderItem> getOrderItemByOrderNumber(@PathVariable(value = "number") int number, HttpServletResponse response) {
+        LOG.info("method: getOrderItemByOrderNumber(). Trying get order item with number {}", number);
+        return orderItemService.getOrderItemByOrderNumber(number);
     }
 
     @PostMapping("/create")

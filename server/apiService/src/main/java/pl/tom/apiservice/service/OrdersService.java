@@ -22,6 +22,13 @@ public class OrdersService {
         return ordersRepository.findAll();
     }
 
+    public Orders getById(Long id) {
+        return ordersRepository.findById(id).get();
+    }
+
+    public List<Orders> getOrdersByUserId(Long id){
+        return ordersRepository.getOrdersByUserId(id);
+    }
 
     public void create(Orders order) {
         order.setOrders_date_time(LocalDateTime.now());
@@ -46,8 +53,6 @@ public class OrdersService {
 
     }
 
-    public Orders getById(Long id) {
-        return ordersRepository.findById(id).get();
-    }
+
 
 }

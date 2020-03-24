@@ -29,7 +29,6 @@ export class CartComponent implements OnInit {
     this.checkCartIsEmpty()
     this.calculatePrice()
     this.setOrderItem()
-    // this.setOrderSum()
   }
   
   selectProductForm = this.fb.group({    
@@ -101,7 +100,6 @@ export class CartComponent implements OnInit {
       
         response =>{
             response.forEach((item)=>{
-              console.log("moj koszyk: "+JSON.stringify(item))
               this.cartLocalItemList.push(item)    
             })
   

@@ -36,6 +36,12 @@ public class OrdersRestController {
         return ordersService.getById(id);
     }
 
+    @GetMapping("/user/{id}")
+    public List<Orders> getOrdersByUserId(@PathVariable(value = "id") Long id, HttpServletResponse response) {
+        LOG.info("method: getOrdersByUserId(). Trying get order with user id {}", id);
+        return ordersService.getOrdersByUserId(id);
+    }
+
     @PostMapping("/create")
     public void create(@RequestBody Orders order, HttpServletResponse response) {
         LOG.info("method: create(). Add new order to database");

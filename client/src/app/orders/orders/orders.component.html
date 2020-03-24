@@ -1,1 +1,25 @@
 <h1>Moje zamówienia</h1>
+<ng-container *ngIf="auth.isAuthenticated">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">lp</th>
+            <th scope="col">numer</th>
+            <th scope="col">data</th>
+            <th scope="col">status</th>
+            <th scope="col">wartość</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of userOrders let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{order.orders_number}}</td>
+            <td>{{order.orders_date_time | date: 'yyyy-MM-dd HH:mm'}}</td>
+            <td>{{order.orders_status}}</td>
+            <td>{{order.orders_payments_sum}} zł</td>
+            <td><button class="btn btn-info" (click)="goOrder(order)">szczegóły</button></td>        
+          </tr>
+        </tbody>
+      </table>
+</ng-container>
