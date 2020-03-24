@@ -10,7 +10,7 @@ import pl.tom.apiservice.service.OrdersService;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/orders")
 public class OrdersRestController {
@@ -37,9 +37,9 @@ public class OrdersRestController {
     }
 
     @PostMapping("/create")
-    public Orders create(@RequestBody Orders orders, HttpServletResponse response) {
+    public void create(@RequestBody Orders order, HttpServletResponse response) {
         LOG.info("method: create(). Add new order to database");
-        return ordersService.create(orders);
+         ordersService.create(order);
     }
 
     @PutMapping("/{id}")

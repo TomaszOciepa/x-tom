@@ -1,5 +1,4 @@
-
-<ng-container *ngIf="profile">
-    Zalogowano {{auth.role}} <strong>{{profile.user_firstName}}</strong> !
-    <span (click)="auth.logout()"> | wyloguj</span>
+<ng-container *ngIf="auth.isAuthenticated">
+    Witaj <strong>{{name}}</strong> :)
+    <span (click)="auth.logout('wylogowano!!!')"> | wyloguj</span>
  </ng-container>

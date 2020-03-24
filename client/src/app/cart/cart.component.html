@@ -1,14 +1,17 @@
 <h2>Koszyk</h2>
 {{cartItemUserList}}
 <ng-container *ngIf="!isEmpty">
-  <ng-container *ngIf="!auth.isAuthenticated">
-    <button class="btn btn-danger" (click)="removeCartInLocalStorage()">usuń wszystko</button>
-  </ng-container>
   
-  <ng-container *ngIf="auth.isAuthenticated">
-    <button class="btn btn-danger" (click)="removeCartInDatabase()">wyczyść koszyk</button>
-  </ng-container>
-
+    <ng-container *ngIf="!pathOrder">
+      <ng-container *ngIf="!auth.isAuthenticated">
+        <button class="btn btn-danger" (click)="removeCartInLocalStorage()">wyczyść koszyk</button>
+      </ng-container>
+      
+      <ng-container *ngIf="auth.isAuthenticated">
+        <button class="btn btn-danger" (click)="removeCartInDatabase()">wyczyść koszyk</button>
+      </ng-container>
+    </ng-container>
+  
 <table class="table table-striped">
     <thead>
       <tr>
@@ -25,17 +28,21 @@
         <th scope="row">{{i+1}}</th>
         <td><a [routerLink]="['/product', cartItem.product.product_id]">{{cartItem.product.product_mark}}</a></td>
         <td>{{cartItem.product.product_price}} zł</td>
-        <td>{{cartItem.cart_amount}}</td>
-        <td>{{cartItem.product.product_price * cartItem.cart_amount}} zł</td>
-        <td>
-          <ng-container *ngIf="!auth.isAuthenticated">
-            <button class="btn btn-danger" (click)="deleteCartItemInLocalStorage(i)">usuń</button>
-          </ng-container>
-  
-          <ng-container *ngIf="auth.isAuthenticated">
-            <button class="btn btn-danger" (click)="deleteCartItemInDatabase(cartItem.cart_id, i)">usuń</button>
-          </ng-container>
-        </td>
+        <td>{{cartItem.order_item_amount}}</td>
+        <td>{{cartItem.product.product_price * cartItem.order_item_amount}} zł</td>
+        
+        <ng-container *ngIf="!pathOrder">
+          <td>  
+            <ng-container *ngIf="!auth.isAuthenticated">
+              <button class="btn btn-danger" (click)="deleteCartItemInLocalStorage(i)">usuń</button>
+            </ng-container>
+    
+            <ng-container *ngIf="auth.isAuthenticated">
+              <button class="btn btn-danger" (click)="deleteCartItemInDatabase(cartItem.cart_id, i)">usuń</button>
+            </ng-container>
+          </td>
+        </ng-container>
+
   
         
       </tr>
@@ -43,7 +50,18 @@
   </table>
   <div style="margin-bottom: 10px;">
     razem do zapłaty: {{cartSum}} zł
-    <button class="btn btn-success">zamów</button>
+
+    <ng-container *ngIf="!pathOrder">
+      <ng-container *ngIf="auth.isAuthenticated">
+        <button [routerLink]="['/zamowienie']" class="btn btn-success">zamów</button>
+      </ng-container>
+  
+      <ng-container *ngIf="!auth.isAuthenticated">
+        <button [routerLink]="['/logowanie', 1]" class="btn btn-success">zamów</button>
+      </ng-container>
+    </ng-container>
+
+    
 </div>
 </ng-container>
 

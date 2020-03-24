@@ -1,25 +1,38 @@
 <ng-container *ngIf="!auth.isAuthenticated">
-    <h3>Logowanie</h3>
-<div class="alert alert-danger" *ngIf="message">{{message}}</div>
-<form [formGroup]="loginForm" (submit)="login()">
-    <div class="form-group">
-        <label for="Email">Email</label>
-        <input type="text" class="form-control" formControlName="user_email">
-    </div>
 
-    <div class="form-group">
-        <label for="Password">Hasło</label>
-        <input type="text" class="form-control" formControlName="user_password">
+<div class="row">
+    <div class="col-6" style="padding: 0px 60px 0px 40px; border-right: 2px solid slategrey;">
+        <h3>Mam już konto</h3>
+        <div class="alert alert-danger" *ngIf="message">{{message}}</div>
+        <form [formGroup]="loginForm" (submit)="login()">
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" formControlName="user_email">
+            </div>
+        
+            <div class="form-group">
+                <label for="Password">Hasło</label>
+                <input type="text" class="form-control" formControlName="user_password">
+            </div>
+        
+            <input type="submit" class="btn btn-primary mx-auto" value="zaloguj">
+        </form>
     </div>
-
-    <input type="submit" class="btn btn-danger mx-auto" value="zaloguj">
-</form>
+    <div class="col-6">
+        <h3>Nie mam konta</h3>
+        <ng-container *ngIf="options == 1">
+            <button [routerLink]="['/zamowienie']" type="button" class="btn btn-primary">Kontynuuj bez logowania</button>
+            <br><br>
+        </ng-container>        
+        <button [routerLink]="['/rejestracja']" type="button" class="btn btn-primary">Załóż konto</button>
+    </div>
+</div>
 </ng-container>
 
 
 <ng-container *ngIf="auth.isAuthenticated">
     <div class="alert alert-success" role="alert">
         <h3>Zalogowano</h3>
-        <button class="btn btn-info" [routerLink]="['/']">Przejdz do strony głównej</button>
+        <button class="btn btn-info" [routerLink]="['/home']">Przejdz do strony głównej</button>
       </div>
 </ng-container>

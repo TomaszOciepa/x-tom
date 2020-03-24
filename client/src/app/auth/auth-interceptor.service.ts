@@ -9,6 +9,10 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthInterceptorService implements HttpInterceptor {
 
+  constructor(private auth:AuthService) {
+    this.auth.state.subscribe()
+   }
+  
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
    return next.handle(this.getAuthorizedRequest(req)).pipe(
@@ -26,12 +30,24 @@ export class AuthInterceptorService implements HttpInterceptor {
   }
 
   getAuthorizedRequest(req:HttpRequest<any>){
-    return req.clone({
-      setHeaders:{
-        'Authorization': 'Bearer ' + this.auth.getToken()
-      }
-    })
+
+    if(!this.auth.isAuthenticated){
+      return req.clone({
+        setHeaders:{
+          'Authorization': 'Bearer ' + this.auth.getTokenInLocalStorage()
+        }
+      })  
+    }else{
+      return req.clone({
+        setHeaders:{
+          'Authorization': 'Bearer ' + this.auth.getToken()
+        }
+      })
+    }
+    
+
+
   }
 
-  constructor(private auth:AuthService) { }
+  
 }

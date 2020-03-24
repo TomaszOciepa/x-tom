@@ -43,7 +43,7 @@ export class ProductComponent implements OnInit {
   
 
   cartUserItem:CartItemUser = {
-    cart_amount: 0,
+    order_item_amount: 0,
     product: this.product,
     user: this.auth.getCurrentUser()
   }
@@ -51,7 +51,7 @@ export class ProductComponent implements OnInit {
   addtoCart(cartItem:CartItemLocalStorage){
     
     if(this.auth.isAuthenticated){
-      this.cartUserItem.cart_amount = cartItem.cart_amount
+      this.cartUserItem.order_item_amount = cartItem.order_item_amount
       this.cartUserItem.product = cartItem.product
       this.cartUserItem.user = this.auth.getCurrentUser()
 

@@ -33,6 +33,16 @@ public class ProductService {
         return repo.getProductByStatus(status);
     }
 
+    public void save_amount_sold_product(Long productId, int orderAmount){
+        Optional<Product> product = getProductById(productId);
+
+        int productAmountSold = product.get().getProduct_amount_sold();
+        productAmountSold += orderAmount;
+        product.get().setProduct_amount_sold(productAmountSold);
+
+        repo.save(product.get());
+    }
+
 //    public List<Product> getByDescription(String query) {
 //        List<Product> allProducts = repo.findAll();
 //

@@ -5,6 +5,7 @@ import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.model.orders.OrdersRepository;
 
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,9 +23,9 @@ public class OrdersService {
     }
 
 
-    public Orders create(Orders orders) {
-        orders.setOrders_status(orders.getOrders_status().toLowerCase());
-        return ordersRepository.save(orders);
+    public void create(Orders order) {
+        order.setOrders_date_time(LocalDateTime.now());
+        ordersRepository.save(order);
     }
 
     public String edit(Long id, Orders ordersEdited) {
@@ -48,4 +49,5 @@ public class OrdersService {
     public Orders getById(Long id) {
         return ordersRepository.findById(id).get();
     }
+
 }

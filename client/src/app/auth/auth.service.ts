@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from '../model/user';
 import { map, tap } from 'rxjs/internal/operators';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { JsonPipe } from '@angular/common';
+import { UserCodeEncryptService } from './user-code-encrypt.service';
+
 
 interface Credentials{
   user_email: String;
@@ -20,72 +21,122 @@ interface Session{
   providedIn: 'root'
 })
 export class AuthService {
+  constructor(private http:HttpClient, private userCodeEnctryptService:UserCodeEncryptService) {
+  }
+  
+  private session = new BehaviorSubject<Session>(null)
 
   url = "http://localhost:8090/login"
 
-  private session = new BehaviorSubject<Session>(null)
-
   isAuthenticated = false
-  
+
+  role:string
+  name:String
+  user:User
+
+  userSession:Session = {
+    token: '',
+    user: this.user
+  }
+
   state = this.session.pipe(
     map( session => session && !!session.token),
     tap( state => this.isAuthenticated = state)
-  )
-
-  role:string
-
+    )
+      
   checkRole = this.session.pipe(
-    map(role => this.role = role.user.user_role)
-  )
+    map(role => this.role = role.user.user_role))
+    
+    login(credentials:Credentials){
+      this.http.post(this.url, credentials)
+      .subscribe((session:Session) =>{
+        this.session.next(session)
+        console.log(session.token)
+        this.role = session.user.user_role
+        this.name = session.user.user_firstName
+        this.setTokenInLocalStorage(session.token)
+        this.setUserIdInStorage(session.user.user_id)
+        console.log("Success")
+      },error =>{
+        if(error instanceof HttpErrorResponse){
+          console.error(error.error)
+        }
+        
+      })
+    }
 
-  clearRole(){
-    this.role = ""
-  }
+    logout(message?:String){
+      this.session.next({
+        ...this.session.getValue(),
+        token: null,
+        message
+      })
+      
+      this.clearRole()
+      localStorage.removeItem('(O,,O)')
+      localStorage.removeItem('x-tom------>____ <o_o> ____<----x-tom')
+      // window.location.reload()      
+    }
+    
+    getCurrentUser(){
+      const session = this.session.getValue()
+      return session && session.user;
+    }
 
-  logout(message?:String){
-    this.session.next({
-      ...this.session.getValue(),
-      token: null,
-      message
-    })
-    this.clearRole()
-    window.location.reload()      
-  }
+    register(user:User){
+      return this.http.post<User>("http://localhost:8090/sing-up", user)
+    }
 
-  getToken(){
+    clearRole(){
+        this.role = ""
+    }
+        
+    getToken(){
     const session = this.session.getValue()
     return session && session.token;
-  }
+    }
 
-  getCurrentUser(){
-    const session = this.session.getValue()
-    return session && session.user;
-  }
-
-  getMessage(){
+    getMessage(){
     const session = this.session.getValue()
     return session && session.message;
+    }
+
+  setTokenInLocalStorage(token){
+      localStorage.setItem('(O,,O)', JSON.stringify(token))
   }
 
-  login(credentials:Credentials){
-    console.log(credentials)
-    this.http.post(this.url, credentials)
-    .subscribe((session:Session) =>{
-      this.session.next(session)
-      console.log(session.token)
-      this.role = session.user.user_role
-    },error =>{
-      if(error instanceof HttpErrorResponse){
-        console.error(error.error)
+  getTokenInLocalStorage(){
+    var token:string
+    if(localStorage.getItem('(O,,O)') !== null){
+         token = JSON.parse(localStorage.getItem('(O,,O)'))
+         return token
+    }  
+    
+  }
+
+  setUserIdInStorage(userId:number){
+    var code = this.userCodeEnctryptService.encryptCode(userId)
+    localStorage.setItem('x-tom------>____ <o_o> ____<----x-tom', JSON.stringify(code))
+  }
+
+
+  getUserIdInStorage(){
+    var code:string = JSON.parse(localStorage.getItem('x-tom------>____ <o_o> ____<----x-tom'))
+    var token:string = this.getTokenInLocalStorage()
+    var userId:number  = this.userCodeEnctryptService.decryptCode(code)
+    this.userSession.token = token
+
+    this.http.get<User>("http://localhost:8080/user/"+userId).subscribe(
+      response =>{
+          this.userSession.user = response
+          this.role = response.user_role
+          this.name = response.user_firstName
+          this.session.next(this.userSession)
       }
-      
-    })
+    )
+    
+    
+    
   }
-
-  register(user:User){
-    return this.http.post<User>("http://localhost:8090/sing-up", user)
-  }
-
-  constructor(private http:HttpClient) { }
 
 }

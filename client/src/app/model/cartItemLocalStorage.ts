@@ -1,7 +1,7 @@
 import { ProductTest } from './productTest';
 
 export interface CartItemLocalStorage{
-    cart_id:number,
-    cart_amount:number
+    order_item_id:number,
+    order_item_amount:number
     product:ProductTest,
 }

@@ -14,7 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors()
                 .and().authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/user/all").hasRole("ADMIN")
-                .antMatchers(HttpMethod.GET, "/user/{id}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.GET, "/user/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.PUT, "/user/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.PUT, "/user/role/{id}").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/user/{id}").hasRole("ADMIN")
@@ -25,9 +25,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.GET, "/orders/all").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.GET, "/orders/{id}").hasAnyRole("ADMIN", "USER")
-                .antMatchers(HttpMethod.POST, "/orders/create").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.POST, "/orders/create").permitAll()
                 .antMatchers(HttpMethod.PUT, "/orders/{}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.DELETE, "/orders/{id}").hasAnyRole("ADMIN", "USER")
+
+                .antMatchers(HttpMethod.GET, "/order/all").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.GET, "/order/{id}").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.POST, "/order/create").permitAll()
+                .antMatchers(HttpMethod.PUT, "/order/{}").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.DELETE, "/order/{id}").hasAnyRole("ADMIN", "USER")
 
                 .antMatchers(HttpMethod.GET, "/cart/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.POST, "/cart/create").hasAnyRole("ADMIN", "USER")
