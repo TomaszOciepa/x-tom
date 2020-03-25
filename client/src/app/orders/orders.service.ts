@@ -10,6 +10,10 @@ export class OrdersService {
 
   constructor(private http: HttpClient) { }
 
+  getAllOrders(){
+    return this.http.get<Order[]>("http://localhost:8080/orders/all")
+  }
+
   getOrdersById(id:number){
     return this.http.get<Order>("http://localhost:8080/orders/"+id)
   }
@@ -28,5 +32,13 @@ export class OrdersService {
 
   createOrder(order:Partial<Order>){
     return this.http.post("http://localhost:8090/orders/create", order)
+  }
+
+  editDetail(id:number, order:Partial<Order>){
+    return this.http.put<Order>("http://localhost:8080/orders/detail/"+id, order)
+  }
+
+  editAddress(id:number, order:Partial<Order>){
+    return this.http.put<Order>("http://localhost:8080/orders/address/"+id, order)
   }
 }

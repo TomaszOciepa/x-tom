@@ -48,10 +48,16 @@ public class OrdersRestController {
          ordersService.create(order);
     }
 
-    @PutMapping("/{id}")
-    public String edit(@PathVariable(value = "id") Long id, @RequestBody Orders ordersEdited, HttpServletResponse response) {
-        LOG.info("method: edit(). Update order to database");
-        return ordersService.edit(id, ordersEdited);
+    @PutMapping("/detail/{id}")
+    public String editDetail(@PathVariable(value = "id") Long id, @RequestBody Orders ordersEdited, HttpServletResponse response) {
+        LOG.info("method: editDetail(). Update order detail to database");
+        return ordersService.editDetail(id, ordersEdited);
+    }
+
+    @PutMapping("/address/{id}")
+    public String editAddress(@PathVariable(value = "id") Long id, @RequestBody Orders ordersEdited, HttpServletResponse response) {
+        LOG.info("method: editAddress(). Update order address to database");
+        return ordersService.editAddress(id, ordersEdited);
     }
 
     @DeleteMapping("/{id}")

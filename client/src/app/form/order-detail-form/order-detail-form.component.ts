@@ -1,0 +1,54 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { OrdersService } from 'src/app/orders/orders.service';
+import { Order } from 'src/app/model/order';
+
+@Component({
+  selector: 'order-detail-form',
+  templateUrl: './order-detail-form.component.html',
+  styleUrls: ['./order-detail-form.component.css']
+})
+export class OrderDetailFormComponent implements OnInit {
+
+  constructor(private fb:FormBuilder, protected auth:AuthService, private route:ActivatedRoute, private router: Router, private ordersService:OrdersService) {
+    this.auth.state.subscribe()
+
+    this.route.paramMap.subscribe(params =>{
+      this.orderId = +params.get('order_id')
+    })
+
+    this.ordersService.getOrdersById(this.orderId).subscribe(response =>{
+      this.order = response;
+    })
+
+   }
+
+  ngOnInit() {
+  }
+
+  orderId:number
+  order:Order
+  error:boolean
+  saved:boolean = false
+
+  orderDetailForm = this.fb.group({    
+    orders_status: this.fb.control(''), 
+    orders_number_delivery_days: this.fb.control(''), 
+    orders_delivery_method: this.fb.control(''), 
+    orders_payments_method: this.fb.control(''), 
+  })
+
+  save(){
+
+    this.ordersService.editDetail(this.orderId, this.orderDetailForm.value).subscribe( () =>{
+      console.log("Success")
+    },err=>{
+      this.error = err.message
+      console.log("error: "+this.error.valueOf)
+    }
+    )
+    this.saved = true
+  }
+}

@@ -1,5 +1,5 @@
-<h1>Moje zamówienia</h1>
-<ng-container *ngIf="auth.isAuthenticated">
+<h1>Zamówienia</h1>
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
     <table class="table table-striped">
         <thead>
           <tr>
@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let order of userOrders let i = index;">
+          <tr *ngFor="let order of orders let i = index;">
             <th scope="row">{{i+1}}</th>
             <td>{{order.orders_number}}</td>
             <td>{{order.orders_date_time | date: 'yyyy-MM-dd HH:mm'}}</td>
@@ -23,3 +23,4 @@
         </tbody>
       </table>
 </ng-container>
+

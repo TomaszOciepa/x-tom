@@ -23,18 +23,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.DELETE, "/product/{id}").hasRole("ADMIN")
                 .antMatchers(HttpMethod.PUT, "/product/{}").hasRole("ADMIN")
 
-                .antMatchers(HttpMethod.GET, "/orders/all").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.GET, "/orders/all").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/orders/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.GET, "/orders//user/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.POST, "/orders/create").permitAll()
                 .antMatchers(HttpMethod.PUT, "/orders/{}").hasAnyRole("ADMIN", "USER")
-                .antMatchers(HttpMethod.DELETE, "/orders/{id}").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.DELETE, "/orders/{id}").hasRole("ADMIN")
 
-                .antMatchers(HttpMethod.GET, "/order/all").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.GET, "/order/all").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET, "/order/{id}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.GET, "/order/number/{number}").hasAnyRole("ADMIN", "USER")
                 .antMatchers(HttpMethod.POST, "/order/create").permitAll()
-                .antMatchers(HttpMethod.PUT, "/order/{}").hasAnyRole("ADMIN", "USER")
+                .antMatchers(HttpMethod.PUT, "/order/detail/{}").hasRole("ADMIN")
+                .antMatchers(HttpMethod.PUT, "/order/address/{}").hasRole("ADMIN")
                 .antMatchers(HttpMethod.DELETE, "/order/{id}").hasAnyRole("ADMIN", "USER")
 
                 .antMatchers(HttpMethod.GET, "/cart/{id}").hasAnyRole("ADMIN", "USER")

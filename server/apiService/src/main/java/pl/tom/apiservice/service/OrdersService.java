@@ -26,7 +26,7 @@ public class OrdersService {
         return ordersRepository.findById(id).get();
     }
 
-    public List<Orders> getOrdersByUserId(Long id){
+    public List<Orders> getOrdersByUserId(Long id) {
         return ordersRepository.getOrdersByUserId(id);
     }
 
@@ -35,12 +35,39 @@ public class OrdersService {
         ordersRepository.save(order);
     }
 
-    public String edit(Long id, Orders ordersEdited) {
+    public String editDetail(Long id, Orders ordersEdited) {
         Optional<Orders> orders = ordersRepository.findById(id);
 
         if (orders.isPresent()) {
             orders.get().setOrders_status(ordersEdited.getOrders_status());
-            orders.get().setOrders_date_time(ordersEdited.getOrders_date_time());
+            orders.get().setOrders_delivery_method(ordersEdited.getOrders_delivery_method());
+            orders.get().setOrders_payments_method(ordersEdited.getOrders_payments_method());
+            orders.get().setOrders_number_delivery_days(ordersEdited.getOrders_number_delivery_days());
+
+            orders.get().setOrders_date_time_delivery(
+                    orders.get().getOrders_date_time().plusDays(orders.get().getOrders_number_delivery_days())
+            );
+
+            ordersRepository.save(orders.get());
+            return "updated";
+        } else {
+            return "not found";
+        }
+    }
+
+    public String editAddress(Long id, Orders ordersEdited) {
+        Optional<Orders> orders = ordersRepository.findById(id);
+
+        if (orders.isPresent()) {
+
+            orders.get().setOrders_firstName(ordersEdited.getOrders_firstName());
+            orders.get().setOrders_lastName(ordersEdited.getOrders_lastName());
+            orders.get().setOrders_email(ordersEdited.getOrders_email());
+            orders.get().setOrders_phoneNumber(ordersEdited.getOrders_phoneNumber());
+            orders.get().setOrders_zipCode(ordersEdited.getOrders_zipCode());
+            orders.get().setOrders_city(ordersEdited.getOrders_city());
+            orders.get().setOrders_street(ordersEdited.getOrders_street());
+
             ordersRepository.save(orders.get());
             return "updated";
         } else {
@@ -52,7 +79,6 @@ public class OrdersService {
         ordersRepository.deleteById(id);
 
     }
-
 
 
 }

@@ -4,6 +4,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { OrderComponent } from './order/order.component';
+import { OrdersManagerComponent } from './orders-manager/orders-manager.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'zamowienie-szczegoly',
     component:  OrderComponent
+  },
+  {
+    path:'zamowienia-admin',
+    component:  OrdersManagerComponent
   },
 ]
 

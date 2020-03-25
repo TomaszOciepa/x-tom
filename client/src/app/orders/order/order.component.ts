@@ -26,10 +26,6 @@ export class OrderComponent implements OnInit {
         this.orderItem = items
       })
     })
-
-    // this.ordersService.getOrderItemByOrderNumber(this.order.orders_number).subscribe(item =>{
-    //   this.orderItem = item
-    // })
     
    }
 

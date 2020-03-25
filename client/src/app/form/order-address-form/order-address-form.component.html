@@ -1,0 +1,54 @@
+<ng-container *ngIf="order && auth.isAuthenticated && auth.role == 'ADMIN'">
+    <form [formGroup]="orderAddressForm" (submit)="save()">
+        <span class="contact100-form-title">
+            <h4>Edycja danych adresowych zamówienia</h4>
+        </span>
+        <ng-container *ngIf="saved">
+            <div class="alert alert-success" role="alert">
+                Zapisano!!!
+              </div>
+        </ng-container>
+        <div class="form-group">
+            <label for="Name">Imię</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_firstName" formControlName="orders_firstName">
+        </div>
+        
+        <div class="form-group">
+            <label for="Lastname">Nazwisko</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_lastName" formControlName="orders_lastName">
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_email" formControlName="orders_email">
+        </div>
+    
+        <div class="form-group">
+            <label for="PhoneNumber">telefon</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_phoneNumber" formControlName="orders_phoneNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="zipcode">Kod pocztowy</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_zipCode" formControlName="orders_zipCode">
+        </div>
+
+        <div class="form-group">
+            <label for="city">Miejscowość</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_city" formControlName="orders_city">
+        </div>
+        <div class="form-group">
+            <label for="street">Ulica i numer</label>
+            <input type="text" class="form-control" [(ngModel)]="order.orders_street" formControlName="orders_street">
+        </div>
+
+        <ng-container *ngIf="!saved">
+            <input type="submit" value="zapisz" class="btn btn-danger">
+        </ng-container>
+        <ng-container *ngIf="saved">
+            <button class="btn btn-success" [routerLink]="['/zamowienie-szczegoly']" [queryParams]="{ order_id: order.orders_id}">powrót</button>
+        </ng-container>
+    </form>
+</ng-container>
+
+
