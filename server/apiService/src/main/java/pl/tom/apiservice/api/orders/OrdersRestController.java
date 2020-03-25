@@ -36,16 +36,28 @@ public class OrdersRestController {
         return ordersService.getById(id);
     }
 
+    @GetMapping("/user/{id}")
+    public List<Orders> getOrdersByUserId(@PathVariable(value = "id") Long id, HttpServletResponse response) {
+        LOG.info("method: getOrdersByUserId(). Trying get order with user id {}", id);
+        return ordersService.getOrdersByUserId(id);
+    }
+
     @PostMapping("/create")
     public void create(@RequestBody Orders order, HttpServletResponse response) {
         LOG.info("method: create(). Add new order to database");
          ordersService.create(order);
     }
 
-    @PutMapping("/{id}")
-    public String edit(@PathVariable(value = "id") Long id, @RequestBody Orders ordersEdited, HttpServletResponse response) {
-        LOG.info("method: edit(). Update order to database");
-        return ordersService.edit(id, ordersEdited);
+    @PutMapping("/detail/{id}")
+    public String editDetail(@PathVariable(value = "id") Long id, @RequestBody Orders ordersEdited, HttpServletResponse response) {
+        LOG.info("method: editDetail(). Update order detail to database");
+        return ordersService.editDetail(id, ordersEdited);
+    }
+
+    @PutMapping("/address/{id}")
+    public String editAddress(@PathVariable(value = "id") Long id, @RequestBody Orders ordersEdited, HttpServletResponse response) {
+        LOG.info("method: editAddress(). Update order address to database");
+        return ordersService.editAddress(id, ordersEdited);
     }
 
     @DeleteMapping("/{id}")

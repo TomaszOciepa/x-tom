@@ -8,9 +8,11 @@ import { SmartphoneFormComponent } from './smartphone-form/smartphone-form.compo
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserRoleFormComponent } from './user-role-form/user-role-form.component';
 import { OrderFormComponent } from './order-form/order-form.component';
+import { OrderDetailFormComponent } from './order-detail-form/order-detail-form.component';
+import { OrderAddressFormComponent } from './order-address-form/order-address-form.component';
 
 @NgModule({
-  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent],
+  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent, OrderDetailFormComponent, OrderAddressFormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

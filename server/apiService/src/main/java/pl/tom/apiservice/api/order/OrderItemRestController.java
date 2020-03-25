@@ -36,6 +36,12 @@ public class OrderItemRestController {
         return orderItemService.getById(id);
     }
 
+    @GetMapping("/number/{number}")
+    public List<OrderItem> getOrderItemByOrderNumber(@PathVariable(value = "number") int number, HttpServletResponse response) {
+        LOG.info("method: getOrderItemByOrderNumber(). Trying get order item with number {}", number);
+        return orderItemService.getOrderItemByOrderNumber(number);
+    }
+
     @PostMapping("/create")
     public int create(@RequestBody List<OrderItem> orderItemList, HttpServletResponse response) {
         LOG.info("method: create(). Add new orderItem to database");
@@ -55,4 +61,5 @@ public class OrderItemRestController {
         LOG.info("method: deleteById(). Deleting orderItem about id {}", id);
         orderItemService.deleteById(id);
     }
+
 }

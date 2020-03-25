@@ -26,6 +26,7 @@ public class OrderItemService {
         int orderNumber = orderNumberGenerator();
         orderItemList.stream().forEach(order -> {
             order.setOrder_item_number(orderNumber);
+            order.setOrder_item_price(order.getProduct().getProduct_price());
           productService.save_amount_sold_product(order.getProduct().getProduct_id(), order.getOrder_item_amount());
             orderItemRepository.save(order);
         });

@@ -30,19 +30,10 @@ export class OrderSumaryComponent implements OnInit {
   saved:boolean = false
   orderItemList:OrderItem[]
   orderData:Order
-
+  sumOrder:number = 0
   
-
   getOrderItemCart(item:OrderItem[]){
     this.orderItemList = item
-      item.forEach(item =>{
-        console.log("items: "+JSON.stringify(item.order_item_amount))
-      })
-
-  }
-
-  getOrderSumCart(sum:number){
-    console.log("suma koszyka to: "+sum)
   }
 
   save(){
@@ -54,27 +45,27 @@ export class OrderSumaryComponent implements OnInit {
   }
 
   saveOrderItem(){
-      return this.ordersService.createOrderItem(this.orderItemList)
+    this.orderItemList.forEach(item =>{
+    this.sumOrder += (item.product.product_price * item.order_item_amount)
+
+    })
+    return this.ordersService.createOrderItem(this.orderItemList)
+
   }
 
   saveOrder(number:number){
-    console.log("save order: "+number)
-    console.log("JSON 1: "+JSON.stringify(this.orderData))
     this.orderData.orders_number = number
-
+    this.orderData.orders_payments_sum = this.sumOrder
     if(this.auth.isAuthenticated){
       this.orderData.user = this.auth.getCurrentUser()
     }
-    console.log("JSON 2: "+JSON.stringify(this.orderData))
     this.ordersService.createOrder(this.orderData).subscribe( response =>{
       console.log("Success")
     }
     )
 
     if(this.auth.isAuthenticated){
-        console.log("jestem zalogowany i ususwam koszyk: użytkownika o id: "+this.auth.getCurrentUser().user_id)
         this.cartService.deleteMyCart(this.auth.getCurrentUser().user_id).subscribe(response =>{
-          console.log("koszyk został wyczyszczony")
         })
     }else{
       localStorage.removeItem('products')

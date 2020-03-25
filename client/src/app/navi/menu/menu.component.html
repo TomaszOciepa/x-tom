@@ -21,18 +21,24 @@
               <a class="nav-link" [routerLink]="['/koszyk']">Koszyk</a>
             </li>
           
+          <ng-container *ngIf="auth.isAuthenticated">
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/moje-zamowienia']">Moje Zamówienia</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+              <a class="nav-link" [routerLink]="['/profile']">Twoje konto</a>
+            </li>
+          </ng-container>
+
           <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
             <li class="nav-item" routerLinkActive="active">
               <a class="nav-link" [routerLink]="['/add-product']">Dodaj produkt</a>
             </li>
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" [routerLink]="['/users']">Użytkownicy</a>
+              <a class="nav-link" [routerLink]="['/zamowienia-admin']">Zarządzanie zamówieniami</a>
             </li>
-          </ng-container>
-
-          <ng-container *ngIf="auth.isAuthenticated">
             <li class="nav-item" routerLinkActive="active">
-              <a class="nav-link" [routerLink]="['/profile']">Twoje konto</a>
+              <a class="nav-link" [routerLink]="['/users']">Użytkownicy</a>
             </li>
           </ng-container>
 

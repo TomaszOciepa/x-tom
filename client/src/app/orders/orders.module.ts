@@ -5,16 +5,18 @@ import { OrdersComponent } from './orders/orders.component';
 import { AuthModule } from '../auth/auth.module';
 import { OrderComponent } from './order/order.component';
 import { FormModule } from '../form/form.module';
-import { OrderItemComponent } from './order-item/order-item.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { CartModule } from '../cart/cart.module';
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
+import { OrdersManagerComponent } from './orders-manager/orders-manager.component';
+import { OrdersDeleteComponent } from './orders-delete/orders-delete.component';
+
 
 
 
 
 @NgModule({
-  declarations: [OrdersComponent, OrderComponent, OrderItemComponent, AddOrderComponent, OrderSumaryComponent],
+  declarations: [OrdersComponent, OrderComponent, AddOrderComponent, OrderSumaryComponent, OrdersManagerComponent, OrdersDeleteComponent,],
   imports: [
     CommonModule,
     AuthModule,

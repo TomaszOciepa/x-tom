@@ -1,2 +1,103 @@
-<p>Zamówienie</p>
+
+ <ng-container *ngIf="auth.isAuthenticated && order">
+    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+        <button class="btn btn-danger" [routerLink]="['/zamowienie-usuwanie', order.orders_id]">Usuń zamówienie</button>
+    </ng-container>
+<h4>Numer zamówienia: {{order.orders_number}}</h4>
+<div class="row">
+    <div class="col-6">
+        <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+            <button class="btn btn-info" [routerLink]="['/edit-order-address', order.orders_id]">Edytuj</button>
+        </ng-container>
+        <h6>Dane do wysyłki</h6>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>imię i nazwisko</td>
+                    <td><strong>{{order.orders_firstName}} {{order.orders_lastName}}</strong></td>
+              </tr>
+              <tr>
+                <td>email</td>
+                <td><strong>{{order.orders_email}}</strong></td>
+            </tr>
+            <tr>
+                <td>telefon</td>
+                <td><strong>{{order.orders_phoneNumber}}</strong></td>
+            </tr>
+            <tr>
+                <td>miejscowość</td>
+                <td><strong>{{order.orders_zipCode}} {{order.orders_city}}</strong></td>
+            </tr>
+            <tr>
+                <td>ulica</td>
+                <td><strong>{{order.orders_street}}</strong></td>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <div class="col-6">
+        <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+            <button class="btn btn-info" [routerLink]="['/edit-order-detail', order.orders_id]">Edytuj</button>
+        </ng-container>
+        <h6>Informacje o zamówieniu</h6>
+          <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>status</td>
+                    <td><strong>{{order.orders_status}}</strong></td>
+              </tr>
+              <tr>
+                <td>data zamówienia</td>
+                <td><strong>{{order.orders_date_time | date: 'yyyy-MM-dd HH:mm'}}</strong></td>
+            </tr>
+            <tr>
+                <td>przewidywany czas dostawy</td>
+                <td><strong>{{order.orders_date_time_delivery | date: 'yyyy-MM-dd HH:mm'}}</strong></td>
+            </tr>
+            <tr>
+                <td>sposób dostawy</td>
+                <td><strong>{{order.orders_delivery_method}}</strong></td>
+            </tr>
+            <tr>
+                <td>sposób płatności</td>
+                <td><strong>{{order.orders_payments_method}}</strong></td>
+            </tr>
+            <tr>
+                <td>wartość zamówienia</td>
+                <td style="border: 1px solid red;"><strong>{{order.orders_payments_sum}} zł</strong></td>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<div class="row">
+    <h4>Zamówione produkty</h4>
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th scope="col">lp</th>
+                  <th scope="col">nazwa</th>
+                  <th scope="col">cena</th>
+                  <th scope="col">zamówiona ilość</th>
+                  <th scope="col">razem</th>
+                </tr>
+              </thead>
+            <tbody>
+                <tr *ngFor="let item of orderItem let i = index;">
+                    <th scope="row">{{i+1}}</th>
+                    <td><a [routerLink]="['/product',item.product.product_id]">{{item.product.product_mark}}</a></td>
+                    <td>{{item.order_item_price}} zł</td>
+                    <td>{{item.order_item_amount}}</td>
+                    <td>{{item.order_item_amount * item.order_item_price}} zł</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+</ng-container>
+
+
 

@@ -37,7 +37,7 @@ export class EditProductComponent implements OnInit {
       console.log("Success")
     },err=>{
       this.error = err.message
-      console.log("error: "+this.error.valueOf)
+      console.log("error: "+this.error)
     })
    }
 
