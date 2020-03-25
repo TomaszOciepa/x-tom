@@ -13,9 +13,11 @@ import java.util.Optional;
 public class OrdersService {
 
     private OrdersRepository ordersRepository;
+    private OrderItemService orderItemService;
 
-    public OrdersService(OrdersRepository ordersRepository) {
+    public OrdersService(OrdersRepository ordersRepository, OrderItemService orderItemService) {
         this.ordersRepository = ordersRepository;
+        this.orderItemService = orderItemService;
     }
 
     public List<Orders> getAll() {
@@ -76,8 +78,11 @@ public class OrdersService {
     }
 
     public void deleteById(Long id) {
-        ordersRepository.deleteById(id);
 
+        Orders order = getById(id);
+        int orderNumber = order.getOrders_number();
+        orderItemService.deleteOrderItemByOrderNumber(orderNumber);
+        ordersRepository.deleteById(id);
     }
 
 

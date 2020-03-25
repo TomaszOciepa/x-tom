@@ -54,7 +54,7 @@
 
                    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
                             <div class="options">
-                                <a class="btn btn-danger" [routerLink]="['/edit-product', product.product_id]">Edytuj</a>
+                                <a class="btn btn-info" [routerLink]="['/edit-product', product.product_id]">Edytuj</a>
                             </div>
                             <div class="options">
                                 <a class="btn btn-danger" [routerLink]="['/delete-product', product.product_id]">Usuń</a>

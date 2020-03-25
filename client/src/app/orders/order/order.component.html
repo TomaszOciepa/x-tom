@@ -1,10 +1,13 @@
 
  <ng-container *ngIf="auth.isAuthenticated && order">
+    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+        <button class="btn btn-danger" [routerLink]="['/zamowienie-usuwanie', order.orders_id]">Usuń zamówienie</button>
+    </ng-container>
 <h4>Numer zamówienia: {{order.orders_number}}</h4>
 <div class="row">
     <div class="col-6">
         <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-            <button class="btn btn-danger" [routerLink]="['/edit-order-address', order.orders_id]">Edytuj</button>
+            <button class="btn btn-info" [routerLink]="['/edit-order-address', order.orders_id]">Edytuj</button>
         </ng-container>
         <h6>Dane do wysyłki</h6>
         <table class="table table-striped">
@@ -35,7 +38,7 @@
 
     <div class="col-6">
         <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-            <button class="btn btn-danger" [routerLink]="['/edit-order-detail', order.orders_id]">Edytuj</button>
+            <button class="btn btn-info" [routerLink]="['/edit-order-detail', order.orders_id]">Edytuj</button>
         </ng-container>
         <h6>Informacje o zamówieniu</h6>
           <table class="table table-striped">

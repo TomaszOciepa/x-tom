@@ -51,6 +51,10 @@ public class OrderItemService {
             orderItemRepository.deleteById(id);
     }
 
+    public void deleteOrderItemByOrderNumber(int number) {
+        orderItemRepository.deleteOrderItemByOrderNumber(number);
+    }
+
     private int orderNumberGenerator() {
 
         List<OrderItem> orderItemList = getAll();

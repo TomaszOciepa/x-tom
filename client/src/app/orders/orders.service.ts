@@ -41,4 +41,8 @@ export class OrdersService {
   editAddress(id:number, order:Partial<Order>){
     return this.http.put<Order>("http://localhost:8080/orders/address/"+id, order)
   }
+
+  deleteOrder(id:number){
+    return this.http.delete("http://localhost:8080/orders/"+id)
+  }
 }

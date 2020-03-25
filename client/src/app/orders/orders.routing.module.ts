@@ -5,6 +5,7 @@ import { AddOrderComponent } from './add-order/add-order.component';
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { OrderComponent } from './order/order.component';
 import { OrdersManagerComponent } from './orders-manager/orders-manager.component';
+import { OrdersDeleteComponent } from './orders-delete/orders-delete.component';
 
 const routes: Routes = [
   {
@@ -27,9 +28,11 @@ const routes: Routes = [
     path:'zamowienia-admin',
     component:  OrdersManagerComponent
   },
+  {
+    path: 'zamowienie-usuwanie/:order_id',
+    component: OrdersDeleteComponent
+  },
 ]
-
-// path: 'product/:product_id',
 
 @NgModule({
   imports: [

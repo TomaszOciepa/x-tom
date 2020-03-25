@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.tom.apiservice.model.order.OrderItem;
-import pl.tom.apiservice.model.orders.Orders;
 import pl.tom.apiservice.service.OrderItemService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -62,4 +61,5 @@ public class OrderItemRestController {
         LOG.info("method: deleteById(). Deleting orderItem about id {}", id);
         orderItemService.deleteById(id);
     }
+
 }
