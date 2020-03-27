@@ -15,6 +15,7 @@ import { ProductsModule } from './products/products.module';
 import { FormModule } from './form/form.module';
 import { OrdersModule } from './orders/orders.module';
 import { ValidationModule } from './validation/validation.module';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -35,6 +36,7 @@ import { ValidationModule } from './validation/validation.module';
     FormModule,
     OrdersModule,
     ValidationModule,
+    AdminModule,
     AppRoutingModule,
   ],
   providers: [],

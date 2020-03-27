@@ -33,8 +33,8 @@ export class EditProductComponent implements OnInit {
    updateProduct(product){
        console.log(product)
          this.http.update(this.id, product)
-    .subscribe(()=>{
-      console.log("Success")
+    .subscribe((response)=>{
+      console.log("Success "+ response)
     },err=>{
       this.error = err.message
       console.log("error: "+this.error)

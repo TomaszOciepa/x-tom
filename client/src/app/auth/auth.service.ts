@@ -87,6 +87,10 @@ export class AuthService {
       return this.http.post<User>("http://localhost:8090/sing-up", user)
     }
 
+    checkEmail(email:string){
+      return this.http.post<boolean>("http://localhost:8090/check-email", email)
+    }
+
     clearRole(){
         this.role = ""
     }

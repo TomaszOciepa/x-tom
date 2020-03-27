@@ -41,4 +41,10 @@ public class SignUpRestController {
 
         }
     }
+
+    @PostMapping("/check-email")
+    public Boolean checkEmail(@RequestBody String email, HttpServletResponse response){
+        return userService.checkEmail(email);
+    }
+
 }

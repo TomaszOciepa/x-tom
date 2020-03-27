@@ -14,6 +14,10 @@ export class RegisterComponent implements OnInit {
   
   ngOnInit() {
     // this.registerForm.get('user_firstName').hasError
+
+    // this.auth.checkEmail("tom.ociepa@gddddmail.com").subscribe(respone =>{
+    //   console.log(respone)
+    // })
   
   }
   
@@ -65,10 +69,11 @@ export class RegisterComponent implements OnInit {
       const value = control.value;
 
       return Observable.create((observer:Observer<ValidationErrors | null>) => {
+
         setTimeout(()=>{
           const notAllwed = ['demo@wp.pl','admin', 'user']
           const notValid = notAllwed.includes(value)
-    
+
           const result = notValid? {
             'invalid-username': value
           } : null

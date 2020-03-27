@@ -1,0 +1,33 @@
+<ng-container *ngIf="auth.isAuthenticated">
+<h4>Produkty</h4>
+
+<button class="btn btn-success" [routerLink]="['/add-product']"> Dodaj nowy produkt</button>
+
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">lp</th>
+            <th scope="col">rodzaj</th>
+            <th scope="col">marka</th>
+            <th scope="col">dostępna ilość</th>
+            <th scope="col">cena</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of product let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{p.product_type}}</td>
+            <td>{{p.product_mark}}</td>
+            <td>{{p.product_amount_available - p.product_amount_sold}} szt.</td>
+            <td>{{p.product_price}} zł</td>
+            <td><button class="btn btn-primary" [routerLink]="['/product', p.product_id]">podgląd</button></td>
+            <td><button class="btn btn-info" [routerLink]="['/edit-product', p.product_id]">edytuj</button></td>
+            <td><button class="btn btn-danger" [routerLink]="['/delete-product', p.product_id]">usuń</button></td>        
+          </tr>
+        </tbody>
+      </table>
+</ng-container>

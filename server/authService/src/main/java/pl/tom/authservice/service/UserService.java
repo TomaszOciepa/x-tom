@@ -63,4 +63,19 @@ public class UserService {
             return credentials;
         }
     }
+
+    public boolean checkEmail(String email) {
+        System.out.println("co szukasz?: "+ email);
+
+        User user = userRepository.getUserByEmail(email);
+
+        if(user == null){
+            System.out.println("user = null");
+            return false;
+        }else {
+            System.out.println("user istnieje");
+            return true;
+        }
+
+    }
 }

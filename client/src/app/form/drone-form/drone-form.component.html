@@ -19,23 +19,23 @@
                 
                 <ng-container *ngIf='product'>
                     <select class="form-control" [(ngModel)]='product.product_mark' formControlName="product_mark">
-                        <option>DJI</option>
-                        <option>Hubsan</option>
-                        <option>Parrot</option>
-                        <option>Yuneec</option>
-                        <option>Overmax</option>
-                        <option>Syma</option>
+                        <option value="dji">DJI</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="hubsan">Hubsan</option>
+                        <option value="yuneec">Yuneec</option>
+                        <option value="overmax">Overmax</option>
+                        <option value="syma">Syma</option>
                     </select>
                 </ng-container>
 
                 <ng-container *ngIf='!product'>
                     <select class="form-control" formControlName="product_mark">
-                        <option>DJI</option>
-                        <option>Hubsan</option>
-                        <option>Parrot</option>
-                        <option>Yuneec</option>
-                        <option>Overmax</option>
-                        <option>Syma</option>
+                        <option value="dji">DJI</option>
+                        <option value="parrot">Parrot</option>
+                        <option value="hubsan">Hubsan</option>
+                        <option value="yuneec">Yuneec</option>
+                        <option value="overmax">Overmax</option>
+                        <option value="syma">Syma</option>
                     </select>
                 </ng-container>
 

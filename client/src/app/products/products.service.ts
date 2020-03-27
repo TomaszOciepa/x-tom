@@ -11,7 +11,7 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   getAll(){
-    return this.http.get<ProductTestList>("http://localhost:8090/product/all")
+    return this.http.get<ProductTest[]>("http://localhost:8090/product/all")
   }
 
   create(product:Partial<ProductTest>){
