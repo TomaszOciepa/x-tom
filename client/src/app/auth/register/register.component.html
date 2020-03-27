@@ -1,52 +1,116 @@
 <h3>Rejstracja</h3>
 <div class="alert alert-danger" *ngIf="message">{{message}}</div>
 <div class="form">
-    <form class="contact100-form" [formGroup]="registerForm" (submit)="register()">
+    <form [formGroup]="registerForm" (submit)="register()">
+        <ng-container *ngIf="valid">
+            <div class="alert alert-danger" role="alert">
+                Wypełnij poprawnie wszystkie pola
+              </div>
+        </ng-container>
 
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label for="FirstName">Imię</label>
-            <input type="text" class="form-control" formControlName="user_firstName">
+        <div class="form-group">
+            <label class="label-input100" for="Email">Email</label>
+            <input class="input100" type="text" class="form-control" formControlName="user_email">
+            <validation-feedback [control]="registerForm.get('user_email')"></validation-feedback>
+            <!-- <div class="validation-feedback" *ngIf="registerForm.get('user_email').touched || registerForm.get('user_email').dirty">
+                <div *ngIf="registerForm.get('user_email').hasError('required')">
+                    Pole jest wymagane
+                </div>
+                <div *ngIf="registerForm.get('user_email').hasError('email')">
+                    Niepoprawny email
+                </div>
+                <div *ngIf="registerForm.get('user_email').hasError('invalid-username')">
+                     email zajęty
+                </div>
+            </div> -->
+
         </div>
 
+        <div class="form-group">
+            <label for="Password">Hasło</label>
+            <input type="text" class="form-control" formControlName="user_password">
+            <validation-feedback [control]="registerForm.get('user_password')"></validation-feedback>
+<!-- 
+            <div class="validation-feedback" *ngIf="registerForm.get('user_password').touched || registerForm.get('user_password').dirty">
+                <div *ngIf="registerForm.get('user_password').hasError('required')">
+                    Pole jest wymagane
+                </div>
+                
+                    <div *ngIf="registerForm.get('user_password').getError('password') as error">
+                        Hasło musi zawierać:
+                        <div *ngIf="error.lowercase"> - małą literę</div>
+                        <div *ngIf="error.uppercase"> - dużą literę</div>
+                        <div *ngIf="error.number"> - liczbę</div>
+                        <div *ngIf="error.special"> - znak specjalny</div>
+                    </div>
+                
+
+
+                <div *ngIf="registerForm.get('user_password').hasError('password')">
+                    Hasło musi zawierać (min 8 znaków małą, duża literę oraz liczbę lub znak specjalny)
+                </div>
+            </div> -->
+
+        </div>
+
+        <div class="form-group">
+            <label for="Password2">Powtórz hasło</label>
+            <input type="text" class="form-control" formControlName="user_repeat_password">
+            <validation-feedback [control]="registerForm" ></validation-feedback>
+            <!-- <div class="validation-feedback" *ngIf="registerForm.get('user_repeat_password').touched || registerForm.get('user_repeat_password').dirty">
+                <div *ngIf="registerForm.hasError('password_match')">
+                    Hasła nie są równe. Spróbuj ponownie!!!
+                </div>
+
+            </div> -->
+        </div>
+
+        <!-- <div class="form-group wrap-input100 rs1-wrap-input100">
+            <label for="FirstName">Imię</label>
+            <input type="text" class="form-control" formControlName="user_firstName">
+            
+            <validation-feedback [control]="registerForm.get('user_firstName')"></validation-feedback>
+            
+            <div class="validation-feedback" *ngIf="registerForm.get('user_firstName').touched || registerForm.get('user_firstName').dirty">
+                <div *ngIf="registerForm.get('user_firstName').hasError('required')">
+                    Pole jest wymagane
+                </div>
+                <div *ngIf="registerForm.get('user_firstName').getError('minlength') as error">
+                    wymagane przynajmniej {{error.requiredLength}} znaków
+                </div>
+            </div>
+
+        </div> -->
+<!-- 
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label for="LastName">Nazwisko</label>
             <input type="text" class="form-control" formControlName="user_lastName">
-        </div>
+        </div> -->
 
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label class="label-input100" for="Email">Email</label>
-            <input class="input100" type="text" class="form-control" formControlName="user_email">
-        </div>
+
         
-        <div class="form-group wrap-input100 rs1-wrap-input100">
+        <!-- <div class="form-group wrap-input100 rs1-wrap-input100">
             <label for="PhoneNumber">Numer telefonu</label>
             <input type="text" class="form-control" formControlName="user_phoneNumber">
-        </div>
+        </div> -->
 
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label for="Password">Hasło</label>
-            <input type="text" class="form-control" formControlName="user_password">
-        </div>
-    
-        <div class="form-group wrap-input100 rs1-wrap-input100">
-            <label for="Password2">Powtórz hasło</label>
-            <input type="text" class="form-control" formControlName="user_password2">
-        </div>
+
+
         
-        <div class="form-group wrap-input100 rs1-wrap-input100">
+        <!-- <div class="form-group wrap-input100 rs1-wrap-input100">
             <label for="ZipCode">Kod pocztowy</label>
             <input type="text" class="form-control" formControlName="user_zipCode">
-        </div>
-    
+        </div> -->
+<!--     
         <div class="form-group wrap-input100 rs1-wrap-input100">
             <label for="City">Miasto</label>
             <input type="text" class="form-control" formControlName="user_city">
-        </div>
+        </div> -->
     
-        <div class="form-group wrap-input100 rs1-wrap-input100">
+        <!-- <div class="form-group wrap-input100 rs1-wrap-input100">
             <label for="Street">Ulica</label>
             <input type="text" class="form-control" formControlName="user_street">
-        </div>
+        </div> -->
     
         <input type="submit" class="btn btn-danger input100-submit" value="załóż konto">
     </form>

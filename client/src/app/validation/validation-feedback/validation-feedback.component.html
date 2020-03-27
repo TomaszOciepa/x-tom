@@ -1,0 +1,29 @@
+<div class="validation-feedback" *ngIf="control.touched || control.dirty">
+    <div *ngIf="control.hasError('required')">
+        Pole jest wymagane
+    </div>
+    
+    <div *ngIf="control.getError('minlength') as error">
+        wymagane przynajmniej {{error.requiredLength}} znaków
+    </div>
+
+    <div *ngIf="control.hasError('email')">
+        Niepoprawny email
+    </div>
+    <div *ngIf="control.hasError('invalid-username')">
+         email zajęty
+    </div>
+
+    <div *ngIf="control.getError('password') as error">
+        Hasło musi zawierać:
+        <div *ngIf="error.lowercase"> - małą literę</div>
+        <div *ngIf="error.uppercase"> - dużą literę</div>
+        <div *ngIf="error.number"> - liczbę</div>
+        <div *ngIf="error.special"> - znak specjalny</div>
+    </div>
+
+    <div *ngIf="control.hasError('password_match')">
+        Hasła nie są równe. Spróbuj ponownie!!!
+    </div>
+
+</div>

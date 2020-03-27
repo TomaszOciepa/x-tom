@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -23,15 +23,29 @@ export class LoginComponent implements OnInit {
    }
 
   loginForm = this.fb.group({
-    user_email:[''],
-    user_password:['']
+    user_email: this.fb.control('', [
+    Validators.required,
+    ]),
+    user_password: this.fb.control('', [
+      Validators.required,
+    ]),
   })
 
   message:String
   options = 0
+  valid:boolean = false
+
 
   login(){
-    this.auth.login(this.loginForm.value)
+
+    if(this.loginForm.valid){
+      this.valid = false;
+      this.auth.login(this.loginForm.value)
+    }else{
+      this.valid = true;
+    }
+
+    
   }
 
   

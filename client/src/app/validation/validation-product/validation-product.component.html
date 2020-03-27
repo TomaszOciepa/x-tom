@@ -1,0 +1,15 @@
+<div class="validation-feedback" *ngIf="control.touched || control.dirty">
+    
+    <div *ngIf="control.hasError('required')">
+            Pole jest wymagane
+    </div>
+
+    <div *ngIf="control.hasError('pattern')">
+        wymagane liczby
+    </div>
+
+    <div *ngIf="control.getError('minlength') as error">
+        Pozostało jeszcze {{error.requiredLength - control.value.length}} znaków do wpisania
+    </div>
+
+</div>

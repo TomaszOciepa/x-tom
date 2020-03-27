@@ -14,6 +14,7 @@ import { CartModule } from './cart/cart.module';
 import { ProductsModule } from './products/products.module';
 import { FormModule } from './form/form.module';
 import { OrdersModule } from './orders/orders.module';
+import { ValidationModule } from './validation/validation.module';
 
 
 
@@ -33,6 +34,7 @@ import { OrdersModule } from './orders/orders.module';
     ProductsModule,
     FormModule,
     OrdersModule,
+    ValidationModule,
     AppRoutingModule,
   ],
   providers: [],

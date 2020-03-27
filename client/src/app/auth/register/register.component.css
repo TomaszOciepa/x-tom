@@ -1,3 +1,15 @@
+form .ng-invalid.ng-touched,
+form .ng-invalid.ng-dirty {
+  border: 2px solid red !important;
+}
+
+/* form .ng-invalid.ng-touched ~ .validation-feedback,
+form .ng-invalid.ng-dirty ~ .validation-feedback {
+  color: red;
+} */
+/* style */
+
+
 .form{
     margin: 10px;
 }

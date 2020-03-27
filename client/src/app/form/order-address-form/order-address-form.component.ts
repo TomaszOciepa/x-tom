@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrdersService } from 'src/app/orders/orders.service';
@@ -32,27 +32,55 @@ export class OrderAddressFormComponent implements OnInit {
   order:Order
   error:boolean
   saved:boolean = false
+  valid:boolean = false
 
   orderAddressForm = this.fb.group({    
-    orders_firstName: this.fb.control(''), 
-    orders_lastName: this.fb.control(''), 
-    orders_email: this.fb.control(''), 
-    orders_phoneNumber: this.fb.control(''),
-    orders_zipCode: this.fb.control(''),
-    orders_city: this.fb.control(''),
-    orders_street: this.fb.control(''),
+    orders_firstName: this.fb.control('', [
+      Validators.required,
+      Validators.minLength(3)
+    ]), 
+    orders_lastName: this.fb.control('', [
+      Validators.required,
+      Validators.minLength(2)
+    ]), 
+    orders_email: this.fb.control('', [
+      Validators.required,
+      Validators.email
+    ]), 
+    orders_phoneNumber: this.fb.control('', [
+      Validators.required,
+      Validators.pattern(/^[0-9]+$/)
+    ]),
+    orders_zipCode: this.fb.control('', [
+      Validators.required,
+      Validators.pattern(/^\d{2}-\d{3}$/)
+    ]),
+    orders_city: this.fb.control('', [
+      Validators.required,
+      Validators.pattern(/[a-zA-Z]+(?:[ '-][a-zA-Z]+)*/)
+    ]),
+    orders_street: this.fb.control('', [
+      Validators.required,
+    ]),
   })
 
   save(){
 
-    this.ordersService.editAddress(this.orderId, this.orderAddressForm.value).subscribe( () =>{
-      console.log("Success")
-    },err=>{
-      this.error = err.message
-      console.log("error: "+this.error.valueOf)
+    if(this.orderAddressForm.valid){
+      this.valid = false
+      this.ordersService.editAddress(this.orderId, this.orderAddressForm.value).subscribe( () =>{
+        console.log("Success")
+      },err=>{
+        this.error = err.message
+        console.log("error: "+this.error.valueOf)
+      }
+      )
+      this.saved = true
+    }else{
+      this.valid = true
     }
-    )
-    this.saved = true
+
+    
   }
 
 }

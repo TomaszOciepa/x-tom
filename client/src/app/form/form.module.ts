@@ -10,11 +10,13 @@ import { UserRoleFormComponent } from './user-role-form/user-role-form.component
 import { OrderFormComponent } from './order-form/order-form.component';
 import { OrderDetailFormComponent } from './order-detail-form/order-detail-form.component';
 import { OrderAddressFormComponent } from './order-address-form/order-address-form.component';
+import { ValidationModule } from '../validation/validation.module';
 
 @NgModule({
   declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent, OrderDetailFormComponent, OrderAddressFormComponent],
   imports: [
     CommonModule,
+    ValidationModule,
     ReactiveFormsModule,
     FormRoutingModule,
   ],

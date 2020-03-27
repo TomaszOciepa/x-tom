@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthRoutingModule } from './auth.routing.module';
 // import { AuthorizedGuard } from './authorized.guard';
 import { RegisterComponent } from './register/register.component';
+import { ValidationModule } from '../validation/validation.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    ValidationModule,
     AuthRoutingModule
   ],
   providers: [

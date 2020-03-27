@@ -8,6 +8,13 @@
                 Zapisano!!!
               </div>
         </ng-container>
+
+        <ng-container *ngIf="valid">
+            <div class="alert alert-danger" role="alert">
+                Wypełnij poprawnie wszystkie pola
+              </div>
+        </ng-container>
+
         <div class="form-group">
             <label for="City">Status</label>
             <select class="form-control" [(ngModel)]="order.orders_status" formControlName="orders_status">
@@ -18,12 +25,14 @@
                 <option value="doręczone do klienta">Doręczone do klienta</option>
                 <option value="anulowane">Anulowane</option>
             </select>
+
+            <validation-order-address [control]="orderDetailForm.get('orders_status')"></validation-order-address>
+
         </div>
         
         <div class="form-group">
             <label for="Name">Przewidywany czas dostawy</label>
                 <select class="form-control" [(ngModel)]="order.orders_number_delivery_days" formControlName="orders_number_delivery_days">
-                    <option value="0"></option>
                     <option value="1">1 dzień</option>
                     <option value="2">2 dni</option>
                     <option value="3">3 dni</option>
@@ -39,6 +48,9 @@
                     <option value="13">13 dni</option>
                     <option value="14">14 dni</option>
                 </select>
+
+                <validation-order-address [control]="orderDetailForm.get('orders_number_delivery_days')"></validation-order-address>
+
         </div>
     
         <div class="form-group">
@@ -47,6 +59,8 @@
                     <option value="kurier">Dostawa kurierem</option>
                     <option value="osobisty">Odbiór osobisty</option>
                 </select>
+
+                <validation-order-address [control]="orderDetailForm.get('orders_delivery_method')"></validation-order-address>
         </div>
     
         <div class="form-group">
@@ -55,6 +69,9 @@
                 <option value="przy odbiorze">Przy odbiorze</option>
                 <option value="przelew gotówkowy">Przelew gotówkowy</option>
             </select>
+
+            <validation-order-address [control]="orderDetailForm.get('orders_payments_method')"></validation-order-address>
+
         </div>
         <ng-container *ngIf="!saved">
             <input type="submit" value="zapisz" class="btn btn-danger">
