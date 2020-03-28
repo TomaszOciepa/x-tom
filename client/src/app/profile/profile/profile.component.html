@@ -1,6 +1,6 @@
 <ng-container *ngIf="auth.isAuthenticated">
     <div *ngIf="profile">
-    <a class="btn btn-secondary" [routerLink]="['/edit-profile', profile.user_id]">Edytuj</a>
+    <a class="btn btn-secondary" [routerLink]="['/edit-profile', profile.user_id]">Edytuj dane adresowe</a>
         <dl class="row">
             <dt class="col-3">email</dt>
             <dd class="col-9">{{profile.user_email}}</dd>

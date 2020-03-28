@@ -29,7 +29,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public String edit(Long id, Product editedProduct){
+    public Product edit(Long id, Product editedProduct){
         Optional<Product> product = productRepository.findById(id);
 
         if (product.isPresent()){
@@ -52,9 +52,9 @@ public class ProductService {
             product.get().setProduct_range(editedProduct.getProduct_range());
 
             productRepository.save(product.get());
-            return "updated";
+            return product.get();
         }else {
-            return "not found";
+            return product.get();
         }
     }
 

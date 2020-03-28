@@ -1,14 +1,21 @@
 
+            <ng-container *ngIf="valid">
+                <div class="alert alert-danger" role="alert">
+                    Wypełnij poprawnie wszystkie pola
+                  </div>
+            </ng-container>
+
     <form [formGroup]="addOrderForm" (submit)="saveOrderSummary()">
-        <span class="contact100-form-title">
-            Dostawa i płatność
-        </span>
+        <h4>Dostawa i płatność</h4>
         <h3>1.Sposób dostawy</h3>
         <div class="form-group ">
                 <select class="form-control" formControlName="orders_delivery_method">
                     <option value="kurier">Dostawa kurierem</option>
                     <option value="osobisty">Odbiór osobisty</option>
                 </select>
+    
+            <validation-order-address [control]="addOrderForm.get('orders_delivery_method')"></validation-order-address>
+    
         </div>
 
         <h3>2.Metoda płatności</h3>
@@ -17,28 +24,40 @@
                     <option value="przy odbiorze">Przy odbiorze</option>
                     <option value="przelew gotówkowy">Przelew gotówkowy</option>
                 </select>
+
+            <validation-order-address [control]="addOrderForm.get('orders_payments_method')"></validation-order-address>
+        
         </div>
 
         <h3>3.Dane odbiorcy</h3>
         <div class="form-group">
             <label for="FirstName">Imię</label>
+
             <ng-container *ngIf="user">
                 <input type="text" class="form-control" [(ngModel)]="user.user_firstName" formControlName="orders_firstName">
             </ng-container>
+
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_firstName">
-
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_firstName')"></validation-order-address>
+            
         </div>
     
         <div class="form-group">
             <label for="LastName">Nazwisko</label>
+
             <ng-container *ngIf="user">
                 <input type="text" class="form-control" [(ngModel)]="user.user_lastName" formControlName="orders_lastName">
             </ng-container>
+
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_lastName">
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_lastName')"></validation-order-address>
+            
         </div>
 
         <div class="form-group">
@@ -50,10 +69,13 @@
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_street">
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_street')"></validation-order-address>
+
         </div>
 
         <div class="form-group">
-            <label for="ZipCode">Kod pocztowy</label>
+            <label for="ZipCode">Kod pocztowy [nn-nnn]</label>
             <ng-container *ngIf="user">
                 <input type="text" class="form-control" [(ngModel)]="user.user_zipCode" formControlName="orders_zipCode">
             </ng-container>
@@ -61,6 +83,9 @@
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_zipCode">
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_zipCode')"></validation-order-address>
+
         </div>
 
         <div class="form-group">
@@ -71,6 +96,9 @@
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_city">
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_city')"></validation-order-address>
+
         </div>
         
         <div class="form-group">
@@ -82,6 +110,9 @@
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_email">
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_email')"></validation-order-address>
+
         </div>
 
         <div class="form-group">
@@ -93,10 +124,9 @@
             <ng-container *ngIf="!user">
                 <input type="text" class="form-control" formControlName="orders_phoneNumber">
             </ng-container>
+
+            <validation-order-address [control]="addOrderForm.get('orders_phoneNumber')"></validation-order-address>
+
         </div>
         <input value="zapisz" type="submit" value="kupuję i płacę" class="btn btn-danger">
     </form>
-
-
-
-

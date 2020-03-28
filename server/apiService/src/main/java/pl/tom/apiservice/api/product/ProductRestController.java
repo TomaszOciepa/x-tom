@@ -29,8 +29,8 @@ public class ProductRestController {
     }
 
     @PutMapping("/{id}")
-    public String edit(@PathVariable(value = "id") Long id, @RequestBody Product productEdited, HttpServletResponse response) {
-        LOG.info("method: edit. Add new dron to database");
+    public Product edit(@PathVariable(value = "id") Long id, @RequestBody Product productEdited, HttpServletResponse response) {
+        LOG.info("method: edit. Edit dron id: {}", id);
 
         return productService.edit(id, productEdited);
     }

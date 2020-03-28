@@ -1,0 +1,29 @@
+.item a{
+    color: #000000;
+    text-decoration: none;   
+   }
+   
+   .item a:hover{
+   color: green;
+   }
+   
+   .item{
+       margin: 10px;
+   }
+   
+   .my-card-body p{
+   margin: 0;
+   }
+   
+   .my-card-body h5{
+       margin-top: 20px;
+       }
+   
+   .card{
+       padding: 6px;
+   }
+   
+   .card:hover{
+       border: 1px solid green;
+   }
+   

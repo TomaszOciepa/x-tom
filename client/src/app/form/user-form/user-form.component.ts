@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user';
 
 @Component({
@@ -11,21 +11,35 @@ export class UserFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder) { }
 
-    userForm = this.fb.group({
-    user_firstName: this.fb.control(''),
-    user_lastName: this.fb.control(''),
-    user_email: this.fb.control(''),
-    user_phoneNumber: this.fb.control(''),
-    user_zipCode: this.fb.control(''),
-    user_city: this.fb.control(''),
+  ngOnInit() {
+  }
+  
+  userForm = this.fb.group({
+    user_firstName: this.fb.control('', [
+      Validators.minLength(3)
+    ]),
+    user_lastName: this.fb.control('', [
+      Validators.minLength(2)
+    ]),
+    user_phoneNumber: this.fb.control('', [
+      Validators.pattern(/^[0-9]+$/)
+    ]),
+    user_zipCode: this.fb.control('', [
+      Validators.pattern(/^\d{2}-\d{3}$/)
+    ]),
+    user_city: this.fb.control('', [
+      Validators.pattern(/[a-zA-Z]+(?:[ '-][a-zA-Z]+)*/)
+    ]),
     user_street: this.fb.control(''),
+    
   })
-
+  
   user
   updateUser:User
-  saved:boolean = false
   returnPath:string
-
+  saved:boolean = false
+  valid:boolean = false
+  
   @Input("getUser")
   set getId(product){
     this.user = product
@@ -42,12 +56,17 @@ export class UserFormComponent implements OnInit {
   emiterSaveProduct = new EventEmitter()
 
   saveUser(){
-    console.log("zaktualizowany: "+this.userForm.value)
-    this.updateUser = this.userForm.value
-    this.emiterSaveProduct.emit(this.updateUser)
-    this.saved = true;
-  }
-  ngOnInit() {
+
+    if(this.userForm.valid){
+      this.valid = false
+      this.updateUser = this.userForm.value
+      this.emiterSaveProduct.emit(this.updateUser)
+      this.saved = true;
+    }else{
+      this.valid = true
+    }
+
+    
   }
 
 }

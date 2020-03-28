@@ -14,6 +14,7 @@ export interface ProductTest {
     product_disc_size: number,
     product_screen_diagonal: number,
     product_amount_available: number,
+    product_amount_sold: number,
     product_camera_resolution: number,
     product_time_work: number,
     product_range: number

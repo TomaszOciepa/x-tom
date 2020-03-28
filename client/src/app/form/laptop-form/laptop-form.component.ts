@@ -14,35 +14,66 @@ export class LaptopFormComponent implements OnInit {
     this.auth.state.subscribe()
   }
   
+  ngOnInit() {
+      console.log(this.productForm)
+  }
+
+  product
+  productType = "laptops"
+  saved:boolean = false
+  valid:boolean = false
+
+  updateProduct:ProductTest
   productForm = this.fb.group({    
-    
     product_type: this.fb.control('laptop'), 
     product_mark: this.fb.control('', [
       Validators.required,
-      Validators.minLength(3)
     ]), 
-    product_status: this.fb.control(''), 
-    product_description: this.fb.control(''), 
-    product_processor: this.fb.control(''), 
-    product_system: this.fb.control(''), 
+    product_status: this.fb.control('', [
+        Validators.required,
+      ]), 
+    product_description: this.fb.control('', [
+        Validators.required,
+        Validators.minLength(20)
+      ]), 
+    product_processor: this.fb.control('', [
+        Validators.required,
+      ]), 
+    product_system: this.fb.control('', [
+        Validators.required,
+      ]), 
     product_camera: this.fb.control('brak'), 
-    product_disc_type: this.fb.control(''), 
-    product_graphics_card: this.fb.control(''), 
-    product_price: this.fb.control(''), 
-    product_ram_size: this.fb.control(''), 
-    product_disc_size: this.fb.control(''), 
-    product_screen_diagonal: this.fb.control(''), 
-    product_amount_available: this.fb.control(''), 
+    product_disc_type: this.fb.control('', [
+        Validators.required,
+      ]), 
+    product_graphics_card: this.fb.control('', [
+        Validators.required,
+      ]), 
+    product_price: this.fb.control('', [
+        Validators.required,
+        Validators.pattern(/^[0-9]+$/),
+      ]), 
+    product_ram_size: this.fb.control('', [
+        Validators.required,
+        Validators.pattern(/^[0-9]+$/),
+      ]), 
+    product_disc_size: this.fb.control('', [
+        Validators.required,
+        Validators.pattern(/^[0-9]+$/),
+      ]), 
+    product_screen_diagonal: this.fb.control('', [
+        Validators.required,
+      ]), 
+    product_amount_available: this.fb.control('', [
+        Validators.required,
+        Validators.pattern(/^[0-9]+$/),
+      ]), 
     product_camera_resolution: this.fb.control('0'), 
     product_time_work: this.fb.control('0'), 
     product_range: this.fb.control('0'),
   })
 
-  product
-  productType = "laptops"
-  saved:boolean = false
 
-  updateProduct:ProductTest
 
   @Input("getProduct")
   set getId(product){
@@ -55,13 +86,18 @@ export class LaptopFormComponent implements OnInit {
   emiterSaveProduct = new EventEmitter()
 
   saveProduct(){
-    console.log("zaktualizowany: "+this.productForm.value)
-    this.updateProduct = this.productForm.value
-    this.changeProductMarkOnString()
-    this.changeProductStatusOnString()
-    this.emiterSaveProduct.emit(this.updateProduct)
-    
-    this.saved = true;
+
+    if(this.productForm.valid){
+        this.valid = false
+        this.updateProduct = this.productForm.value
+        this.changeProductMarkOnString()
+        this.changeProductStatusOnString()
+        this.emiterSaveProduct.emit(this.updateProduct)
+        this.saved = true;
+    }else{
+        this.valid = true
+    }
+
   }
 
   changeProductMarkOnNumber(){
@@ -219,7 +255,6 @@ export class LaptopFormComponent implements OnInit {
           break;
   }
   }
-  ngOnInit() {
-  }
+
 
 }

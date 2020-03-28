@@ -5,6 +5,13 @@
         <h3>Mam już konto</h3>
         <div class="alert alert-danger" *ngIf="message">{{message}}</div>
         <form [formGroup]="loginForm" (submit)="login()">
+
+            <ng-container *ngIf="valid"> 
+                <div class="alert alert-danger" role="alert">
+                    Wpisz email i hasło
+                  </div>
+            </ng-container>
+
             <div class="form-group">
                 <label for="Email">Email</label>
                 <input type="text" class="form-control" formControlName="user_email">
