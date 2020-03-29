@@ -1,11 +1,13 @@
 package pl.tom.authservice.model.user;
 
+import pl.tom.authservice.model.passwordReset.PasswordReset;
 import pl.tom.authservice.model.orders.Orders;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "USER")
 public class User {
 
     @Id
@@ -23,6 +25,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     Set<Orders> order;
+
+    @OneToMany(mappedBy = "user")
+    Set<PasswordReset> passwordReset;
 
     public User() {
     }

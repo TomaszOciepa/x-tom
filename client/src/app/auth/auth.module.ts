@@ -9,10 +9,12 @@ import { AuthRoutingModule } from './auth.routing.module';
 // import { AuthorizedGuard } from './authorized.guard';
 import { RegisterComponent } from './register/register.component';
 import { ValidationModule } from '../validation/validation.module';
+import { RemindPasswordComponent } from './remind-password/remind-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
