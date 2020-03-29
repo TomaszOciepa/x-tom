@@ -21,8 +21,12 @@
                 <label for="Password">Hasło</label>
                 <input type="text" class="form-control" formControlName="user_password">
             </div>
-        
+
             <input type="submit" class="btn btn-primary mx-auto" value="zaloguj">
+
+            <div>
+                <a [routerLink]="['/przypomnij-haslo']">Nie pamiętam hasła</a>
+            </div>
         </form>
     </div>
     <div class="col-6">

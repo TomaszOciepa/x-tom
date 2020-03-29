@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.auth.TokenGenerator;
+import pl.tom.authservice.model.passwordReset.PasswordResetData;
 import pl.tom.authservice.model.user.Credentials;
 import pl.tom.authservice.model.user.User;
 import pl.tom.authservice.model.user.UserRepository;
@@ -65,8 +66,6 @@ public class UserService {
     }
 
     public boolean checkEmail(String email) {
-        System.out.println("co szukasz?: "+ email);
-
         User user = userRepository.getUserByEmail(email);
 
         if(user == null){
@@ -77,5 +76,15 @@ public class UserService {
             return true;
         }
 
+    }
+
+    public boolean setNewPassword(PasswordResetData passwordResetData) {
+        String email = passwordResetData.getEmail();
+        String newPassword = passwordResetData.getPassword();
+
+        User user = userRepository.getUserByEmail(email);
+        user.setUser_password(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+        return true;
     }
 }

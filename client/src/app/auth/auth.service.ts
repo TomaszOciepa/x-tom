@@ -4,6 +4,7 @@ import { User } from '../model/user';
 import { map, tap } from 'rxjs/internal/operators';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { UserCodeEncryptService } from './user-code-encrypt.service';
+import { PasswrodResetData } from '../model/passwordResetData';
 
 
 interface Credentials{
@@ -143,4 +144,15 @@ export class AuthService {
     
   }
 
+  passwordResetVerifyUser(email:string){
+    return this.http.post<boolean>("http://localhost:8090/password-reset/verify-user", email)
+  }
+
+  passwordResetCheckCode(passwordResetData:PasswrodResetData){
+    return this.http.post<boolean>("http://localhost:8090/password-reset/check-code", passwordResetData)
+  }
+
+  passwordResetSetNew(passwordResetData:PasswrodResetData){
+    return this.http.post<boolean>("http://localhost:8090/password-reset/set-new", passwordResetData)
+  }
 }

@@ -13,7 +13,7 @@ import { OrderAddressFormComponent } from './order-address-form/order-address-fo
 import { ValidationModule } from '../validation/validation.module';
 
 @NgModule({
-  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent, OrderDetailFormComponent, OrderAddressFormComponent],
+  declarations: [DroneFormComponent, LaptopFormComponent, SmartphoneFormComponent, UserFormComponent, UserRoleFormComponent, OrderFormComponent, OrderDetailFormComponent, OrderAddressFormComponent,],
   imports: [
     CommonModule,
     ValidationModule,
