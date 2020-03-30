@@ -11,10 +11,11 @@ import { RegisterComponent } from './register/register.component';
 import { ValidationModule } from '../validation/validation.module';
 import { RemindPasswordComponent } from './remind-password/remind-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent],
+  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent, ChangePasswordComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

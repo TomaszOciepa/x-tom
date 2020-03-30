@@ -1,43 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, ValidatorFn, FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { PasswrodResetData } from 'src/app/model/passwordResetData';
 import { ActivatedRoute } from '@angular/router';
+import { ChangePassword } from 'src/app/model/changePasswordData';
 
 @Component({
-  selector: 'app-reset-password',
-  templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.css']
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.css']
 })
-export class ResetPasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
 
-  
-  constructor(private fb:FormBuilder, private auth:AuthService, private route: ActivatedRoute) { }
+  constructor(private fb:FormBuilder, private auth:AuthService, private route: ActivatedRoute) {
+    auth.state.subscribe()
+
+   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(param =>{
-      this.passwordResetData.email = param['user']
-      this.passwordResetData.code = param['code']
-      
-    })
-
-    this.auth.passwordResetCheckCode(this.passwordResetData).subscribe(response =>{
-      this.linkIsCorrect = response
-    });
-      
   }
 
-  linkIsCorrect:boolean
+  changePasswordData:ChangePassword = {
+    user_id: 0
+,    password: ''
+  }
+
   saveNewPassword:boolean = false
   valid:boolean = false
-  
-  passwordResetData:PasswrodResetData = {
-    email: "",
-    code: "",
-    password: '',
-  }
 
-  resetPasswordForm = this.fb.group({
+  changePasswordForm = this.fb.group({
     password: this.fb.control('',[
       Validators.required,
       Validators.minLength(6),
@@ -65,7 +55,6 @@ export class ResetPasswordComponent implements OnInit {
       return null
     }
   })
-
 
 
   validatePassword(options:{
@@ -109,17 +98,21 @@ export class ResetPasswordComponent implements OnInit {
 
   }
 
-  resetPassword(){
+  changePassword(){
 
-    if(this.resetPasswordForm.valid){
+    if(this.changePasswordForm.valid){
       this.valid = false
-      console.log("resetuje :)")
 
-      this.passwordResetData.password = this.resetPasswordForm.get('password').value
+      this.changePasswordData.user_id = this.auth.getCurrentUser().user_id
+      this.changePasswordData.password = this.changePasswordForm.get('password').value
 
-      this.auth.passwordResetSetNew(this.passwordResetData).subscribe(response =>{
-        this.saveNewPassword = response
+      this.auth.changePassword(this.changePasswordData).subscribe(response =>{
+        console.log(response)
       })
+
+      this.saveNewPassword = true
+      
+
       
     }else{
       this.valid = true
