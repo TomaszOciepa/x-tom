@@ -2,6 +2,8 @@
     <div *ngIf="profile">
     <a class="btn btn-secondary" [routerLink]="['/edit-profile', profile.user_id]">Edytuj dane adresowe</a> 
     <a class="btn btn-danger" [routerLink]="['/zmiana-hasla']">zmień hasło</a>
+    <a class="btn btn-danger" [routerLink]="['/zmiana-email']">zmień email</a>
+
         <dl class="row">
             <dt class="col-3">email</dt>
             <dd class="col-9">{{profile.user_email}}</dd>

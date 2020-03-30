@@ -113,8 +113,7 @@ export class ResetPasswordComponent implements OnInit {
 
     if(this.resetPasswordForm.valid){
       this.valid = false
-      console.log("resetuje :)")
-
+      
       this.passwordResetData.password = this.resetPasswordForm.get('password').value
 
       this.auth.passwordResetSetNew(this.passwordResetData).subscribe(response =>{

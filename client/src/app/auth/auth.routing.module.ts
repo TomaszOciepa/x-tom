@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { RemindPasswordComponent } from './remind-password/remind-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangeEmailComponent } from './change-email/change-email.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'zmiana-hasla',
     component: ChangePasswordComponent
+  },
+  {
+    path: 'zmiana-email',
+    component: ChangeEmailComponent
   }
 ]
 

@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.tom.apiservice.model.user.ChangeEmailData;
 import pl.tom.apiservice.model.user.ChangePasswordData;
 import pl.tom.apiservice.service.UserService;
 import pl.tom.apiservice.model.user.User;
@@ -43,8 +44,20 @@ public class UserRestController {
             LOG.info("method: getUserById(). userId {} found", id);
             response.setStatus(200);
         }
-
         return user;
+    }
+
+    @PostMapping("/confirm-password")
+    public boolean confirmPassword(@RequestBody ChangePasswordData passwordData, HttpServletResponse response) {
+        LOG.info("method: confirmPassword()");
+        boolean result = userService.confirmPassword(passwordData);
+
+        if(result){
+            LOG.info("Password confirmed");
+        }else {
+            LOG.warn("Password not confirmed");
+        }
+        return result;
     }
 
     @PutMapping("/{id}")
@@ -69,6 +82,20 @@ public class UserRestController {
             LOG.info("Password changed");
         }else {
             LOG.warn("Password has not been changed");
+        }
+        return result;
+    }
+
+    @PutMapping("/change-email")
+    public boolean changeEmail(@RequestBody ChangeEmailData changeEmailData, HttpServletResponse response) {
+        LOG.info("method: changeEmail()");
+
+        boolean result = userService.changeEmail(changeEmailData);
+
+        if(result){
+            LOG.info("Email changed");
+        }else {
+            LOG.warn("Email has not been changed");
         }
         return result;
     }

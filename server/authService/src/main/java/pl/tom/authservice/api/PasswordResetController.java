@@ -58,7 +58,8 @@ public class PasswordResetController {
 
     @PostMapping("/set-new")
     public boolean setNewPassword(@RequestBody PasswordResetData passwordResetData, HttpServletResponse response) {
-        LOG.info("Try set new Password: {}, code: {}");
+        String email = passwordResetData.getEmail();
+        LOG.info("Try set new Password for: {}", email);
 
         boolean correct = passwordResetSevice.check(passwordResetData);
 
@@ -66,7 +67,7 @@ public class PasswordResetController {
            boolean result =  userService.setNewPassword(passwordResetData);
            if(result){
                LOG.info("Set a new password");
-                String email = passwordResetData.getEmail();
+               LOG.info("sending email to: {} with a confirmation password change ", email);
                passwordResetSevice.deletePasswordResetByUserId(email);
                LOG.info("Delete password reset data for {}", email);
            }else {

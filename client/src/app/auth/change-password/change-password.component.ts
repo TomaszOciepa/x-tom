@@ -11,9 +11,8 @@ import { ChangePassword } from 'src/app/model/changePasswordData';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, private auth:AuthService, private route: ActivatedRoute) {
+  constructor(private fb:FormBuilder, private auth:AuthService) {
     auth.state.subscribe()
-
    }
 
   ngOnInit() {
@@ -107,7 +106,7 @@ export class ChangePasswordComponent implements OnInit {
       this.changePasswordData.password = this.changePasswordForm.get('password').value
 
       this.auth.changePassword(this.changePasswordData).subscribe(response =>{
-        console.log(response)
+        console.log("odpowiedz: "+response)
       })
 
       this.saveNewPassword = true

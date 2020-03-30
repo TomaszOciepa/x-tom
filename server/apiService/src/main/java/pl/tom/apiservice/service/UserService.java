@@ -2,12 +2,15 @@ package pl.tom.apiservice.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import pl.tom.apiservice.model.user.ChangeEmailData;
 import pl.tom.apiservice.model.user.ChangePasswordData;
 import pl.tom.apiservice.model.user.User;
 import pl.tom.apiservice.model.user.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -72,6 +75,58 @@ public class UserService {
             user.setUser_password(passwordEncoder.encode(newPassword));
             repo.save(user);
             return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean changeEmail(ChangeEmailData changeEmailData) {
+        Long userId = changeEmailData.getUserId();
+        String newEmail = changeEmailData.getEmail();
+
+        boolean result = emailExists(newEmail);
+
+        if(!result){
+            Optional<User> userOptional = getUserById(userId);
+            User user = userOptional.get();
+            user.setUser_email(newEmail);
+            repo.save(user);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    private boolean emailExists(String email) {
+        List<User> allUser = getAllUser();
+
+        Set<User> collect = allUser.stream().filter(user -> user.getUser_email().contains(email)).collect(Collectors.toSet());
+
+        if(collect.isEmpty()){
+            return false;
+        }else {
+            return true;
+        }
+
+    }
+
+    public boolean confirmPassword(ChangePasswordData passwordData) {
+        Long userId = passwordData.getUser_id();
+        String passwordForConfirmation = passwordData.getPassword();
+
+        Optional<User> userOptional = getUserById(userId);
+
+        if(userOptional.isPresent()){
+            User user = userOptional.get();
+            String userPassword = user.getUser_password();
+
+            boolean result = passwordEncoder.matches(passwordForConfirmation, userPassword);
+
+            if(result){
+                return true;
+            }else {
+                return false;
+            }
         }else {
             return false;
         }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.auth.TokenGenerator;
+import pl.tom.authservice.email.EmailSender;
 import pl.tom.authservice.model.passwordReset.PasswordResetData;
 import pl.tom.authservice.model.user.Credentials;
 import pl.tom.authservice.model.user.User;
@@ -14,14 +15,16 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    private final EmailSender emailSender;
     private PasswordEncoder passwordEncoder;
     private UserRepository userRepository;
     private TokenGenerator tokenGenerator;
 
     @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, TokenGenerator tokenGenerator) {
-        this.userRepository = userRepository;
+    public UserService(EmailSender emailSender, PasswordEncoder passwordEncoder, UserRepository userRepository, TokenGenerator tokenGenerator) {
+        this.emailSender = emailSender;
         this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
         this.tokenGenerator = tokenGenerator;
     }
 
@@ -85,6 +88,7 @@ public class UserService {
         User user = userRepository.getUserByEmail(email);
         user.setUser_password(passwordEncoder.encode(newPassword));
         userRepository.save(user);
+        emailSender.sendEmail("tomek0290@gmail.com", "x-tom - nowe hasło", "Hasło dla konta: "+email+" zostało zmienione");
         return true;
     }
 }

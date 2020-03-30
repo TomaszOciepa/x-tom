@@ -1,0 +1,89 @@
+<h3>Zmiana adresu e-mail</h3>
+
+<ng-container *ngIf="auth.isAuthenticated">
+
+    <ng-container *ngIf="!passwordConfirm">
+        <div class="form">
+            <form [formGroup]="confirmPasswordForm" (submit)="confirmPassword()">
+                <ng-container *ngIf="valid">
+                    <div class="alert alert-danger" role="alert">
+                         Wypełnij puste pole
+                    </div>
+                </ng-container>
+            
+                <ng-container *ngIf="!correctPassword">
+                    <div class="alert alert-danger" role="alert">
+                        Niepoprawne hasło
+                    </div>
+                </ng-container>
+                <div class="form-group">
+                    <label for="Password">Podaj hasło do swojego konta</label>
+                    <input type="text" class="form-control" formControlName="password">
+                    <validation-feedback [control]="confirmPasswordForm.get('password')"></validation-feedback>
+                </div>
+            
+                <input type="submit" class="btn btn-danger input100-submit" value="wyślij">
+            </form>
+        </div>
+
+
+
+    </ng-container>
+
+
+
+
+    <ng-container *ngIf="passwordConfirm">
+        <ng-container *ngIf="saveNewEmail">
+            <div class="alert alert-success" role="alert">
+                Hasło zostało zmienione<br>
+                <a class="btn btn-info" [routerLink]="['/profile']">ok</a>  
+              </div>
+              
+        </ng-container>
+        
+        <ng-container *ngIf="!saveNewEmail">
+            <div class="alert alert-danger" *ngIf="message">{{message}}</div>
+            <ng-container *ngIf="!saveEmail">
+                <div class="form">
+                    <form [formGroup]="changeEmailForm" (submit)="changeEmail()">
+                        <ng-container *ngIf="valid">
+                            <div class="alert alert-danger" role="alert">
+                                 Wypełnij puste pole
+                            </div>
+                        </ng-container>
+    
+                        <ng-container *ngIf="!correctChangeEmail">
+                            <div class="alert alert-danger" role="alert">
+                                Email jest już zajęty
+                            </div>
+                        </ng-container>
+                
+                        <div class="form-group">
+                            <label for="Password">Podaj nowy email</label>
+                            <input type="text" class="form-control" formControlName="email">
+                            <validation-feedback [control]="changeEmailForm.get('email')"></validation-feedback>
+                        </div>
+                    
+                        <input type="submit" class="btn btn-danger input100-submit" value="zapisz">
+                    </form>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="saveEmail">
+                <div class="alert alert-success" role="alert">
+                    Email został zmieniony<br>
+                    <a class="btn btn-info" [routerLink]="['/profile']">ok</a>  
+                  </div>
+            </ng-container>
+
+        </ng-container>
+    </ng-container>
+
+</ng-container>
+
+
+
+
+
+
