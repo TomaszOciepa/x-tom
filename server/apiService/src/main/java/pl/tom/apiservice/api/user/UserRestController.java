@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pl.tom.apiservice.model.user.ChangePasswordData;
 import pl.tom.apiservice.service.UserService;
 import pl.tom.apiservice.model.user.User;
 
@@ -52,10 +53,24 @@ public class UserRestController {
         return userService.edit(id, userEdited);
     }
 
-    @PutMapping("role/{id}")
+    @PutMapping("/role/{id}")
     public Optional<User> editRole(@PathVariable(value = "id") Long id, @RequestBody User userEdited, HttpServletResponse response) {
         LOG.info("method: editRole. Edit user");
         return userService.editRole(id, userEdited);
+    }
+
+    @PutMapping("/change-password")
+    public boolean changePassword(@RequestBody ChangePasswordData changePasswordData, HttpServletResponse response) {
+        LOG.info("method: changePassword()");
+
+        boolean result = userService.changePassword(changePasswordData);
+
+        if(result){
+            LOG.info("Password changed");
+        }else {
+            LOG.warn("Password has not been changed");
+        }
+        return result;
     }
 
     @DeleteMapping("/{id}")

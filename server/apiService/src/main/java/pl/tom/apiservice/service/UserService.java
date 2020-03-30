@@ -1,6 +1,8 @@
 package pl.tom.apiservice.service;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import pl.tom.apiservice.model.user.ChangePasswordData;
 import pl.tom.apiservice.model.user.User;
 import pl.tom.apiservice.model.user.UserRepository;
 
@@ -11,9 +13,11 @@ import java.util.Optional;
 public class UserService {
 
     private UserRepository repo;
+    private PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository repo) {
+    public UserService(UserRepository repo, PasswordEncoder passwordEncoder) {
         this.repo = repo;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public Optional<User> getUserById(Long id){
@@ -54,6 +58,22 @@ public class UserService {
 
         } else {
             return updateUser;
+        }
+    }
+
+    public boolean changePassword(ChangePasswordData changePasswordData) {
+        Long userId = changePasswordData.getUser_id();
+        String newPassword = changePasswordData.getPassword();
+
+        Optional<User> userOptional = getUserById(userId);
+
+        if(userOptional.isPresent()){
+            User user = userOptional.get();
+            user.setUser_password(passwordEncoder.encode(newPassword));
+            repo.save(user);
+            return true;
+        }else {
+            return false;
         }
     }
 }

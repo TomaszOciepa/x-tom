@@ -5,6 +5,7 @@ import { map, tap } from 'rxjs/internal/operators';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { UserCodeEncryptService } from './user-code-encrypt.service';
 import { PasswrodResetData } from '../model/passwordResetData';
+import { ChangePassword } from '../model/changePasswordData';
 
 
 interface Credentials{
@@ -154,5 +155,9 @@ export class AuthService {
 
   passwordResetSetNew(passwordResetData:PasswrodResetData){
     return this.http.post<boolean>("http://localhost:8090/password-reset/set-new", passwordResetData)
+  }
+
+  changePassword(changePasswordData:ChangePassword){
+    return this.http.put<boolean>("http://localhost:8080/user/change-password", changePasswordData)
   }
 }
