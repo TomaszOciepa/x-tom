@@ -34,13 +34,14 @@ export class LoginComponent implements OnInit {
   message:String
   options = 0
   valid:boolean = false
-
-
+  
   login(){
 
     if(this.loginForm.valid){
       this.valid = false;
       this.auth.login(this.loginForm.value)
+      
+
     }else{
       this.valid = true;
     }

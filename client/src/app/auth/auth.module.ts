@@ -12,10 +12,11 @@ import { ValidationModule } from '../validation/validation.module';
 import { RemindPasswordComponent } from './remind-password/remind-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangeEmailComponent } from './change-email/change-email.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent, ChangePasswordComponent],
+  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent, ChangePasswordComponent, ChangeEmailComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

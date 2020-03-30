@@ -30,9 +30,7 @@ export class RemindPasswordComponent implements OnInit {
     if(this.remindPasswordForm.valid){
       this.valid = false
       this.sent = true
-      this.auth.passwordResetVerifyUser(this.remindPasswordForm.get('email').value).subscribe(response =>{
-        console.log(response)
-      })
+      this.auth.passwordResetVerifyUser(this.remindPasswordForm.get('email').value).subscribe()
     }else{
       this.valid = true
     }

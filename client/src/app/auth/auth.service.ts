@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { UserCodeEncryptService } from './user-code-encrypt.service';
 import { PasswrodResetData } from '../model/passwordResetData';
 import { ChangePassword } from '../model/changePasswordData';
+import { ChangeEmail } from '../model/changeEmailData';
 
 
 interface Credentials{
@@ -50,7 +51,8 @@ export class AuthService {
     map(role => this.role = role.user.user_role))
     
     login(credentials:Credentials){
-      this.http.post(this.url, credentials)
+      
+    return this.http.post(this.url, credentials)
       .subscribe((session:Session) =>{
         this.session.next(session)
         console.log(session.token)
@@ -59,12 +61,14 @@ export class AuthService {
         this.setTokenInLocalStorage(session.token)
         this.setUserIdInStorage(session.user.user_id)
         console.log("Success")
+       
       },error =>{
         if(error instanceof HttpErrorResponse){
           console.error(error.error)
         }
         
       })
+      
     }
 
     logout(message?:String){
@@ -159,5 +163,13 @@ export class AuthService {
 
   changePassword(changePasswordData:ChangePassword){
     return this.http.put<boolean>("http://localhost:8080/user/change-password", changePasswordData)
+  }
+
+  changeEmail(changeEmailData:ChangeEmail){
+    return this.http.put<boolean>("http://localhost:8080/user/change-email", changeEmailData)
+  }
+
+  confirmPassword(changePasswordData:ChangePassword){
+    return this.http.post<boolean>("http://localhost:8080/user/confirm-password", changePasswordData)
   }
 }
