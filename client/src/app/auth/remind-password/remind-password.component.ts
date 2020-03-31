@@ -14,6 +14,9 @@ export class RemindPasswordComponent implements OnInit {
   ngOnInit() {
   }
 
+  valid:boolean = false;
+  sent:boolean = false;
+  
   remindPasswordForm = this.fb.group({    
     email: this.fb.control('', [
       Validators.required,
@@ -21,9 +24,6 @@ export class RemindPasswordComponent implements OnInit {
     ]), 
 
   })
-
-  valid:boolean = false;
-  sent:boolean = false;
 
   resetPassword(){
 

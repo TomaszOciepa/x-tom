@@ -6,6 +6,7 @@ import { RemindPasswordComponent } from './remind-password/remind-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
+import { ConfirmAccountComponent } from './confirm-account/confirm-account.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,11 @@ const routes: Routes = [
   {
     path: 'zmiana-email',
     component: ChangeEmailComponent
-  }
+  },
+  {
+    path: 'potwierdzenie-rejestracji/:code/:email',
+    component: ConfirmAccountComponent
+  },
 ]
 
 

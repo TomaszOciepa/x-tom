@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, ValidatorFn, FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { ActivatedRoute } from '@angular/router';
 import { ChangePassword } from 'src/app/model/changePasswordData';
 
 @Component({
@@ -18,13 +17,26 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit() {
   }
 
+  passwordConfirm:boolean = false
+  correctPassword:boolean = true
+  saveNewPassword:boolean = false
+  valid:boolean = false
+
+  confirmPasswordData:ChangePassword = {
+    user_id: 0,
+    password: "",
+  }
+
   changePasswordData:ChangePassword = {
     user_id: 0
 ,    password: ''
   }
 
-  saveNewPassword:boolean = false
-  valid:boolean = false
+  confirmPasswordForm = this.fb.group({
+    password: this.fb.control('',[
+      Validators.required
+    ]),
+  })
 
   changePasswordForm = this.fb.group({
     password: this.fb.control('',[
@@ -97,6 +109,27 @@ export class ChangePasswordComponent implements OnInit {
 
   }
 
+  confirmPassword(){
+
+    if(this.confirmPasswordForm.valid){
+      this.valid = false;
+        this.confirmPasswordData.user_id = this.auth.getCurrentUser().user_id
+        this.confirmPasswordData.password = this.confirmPasswordForm.get('password').value
+        
+        this.auth.confirmPassword(this.confirmPasswordData).subscribe(response =>{
+
+          if(response){
+            this.passwordConfirm = response
+          }else{
+            this.correctPassword = response
+          }
+          
+        })
+    }else{
+      this.valid = true;
+    }
+  }
+
   changePassword(){
 
     if(this.changePasswordForm.valid){
@@ -105,14 +138,8 @@ export class ChangePasswordComponent implements OnInit {
       this.changePasswordData.user_id = this.auth.getCurrentUser().user_id
       this.changePasswordData.password = this.changePasswordForm.get('password').value
 
-      this.auth.changePassword(this.changePasswordData).subscribe(response =>{
-        console.log("odpowiedz: "+response)
-      })
-
+      this.auth.changePassword(this.changePasswordData).subscribe()
       this.saveNewPassword = true
-      
-
-      
     }else{
       this.valid = true
     }

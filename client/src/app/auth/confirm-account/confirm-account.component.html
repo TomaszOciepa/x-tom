@@ -1,0 +1,19 @@
+<ng-container *ngIf="init">
+    <ng-container *ngIf="accountConfirmation">
+        <div class="alert alert-success" role="alert">
+            <h4>Dziękujemy za rejestracje :(</h4>
+            <p>Możesz zalogować się na swoje konto.</p>
+            <button class="btn btn-info" [routerLink]="['/logowanie']">Zaloguj</button>
+       </div>
+    </ng-container>
+    
+    <ng-container *ngIf="!accountConfirmation">
+        <div class="alert alert-danger" role="alert">
+            <h4>Coś poszło nie tak :(</h4>
+            <p>Prawdopodobie link wygasł.</p>
+            <button class="btn btn-info" [routerLink]="['/rejestracja']">Spróbuj ponowanie</button>
+       </div>
+    </ng-container>
+</ng-container>
+
+

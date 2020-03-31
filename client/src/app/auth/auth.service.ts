@@ -18,6 +18,7 @@ interface Session{
   token: String;
   user: User;
   message?: String
+  status: boolean
 }
 
 @Injectable({
@@ -30,16 +31,16 @@ export class AuthService {
   private session = new BehaviorSubject<Session>(null)
 
   url = "http://localhost:8090/login"
-
   isAuthenticated = false
-
   role:string
   name:String
   user:User
+  status:boolean
 
   userSession:Session = {
     token: '',
-    user: this.user
+    user: this.user,
+    status: false
   }
 
   state = this.session.pipe(
@@ -55,18 +56,16 @@ export class AuthService {
     return this.http.post(this.url, credentials)
       .subscribe((session:Session) =>{
         this.session.next(session)
-        console.log(session.token)
+        
         this.role = session.user.user_role
         this.name = session.user.user_firstName
+        this.status = session.status
         this.setTokenInLocalStorage(session.token)
         this.setUserIdInStorage(session.user.user_id)
-        console.log("Success")
-       
       },error =>{
         if(error instanceof HttpErrorResponse){
           console.error(error.error)
         }
-        
       })
       
     }
@@ -87,10 +86,6 @@ export class AuthService {
     getCurrentUser(){
       const session = this.session.getValue()
       return session && session.user;
-    }
-
-    register(user:User){
-      return this.http.post<User>("http://localhost:8090/sing-up", user)
     }
 
     checkEmail(email:string){
@@ -144,9 +139,6 @@ export class AuthService {
           this.session.next(this.userSession)
       }
     )
-    
-    
-    
   }
 
   passwordResetVerifyUser(email:string){

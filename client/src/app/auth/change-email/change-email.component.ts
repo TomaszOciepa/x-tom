@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { ChangeEmail } from 'src/app/model/changeEmailData';
-import { PasswrodResetData } from 'src/app/model/passwordResetData';
 import { ChangePassword } from 'src/app/model/changePasswordData';
 
 @Component({

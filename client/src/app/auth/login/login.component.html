@@ -11,10 +11,17 @@
                     Wpisz email i hasło
                   </div>
             </ng-container>
+            
+            <ng-container *ngIf="!correctData"> 
+                <div class="alert alert-danger" role="alert">
+                    Niepoprawny login lub hasło
+                  </div>
+            </ng-container>
 
             <div class="form-group">
                 <label for="Email">Email</label>
                 <input type="text" class="form-control" formControlName="user_email">
+                <validation-feedback [control]="loginForm.get('user_email')"></validation-feedback>
             </div>
         
             <div class="form-group">

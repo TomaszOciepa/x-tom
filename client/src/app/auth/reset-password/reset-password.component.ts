@@ -49,9 +49,6 @@ export class ResetPasswordComponent implements OnInit {
       })
     ]),
     password_repeat: this.fb.control(''),
-
-
-
   }, {
     validator: (control:FormGroup) =>{
        const values = control.value
@@ -123,7 +120,6 @@ export class ResetPasswordComponent implements OnInit {
     }else{
       this.valid = true
     }
-    
   }
 
 }

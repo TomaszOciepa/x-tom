@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, ValidatorFn, FormControl, ValidationErrors, AsyncValidatorFn, FormGroup } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { Observable, Observer } from 'rxjs';
+import { FormBuilder, Validators, ValidatorFn, FormControl, FormGroup } from '@angular/forms';
+import { RegisterService } from '../register.service';
+import { RegisterData } from 'src/app/model/registerData';
 
 @Component({
   selector: 'app-register',
@@ -10,47 +10,44 @@ import { Observable, Observer } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, private auth:AuthService) { }
+  constructor(private fb:FormBuilder, private registerService:RegisterService) { }
   
-  ngOnInit() {
-    // this.registerForm.get('user_firstName').hasError
+  ngOnInit() { }
+  
+  error
+  validEmail:boolean = false
+  validPass:boolean = false
+  checkedEmail:boolean = false
+  emailExists:boolean = false
+  registerConfirm: boolean = false
 
-    // this.auth.checkEmail("tom.ociepa@gddddmail.com").subscribe(respone =>{
-    //   console.log(respone)
-    // })
-  
+  account:RegisterData = {
+    account_confirmation_email: '',
+    account_confirmation_password: '',
   }
-  
-  registerForm = this.fb.group({
+
+
+  emailForm = this.fb.group({
     user_email: this.fb.control('',[
       Validators.required,
       Validators.email
-    ],[
-      this.validateEmail
     ]),
+  })
+
+  passwordForm = this.fb.group({
     user_password: this.fb.control('',[
       Validators.required,
-      Validators.minLength(3),
-      // Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')
+      Validators.minLength(6),
       this.validatePassword({
         lowercase:true,
         uppercase:true,
-        number:true
+        number:true,
+        special:true
       })
     ]),
     user_repeat_password: this.fb.control(''),
-    
-    // user_firstName: this.fb.control(''),
-    // user_lastName: this.fb.control(''),
-    // user_phoneNumber: this.fb.control(''),
-    // user_zipCode: this.fb.control(''),
-    // user_city: this.fb.control(''),
-    // user_street: this.fb.control(''),
-
-
   }, {
     validator: (control:FormGroup) =>{
-      // console.log(control)
        const values = control.value
 
       if(values.user_password !== values.user_repeat_password){
@@ -63,29 +60,6 @@ export class RegisterComponent implements OnInit {
     }
   })
   
-  error
-
-  validateEmail<AsyncValidatorFn>(control: FormControl){
-      const value = control.value;
-
-      return Observable.create((observer:Observer<ValidationErrors | null>) => {
-
-        setTimeout(()=>{
-          const notAllwed = ['demo@wp.pl','admin', 'user']
-          const notValid = notAllwed.includes(value)
-
-          const result = notValid? {
-            'invalid-username': value
-          } : null
-          observer.next(result)
-          observer.complete()
-        },2000)
-      })
-
-
-    // return this.auth.register()
-  }
-
   validatePassword(options:{
     uppercase?:boolean;
     lowercase?:boolean;
@@ -126,44 +100,46 @@ export class RegisterComponent implements OnInit {
     }
 
   }
-
-  // validatePassword<ValidatorFn>(control:FormControl){
-
-  //   const noError = control.value.match(/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/)
-
-  //   if(noError){
-  //     return null
-  //   }else{
-  //     return <ValidationErrors>{
-  //       'password': true
-  //     }
-  //   }
-    
-  // }
-
-  valid:boolean = false
-
-  register(){
-
-    if(this.registerForm.valid){
-      this.valid = false
-      
-      this.auth.register(this.registerForm.value)
-      .subscribe(()=>{
-        console.log("Success")
-      },err=>{
-        this.error = err.message
-        console.log(this.error)
   
-      })
-  
-    }else{
-      this.valid = true
-    }
+checkEmail(){
+  if(this.emailForm.valid){
+    this.validEmail = false;
+    var email = this.emailForm.get('user_email').value
 
-
-    
-
-  }
-  
+    this.registerService.checkEmail(email).subscribe(response =>{
+      if(response){
+        this.emailExists = false
+        this.checkedEmail = true
+        
+      }else{
+        this.emailExists = true
+      }
+    })
+  }else{
+    this.validEmail = true;
+  }  
 }
+
+saveAccount(){
+
+  if(this.passwordForm.valid){
+    this.validPass = false
+    
+    this.account.account_confirmation_email = this.emailForm.get('user_email').value
+    this.account.account_confirmation_password = this.passwordForm.get('user_password').value
+
+    this.registerService.saveAccount(this.account).subscribe(response =>{
+        if(response){
+            this.registerConfirm = true
+        }else{
+
+        }
+    })
+  }else{
+    this.validPass = true
+  }
+}
+
+}
+
+
