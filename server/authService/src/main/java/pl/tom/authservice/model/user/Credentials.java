@@ -4,13 +4,15 @@ public class Credentials {
 
     private String token;
     private User user;
+    private boolean status;
 
     public Credentials() {
     }
 
-    public Credentials(String token, User user) {
+    public Credentials(String token, User user, boolean status) {
         this.token = token;
         this.user = user;
+        this.status = status;
     }
 
     public String getToken() {
@@ -27,5 +29,13 @@ public class Credentials {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

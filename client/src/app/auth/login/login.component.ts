@@ -20,15 +20,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.message =  this.auth.getMessage()
+    
    }
 
   message:String
   options = 0
   valid:boolean = false
+  correctData = true
+
 
   loginForm = this.fb.group({
     user_email: this.fb.control('', [
     Validators.required,
+    Validators.email
     ]),
     user_password: this.fb.control('', [
       Validators.required,
@@ -40,6 +44,10 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.valid = false;
       this.auth.login(this.loginForm.value)
+      if(!this.auth.status){
+        this.correctData = false
+      }
+      
     }else{
       this.valid = true;
     }

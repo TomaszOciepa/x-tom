@@ -35,16 +35,18 @@ public class LoginRestController {
             if (credentials.get().getUser() != null) {
                 LOG.info("Login {} succeeded", client.getUser_email());
                 response.setStatus(200);
+                credentials.get().setStatus(true);
             }else {
                 LOG.warn("Login {} failed. Incorrect password", client.getUser_email());
                 response.sendError(403, "Incorrect login or password");
+                credentials.get().setStatus(false);
             }
+            credentials.get().setStatus(false);
             return credentials;
 
         } else {
             LOG.warn("Login {} failed. Incorrect login or User does not exist: ", client.getUser_email());
             response.sendError(403, "Incorrect login or password");
-
             return credentials1;
         }
     }
