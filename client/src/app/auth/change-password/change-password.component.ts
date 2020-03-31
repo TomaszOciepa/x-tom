@@ -17,13 +17,26 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit() {
   }
 
+  passwordConfirm:boolean = false
+  correctPassword:boolean = true
+  saveNewPassword:boolean = false
+  valid:boolean = false
+
+  confirmPasswordData:ChangePassword = {
+    user_id: 0,
+    password: "",
+  }
+
   changePasswordData:ChangePassword = {
     user_id: 0
 ,    password: ''
   }
 
-  saveNewPassword:boolean = false
-  valid:boolean = false
+  confirmPasswordForm = this.fb.group({
+    password: this.fb.control('',[
+      Validators.required
+    ]),
+  })
 
   changePasswordForm = this.fb.group({
     password: this.fb.control('',[
@@ -94,6 +107,27 @@ export class ChangePasswordComponent implements OnInit {
       }
     }
 
+  }
+
+  confirmPassword(){
+
+    if(this.confirmPasswordForm.valid){
+      this.valid = false;
+        this.confirmPasswordData.user_id = this.auth.getCurrentUser().user_id
+        this.confirmPasswordData.password = this.confirmPasswordForm.get('password').value
+        
+        this.auth.confirmPassword(this.confirmPasswordData).subscribe(response =>{
+
+          if(response){
+            this.passwordConfirm = response
+          }else{
+            this.correctPassword = response
+          }
+          
+        })
+    }else{
+      this.valid = true;
+    }
   }
 
   changePassword(){
