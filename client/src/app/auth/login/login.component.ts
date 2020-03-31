@@ -15,12 +15,16 @@ export class LoginComponent implements OnInit {
     
     this.route.paramMap.subscribe(params =>{
       this.options = +params.get('options')
-    })
+      })
   }
 
   ngOnInit() {
     this.message =  this.auth.getMessage()
    }
+
+  message:String
+  options = 0
+  valid:boolean = false
 
   loginForm = this.fb.group({
     user_email: this.fb.control('', [
@@ -30,25 +34,15 @@ export class LoginComponent implements OnInit {
       Validators.required,
     ]),
   })
-
-  message:String
-  options = 0
-  valid:boolean = false
   
   login(){
 
     if(this.loginForm.valid){
       this.valid = false;
       this.auth.login(this.loginForm.value)
-      
-
     }else{
       this.valid = true;
     }
-
-    
   }
-
-  
 
 }

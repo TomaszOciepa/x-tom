@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, ValidatorFn, FormControl } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { ActivatedRoute } from '@angular/router';
 import { ChangePassword } from 'src/app/model/changePasswordData';
 
 @Component({
@@ -105,14 +104,8 @@ export class ChangePasswordComponent implements OnInit {
       this.changePasswordData.user_id = this.auth.getCurrentUser().user_id
       this.changePasswordData.password = this.changePasswordForm.get('password').value
 
-      this.auth.changePassword(this.changePasswordData).subscribe(response =>{
-        console.log("odpowiedz: "+response)
-      })
-
+      this.auth.changePassword(this.changePasswordData).subscribe()
       this.saveNewPassword = true
-      
-
-      
     }else{
       this.valid = true
     }

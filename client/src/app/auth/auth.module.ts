@@ -13,10 +13,11 @@ import { RemindPasswordComponent } from './remind-password/remind-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeEmailComponent } from './change-email/change-email.component';
+import { ConfirmAccountComponent } from './confirm-account/confirm-account.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent, ChangePasswordComponent, ChangeEmailComponent],
+  declarations: [LoginComponent, RegisterComponent, RemindPasswordComponent, ResetPasswordComponent, ChangePasswordComponent, ChangeEmailComponent, ConfirmAccountComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

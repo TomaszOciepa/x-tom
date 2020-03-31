@@ -12,11 +12,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers(HttpMethod.POST, "/sing-up").permitAll()
                 .antMatchers(HttpMethod.POST, "/check-email").permitAll()
                 .antMatchers(HttpMethod.POST, "/password-reset/verify-user").permitAll()
                 .antMatchers(HttpMethod.POST, "/password-reset/check-code").permitAll()
                 .antMatchers(HttpMethod.POST, "/password-reset/set-new").permitAll()
+                .antMatchers(HttpMethod.POST, "/account/check-email").permitAll()
+                .antMatchers(HttpMethod.POST, "/account/save").permitAll()
+                .antMatchers(HttpMethod.GET, "/account/confirmation").permitAll()
 
                 .antMatchers(HttpMethod.GET, "/product/all").permitAll()
                 .antMatchers(HttpMethod.GET, "/product/{id}").permitAll()

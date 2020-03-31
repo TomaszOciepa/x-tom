@@ -40,9 +40,8 @@ public class UserService {
         }
     }
 
-    public void save(User user){
+    public void saveAccount(User user){
         user.setUser_email(user.getUser_email().toLowerCase());
-        user.setUser_password(passwordEncoder.encode(user.getUser_password()));
         user.setUser_role("USER");
         userRepository.save(user);
     }
@@ -68,19 +67,6 @@ public class UserService {
         }
     }
 
-    public boolean checkEmail(String email) {
-        User user = userRepository.getUserByEmail(email);
-
-        if(user == null){
-            System.out.println("user = null");
-            return false;
-        }else {
-            System.out.println("user istnieje");
-            return true;
-        }
-
-    }
-
     public boolean setNewPassword(PasswordResetData passwordResetData) {
         String email = passwordResetData.getEmail();
         String newPassword = passwordResetData.getPassword();
@@ -91,4 +77,5 @@ public class UserService {
         emailSender.sendEmail("tomek0290@gmail.com", "x-tom - nowe hasło", "Hasło dla konta: "+email+" zostało zmienione");
         return true;
     }
+
 }

@@ -77,7 +77,6 @@ form .ng-invalid.ng-dirty ~ .validation-feedback {
   .input100-submit {
     display: block;
     width: 100%;
-    background: #bd2130;
     border-radius: 2px;
     height: 60px;
     font-family: Raleway-SemiBold;
