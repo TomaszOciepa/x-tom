@@ -4,10 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.email.EmailSender;
 import pl.tom.authservice.model.passwordReset.PasswordReset;
-import pl.tom.authservice.model.passwordReset.PasswordResetData;
-import pl.tom.authservice.model.passwordReset.PasswordResetRepository;
+import pl.tom.authservice.model.passwordResetData.PasswordResetData;
+import pl.tom.authservice.repo.PasswordResetRepository;
 import pl.tom.authservice.model.user.User;
-import pl.tom.authservice.model.user.UserRepository;
+import pl.tom.authservice.repo.UserRepository;
 
 import java.time.LocalDateTime;
 import java.util.Optional;

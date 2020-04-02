@@ -2,7 +2,7 @@ package pl.tom.authservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.model.orders.Orders;
-import pl.tom.authservice.model.orders.OrdersRepository;
+import pl.tom.authservice.repo.OrdersRepository;
 
 import java.time.LocalDateTime;
 

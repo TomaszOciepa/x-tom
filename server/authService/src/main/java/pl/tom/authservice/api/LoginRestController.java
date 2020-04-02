@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import pl.tom.authservice.model.user.Credentials;
+import pl.tom.authservice.model.credentials.Credentials;
 import pl.tom.authservice.model.user.User;
 import pl.tom.authservice.service.UserService;
 
@@ -36,7 +36,7 @@ public class LoginRestController {
                 LOG.info("Login {} succeeded", client.getUser_email());
                 response.setStatus(200);
                 credentials.get().setStatus(true);
-            }else {
+            } else {
                 LOG.warn("Login {} failed. Incorrect password", client.getUser_email());
                 response.sendError(403, "Incorrect login or password");
                 credentials.get().setStatus(false);
@@ -50,7 +50,5 @@ public class LoginRestController {
             return credentials1;
         }
     }
-
-
 
 }

@@ -1,4 +1,4 @@
-package pl.tom.apiservice.model.user;
+package pl.tom.apiservice.model.changePasswordData;
 
 public class ChangePasswordData {
 

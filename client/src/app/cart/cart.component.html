@@ -1,5 +1,7 @@
+<error-handler [errorHandler]="statusError"></error-handler>
+
 <h2>Koszyk</h2>
-{{cartItemUserList}}
+
 <ng-container *ngIf="!isEmpty">
   
     <ng-container *ngIf="!pathOrder">
@@ -68,3 +70,4 @@
 <ng-container *ngIf="isEmpty">
   <h2>Pusty</h2>
 </ng-container>
+

@@ -2,7 +2,7 @@ package pl.tom.apiservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.tom.apiservice.model.product.Product;
-import pl.tom.apiservice.model.product.ProductRepository;
+import pl.tom.apiservice.repo.ProductRepository;
 
 import java.util.Optional;
 

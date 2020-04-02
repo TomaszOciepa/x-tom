@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { CartService } from './cart.service';
 import { CartItemLocalStorage } from '../model/cartItemLocalStorage';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'cart',
@@ -17,9 +18,9 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     if(localStorage.getItem('products') == null){
-      localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
+      localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))  
     }
-
+    
     if(this.auth.isAuthenticated){
       this.getMyCartWithDatabase()
     }else{
@@ -37,6 +38,7 @@ export class CartComponent implements OnInit {
 
   cartLocalItemList:CartItemLocalStorage[] = []
 
+  statusError:number
   cartSum:number
   isEmpty:boolean
   error: boolean
@@ -97,8 +99,9 @@ export class CartComponent implements OnInit {
     
     if(this.auth.getCurrentUser()){
       this.cartService.getMyCartItems(this.auth.getCurrentUser().user_id).subscribe(
-      
+
         response =>{
+          
             response.forEach((item)=>{
               this.cartLocalItemList.push(item)    
             })
@@ -107,12 +110,17 @@ export class CartComponent implements OnInit {
             })
             this.checkCartIsEmpty()
             this.calculatePrice()
-        } 
+            
+        }
+        // ,error =>{
+        //   if(error instanceof HttpErrorResponse){
+        //     this.statusError = error.status
+            
+        //   }
+        // } 
       )
-    }
+    }    
 
-
-    
   }
 
   deleteCartItemInDatabase(idInDatabase, idInList){
@@ -127,7 +135,6 @@ export class CartComponent implements OnInit {
 
   removeCartInDatabase(){
     this.cartService.deleteMyCart(this.auth.getCurrentUser().user_id).subscribe(()=>{
-      console.log("Success")
     },err=>{
       this.error = err.message
     })

@@ -2,7 +2,7 @@ package pl.tom.authservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.model.order.OrderItem;
-import pl.tom.authservice.model.order.OrderItemRepository;
+import pl.tom.authservice.repo.OrderItemRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -27,7 +27,7 @@ public class OrderItemService {
         orderItemList.stream().forEach(order -> {
             order.setOrder_item_number(orderNumber);
             order.setOrder_item_price(order.getProduct().getProduct_price());
-          productService.save_amount_sold_product(order.getProduct().getProduct_id(), order.getOrder_item_amount());
+            productService.save_amount_sold_product(order.getProduct().getProduct_id(), order.getOrder_item_amount());
             orderItemRepository.save(order);
         });
 

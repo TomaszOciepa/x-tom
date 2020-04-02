@@ -1,0 +1,10 @@
+<ng-container *ngIf="errorHandler === 0">
+    <h4>Brak połączenia z serwerem</h4>
+    <p>Mamy chwilowy problem. Wróć za kilka minut</p>
+</ng-container>
+
+<ng-container *ngIf="errorHandler === 404">
+    <h4>Not found 404</h4>
+    <p>Produkt jest niedostępny lub wycofany z naszej sprzedaży.</p>
+</ng-container>
+

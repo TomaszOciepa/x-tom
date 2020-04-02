@@ -1,8 +1,9 @@
 package pl.tom.apiservice.service;
 
 import org.springframework.stereotype.Service;
+import pl.tom.apiservice.exception.OrderItemNotFoundException;
 import pl.tom.apiservice.model.order.OrderItem;
-import pl.tom.apiservice.model.order.OrderItemRepository;
+import pl.tom.apiservice.repo.OrderItemRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -19,15 +20,15 @@ public class OrderItemService {
 
 
     public List<OrderItem> getAll() {
-        return orderItemRepository.findAll();
+        return orderItemRepository.getAllOrderItem().orElseThrow(() -> new OrderItemNotFoundException());
     }
 
     public OrderItem getById(Long id) {
-        return orderItemRepository.findById(id).get();
+        return orderItemRepository.findById(id).orElseThrow(() -> new OrderItemNotFoundException(id));
     }
 
-    public List<OrderItem> getOrderItemByOrderNumber(int number){
-        return orderItemRepository.getOrderItemByOrderNumber(number);
+    public List<OrderItem> getOrderItemByOrderNumber(int number) {
+        return orderItemRepository.getOrderItemByOrderNumber(number).orElseThrow(() -> new OrderItemNotFoundException(number));
     }
 
     public int create(List<OrderItem> orderItemList) {
@@ -41,14 +42,14 @@ public class OrderItemService {
     }
 
     public String edit(Long id, OrderItem orderItemEdited) {
-            OrderItem orderItem = getById(id);
-            orderItem = orderItemEdited;
-             orderItemRepository.save(orderItem);
-             return "updated";
+        OrderItem orderItem = getById(id);
+        orderItem = orderItemEdited;
+        orderItemRepository.save(orderItem);
+        return "updated";
     }
 
     public void deleteById(Long id) {
-            orderItemRepository.deleteById(id);
+        orderItemRepository.deleteById(id);
     }
 
     public void deleteOrderItemByOrderNumber(int number) {

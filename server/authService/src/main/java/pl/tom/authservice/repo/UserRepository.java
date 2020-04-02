@@ -1,7 +1,8 @@
-package pl.tom.authservice.model.user;
+package pl.tom.authservice.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import pl.tom.authservice.model.user.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 

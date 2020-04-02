@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { CartService } from 'src/app/cart/cart.service';
 import { CartItemLocalStorage } from 'src/app/model/cartItemLocalStorage';
 import { CartItemUser } from 'src/app/model/cartItemUser';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
@@ -23,6 +24,11 @@ export class ProductComponent implements OnInit {
     this.http.getById(this.id).subscribe(response =>{
       this.product = response
       this.productType = response.product_type
+    },error =>{
+      if(error instanceof HttpErrorResponse){
+        this.statusError = error.status
+        console.error(error.error)
+      }
     })
 
    }
@@ -34,7 +40,8 @@ export class ProductComponent implements OnInit {
       this.cartLocalItemList = JSON.parse(localStorage.getItem('products'))  
     }
   }
-
+  
+  statusError:number
   error
   id:number
   product:ProductTest
@@ -56,7 +63,6 @@ export class ProductComponent implements OnInit {
       this.cartUserItem.user = this.auth.getCurrentUser()
 
       this.cartService.setMyCartItem(this.cartUserItem).subscribe(()=>{
-      console.log("Success")   
     },err=>{
       this.error = err.message
     })

@@ -1,4 +1,4 @@
-package pl.tom.authservice.model;
+package pl.tom.authservice.model.product;
 
 import pl.tom.authservice.model.order.OrderItem;
 

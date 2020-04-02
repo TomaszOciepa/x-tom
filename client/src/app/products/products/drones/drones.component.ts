@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ProductTestList } from 'src/app/model/productTestList';
 import { ProductsService } from 'src/app/products/products.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -16,17 +17,22 @@ export class DronesComponent implements OnInit {
     this.auth.state.subscribe()
    }
 
+  ngOnInit() {
+    this.getAllProduct()
+  }
+
+   statusError:number
    drones:ProductTestList
 
-   getAllDrones(){
+   getAllProduct(){
     this.http.getByType("drone").subscribe(response =>{
       this.drones = response;
+    },error =>{
+      if(error instanceof HttpErrorResponse){
+        this.statusError = error.status
+        console.error(error.error)
+      }
     })
    }
-
-
-  ngOnInit() {
-    this.getAllDrones()
-  }
 
 }

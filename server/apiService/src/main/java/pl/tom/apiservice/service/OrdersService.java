@@ -2,8 +2,7 @@ package pl.tom.apiservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.tom.apiservice.model.orders.Orders;
-import pl.tom.apiservice.model.orders.OrdersRepository;
-
+import pl.tom.apiservice.repo.OrdersRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;

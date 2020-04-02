@@ -1,8 +1,9 @@
-package pl.tom.authservice.model.accountConfirmation;
+package pl.tom.authservice.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import pl.tom.authservice.model.accountConfirmation.AccountConfirmation;
 
 import javax.transaction.Transactional;
 import java.util.Optional;

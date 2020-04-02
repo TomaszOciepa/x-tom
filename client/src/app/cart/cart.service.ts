@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { CartItemUser } from '../model/cartItemUser';
 import { CartItemLocalStorage } from '../model/cartItemLocalStorage';
 
-
 @Injectable({
   providedIn: 'root'
 })

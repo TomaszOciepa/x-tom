@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { OrdersService } from '../orders.service';
 import { Order } from 'src/app/model/order';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-orders',
@@ -18,7 +19,12 @@ export class OrdersComponent implements OnInit {
     if(this.auth.isAuthenticated){
       this.ordersService.getOrdersByUserId(this.auth.getCurrentUser().user_id).subscribe( response =>{
         this.userOrders = response
-      })
+      }, error =>{
+        if(error instanceof HttpErrorResponse){
+          this.statusError = error.status
+          console.error(error.error)
+        }
+      } )
     }
 
   }
@@ -26,6 +32,7 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
   }
 
+  statusError:number
   userOrders:Order[]
 
   goOrder(order:Order){

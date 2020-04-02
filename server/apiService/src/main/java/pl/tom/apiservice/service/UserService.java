@@ -2,10 +2,10 @@ package pl.tom.apiservice.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.tom.apiservice.model.user.ChangeEmailData;
-import pl.tom.apiservice.model.user.ChangePasswordData;
+import pl.tom.apiservice.model.changeEmailData.ChangeEmailData;
+import pl.tom.apiservice.model.changePasswordData.ChangePasswordData;
 import pl.tom.apiservice.model.user.User;
-import pl.tom.apiservice.model.user.UserRepository;
+import pl.tom.apiservice.repo.UserRepository;
 
 import java.util.List;
 import java.util.Optional;

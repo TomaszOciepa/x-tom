@@ -36,6 +36,7 @@ export class AuthService {
   name:String
   user:User
   status:boolean
+  
 
   userSession:Session = {
     token: '',

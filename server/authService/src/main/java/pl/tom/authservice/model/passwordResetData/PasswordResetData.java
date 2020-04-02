@@ -1,4 +1,4 @@
-package pl.tom.authservice.model.passwordReset;
+package pl.tom.authservice.model.passwordResetData;
 
 public class PasswordResetData {
 

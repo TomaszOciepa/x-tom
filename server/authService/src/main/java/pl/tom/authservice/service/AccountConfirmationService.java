@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.tom.authservice.email.EmailSender;
 import pl.tom.authservice.model.accountConfirmation.AccountConfirmation;
-import pl.tom.authservice.model.accountConfirmation.AccountConfirmationRepository;
+import pl.tom.authservice.repo.AccountConfirmationRepository;
 import pl.tom.authservice.model.user.User;
 
 import java.time.LocalDateTime;
@@ -38,16 +38,6 @@ public class AccountConfirmationService {
             } else {
                 return true;
             }
-        } else {
-            return false;
-        }
-    }
-
-    private boolean accountConfirmationfindByEmail(String email) {
-        Optional<AccountConfirmation> accountConfirmationOptional = accountConfirmationRepository.findAll().stream().filter(account -> account.getAccount_confirmation_email().equals(email.toLowerCase())).findFirst();
-
-        if (accountConfirmationOptional.isPresent()) {
-            return true;
         } else {
             return false;
         }
@@ -112,6 +102,17 @@ public class AccountConfirmationService {
                 return false;
             }
         }else {
+            return false;
+        }
+    }
+
+    private boolean accountConfirmationfindByEmail(String email) {
+        Optional<AccountConfirmation> accountConfirmationOptional = accountConfirmationRepository.findAll().stream().filter(account -> account.getAccount_confirmation_email()
+                .equals(email.toLowerCase())).findFirst();
+
+        if (accountConfirmationOptional.isPresent()) {
+            return true;
+        } else {
             return false;
         }
     }

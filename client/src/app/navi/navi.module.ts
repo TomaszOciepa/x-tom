@@ -7,6 +7,7 @@ import { AuthModule } from '../auth/auth.module';
 import { ProfileModule } from '../profile/profile.module';
 import { NaviRoutingModule } from './navi.routing.module';
 import { UsersModule } from '../users/users.module';
+import { ErrorModule } from '../error/error.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UsersModule } from '../users/users.module';
     CommonModule,
     AuthModule,
     ProfileModule,
+    ErrorModule,
     NaviRoutingModule,
   ],
   exports: [
