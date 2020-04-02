@@ -8,7 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import pl.tom.apiservice.model.user.User;
-import pl.tom.apiservice.model.user.UserRepository;
+import pl.tom.apiservice.repo.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;

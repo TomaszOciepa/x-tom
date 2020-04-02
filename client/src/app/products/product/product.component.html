@@ -9,3 +9,5 @@
 <ng-container *ngIf="productType == 'smartphone'">
     <smartphone-by-id [getProduct]="product" (addToCart)="addtoCart($event)"></smartphone-by-id>
 </ng-container>
+
+<error-handler [errorHandler]="statusError"></error-handler>

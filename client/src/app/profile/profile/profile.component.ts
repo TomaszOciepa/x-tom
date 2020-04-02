@@ -3,7 +3,7 @@ import { ProfileService } from '../profile.service';
 import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UsersService } from 'src/app/users/users.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'profile',
@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private userService:UsersService, private profileService:ProfileService, protected auth:AuthService, private http:HttpClient) { 
+  constructor(protected auth:AuthService, private http:HttpClient) { 
     this.auth.state.subscribe()
   }
 
@@ -25,11 +25,17 @@ export class ProfileComponent implements OnInit {
         response =>{
           this.profile = response
         }
-      )
+      ), error =>{
+        if(error instanceof HttpErrorResponse){
+          this.statusError = error.status
+          console.error(error.error)
+        }
+      } 
     } 
   }
 
   id:number
   profile:User
+  statusError:number
 
 }

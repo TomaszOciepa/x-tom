@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.tom.authservice.model.orders.Orders;
 import pl.tom.authservice.service.OrdersService;
 
-import javax.servlet.http.HttpServletResponse;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -24,9 +23,10 @@ public class OrdersRestController {
     }
 
     @PostMapping("/create")
-    public void create(@RequestBody Orders order, HttpServletResponse response) {
-        LOG.info("method: create(). Add new order to database");
-         ordersService.create(order);
+    public void create(@RequestBody Orders order) {
+        LOG.info("method: create()");
+        ordersService.create(order);
+        LOG.info("Add new order to database");
     }
 
 

@@ -59,10 +59,7 @@ export class OrderSumaryComponent implements OnInit {
     if(this.auth.isAuthenticated){
       this.orderData.user = this.auth.getCurrentUser()
     }
-    this.ordersService.createOrder(this.orderData).subscribe( response =>{
-      console.log("Success")
-    }
-    )
+    this.ordersService.createOrder(this.orderData).subscribe()
 
     if(this.auth.isAuthenticated){
         this.cartService.deleteMyCart(this.auth.getCurrentUser().user_id).subscribe(response =>{

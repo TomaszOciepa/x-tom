@@ -14,7 +14,6 @@ export class ProductsComponent implements OnInit {
     })
    }
 
-
   productType:String
 
   ngOnInit() {

@@ -4,12 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.tom.apiservice.model.user.ChangeEmailData;
-import pl.tom.apiservice.model.user.ChangePasswordData;
+import pl.tom.apiservice.model.changeEmailData.ChangeEmailData;
+import pl.tom.apiservice.model.changePasswordData.ChangePasswordData;
 import pl.tom.apiservice.service.UserService;
 import pl.tom.apiservice.model.user.User;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,22 +32,20 @@ public class UserRestController {
     }
 
     @GetMapping("/{id}")
-    public Optional<User> getUserById(@PathVariable(value = "id") Long id, HttpServletResponse response) {
+    public Optional<User> getUserById(@PathVariable(value = "id") Long id) {
         LOG.info("method: getUserById(). Trying find userId: {}", id);
         Optional<User> user = userService.getUserById(id);
 
         if (user.isEmpty()) {
             LOG.warn("method: getUserById(). userId {} not found", id);
-            response.setStatus(404);
         } else {
             LOG.info("method: getUserById(). userId {} found", id);
-            response.setStatus(200);
         }
         return user;
     }
 
     @PostMapping("/confirm-password")
-    public boolean confirmPassword(@RequestBody ChangePasswordData passwordData, HttpServletResponse response) {
+    public boolean confirmPassword(@RequestBody ChangePasswordData passwordData) {
         LOG.info("method: confirmPassword()");
         boolean result = userService.confirmPassword(passwordData);
 
@@ -61,19 +58,19 @@ public class UserRestController {
     }
 
     @PutMapping("/{id}")
-    public Optional<User> edit(@PathVariable(value = "id") Long id, @RequestBody User userEdited, HttpServletResponse response) {
+    public Optional<User> edit(@PathVariable(value = "id") Long id, @RequestBody User userEdited) {
         LOG.info("method: edit. Edit user");
         return userService.edit(id, userEdited);
     }
 
     @PutMapping("/role/{id}")
-    public Optional<User> editRole(@PathVariable(value = "id") Long id, @RequestBody User userEdited, HttpServletResponse response) {
+    public Optional<User> editRole(@PathVariable(value = "id") Long id, @RequestBody User userEdited) {
         LOG.info("method: editRole. Edit user");
         return userService.editRole(id, userEdited);
     }
 
     @PutMapping("/change-password")
-    public boolean changePassword(@RequestBody ChangePasswordData changePasswordData, HttpServletResponse response) {
+    public boolean changePassword(@RequestBody ChangePasswordData changePasswordData) {
         LOG.info("method: changePassword()");
 
         boolean result = userService.changePassword(changePasswordData);
@@ -87,7 +84,7 @@ public class UserRestController {
     }
 
     @PutMapping("/change-email")
-    public boolean changeEmail(@RequestBody ChangeEmailData changeEmailData, HttpServletResponse response) {
+    public boolean changeEmail(@RequestBody ChangeEmailData changeEmailData) {
         LOG.info("method: changeEmail()");
 
         boolean result = userService.changeEmail(changeEmailData);
@@ -101,10 +98,9 @@ public class UserRestController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@PathVariable(value = "id") Long id, HttpServletResponse response){
+    public void deleteById(@PathVariable(value = "id") Long id){
         LOG.info("method: deleteById. Deleting user about id {}", id);
         userService.deleteById(id);
-        response.setStatus(200);
     }
 
 

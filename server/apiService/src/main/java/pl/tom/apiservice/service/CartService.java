@@ -2,7 +2,7 @@ package pl.tom.apiservice.service;
 
 import org.springframework.stereotype.Service;
 import pl.tom.apiservice.model.cart.Cart;
-import pl.tom.apiservice.model.cart.CartRepository;
+import pl.tom.apiservice.repo.CartRepository;
 
 import java.util.List;
 
@@ -17,7 +17,10 @@ public class CartService {
 
 
     public List<Cart> getCartByUserId(Long id) {
-        return cartRepository.getCartByUserId(id);
+//        return cartRepository.getCartByUserId(id).orElseThrow( () -> new CartNotFoundException(id));
+
+       return cartRepository.getCartByUserId(id);
+
     }
 
     public Cart createCartItem(Cart cart) {

@@ -10,6 +10,7 @@ import { CartModule } from '../cart/cart.module';
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { OrdersManagerComponent } from './orders-manager/orders-manager.component';
 import { OrdersDeleteComponent } from './orders-delete/orders-delete.component';
+import { ErrorModule } from '../error/error.module';
 
 
 
@@ -21,6 +22,7 @@ import { OrdersDeleteComponent } from './orders-delete/orders-delete.component';
     CommonModule,
     AuthModule,
     FormModule,
+    ErrorModule,
     CartModule,
     OrdersRoutingModule
   ]

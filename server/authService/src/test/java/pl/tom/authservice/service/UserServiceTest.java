@@ -8,7 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import pl.tom.authservice.model.user.User;
-import pl.tom.authservice.model.user.UserRepository;
+import pl.tom.authservice.repo.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ public class UserServiceTest {
     @Test
     public void should_return_true_emailExists() {
         User user = new User("tomek02@gmail.com", "haslo123", "ADMIN");
-        Assert.assertTrue(userService.emailExists(user));
+        Assert.assertTrue(userService.emailExists(user.getUser_email()));
     }
 
     @Test

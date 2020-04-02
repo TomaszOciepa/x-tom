@@ -1,4 +1,6 @@
-<ng-container *ngIf="auth.isAuthenticated">
+<error-handler [errorHandler]="statusError"></error-handler>
+
+<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
 <h4>Produkty</h4>
 
 <button class="btn btn-success" [routerLink]="['/add-product']"> Dodaj nowy produkt</button>
@@ -31,3 +33,4 @@
         </tbody>
       </table>
 </ng-container>
+

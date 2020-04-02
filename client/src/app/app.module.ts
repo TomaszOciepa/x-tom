@@ -16,6 +16,7 @@ import { FormModule } from './form/form.module';
 import { OrdersModule } from './orders/orders.module';
 import { ValidationModule } from './validation/validation.module';
 import { AdminModule } from './admin/admin.module';
+import { ErrorModule } from './error/error.module';
 
 
 
@@ -37,6 +38,7 @@ import { AdminModule } from './admin/admin.module';
     OrdersModule,
     ValidationModule,
     AdminModule,
+    ErrorModule,
     AppRoutingModule,
   ],
   providers: [],

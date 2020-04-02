@@ -8,6 +8,7 @@ import { ProfileRoutingModule } from './profile.routing.module';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormModule } from '../form/form.module';
+import { ErrorModule } from '../error/error.module';
 
 
 @NgModule({
@@ -16,11 +17,12 @@ import { FormModule } from '../form/form.module';
     CommonModule,
     FormModule,
     HttpClientModule,
+    ErrorModule,
     ReactiveFormsModule,
     ProfileRoutingModule,
   ],
   exports: [
-    ProfileComponent, ProfileBarComponent
+    ProfileComponent, ProfileBarComponent, 
   ],
   providers: [
     ProfileService

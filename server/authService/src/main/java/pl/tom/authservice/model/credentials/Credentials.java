@@ -1,4 +1,6 @@
-package pl.tom.authservice.model.user;
+package pl.tom.authservice.model.credentials;
+
+import pl.tom.authservice.model.user.User;
 
 public class Credentials {
 

@@ -7,17 +7,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import pl.tom.apiservice.model.cart.Cart;
-import pl.tom.apiservice.model.cart.CartRepository;
-import pl.tom.apiservice.model.order.OrderItem;
-import pl.tom.apiservice.model.order.OrderItemRepository;
-import pl.tom.apiservice.model.orders.Orders;
-import pl.tom.apiservice.model.orders.OrdersRepository;
+import pl.tom.apiservice.repo.CartRepository;
+import pl.tom.apiservice.repo.OrderItemRepository;
+import pl.tom.apiservice.repo.OrdersRepository;
 import pl.tom.apiservice.model.product.Product;
-import pl.tom.apiservice.model.product.ProductRepository;
+import pl.tom.apiservice.repo.ProductRepository;
 import pl.tom.apiservice.model.user.User;
-import pl.tom.apiservice.model.user.UserRepository;
-
-import java.time.LocalDateTime;
+import pl.tom.apiservice.repo.UserRepository;
 
 @Component
 public class ConfigExampleData {

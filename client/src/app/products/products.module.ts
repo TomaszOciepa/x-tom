@@ -17,6 +17,7 @@ import { DroneByIdComponent } from './product/drone-by-id/drone-by-id.component'
 import { LaptopByIdComponent } from './product/laptop-by-id/laptop-by-id.component';
 import { SmartphoneByIdComponent } from './product/smartphone-by-id/smartphone-by-id.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { ErrorModule } from '../error/error.module';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent, DronesComponent, LaptopsComponent,
@@ -28,6 +29,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     CartModule,
     AuthModule,
     FormModule,
+    ErrorModule,
     ProductsRoutingModule
   ]
 })

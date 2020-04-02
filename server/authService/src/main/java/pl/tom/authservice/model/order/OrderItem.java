@@ -1,6 +1,6 @@
 package pl.tom.authservice.model.order;
 
-import pl.tom.authservice.model.Product;
+import pl.tom.authservice.model.product.Product;
 
 import javax.persistence.*;
 
