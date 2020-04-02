@@ -28,15 +28,25 @@ public class UserService {
         this.tokenGenerator = tokenGenerator;
     }
 
-    public Optional<User> findByEmail(String email) {
-        return userRepository.findAll().stream().filter(user -> user.getUser_email().equals(email.toLowerCase())).findFirst();
-    }
+    public Credentials login(User client) {
+        Credentials credentials = new Credentials();
+        String clientEmail = client.getUser_email();
+        String clientPassword = client.getUser_password();
 
-    public boolean emailExists(User user) {
-        if (!findByEmail(user.getUser_email()).isPresent()) {
-            return false;
+        User user = userRepository.getUserByEmail(clientEmail);
+        String userPassword = user.getUser_password();
+
+        boolean passwordMatches = passwordEncoder.matches(clientPassword, userPassword);
+
+        if (passwordMatches) {
+            String token = tokenGenerator.createToken(user);
+            credentials.setUser(user);
+            credentials.setToken(token);
+            credentials.setStatus(true);
+            return credentials;
         } else {
-            return true;
+            credentials.setStatus(false);
+            return credentials;
         }
     }
 
@@ -44,27 +54,6 @@ public class UserService {
         user.setUser_email(user.getUser_email().toLowerCase());
         user.setUser_role("USER");
         userRepository.save(user);
-    }
-
-    public boolean emailValid(String email) {
-        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-        return email.matches(regex);
-    }
-
-    public Credentials login(User client) {
-        Credentials credentials = new Credentials();
-        if (emailExists(client)) {
-            Optional<User> user = findByEmail(client.getUser_email());
-            if (passwordEncoder.matches(client.getUser_password(), user.get().getUser_password())) {
-                credentials.setUser(user.get());
-                credentials.setToken(tokenGenerator.createToken(user.get()));
-                return credentials;
-            } else {
-                return credentials;
-            }
-        } else {
-            return credentials;
-        }
     }
 
     public boolean setNewPassword(PasswordResetData passwordResetData) {
@@ -76,6 +65,25 @@ public class UserService {
         userRepository.save(user);
         emailSender.sendEmail("tomek0290@gmail.com", "x-tom - nowe hasło", "Hasło dla konta: " + email + " zostało zmienione");
         return true;
+    }
+
+    public boolean emailExists(String email) {
+        Optional<User> userByEmail = findByEmail(email);
+
+        if (userByEmail.isPresent()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findAll().stream().filter(user -> user.getUser_email().equals(email.toLowerCase())).findFirst();
+    }
+
+    public boolean emailValid(String email) {
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
     }
 
 }

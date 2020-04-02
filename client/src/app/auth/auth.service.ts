@@ -57,12 +57,14 @@ export class AuthService {
     return this.http.post(this.url, credentials)
       .subscribe((session:Session) =>{
         this.session.next(session)
+        if(session.status){
+          this.role = session.user.user_role
+          this.name = session.user.user_firstName
+          this.status = session.status
+          this.setTokenInLocalStorage(session.token)
+          this.setUserIdInStorage(session.user.user_id)
+        }
         
-        this.role = session.user.user_role
-        this.name = session.user.user_firstName
-        this.status = session.status
-        this.setTokenInLocalStorage(session.token)
-        this.setUserIdInStorage(session.user.user_id)
       },error =>{
         if(error instanceof HttpErrorResponse){
           console.error(error.error)

@@ -44,7 +44,7 @@ public class UserServiceTest {
     @Test
     public void should_return_true_emailExists() {
         User user = new User("tomek02@gmail.com", "haslo123", "ADMIN");
-        Assert.assertTrue(userService.emailExists(user));
+        Assert.assertTrue(userService.emailExists(user.getUser_email()));
     }
 
     @Test
