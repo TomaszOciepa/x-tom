@@ -38,8 +38,18 @@ export class ProductsService {
     })
   }
 
+  // ---> localhost
+  // getByStatus(status:string){
+  //   return this.http.get<ProductTestList>("http://localhost:8090/product/status/",{
+  //     params:{
+  //       status:status
+  //     }
+  //   })
+  // }
+
+  // ----> remote
   getByStatus(status:string){
-    return this.http.get<ProductTestList>("http://localhost:8090/product/status/",{
+    return this.http.get<ProductTestList>("https://x-tom-auth.herokuapp.com/product/status/",{
       params:{
         status:status
       }

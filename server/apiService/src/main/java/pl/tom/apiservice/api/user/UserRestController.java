@@ -36,10 +36,10 @@ public class UserRestController {
         LOG.info("method: getUserById(). Trying find userId: {}", id);
         Optional<User> user = userService.getUserById(id);
 
-        if (user.isEmpty()) {
-            LOG.warn("method: getUserById(). userId {} not found", id);
-        } else {
+        if (user.isPresent()) {
             LOG.info("method: getUserById(). userId {} found", id);
+        } else {
+            LOG.warn("method: getUserById(). userId {} not found", id);
         }
         return user;
     }
