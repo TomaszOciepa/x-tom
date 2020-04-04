@@ -10,6 +10,8 @@ import { filter, map } from 'rxjs/internal/operators';
 })
 export class ProfileService {
 
+  constructor(private http:HttpClient, private auth:AuthService) { }
+
   private user_request:Observable<User>
   
   getUserProfile(){
@@ -28,10 +30,14 @@ export class ProfileService {
     this.user_request = null
   }
 
+  // ---> localhost
+  // update(id:number, user:Partial<User>){
+  //   return this.http.put<User>("http://localhost:8080/user/"+id, user)
+  // }
+
+  // ----> remote
   update(id:number, user:Partial<User>){
-    return this.http.put<User>("http://localhost:8080/user/"+id, user)
+    return this.http.put<User>("https://x-tom-api.herokuapp.com/user/"+id, user)
   }
 
-
-  constructor(private http:HttpClient, private auth:AuthService) { }
 }

@@ -31,15 +31,15 @@ public class AccountConfirmationService {
     public boolean checkEmail(String email) {
         Optional<User> userOptional = userService.findByEmail(email);
 
-        if (userOptional.isEmpty()) {
+        if (userOptional.isPresent()) {
+            return false;
+        } else {
             boolean result = accountConfirmationfindByEmail(email);
             if (result) {
                 return false;
             } else {
                 return true;
             }
-        } else {
-            return false;
         }
     }
 

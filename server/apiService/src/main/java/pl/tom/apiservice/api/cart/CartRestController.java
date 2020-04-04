@@ -9,7 +9,11 @@ import pl.tom.apiservice.service.CartService;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//---->localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+
+//---->remote
+@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
 @RestController
 @RequestMapping("/cart")
 public class CartRestController {

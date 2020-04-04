@@ -43,7 +43,7 @@ public class PasswordResetSevice {
 
             passwordResetRepository.save(passwordReset);
             emailSender.sendEmail("tomek0290@gmail.com", "x-tom - reset hasła", "Zapomniałeś hasła? To nie problem. Oto link do zresetowania. Jest ważny 10min." +
-                    "http://localhost:4200/resetuj-haslo?code=" + code + "&user=" + email);
+                    "https://x-tom-client.herokuapp.com//resetuj-haslo?code=" + code + "&user=" + email);
 
             return true;
         } else {

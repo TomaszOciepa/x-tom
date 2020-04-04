@@ -12,7 +12,11 @@ import pl.tom.apiservice.model.user.User;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//---->localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+
+//---->remote
+@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
 @RestController
 @RequestMapping("/user")
 public class UserRestController {
@@ -36,10 +40,10 @@ public class UserRestController {
         LOG.info("method: getUserById(). Trying find userId: {}", id);
         Optional<User> user = userService.getUserById(id);
 
-        if (user.isEmpty()) {
-            LOG.warn("method: getUserById(). userId {} not found", id);
-        } else {
+        if (user.isPresent()) {
             LOG.info("method: getUserById(). userId {} found", id);
+        } else {
+            LOG.warn("method: getUserById(). userId {} not found", id);
         }
         return user;
     }
