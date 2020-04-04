@@ -30,8 +30,8 @@ export class AuthService {
   
   private session = new BehaviorSubject<Session>(null)
 
-  // urlLocal = "http://localhost:8090/login"
-  urlRemote = "https://x-tom-auth.herokuapp.com/login"
+  urlLocal = "http://localhost:8090/login"
+  // urlRemote = "https://x-tom-auth.herokuapp.com/login"
   isAuthenticated = false
   role:string
   name:String
@@ -55,7 +55,7 @@ export class AuthService {
     
     login(credentials:Credentials){
       
-    return this.http.post(this.urlRemote, credentials)
+    return this.http.post(this.urlLocal, credentials)
       .subscribe((session:Session) =>{
         this.session.next(session)
         if(session.status){
@@ -93,14 +93,14 @@ export class AuthService {
     }
 
     // ---> localhost
-    // checkEmail(email:string){
-    //   return this.http.post<boolean>("http://localhost:8090/check-email", email)
-    // }
+    checkEmail(email:string){
+      return this.http.post<boolean>("http://localhost:8090/check-email", email)
+    }
 
     // ---> remote
-    checkEmail(email:string){
-      return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/check-email", email)
-    }
+    // checkEmail(email:string){
+    //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/check-email", email)
+    // }
 
     clearRole(){
         this.role = ""
@@ -142,17 +142,7 @@ export class AuthService {
     this.userSession.token = token
 
     // ---> localhost
-    // this.http.get<User>("http://localhost:8080/user/"+userId).subscribe(
-    //   response =>{
-    //       this.userSession.user = response
-    //       this.role = response.user_role
-    //       this.name = response.user_firstName
-    //       this.session.next(this.userSession)
-    //   }
-    // )
-
-    // ---->remote
-    this.http.get<User>("https://x-tom-api.herokuapp.com/user/"+userId).subscribe(
+    this.http.get<User>("http://localhost:8080/user/"+userId).subscribe(
       response =>{
           this.userSession.user = response
           this.role = response.user_role
@@ -161,67 +151,77 @@ export class AuthService {
       }
     )
 
+    // ---->remote
+    // this.http.get<User>("https://x-tom-api.herokuapp.com/user/"+userId).subscribe(
+    //   response =>{
+    //       this.userSession.user = response
+    //       this.role = response.user_role
+    //       this.name = response.user_firstName
+    //       this.session.next(this.userSession)
+    //   }
+    // )
+
   }
 
 
   // ---> localhost
-  // passwordResetVerifyUser(email:string){
-  //   return this.http.post<boolean>("http://localhost:8090/password-reset/verify-user", email)
-  // }
+  passwordResetVerifyUser(email:string){
+    return this.http.post<boolean>("http://localhost:8090/password-reset/verify-user", email)
+  }
 
 // ---->remote
-passwordResetVerifyUser(email:string){
-  return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/verify-user", email)
-}
+// passwordResetVerifyUser(email:string){
+//   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/verify-user", email)
+// }
 
   // ---> localhost
-  // passwordResetCheckCode(passwordResetData:PasswrodResetData){
-  //   return this.http.post<boolean>("http://localhost:8090/password-reset/check-code", passwordResetData)
-  // }
+  passwordResetCheckCode(passwordResetData:PasswrodResetData){
+    return this.http.post<boolean>("http://localhost:8090/password-reset/check-code", passwordResetData)
+  }
 
 // ---->remote
-passwordResetCheckCode(passwordResetData:PasswrodResetData){
-  return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/check-code", passwordResetData)
-}
+// passwordResetCheckCode(passwordResetData:PasswrodResetData){
+//   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/check-code", passwordResetData)
+// }
 
   // ---> localhost
-  // passwordResetSetNew(passwordResetData:PasswrodResetData){
-  //   return this.http.post<boolean>("http://localhost:8090/password-reset/set-new", passwordResetData)
-  // }
+  passwordResetSetNew(passwordResetData:PasswrodResetData){
+    return this.http.post<boolean>("http://localhost:8090/password-reset/set-new", passwordResetData)
+  }
 
 // ---->remote
-passwordResetSetNew(passwordResetData:PasswrodResetData){
-  return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/set-new", passwordResetData)
-}
+// passwordResetSetNew(passwordResetData:PasswrodResetData){
+//   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/set-new", passwordResetData)
+// }
 
   // ---> localhost
-  // changePassword(changePasswordData:ChangePassword){
-  //   return this.http.put<boolean>("http://localhost:8080/user/change-password", changePasswordData)
-  // }
+  changePassword(changePasswordData:ChangePassword){
+    return this.http.put<boolean>("http://localhost:8080/user/change-password", changePasswordData)
+  }
 
 // ---->remote
-changePassword(changePasswordData:ChangePassword){
-  return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-password", changePasswordData)
-}
+// changePassword(changePasswordData:ChangePassword){
+//   return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-password", changePasswordData)
+// }
 
 // ---> localhost
-  // changeEmail(changeEmailData:ChangeEmail){
-  //   return this.http.put<boolean>("http://localhost:8080/user/change-email", changeEmailData)
-  // }
+  changeEmail(changeEmailData:ChangeEmail){
+    return this.http.put<boolean>("http://localhost:8080/user/change-email", changeEmailData)
+  }
 
 // ---->remote
-changeEmail(changeEmailData:ChangeEmail){
-  return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-email", changeEmailData)
-}
+// changeEmail(changeEmailData:ChangeEmail){
+//   return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-email", changeEmailData)
+// }
 
   // ---> localhost
-  // confirmPassword(changePasswordData:ChangePassword){
-  //   return this.http.post<boolean>("http://localhost:8080/user/confirm-password", changePasswordData)
-  // }
+  confirmPassword(changePasswordData:ChangePassword){
+    return this.http.post<boolean>("http://localhost:8080/user/confirm-password", changePasswordData)
+  }
 
   // ---->remote
-  confirmPassword(changePasswordData:ChangePassword){
-    return this.http.post<boolean>("https://x-tom-api.herokuapp.com/user/confirm-password", changePasswordData)
-  }
+  // confirmPassword(changePasswordData:ChangePassword){
+  //   return this.http.post<boolean>("https://x-tom-api.herokuapp.com/user/confirm-password", changePasswordData)
+  // }
 
 }

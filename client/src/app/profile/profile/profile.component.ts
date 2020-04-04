@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
     if(this.auth.isAuthenticated){
       this.id = this.auth.getCurrentUser().user_id  
 
-      this.http.get<User>(this.remoteUrl+this.id).subscribe(
+      this.http.get<User>(this.localUrl+this.id).subscribe(
         response =>{
           this.profile = response
         }
@@ -34,8 +34,8 @@ export class ProfileComponent implements OnInit {
     } 
   }
 
-  // localUrl = "http://localhost:8080/user/"
-  remoteUrl = "https://x-tom-api.herokuapp.com/user/"
+  localUrl = "http://localhost:8080/user/"
+  // remoteUrl = "https://x-tom-api.herokuapp.com/user/"
   id:number
   profile:User
   statusError:number
