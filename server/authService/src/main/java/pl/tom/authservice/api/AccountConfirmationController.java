@@ -8,7 +8,11 @@ import pl.tom.authservice.model.accountConfirmation.AccountConfirmation;
 import pl.tom.authservice.service.AccountConfirmationService;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+//---->localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+
+//---->remote
+@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
 @RestController
 @RequestMapping("/account")
 public class AccountConfirmationController {

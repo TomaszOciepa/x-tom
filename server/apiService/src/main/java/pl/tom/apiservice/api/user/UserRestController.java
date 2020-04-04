@@ -12,7 +12,11 @@ import pl.tom.apiservice.model.user.User;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//---->localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+
+//---->remote
+@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
 @RestController
 @RequestMapping("/user")
 public class UserRestController {
