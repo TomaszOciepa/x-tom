@@ -17,6 +17,15 @@ import { OrdersModule } from './orders/orders.module';
 import { ValidationModule } from './validation/validation.module';
 import { AdminModule } from './admin/admin.module';
 import { ErrorModule } from './error/error.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 
 
@@ -24,6 +33,8 @@ import { ErrorModule } from './error/error.module';
 @NgModule({
   declarations: [
     AppComponent,
+    NavigationComponent,
+    NavigationBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +51,13 @@ import { ErrorModule } from './error/error.module';
     AdminModule,
     ErrorModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
