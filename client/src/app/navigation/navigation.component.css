@@ -100,10 +100,16 @@
   }
 }
 
-@media (max-width: 460px){
+@media (max-width: 556px){
   .hidden-menu{
     display: none;
    
   }
 }
 
+@media (max-width: 397px){
+  .hidden-min{
+    display: none;
+   
+  }
+}

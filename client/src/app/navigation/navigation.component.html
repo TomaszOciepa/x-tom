@@ -48,7 +48,7 @@
       </button>
       <div class="logo">
         <a [routerLink]="['/']">
-          <span>x-tom</span>
+          <img src="../../assets/img/logo/logo-nav.jpg" alt="logo">
         </a>
       </div>
       <span class="spacer"></span>
@@ -89,7 +89,7 @@
             </a>
         </div>
         <ng-container *ngIf="auth.isAuthenticated">
-          <div class="menu-icon-wraper">
+          <div class="menu-icon-wraper hidden-min">
             <a (click)="auth.logout()">
               <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">input</mat-icon></div>
               <div class="menu-text"><span>Wyloguj</span></div>
