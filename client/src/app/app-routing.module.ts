@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './navi/page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
   {
     path:'not-found',
     component: PageNotFoundComponent
+  },
+  {
+    path:'home',
+    component:  HomeComponent
   },
   {
     path:'',

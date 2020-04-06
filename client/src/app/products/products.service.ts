@@ -82,7 +82,7 @@ export class ProductsService {
 
   // ---> localhost
   getByStatus(status:string){
-    return this.http.get<ProductTestList>("http://localhost:8090/product/status/",{
+    return this.http.get<ProductTest[]>("http://localhost:8090/product/status/",{
       params:{
         status:status
       }

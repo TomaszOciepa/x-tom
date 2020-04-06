@@ -1,0 +1,116 @@
+
+  
+<error-handler [errorHandler]="statusError"></error-handler>
+
+  
+<ng-container *ngIf="productsRecomend || productsPromotion">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4" style="background-color: aqua; height: 950px;">
+        </div>
+        <div class="col-lg-8 recomend" style="height: 950px;">
+            <div class="row recomend-header" style="height: 50px;">
+                <h4>Polecamy</h4>
+            </div>
+            <div class="row">
+                <div class="col-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList1">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <ng-container *ngIf="p.product_type == 'smartphone'">
+                            <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                        </ng-container>
+                        <ng-container *ngIf="p.product_type != 'smartphone'">
+                            <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                        </ng-container>
+    
+                        <div class="content">
+                            <div class="recomend-description">{{p.product_description}}</div>
+                            <div class="recomend-price">{{p.product_price}} zł</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList2">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <ng-container *ngIf="p.product_type == 'smartphone'">
+                            <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                        </ng-container>
+                        <ng-container *ngIf="p.product_type != 'smartphone'">
+                            <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                        </ng-container>
+    
+                        <div class="content">
+                            <div class="recomend-description">{{p.product_description}}</div>
+                            <div class="recomend-price">{{p.product_price}} zł</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList3">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <ng-container *ngIf="p.product_type == 'smartphone'">
+                            <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                        </ng-container>
+                        <ng-container *ngIf="p.product_type != 'smartphone'">
+                            <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                        </ng-container>
+    
+                        <div class="content">
+                            <div class="recomend-description">{{p.product_description}}</div>
+                            <div class="recomend-price">{{p.product_price}} zł</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+
+
+  <!-- <h2>Polecamy</h2>
+  <div class="row">
+      <div class="col-3" *ngFor="let product of productsRecomend">
+          <div class="product">
+              <a [routerLink]="['/product', product.product_id]">
+                  <div class="card" style="width: 12rem;">
+                      <h4 class="card-title">{{product.product_mark}}</h4>
+                      <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="product">
+                      <div class="card-body my-card-body">
+                          <p class="card-text">kamera: {{product.product_camera}}</p>
+                          <p class="card-text">zasięg: {{product.product_range}} m</p>
+                          <p class="card-text">czas pracy: {{product.product_time_work}} min</p>
+                          <h5 class="card-text">{{product_product_price}} zł</h5>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+
+  <h2>Promocja</h2>
+  <div class="row">
+      <div class="col-3" *ngFor="let product of productsPromotion">
+          <div class="product">
+              <a [routerLink]="['/product', product.product_id]">
+                  <div class="card" style="width: 12rem;">
+                      <h4 class="card-title">{{product.product_mark}}</h4>
+                      <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="product">
+                      <div class="card-body my-card-body">
+                          <p class="card-text">kamera: {{product.product_camera}}</p>
+                          <p class="card-text">zasięg: {{product.product_range}} m</p>
+                          <p class="card-text">czas pracy: {{product.product_time_work}} min</p>
+                          <h5 class="card-text">{{product_product_price}} zł</h5>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div> -->
+
+</ng-container>
+
+
+
