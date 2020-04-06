@@ -1,17 +1,15 @@
-.recomend{
-    color: #4d4d4d;
-}
 
 .recomend img {
     padding-top: 40px;
-    margin-left: 20px;
+    margin: 0 auto;
     max-width: 100%;
     height: auto;
 }
 
-.recomend-header {
+.recomend-header, .promotion-header {
     padding-top: 10px;
     padding-left: 30px;
+    color: #4d4d4d;
 }
 
 .recomend-price{
@@ -41,12 +39,58 @@
     margin: 0 auto;
 }
 
+.promotion-img{
+    margin: 0 auto;
+}
 
+.promotion-desc, .promotion-price{
+    width: 100%;
+    text-align: center;
+}
 
+.promotion-price{
+    padding-top: 40px;
+}
 
+.promotion-price .before{
+    font-size: 18px;
+    text-decoration: line-through;
+}
 
+.promotion-price .after{
+    font-size: 24px;
+    color: #f70164;
+}
 
+.promo-wrap{
+    height: 800px;
+    margin: 40px;
+    border: 1px solid #f70164;
+    border-radius: 25px;
+}
 
+.promo-wrap:last-child  {
+    border-top: 1px solid black;
+}
+
+.promo-item{
+    margin-top: 30px;
+}
+
+.promo-item:last-child{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-top: 1px solid rgba(77, 77, 77, 0.2);
+}
+
+.promo-item a {
+    text-decoration: none;
+    color: #8c8c8c;
+}
+
+.promo-item a:hover{
+    color: #404040;
+}
 /* .product a{
     color: #000000;
     text-decoration: none;   

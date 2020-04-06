@@ -58,7 +58,14 @@ export class HomeComponent implements OnInit {
     
 
     this.productsService.getByStatus("promocja").subscribe(response =>{
-      this.productsPromotion = response
+      
+      for(var i = 0; i <= response.length -1; i++){
+        if(i <=1){
+          this.productsPromotion.push(response[i])
+        }  
+        
+      }
+      
     },error =>{
       if(error instanceof HttpErrorResponse){
         this.statusError = error.status
