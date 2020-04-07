@@ -1,4 +1,8 @@
 
+.recomend{
+    margin: 0 auto;
+}
+
 .recomend img {
     padding-top: 40px;
     margin: 0 auto;
@@ -16,6 +20,10 @@
     text-align: center;
 }
 
+.recomend .wrap{
+    margin: 0 auto;
+}
+
 .recomend .wrap:hover{
     border: 1px solid rgba(77, 77, 77, 0.3);
     border-radius: 25px;
@@ -28,12 +36,20 @@
 .recomend .wrap .content{
     position: absolute;
     bottom: 1px;
+    text-align: center;
 }
 
 
 .recomend .wrap a {
     color: #4d4d4d;
 }
+
+.recomend .wrap .img{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .content {
     width: 90%;
     margin: 0 auto;
@@ -90,6 +106,12 @@
 
 .promo-item a:hover{
     color: #404040;
+}
+
+@media (max-width: 360px){
+    /* .promo-wrap{
+        margin: 10px;   
+} */
 }
 /* .product a{
     color: #000000;

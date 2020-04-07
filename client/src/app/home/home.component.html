@@ -35,13 +35,17 @@
                 <h4>Polecamy</h4>
             </div>
             <div class="row">
-                <div class="col-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList1">
+                <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList1">
                     <a [routerLink]="['/product', p.product_id]">
                         <ng-container *ngIf="p.product_type == 'smartphone'">
-                            <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                            <div class="img">
+                                <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                            </div>
                         </ng-container>
                         <ng-container *ngIf="p.product_type != 'smartphone'">
-                            <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                            <div class="img">
+                                <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                            </div>
                         </ng-container>
     
                         <div class="content">
@@ -52,13 +56,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList2">
+                <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList2">
                     <a [routerLink]="['/product', p.product_id]">
                         <ng-container *ngIf="p.product_type == 'smartphone'">
-                            <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                            <div class="img">
+                                <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                            </div>
                         </ng-container>
                         <ng-container *ngIf="p.product_type != 'smartphone'">
-                            <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                            <div class="img">
+                                <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                            </div>
                         </ng-container>
     
                         <div class="content">
@@ -69,13 +77,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList3">
+                <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList3">
                     <a [routerLink]="['/product', p.product_id]">
                         <ng-container *ngIf="p.product_type == 'smartphone'">
-                            <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                            <div class="img">
+                                <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
+                            </div>
                         </ng-container>
                         <ng-container *ngIf="p.product_type != 'smartphone'">
-                            <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                            <div class="img">
+                                <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                            </div>
                         </ng-container>
     
                         <div class="content">
