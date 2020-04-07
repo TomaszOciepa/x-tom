@@ -15,7 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ProductComponent implements OnInit {
   
-  constructor(protected auth:AuthService, private http:ProductsService, private cartService:CartService, private route:ActivatedRoute) {
+  constructor(public auth:AuthService, private http:ProductsService, private cartService:CartService, private route:ActivatedRoute) {
 
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('product_id')

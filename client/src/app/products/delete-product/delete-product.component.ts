@@ -10,7 +10,7 @@ import { ProductsService } from 'src/app/products/products.service';
 })
 export class DeleteProductComponent implements OnInit {
 
-  constructor(private http:ProductsService, protected auth:AuthService, private route:ActivatedRoute) { 
+  constructor(private http:ProductsService, public auth:AuthService, private route:ActivatedRoute) { 
     this.auth.state.subscribe()
 
     this.route.paramMap.subscribe(params =>{

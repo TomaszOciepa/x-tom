@@ -11,7 +11,7 @@ import { User } from 'src/app/model/user';
 })
 export class RoleUserComponent implements OnInit {
 
-  constructor(private http:UsersService, protected auth:AuthService, private route:ActivatedRoute) {
+  constructor(private http:UsersService, public auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
 
     this.route.paramMap.subscribe(params =>{

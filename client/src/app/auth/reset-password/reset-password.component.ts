@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ResetPasswordComponent implements OnInit {
 
   
-  constructor(private fb:FormBuilder, private auth:AuthService, private route: ActivatedRoute) { }
+  constructor(private fb:FormBuilder, public auth:AuthService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(param =>{

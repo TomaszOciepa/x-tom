@@ -11,7 +11,7 @@ import { CartItemLocalStorage } from 'src/app/model/cartItemLocalStorage';
 })
 export class LaptopByIdComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private fb:FormBuilder) {
+  constructor(public auth:AuthService, private fb:FormBuilder) {
     this.auth.state.subscribe()
    }
    ngOnInit() {}

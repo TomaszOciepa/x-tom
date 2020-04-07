@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class OrdersManagerComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private ordersService:OrdersService, private router: Router) {
+  constructor(public auth:AuthService, private ordersService:OrdersService, private router: Router) {
     this.auth.state.subscribe()
     
     this.ordersService.getAllOrders().subscribe(response =>{

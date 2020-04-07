@@ -41,7 +41,6 @@
         </ng-container>
         
         <ng-container *ngIf="!saveNewEmail">
-            <div class="alert alert-danger" *ngIf="message">{{message}}</div>
             <ng-container *ngIf="!saveEmail">
                 <div class="form">
                     <form [formGroup]="changeEmailForm" (submit)="changeEmail()">

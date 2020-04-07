@@ -12,7 +12,7 @@ import { Order } from 'src/app/model/order';
 })
 export class OrderAddressFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, protected auth:AuthService, private route:ActivatedRoute, private router: Router, private ordersService:OrdersService) {
+  constructor(private fb:FormBuilder, public auth:AuthService, private route:ActivatedRoute, private ordersService:OrdersService) {
     this.auth.state.subscribe()
 
     this.route.paramMap.subscribe(params =>{

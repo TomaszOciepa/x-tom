@@ -12,7 +12,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private http:HttpClient) { 
+  constructor(public auth:AuthService, private http:HttpClient) { 
     this.auth.state.subscribe()
   }
 

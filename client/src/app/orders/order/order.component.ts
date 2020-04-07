@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class OrderComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, private ordersService:OrdersService, protected auth:AuthService) {
+  constructor(private route:ActivatedRoute, private ordersService:OrdersService, public auth:AuthService) {
     this.auth.state.subscribe()
 
     this.route.queryParams.subscribe(param =>{

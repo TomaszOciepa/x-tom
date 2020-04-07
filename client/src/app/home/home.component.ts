@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.productsService.getByStatus("polecamy").subscribe(response =>{
-        console.log("list size: "+response.length)
       for(var i = 0; i <= response.length -1; i++){
 
         if(i <=2){
@@ -42,11 +41,6 @@ export class HomeComponent implements OnInit {
         }
 
       }
-      
-      console.log('List 1: '+this.productsRecomendList1.length)
-      console.log('List 2: '+this.productsRecomendList2.length)
-      console.log('List 3: '+this.productsRecomendList3.length)
-
 
     },error =>{
       if(error instanceof HttpErrorResponse){

@@ -13,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DronesComponent implements OnInit {
 
-  constructor(private http:ProductsService, protected auth:AuthService) {
+  constructor(private http:ProductsService, public auth:AuthService) {
     this.auth.state.subscribe()
    }
 

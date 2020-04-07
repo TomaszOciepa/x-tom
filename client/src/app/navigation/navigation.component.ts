@@ -17,7 +17,7 @@ export class NavigationComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, protected auth:AuthService) {
+  constructor(private breakpointObserver: BreakpointObserver, public auth:AuthService) {
     this.auth.state.subscribe()
   }
 

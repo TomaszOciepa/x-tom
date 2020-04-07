@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class ProfileBarComponent implements OnInit {
 
-  constructor(protected auth:AuthService) {}
+  constructor(public auth:AuthService) {}
   
   ngOnInit() {
     this.name = this.auth.name

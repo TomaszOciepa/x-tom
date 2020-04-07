@@ -13,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private ordersService:OrdersService, private router: Router) { 
+  constructor(public auth:AuthService, private ordersService:OrdersService, private router: Router) { 
     this.auth.state.subscribe()
 
     if(this.auth.isAuthenticated){

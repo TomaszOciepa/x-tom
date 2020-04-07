@@ -12,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class CartComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private cartService:CartService ,private fb:FormBuilder) { 
+  constructor(public auth:AuthService, private cartService:CartService ,private fb:FormBuilder) { 
     this.auth.state.subscribe()
   }
 

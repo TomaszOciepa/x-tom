@@ -12,7 +12,7 @@ import { Order } from 'src/app/model/order';
 })
 export class OrderFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, protected auth:AuthService, private router: Router) { }
+  constructor(private fb:FormBuilder, public auth:AuthService, private router: Router) { }
 
   ngOnInit() {
     this.user = this.auth.getCurrentUser()

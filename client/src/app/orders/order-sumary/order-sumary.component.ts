@@ -14,7 +14,7 @@ import { CartService } from 'src/app/cart/cart.service';
 })
 export class OrderSumaryComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, protected auth:AuthService, private ordersService:OrdersService, private cartService:CartService) { 
+  constructor(private route:ActivatedRoute, public auth:AuthService, private ordersService:OrdersService, private cartService:CartService) { 
     this.auth.state.subscribe()
 
     this.route.queryParams.subscribe(param =>{
