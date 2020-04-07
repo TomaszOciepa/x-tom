@@ -1,10 +1,10 @@
 
 .recomend{
     margin: 0 auto;
+    margin-top: 40px;
 }
 
 .recomend img {
-    padding-top: 40px;
     margin: 0 auto;
     max-width: 100%;
     height: auto;
@@ -16,12 +16,18 @@
     color: #4d4d4d;
 }
 
+.recomend-header{
+    border-top: 1px solid rgba(77, 77, 77, 0.3);
+}
+
 .recomend-price{
     text-align: center;
 }
 
 .recomend .wrap{
     margin: 0 auto;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .recomend .wrap:hover{
@@ -37,6 +43,7 @@
     position: absolute;
     bottom: 1px;
     text-align: center;
+    /* margin-top: 40px; */
 }
 
 
@@ -108,37 +115,8 @@
     color: #404040;
 }
 
-@media (max-width: 360px){
-    /* .promo-wrap{
-        margin: 10px;   
-} */
+@media (max-width: 572px){
+    .recomend .wrap:hover{
+        border: none
+    }
 }
-/* .product a{
-    color: #000000;
-    text-decoration: none;   
-   }
-   
-   .product a:hover{
-   color: green;
-   }
-   
-   .product{
-       margin: 10px;
-       min-width: 260px;
-   }
-   
-   .my-card-body p{
-   margin: 0;
-   }
-   
-   .my-card-body h5{
-       margin-top: 20px;
-       }
-   
-   .card{
-       padding: 10px;
-   }
-   
-   .card:hover{
-       border: 1px solid green;
-   } */

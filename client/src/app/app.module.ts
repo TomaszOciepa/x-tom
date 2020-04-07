@@ -27,6 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
+import { SliderModule } from './slider/slider.module';
+
 
 
 
@@ -60,6 +62,7 @@ import { HomeComponent } from './home/home.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

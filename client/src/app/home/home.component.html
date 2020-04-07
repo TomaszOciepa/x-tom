@@ -1,8 +1,13 @@
 
   
 <error-handler [errorHandler]="statusError"></error-handler>
+<div class="container-fluid">
+    
+        <slider></slider>  
+    
+</div>
 
-  
+
 <ng-container *ngIf="productsRecomend || productsPromotion">
 <div class="container-fluid">
     <div class="row cont-r">
@@ -44,7 +49,8 @@
                         </ng-container>
                         <ng-container *ngIf="p.product_type != 'smartphone'">
                             <div class="img">
-                                <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                                <!-- <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> -->
+                                <img src="../../assets/img/promotion/new-promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                             </div>
                         </ng-container>
     
@@ -65,7 +71,8 @@
                         </ng-container>
                         <ng-container *ngIf="p.product_type != 'smartphone'">
                             <div class="img">
-                                <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                                <!-- <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> -->
+                                <img src="../../assets/img/promotion/new-promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                             </div>
                         </ng-container>
     
@@ -86,7 +93,8 @@
                         </ng-container>
                         <ng-container *ngIf="p.product_type != 'smartphone'">
                             <div class="img">
-                                <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product">
+                                <!-- <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> -->
+                                <img src="../../assets/img/promotion/new-promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                             </div>
                         </ng-container>
     
