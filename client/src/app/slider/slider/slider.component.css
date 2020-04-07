@@ -1,4 +1,11 @@
+.carusel-wraper{
+    width: 90%;
+    margin: 0 auto;
+}
+
 .picsum-img-wrapper img {
+    width: 100%;
+    margin: 0 auto;
     border: 1px solid  rgba(77, 77, 77, 0.3);
     border-radius: 25px;
 }
