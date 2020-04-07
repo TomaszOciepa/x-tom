@@ -119,4 +119,8 @@
     .recomend .wrap:hover{
         border: none
     }
+    
+    .slider{
+    display: none;
+    }
 }

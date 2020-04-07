@@ -28,7 +28,7 @@ import { MatListModule } from '@angular/material/list';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { SliderModule } from './slider/slider.module';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -41,6 +41,7 @@ import { SliderModule } from './slider/slider.module';
     HomeComponent,
   ],
   imports: [
+    NgbModule,  
     BrowserModule,
     HttpClientModule,
     AuthModule,
