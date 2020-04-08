@@ -31,13 +31,18 @@
 }
 
 .drone-wraper a{
-    color: #4d4d4d;
+    color: #808080;
+    
 }
 
 .drone-wraper .wraper{
     width: 100%;
     margin: 0 auto;
     text-align: center;
+}
+
+.drone-wraper .wraper:hover{
+    color: #404040;
 }
 
 @media (max-width: 767px){
