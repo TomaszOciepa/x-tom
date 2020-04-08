@@ -2,6 +2,13 @@
 .recomend{
     margin: 0 auto;
     margin-top: 40px;
+    min-height: 850px;
+    height: auto;
+    overflow: hidden;
+}
+
+.promotion{
+    min-height: 850px;
 }
 
 .recomend img {
@@ -17,7 +24,7 @@
 }
 
 .recomend-header{
-    border-top: 1px solid rgba(77, 77, 77, 0.3);
+    border-top: 2px solid rgba(77, 77, 77, 0.3);
 }
 
 .recomend-price{
@@ -120,7 +127,7 @@
         border: none
     }
     
-    .slider{
+    .slider, .recomend-list3{
     display: none;
     }
 }

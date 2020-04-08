@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from 'src/app/auth/auth.service';
-import { ProductTestList } from 'src/app/model/productTestList';
 import { ProductsService } from 'src/app/products/products.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ProductTest } from 'src/app/model/productTest';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class DronesComponent implements OnInit {
   }
 
    statusError:number
-   drones:ProductTestList
+   drones:ProductTest[]
 
    getAllProduct(){
     this.http.getByType("drone").subscribe(response =>{

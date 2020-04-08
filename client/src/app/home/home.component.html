@@ -4,13 +4,10 @@
 <div class="container-fluid slider">
         <slider></slider>  
 </div>
-
-
-<!-- <ng-container *ngIf="productsRecomend || productsPromotion"> -->
     
 <div class="container-fluid">
     <div class="row cont-r">
-        <div class="col-lg-4" style="height: 950px;">
+        <div class="col-lg-4 promotion">
             <div class="promo-wrap">
                 <div class="row promotion-header" style="height: 50px;">
                     <h4>Promocja</h4>
@@ -18,7 +15,8 @@
                 <div class="promo-item" *ngFor="let p of productsPromotion">
                     <a [routerLink]="['/product', p.product_id]">
                         <div class="row">
-                            <img class="promotion-img" src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> 
+                            <!-- <img class="promotion-img" src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">  -->
+                            <img class="promotion-img" src="../../assets/img/product-min/{{p.product_mark}}-{{p.product_type}}-232-199.jpg" alt="product"> 
                         </div>
                         <div class="row">
                             <div class="promotion-desc">
@@ -34,11 +32,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 recomend" style="height: 950px;">
+        <div class="col-lg-8 recomend">
             <div class="row recomend-header" style="height: 50px;">
                 <h4>Polecamy</h4>
             </div>
-            <div class="row">
+            <div class="row recomend-list1">
                 <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList1">
                     <a [routerLink]="['/product', p.product_id]">
                         <ng-container *ngIf="p.product_type == 'smartphone'">
@@ -60,7 +58,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row recomend-list2">
                 <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList2">
                     <a [routerLink]="['/product', p.product_id]">
                         <ng-container *ngIf="p.product_type == 'smartphone'">
@@ -82,7 +80,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row recomend-list3">
                 <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList3">
                     <a [routerLink]="['/product', p.product_id]">
                         <ng-container *ngIf="p.product_type == 'smartphone'">
@@ -108,50 +106,12 @@
     </div>
 </div>
     
+<box-drone></box-drone>
 
 
+    
 
-  <!-- <h2>Polecamy</h2>
-  <div class="row">
-      <div class="col-3" *ngFor="let product of productsRecomend">
-          <div class="product">
-              <a [routerLink]="['/product', product.product_id]">
-                  <div class="card" style="width: 12rem;">
-                      <h4 class="card-title">{{product.product_mark}}</h4>
-                      <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="product">
-                      <div class="card-body my-card-body">
-                          <p class="card-text">kamera: {{product.product_camera}}</p>
-                          <p class="card-text">zasięg: {{product.product_range}} m</p>
-                          <p class="card-text">czas pracy: {{product.product_time_work}} min</p>
-                          <h5 class="card-text">{{product_product_price}} zł</h5>
-                      </div>
-                  </div>
-              </a>
-          </div>
-      </div>
-  </div>
 
-  <h2>Promocja</h2>
-  <div class="row">
-      <div class="col-3" *ngFor="let product of productsPromotion">
-          <div class="product">
-              <a [routerLink]="['/product', product.product_id]">
-                  <div class="card" style="width: 12rem;">
-                      <h4 class="card-title">{{product.product_mark}}</h4>
-                      <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="product">
-                      <div class="card-body my-card-body">
-                          <p class="card-text">kamera: {{product.product_camera}}</p>
-                          <p class="card-text">zasięg: {{product.product_range}} m</p>
-                          <p class="card-text">czas pracy: {{product.product_time_work}} min</p>
-                          <h5 class="card-text">{{product_product_price}} zł</h5>
-                      </div>
-                  </div>
-              </a>
-          </div>
-      </div>
-  </div> -->
-
-<!-- </ng-container> -->
 
 
 

@@ -1,0 +1,68 @@
+<ng-container *ngIf="item1">
+    <div class="container-fluid">
+        <div class="drone-wraper">
+            <h4>Drony</h4>
+        <div class="row">
+            <div class="col-md-3">
+                <a [routerLink]="['/product', item1.product_id]">
+                    <div class="wraper">
+                        <div class="img">
+                            <img src="../../../assets/img/promotion/{{item1.product_mark}}-drone-221-221.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="description">{{item1.product_description}}</div>
+                            <div class="price">{{item1.product_price}} zł</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 item2">
+                <a [routerLink]="['/product', item2.product_id]">
+                    <div class="wraper">
+                        <div class="img">
+                            <img src="../../../assets/img/promotion/{{item2.product_mark}}-drone-221-221.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="description">{{item2.product_description}}</div>
+                            <div class="price">{{item2.product_price}} zł</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 item3">
+                <a [routerLink]="['/product', item3.product_id]">
+                    <div class="wraper">
+                        <div class="img">
+                            <img src="../../../assets/img/promotion/{{item3.product_mark}}-drone-221-221.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="description">{{item3.product_description}}</div>
+                            <div class="price">{{item3.product_price}} zł</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-3 item4">
+                <a [routerLink]="['/product', item4.product_id]">
+                    <div class="wraper">
+                        <div class="img">
+                            <img src="../../../assets/img/promotion/{{item4.product_mark}}-drone-221-221.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="description">{{item4.product_description}}</div>
+                            <div class="price">{{item4.product_price}} zł</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="link">
+            <a href="/products/drones">więcej...</a>
+        </div>
+        </div>
+    </div>
+
+
+</ng-container>
+    
+    

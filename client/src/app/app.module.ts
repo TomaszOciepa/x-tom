@@ -29,6 +29,9 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomeComponent } from './home/home.component';
 import { SliderModule } from './slider/slider.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BoxDroneModule } from './box-drone/box-drone.module';
+
+
 
 
 
@@ -64,6 +67,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatIconModule,
     MatListModule,
     SliderModule,
+    BoxDroneModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

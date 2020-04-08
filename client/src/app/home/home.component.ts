@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductTestList } from 'src/app/model/productTestList';
 import { ProductsService } from 'src/app/products/products.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ProductList } from '../model/productList';
 import { ProductTest } from '../model/productTest';
 
 @Component({
@@ -21,7 +19,7 @@ export class HomeComponent implements OnInit {
   productsPromotion:ProductTest[] = []
 
   statusError:number
-  
+  imagesUrl
 
   ngOnInit() {
 
@@ -57,7 +55,6 @@ export class HomeComponent implements OnInit {
         if(i <=1){
           this.productsPromotion.push(response[i])
         }  
-        
       }
       
     },error =>{
@@ -68,5 +65,5 @@ export class HomeComponent implements OnInit {
     })
 
   }
-  
+
 }

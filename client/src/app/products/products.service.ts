@@ -63,7 +63,7 @@ export class ProductsService {
 
   // ---> localhost
   getByType(type:string){
-    return this.http.get<ProductTestList>("http://localhost:8090/product/type",{
+    return this.http.get<ProductTest[]>("http://localhost:8090/product/type",{
       params:{
         type:type
       }
@@ -97,4 +97,6 @@ export class ProductsService {
   //     }
   //   })
   // }
+
+
 }
