@@ -15,7 +15,6 @@
                 <div class="promo-item" *ngFor="let p of productsPromotion">
                     <a [routerLink]="['/product', p.product_id]">
                         <div class="row">
-                            <!-- <img class="promotion-img" src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">  -->
                             <img class="promotion-img" src="../../assets/img/product-min/{{p.product_mark}}-{{p.product_type}}-232-199.jpg" alt="product"> 
                         </div>
                         <div class="row">
@@ -47,8 +46,7 @@
                             </ng-container>
                             <ng-container *ngIf="p.product_type != 'smartphone'">
                                 <div class="img">
-                                    <!-- <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> -->
-                                    <img src="../../assets/img/promotion/new-promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                                    <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                                 </div>
                             </ng-container>
         
@@ -71,8 +69,7 @@
                             </ng-container>
                             <ng-container *ngIf="p.product_type != 'smartphone'">
                                 <div class="img">
-                                    <!-- <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> -->
-                                    <img src="../../assets/img/promotion/new-promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                                    <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                                 </div>
                             </ng-container>
         
@@ -95,8 +92,7 @@
                             </ng-container>
                             <ng-container *ngIf="p.product_type != 'smartphone'">
                                 <div class="img">
-                                    <!-- <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-184.jpg" alt="product"> -->
-                                    <img src="../../assets/img/promotion/new-promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                                    <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                                 </div>
                             </ng-container>
         
@@ -114,10 +110,4 @@
     
 <box-drone></box-drone>
 
-
-    
-
-
-
-
-
+<box-mobile></box-mobile>

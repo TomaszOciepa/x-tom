@@ -42,13 +42,6 @@
     color: #404040;
 }
 
-.recomend .wrap:hover{
-    /* border: 1px solid rgba(77, 77, 77, 0.3);
-    border-radius: 25px; */
-    /* color: #404040; */
-    /* color: red; */
-}
-
 .recomend .wrap .content{
     position: relative;   
 }
@@ -57,9 +50,7 @@
     position: absolute;
     bottom: 1px;
     text-align: center;
-    /* margin-top: 40px; */
 }
-
 
 .recomend .wrap a {
     color: #808080;

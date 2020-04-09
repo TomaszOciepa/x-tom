@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="newsletter">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h4>Newsletter</h4>
+                        <p>Nie przegap żadnej promocji,</p>
+                        <p>zdobywaj dodatkowe rabaty.</p>
+                        <div class="form-box">
+                            <form [formGroup]="newsletterForm" (submit)="send()">
+                                <input type="text" class="form-control" placeholder="Twój e-mail" formControlName="email">
+                                <input type="submit" value="Zapisz się" class="btn btn-primary mx-auto"> 
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 img">
+                        <img src="../../../assets/img/box/newsletter.png" style="width: 80%; height: auto;">
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="mobile-app">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <h4>Aplikacja Mobilna</h4>
+                        <p>Pracujemy nad nią,</p>
+                        <p>wkrótce będzie dostępna.</p>
+                        <div class="img-box">
+                            <span><img src="../../../assets/img/box/app-store.svg"></span>
+                            <span><img src="../../../assets/img/box/android.svg"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 img">
+                        <img src="../../../assets/img/box/mobile-box.png" style="width: 80%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

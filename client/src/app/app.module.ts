@@ -30,6 +30,7 @@ import { HomeComponent } from './home/home.component';
 import { SliderModule } from './slider/slider.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BoxDroneModule } from './box-drone/box-drone.module';
+import { BoxMobileModule } from './box-mobile/box-mobile.module';
 
 
 
@@ -68,6 +69,7 @@ import { BoxDroneModule } from './box-drone/box-drone.module';
     MatListModule,
     SliderModule,
     BoxDroneModule,
+    BoxMobileModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
