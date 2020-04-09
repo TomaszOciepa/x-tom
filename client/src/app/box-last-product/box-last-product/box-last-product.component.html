@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="last-product-wraper">
+        <h4>Ostatnio oglądane</h4>
+        <div class="row">
+            <div class="col-lg-2 item" *ngFor="let p of lastProductList">
+                <a [routerLink]="['/product', p.product_id]">
+                    <div class="wraper">
+                        <div class="img">
+                            <img  src="../../../assets/img/last-watched/{{p.product_mark}}-{{p.product_type}}-127-106.jpg">
+                        </div>
+                        <div class="content">
+                            <div class="description">{{p.product_description}}</div>
+                            <div class="price">{{p.product_price}} zł</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

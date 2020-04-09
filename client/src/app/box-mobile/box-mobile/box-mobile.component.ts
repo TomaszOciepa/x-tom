@@ -35,7 +35,7 @@ export class BoxMobileComponent implements OnInit {
 
     console.log("wysłano")
     this.snackbar.open(msg,'',{
-      duration: 20000,
+      duration: 4000,
       verticalPosition:'top'
     })
   }

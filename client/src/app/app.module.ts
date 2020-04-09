@@ -31,6 +31,8 @@ import { SliderModule } from './slider/slider.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BoxDroneModule } from './box-drone/box-drone.module';
 import { BoxMobileModule } from './box-mobile/box-mobile.module';
+import { BoxLastProductModule } from './box-last-product/box-last-product.module';
+
 
 
 
@@ -70,6 +72,7 @@ import { BoxMobileModule } from './box-mobile/box-mobile.module';
     SliderModule,
     BoxDroneModule,
     BoxMobileModule,
+    BoxLastProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
