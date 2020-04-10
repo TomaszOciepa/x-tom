@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { FormBuilder } from '@angular/forms';
 import { ProductTest } from 'src/app/model/productTest';
 import { CartItemLocalStorage } from 'src/app/model/cartItemLocalStorage';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'laptop-by-id',
@@ -11,14 +12,13 @@ import { CartItemLocalStorage } from 'src/app/model/cartItemLocalStorage';
 })
 export class LaptopByIdComponent implements OnInit {
 
-  constructor(public auth:AuthService, private fb:FormBuilder) {
+  constructor(public auth:AuthService, private fb:FormBuilder, private snackbar:MatSnackBar) {
     this.auth.state.subscribe()
    }
    ngOnInit() {}
 
    id:number
    product:ProductTest
-   cart = true
    amount:number = 1
 
    cartItem:CartItemLocalStorage = {
@@ -43,7 +43,11 @@ export class LaptopByIdComponent implements OnInit {
     this.cartItem.product = product
     this.cartItem.order_item_amount = this.amount
     this.emiterSetProduct.emit(this.cartItem)
-    this.cart = false
+
+    this.snackbar.open('Dodano do koszyka','',{
+      duration: 4000,
+      verticalPosition:'top'
+    })
   }
 
 

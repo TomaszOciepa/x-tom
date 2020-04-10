@@ -19,6 +19,7 @@ import { SmartphoneByIdComponent } from './product/smartphone-by-id/smartphone-b
 import { AddProductComponent } from './add-product/add-product.component';
 import { ErrorModule } from '../error/error.module';
 import { BoxLastProductModule } from '../box-last-product/box-last-product.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent, DronesComponent, LaptopsComponent,
@@ -31,6 +32,7 @@ import { BoxLastProductModule } from '../box-last-product/box-last-product.modul
     AuthModule,
     FormModule,
     ErrorModule,
+    MatSnackBarModule,
     BoxLastProductModule,
     ProductsRoutingModule
   ]

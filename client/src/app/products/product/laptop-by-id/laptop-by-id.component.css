@@ -1,0 +1,110 @@
+
+
+.mat-snack-bar-container{
+    background-color: #28a745 !important;
+}
+
+.img{
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+.description{
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: left;
+    color: #000000;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+
+.spec-short{
+    width: 80%;
+    border-top: 1px solid rgba(77, 77, 77, 0.2);
+    padding-top: 10px;
+}
+
+.spec-short p{
+    color: #4d4d4d;
+    margin: 0px;
+}
+
+.spec-short p span{
+    color: #000000;
+}
+
+.cart-box{
+    width: 80%;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.price{
+    width: 100%;
+    text-align: right;
+    margin-bottom: -30px;
+}
+
+.price p {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.form{
+    width: 100%;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.form a {
+    border-radius: 666px;
+    margin-left: 5px;
+    width: 80%;
+    height: auto;
+}
+
+.form a span{
+    line-height: 80%;
+}
+
+.form select {
+    width: 60px;
+    border-radius: 80px;
+}
+
+.select-btn{
+    display: inline-block;
+}
+
+.spec-wraper{
+    border-top: 1px solid  rgba(77, 77, 77, 0.1);
+    /* border-bottom: 1px solid  rgba(77, 77, 77, 0.2); */
+    margin-top: 40px;
+    /* margin-bottom: 40px; */
+    padding: 20px;
+    overflow: hidden;
+}
+
+.spec tr:hover{
+    background-color:#e6e6e6;
+}
+
+.spec-wraper img{
+    width: 40%;
+    height: auto;
+    padding-top: 40px;
+}
+
+.logo{
+    width: 100%;
+    text-align: center;
+}
