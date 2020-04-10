@@ -33,6 +33,7 @@ import { BoxDroneModule } from './box-drone/box-drone.module';
 import { BoxMobileModule } from './box-mobile/box-mobile.module';
 import { BoxLastProductModule } from './box-last-product/box-last-product.module';
 import { BoxFooterModule } from './box-footer/box-footer.module';
+import { BoxSpecialModule } from './box-special/box-special.module';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { BoxFooterModule } from './box-footer/box-footer.module';
     BoxDroneModule,
     BoxMobileModule,
     BoxLastProductModule,
-    BoxFooterModule
+    BoxFooterModule,
+    BoxSpecialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
