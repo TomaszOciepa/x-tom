@@ -2,25 +2,30 @@
     <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
 </ng-container>
 
-<div class="row">
-<div *ngFor="let drone of drones">
-    <div class="col-4">
-        <div class="drone">
-            <a [routerLink]="['/product', drone.product_id]">
-                <div class="card" style="width: 12rem;">
-                    <h4 class="card-title">{{drone.product_mark}}</h4>
-                    <img src="../../../assets/img/drone.jpeg" class="card-img-top" alt="drone">
-                    <div class="card-body my-card-body">
-                        <p class="card-text">kamera: {{drone.product_camera}}</p>
-                        <p class="card-text">zasięg: {{drone.product_range}} m</p>
-                        <p class="card-text">czas pracy: {{drone.product_time_work}} min</p>
-                        <h5 class="card-text">{{drone.product_price}} zł</h5>
+<div class="container-fluid">
+    <h4>Drony</h4>
+    <div class="row">
+        <div class="col-ms-3" *ngFor="let drone of drones">
+            <div class="drone">
+                <a [routerLink]="['/product', drone.product_id]">
+                    <div class="card" style="width: 12rem;">
+                        <img src="../../../../assets/img/recomend/{{drone.product_mark}}-{{drone.product_type}}-142-116.jpg" class="card-img-top" alt="drone">
+                        <div class="card-body my-card-body">
+                            <div class="description">
+                                {{drone.product_description}}
+                            </div>
+                            <p class="card-text">kamera: {{drone.product_camera}}</p>
+                            <p class="card-text">zasięg: {{drone.product_range}} m</p>
+                            <p class="card-text">czas pracy: {{drone.product_time_work}} min</p>
+                            <h5 class="card-text">{{drone.product_price}} zł</h5>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </div>
 </div>
-</div>
+
+<box-last-product></box-last-product>
 
 <error-handler [errorHandler]="statusError"></error-handler>

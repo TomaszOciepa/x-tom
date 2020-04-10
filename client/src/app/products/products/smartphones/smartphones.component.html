@@ -2,8 +2,33 @@
     <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
 </ng-container>
 
+<div class="container-fluid">
+    <h4>Smartfony</h4>
+    <div class="row">
+        <div class="col-ms-3" *ngFor="let smartphone of smartphones">
+            <div class="smartphone">
+                <a [routerLink]="['/product', smartphone.product_id]">
+                    <div class="card" style="width: 12rem;">
+                        <img src="../../../../assets/img/recomend/{{smartphone.product_mark}}-{{smartphone.product_type}}-142-116.jpg" class="card-img-top" alt="smartphone">
+                        <div class="card-body my-card-body">
+                            <div class="description">
+                                {{smartphone.product_description}}
+                            </div>
+                            <p class="card-text">ekran: {{smartphone.product_screen_diagonal}}"</p>
+                            <p class="card-text">system: {{smartphone.product_system}}</p>
+                            <p class="card-text">pamięć: {{smartphone.product_disc_size}} GB</p>
+                            <h5 class="card-text">{{smartphone.product_price}} zł</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>    
+</div>
 
-<div class="row">
+<box-last-product></box-last-product>
+
+<!-- <div class="row">
     <div *ngFor="let smartphone of smartphones">
         <div class="col-4">
             <div class="smartphone">
@@ -22,6 +47,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <error-handler [errorHandler]="statusError"></error-handler>

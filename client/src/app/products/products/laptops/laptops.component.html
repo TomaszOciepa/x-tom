@@ -1,15 +1,19 @@
 <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
     <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
 </ng-container>
-<div class="row">
-    <div *ngFor="let laptop of laptops">
-        <div class="col-4">
+
+<div class="container-fluid">
+    <h4>Laptopy</h4>
+    <div class="row">
+        <div class="col-ms-3" *ngFor="let laptop of laptops">
             <div class="laptop">
                 <a [routerLink]="['/product', laptop.product_id]">
                     <div class="card" style="width: 12rem;">
-                        <h5 class="card-title">{{laptop.product_mark}}</h5>
-                        <img src="../../../assets/img/laptop.jpg" class="card-img-top" alt="laptop">
+                        <img src="../../../../assets/img/recomend/{{laptop.product_mark}}-{{laptop.product_type}}-142-116.jpg" class="card-img-top" alt="laptop">
                         <div class="card-body my-card-body">
+                            <div class="description">
+                                {{laptop.product_description}}
+                            </div>
                             <p class="card-text">procesor: {{laptop.product_processor}}</p>
                             <p class="card-text">pamięć: {{laptop.product_ram_size}} GB</p>
                             <p class="card-text">grafika: {{laptop.product_graphics_card}}</p>
@@ -18,9 +22,10 @@
                     </div>
                 </a>
             </div>
-
         </div>
     </div>
 </div>
+
+<box-last-product></box-last-product>
 
 <error-handler [errorHandler]="statusError"></error-handler>

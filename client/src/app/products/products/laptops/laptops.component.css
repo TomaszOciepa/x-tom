@@ -1,3 +1,14 @@
+h4{
+    color: #4d4d4d;
+}
+
+.description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
 .laptop a{
     color: #000000;
     text-decoration: none;   
@@ -13,6 +24,14 @@
 
 .card{
     padding: 10px;
+    border-radius: 25px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.card p {
+    font-size: 12px;
+    color: #4d4d4d;
 }
 
 .card:hover{
