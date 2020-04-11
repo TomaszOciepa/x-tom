@@ -86,7 +86,6 @@ export class ProductComponent implements OnInit {
       localStorage.setItem('lastProduct', JSON.stringify(lastProduct))
     }else{
         lastProduct = JSON.parse(localStorage.getItem('lastProduct'))
-        console.log("last: "+JSON.stringify(lastProduct))
         var newList:ProductTest[] = []
 
         newList.push(product)

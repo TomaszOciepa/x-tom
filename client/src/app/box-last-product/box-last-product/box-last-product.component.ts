@@ -14,7 +14,6 @@ export class BoxLastProductComponent implements OnInit {
 
     this.getLastProducts()
 
-
   }
 
   lastProductList:ProductTest[] = []
