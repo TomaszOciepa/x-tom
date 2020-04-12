@@ -1,9 +1,11 @@
-<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-    <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
-</ng-container>
-
 <div class="container-fluid">
     <h4>Laptopy</h4>
+    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+        <a [routerLink]="['/add-product']">
+            <span class="material-icons">add_circle</span>
+            Dodaj produkt
+        </a>
+    </ng-container>
     <div class="row">
         <div class="col-ms-3" *ngFor="let laptop of laptops">
             <div class="laptop">

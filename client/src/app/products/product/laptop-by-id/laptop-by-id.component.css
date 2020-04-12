@@ -72,6 +72,15 @@
     height: auto;
 }
 
+.options a{
+    color: #4d4d4d;
+    text-decoration: none; 
+}
+
+.options a:hover{
+    color: green;
+}
+
 .form a span{
     line-height: 80%;
 }

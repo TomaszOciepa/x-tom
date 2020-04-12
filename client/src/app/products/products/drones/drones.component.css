@@ -1,5 +1,7 @@
 h4{
     color: #4d4d4d;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .description{
@@ -8,17 +10,15 @@ h4{
     white-space: nowrap;
 }
 
+a {
+    color: #4d4d4d;
+    text-decoration: none;   
+}
 
+a:hover{
+    color: green;
+}
 
-
-
-
-
-
-
-
-
-/* old */
 .drone a{
     color: #000000;
     text-decoration: none;   

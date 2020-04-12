@@ -1,4 +1,11 @@
+.options a{
+    color: #4d4d4d;
+    text-decoration: none; 
+}
 
+.options a:hover{
+    color: green;
+}
 
 .mat-snack-bar-container{
     background-color: #28a745 !important;

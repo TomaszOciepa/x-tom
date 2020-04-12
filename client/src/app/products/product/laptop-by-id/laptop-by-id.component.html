@@ -1,6 +1,18 @@
 
 <ng-container *ngIf="product">
     <div class="container-fluid">
+        <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+            <div class="options">
+                <a [routerLink]="['/edit-product', product.product_id]">
+                    <span class="material-icons">edit</span>
+                    Edytuj
+                </a>
+                <a [routerLink]="['/delete-product', product.product_id]">
+                    <span class="material-icons">delete</span>
+                    Usuń
+                </a>
+            </div>  
+        </ng-container>     
         <div class="row">
             <div class="col-lg-4">
                 <div class="img">
@@ -47,15 +59,6 @@
                                         </a>
                                  </form>
                             </div>
-         
-                            <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-                                     <div class="options">
-                                         <a class="btn btn-info" [routerLink]="['/edit-product', product.product_id]">Edytuj</a>
-                                     </div>
-                                     <div class="options">
-                                         <a class="btn btn-danger" [routerLink]="['/delete-product', product.product_id]">Usuń</a>
-                                     </div>
-                            </ng-container>      
                         </div>
                     </div>
                 </div>
