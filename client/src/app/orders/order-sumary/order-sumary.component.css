@@ -1,0 +1,62 @@
+.sumary-wraper{
+    width: 80%;
+    margin: 0 auto;
+}
+
+h4{
+    color: black;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  
+p{
+    color: black;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+.order-method, .payment{
+    width: 50%;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.order-method p, .address p, .payment p {
+    margin: 0px;
+    color: #4d4d4d;
+    font-size: 16px;
+    font-weight: 0;
+}
+
+.address {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.address p:first-child{
+    color: black;
+    font-size: 18px;
+}
+
+.cart{
+    width: 50%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cart a {
+    color: #ffffff;
+    margin-top: -150px;
+    margin-left: 60px;
+}
+
+@media (max-width: 825px){
+    .order-method, .payment, .address, .cart{
+        width: 100%;
+    }
+}

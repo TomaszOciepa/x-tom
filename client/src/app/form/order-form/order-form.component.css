@@ -1,3 +1,28 @@
 .validation-feedback {
     color: red;
   }
+
+h4{
+  color: black;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+p{
+  color: black;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+form {
+  width: 70%;
+  margin: 0 auto;
+}
+
+form input{
+  border-radius: 26px;
+}
+
+form input:last-child{
+  margin-bottom: 60px;
+}

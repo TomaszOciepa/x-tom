@@ -1,7 +1,6 @@
 .container-fluid{
     margin-bottom: 60px;
     padding-bottom: 30px;
-    border-bottom: 1px solid rgba(77, 77, 77, 0.2);
 }
 
 img{
@@ -29,7 +28,7 @@ td span{
     margin-left: 10px;
 }
 
-tbody tr:first-child{
+tbody tr:first-child, tbody tr:last-child{
     border: none;
 }
 
@@ -57,4 +56,20 @@ tbody tr span{
 .or-btn{
     width: 100%;
     margin-top: 20px;
+}
+
+.sum {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sum span{
+    color: black;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+table{
+    margin: 0 auto;
 }

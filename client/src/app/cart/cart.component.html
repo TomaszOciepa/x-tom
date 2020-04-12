@@ -7,7 +7,7 @@
 
   <ng-container *ngIf="!isEmpty">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         
         <table>
           <tbody>
@@ -46,31 +46,30 @@
                     </ng-container>
                   </td>
               </tr>
+              <tr>
+                  <td>
+                    <div class="sum">
+                      Łączna kwota <span>{{cartSum}} zł</span>
+                    </div>
+                    <div class="or-btn">
+                      <ng-container *ngIf="!pathOrder">
+                        <ng-container *ngIf="auth.isAuthenticated">
+                          <button [routerLink]="['/zamowienie']" class="btn btn-success">
+                            Przejdź do dostawy
+                          </button>
+                        </ng-container>
+                    
+                        <ng-container *ngIf="!auth.isAuthenticated">
+                          <button [routerLink]="['/logowanie', 1]" class="btn btn-success">
+                            Przejdź do dostawy
+                          </button>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </td>
+              </tr>
           </tbody>
         </table>
-      </div>
-      <div class="col-lg-4">
-          <div class="sum-wrap">
-            <div class="sum">
-              Łączna kwota {{cartSum}} zł
-            </div>
-            <div class="or-btn">
-              <ng-container *ngIf="!pathOrder">
-                <ng-container *ngIf="auth.isAuthenticated">
-                  <button [routerLink]="['/zamowienie']" class="btn btn-success">
-                    Przejdź do dostawy
-                  </button>
-                </ng-container>
-            
-                <ng-container *ngIf="!auth.isAuthenticated">
-                  <button [routerLink]="['/logowanie', 1]" class="btn btn-success">
-                    Przejdź do dostawy
-                  </button>
-                </ng-container>
-              </ng-container>
-            </div>
-          </div>
-
       </div>
   </div>
   </ng-container>

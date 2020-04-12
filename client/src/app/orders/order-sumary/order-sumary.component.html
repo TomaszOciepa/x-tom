@@ -1,22 +1,37 @@
-
-<ng-container *ngIf="!saved">
-    <h3>Podsumowanie</h3>
-
-<div class="row">
-    <div class="col-7">
-        <pre>
-            {{orderData | json}}
-        </pre>
-    </div>
-
-    <div class="col-5">
-        <cart [setPathOrder]="pathOrder" (setOrderItem)="getOrderItemCart($event)"></cart>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="sumary-wraper">
+                <ng-container *ngIf="!saved">
+                    <h4>Podsumowanie</h4>
+                    <p>Dostawa</p>
+                    <div class="order-method">
+                        <p>{{orderData.orders_delivery_method}}</p>
+                    </div>
+                    <div class="address">
+                        <p>Dane odbiorcy:</p>
+                        <p>{{orderData.orders_firstName}} {{ orderData.orders_lastName}}</p>
+                        <p>{{orderData.orders_street}}</p>
+                        <p>{{orderData.orders_zipCode}} {{orderData.orders_city}}</p>
+                        <p>e-mail: {{orderData.orders_email}}</p>
+                        <p>tel. {{orderData.orders_phoneNumber}}</p>
+                    </div>
+                    <p>Płatność</p>
+                    <div class="payment">
+                        <p>{{orderData.orders_payments_method}}</p>
+                    </div>
+                    <div class="cart">
+                        <cart [setPathOrder]="pathOrder" (setOrderItem)="getOrderItemCart($event)"></cart>
+                        <a class="btn btn-success" (click)="save()">Kupuję i płacę</a>
+                    </div>
+                </ng-container>
+                
+                <ng-container *ngIf="saved">
+                <h3>Dziękujemy za zakupy!!! :)</h3>
+                </ng-container>
+            </div>
+        </div>
     </div>
 </div>
 
-<a class="btn btn-success" (click)="save()">Kupuję i płacę</a>
-</ng-container>
 
-<ng-container *ngIf="saved">
-<h3>Dziękujemy za zakupy!!! :)</h3>
-</ng-container>
