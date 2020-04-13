@@ -30,6 +30,7 @@ export class OrderComponent implements OnInit {
    }
 
   ngOnInit() {
+    
   }
 
   orderId:number

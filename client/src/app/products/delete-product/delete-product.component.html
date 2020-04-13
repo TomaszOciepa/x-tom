@@ -10,14 +10,14 @@
                         </p>
                         
                         <button class="btn btn-secondary" [routerLink]="['/product', id]">Nie</button>
-                        <button type="button" class="btn btn-secondary" (click)="delete()">Tak</button>
+                        <button class="btn btn-secondary" (click)="delete()">Tak</button>
                     </ng-container>
                 
                     <ng-container *ngIf="remove">
                         <div class="alert alert-success" role="alert">
                             Usunięto
                           </div>
-                        <a class="btn btn-success" [routerLink]="['/']">Ok</a>
+                        <a class="btn btn-success" [routerLink]="['/']">Dalej</a>
                     </ng-container>
                 </ng-container>
                 

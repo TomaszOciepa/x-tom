@@ -1,0 +1,42 @@
+.wraper{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+}
+
+h4 {
+    display: inline-block;
+}
+
+.header a {
+    margin-left: 20px;
+    color: rgba(77, 77, 77);
+    font-size: 16px;
+}
+
+.header a:hover{
+    color: green;
+    text-decoration: none;
+}
+
+td a{
+color: rgba(77, 77, 77);
+}
+
+td a:hover {
+    cursor: pointer;
+    color: green;
+}   
+
+@media (max-width: 833px){
+    .wraper{
+        width: 100%;
+    }
+}

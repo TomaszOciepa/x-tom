@@ -1,11 +1,18 @@
-
-<ng-container *ngIf="auth.isAuthenticated">
-    <user-form [getPath]="returnPath" [getUser]="editedUser" (saveUser)="updateUser($event)"></user-form>
-</ng-container>
- 
-<ng-container *ngIf="!auth.isAuthenticated">
-    <div class="alert alert-warning" role="alert">
-        <h3>Nie jesteś zalogowany</h3>
-        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
-      </div>
-  </ng-container>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-wraper">
+                <ng-container *ngIf="auth.isAuthenticated">
+                    <user-form [getPath]="returnPath" [getUser]="editedUser" (saveUser)="updateUser($event)"></user-form>
+                </ng-container>
+                 
+                <ng-container *ngIf="!auth.isAuthenticated">
+                    <div class="alert alert-warning" role="alert">
+                        <h3>Nie jesteś zalogowany</h3>
+                        <button class="btn btn-info" [routerLink]="['/login']">Zaloguj</button>
+                      </div>
+                  </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

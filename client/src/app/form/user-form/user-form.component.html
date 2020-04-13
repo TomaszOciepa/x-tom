@@ -113,10 +113,10 @@
                 </ng-container>
 
             </div>
-
-            <input *ngIf="!saved" value="zapisz" type="submit"  class="btn btn-danger input100-submit">
-            <a *ngIf="saved && returnPath == 'user'"  class="btn btn-success input100-ok" [routerLink]="['/user', user.user_id]">powrót</a>
-            <a *ngIf="saved && returnPath == 'profile'"  class="btn btn-success input100-ok" [routerLink]="['/profile']">powrót</a>
+            
+            <input *ngIf="!saved" value="Zapisz" type="submit"  class="btn btn-success">
+            <a *ngIf="saved && returnPath == 'user'"  class="btn btn-secondary" [routerLink]="['/user', user.user_id]">powrót</a>
+            <a *ngIf="saved && returnPath == 'profile'"  class="btn btn-secondary" [routerLink]="['/profile']">powrót</a>
         </form>
     </div>
 

@@ -1,84 +1,93 @@
-<ng-container *ngIf="order && auth.isAuthenticated && auth.role == 'ADMIN'">
-    <form [formGroup]="orderDetailForm" (submit)="save()">
-        <span class="contact100-form-title">
-            <h4>Edycja informacji o zamówieniu</h4>
-        </span>
-        <ng-container *ngIf="saved">
-            <div class="alert alert-success" role="alert">
-                Zapisano!!!
-              </div>
-        </ng-container>
-
-        <ng-container *ngIf="valid">
-            <div class="alert alert-danger" role="alert">
-                Wypełnij poprawnie wszystkie pola
-              </div>
-        </ng-container>
-
-        <div class="form-group">
-            <label for="City">Status</label>
-            <select class="form-control" [(ngModel)]="order.orders_status" formControlName="orders_status">
-                <option value="przyjęto do realizacji">Przyjęto do realizacji</option>
-                <option value="oczekuje na płatność">Oczekuje na płatność</option>
-                <option value="przygotowanie do wysłania">Przygotowanie do wysłania</option>
-                <option value="wysłano">Wysłano</option>
-                <option value="doręczone do klienta">Doręczone do klienta</option>
-                <option value="anulowane">Anulowane</option>
-            </select>
-
-            <validation-order-address [control]="orderDetailForm.get('orders_status')"></validation-order-address>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wraper">
+                <ng-container *ngIf="order && auth.isAuthenticated && auth.role == 'ADMIN'">
+                    <form [formGroup]="orderDetailForm" (submit)="save()">
+                        <span class="contact100-form-title">
+                            <h4>Edycja informacji o zamówieniu</h4>
+                        </span>
+                        <ng-container *ngIf="saved">
+                            <div class="alert alert-success" role="alert">
+                                Zapisano!!!
+                              </div>
+                        </ng-container>
+                
+                        <ng-container *ngIf="valid">
+                            <div class="alert alert-danger" role="alert">
+                                Wypełnij poprawnie wszystkie pola
+                              </div>
+                        </ng-container>
+                
+                        <div class="form-group">
+                            <label for="City">Status</label>
+                            <select class="form-control" [(ngModel)]="order.orders_status" formControlName="orders_status">
+                                <option value="przyjęto do realizacji">Przyjęto do realizacji</option>
+                                <option value="oczekuje na płatność">Oczekuje na płatność</option>
+                                <option value="przygotowanie do wysłania">Przygotowanie do wysłania</option>
+                                <option value="wysłano">Wysłano</option>
+                                <option value="doręczone do klienta">Doręczone do klienta</option>
+                                <option value="anulowane">Anulowane</option>
+                            </select>
+                
+                            <validation-order-address [control]="orderDetailForm.get('orders_status')"></validation-order-address>
+                
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Name">Przewidywany czas dostawy</label>
+                                <select class="form-control" [(ngModel)]="order.orders_number_delivery_days" formControlName="orders_number_delivery_days">
+                                    <option value="1">1 dzień</option>
+                                    <option value="2">2 dni</option>
+                                    <option value="3">3 dni</option>
+                                    <option value="4">4 dni</option>
+                                    <option value="5">5 dni</option>
+                                    <option value="6">6 dni</option>
+                                    <option value="7">7 dni</option>
+                                    <option value="8">8 dni</option>
+                                    <option value="9">9 dni</option>
+                                    <option value="10">10 dni</option>
+                                    <option value="11">11 dni</option>
+                                    <option value="12">12 dni</option>
+                                    <option value="13">13 dni</option>
+                                    <option value="14">14 dni</option>
+                                </select>
+                
+                                <validation-order-address [control]="orderDetailForm.get('orders_number_delivery_days')"></validation-order-address>
+                
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="PhoneNumber">sposób dostawy</label>
+                                <select class="form-control" [(ngModel)]="order.orders_delivery_method" formControlName="orders_delivery_method">
+                                    <option value="kurier">Dostawa kurierem</option>
+                                    <option value="osobisty">Odbiór osobisty</option>
+                                </select>
+                
+                                <validation-order-address [control]="orderDetailForm.get('orders_delivery_method')"></validation-order-address>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="PhoneNumber">sposób płatności</label>
+                            <select class="form-control" [(ngModel)]="order.orders_payments_method" formControlName="orders_payments_method">
+                                <option value="przy odbiorze">Przy odbiorze</option>
+                                <option value="przelew gotówkowy">Przelew gotówkowy</option>
+                            </select>
+                
+                            <validation-order-address [control]="orderDetailForm.get('orders_payments_method')"></validation-order-address>
+                
+                        </div>
+                        <ng-container *ngIf="!saved">
+                            <input type="submit" value="Zapisz" class="btn btn-success">
+                        </ng-container>
+                        <ng-container *ngIf="saved">
+                            <button class="btn btn-success" [routerLink]="['/zamowienie-szczegoly']" [queryParams]="{ order_id: order.orders_id}">Dalej</button>
+                        </ng-container>
+                    </form>
+                </ng-container>
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="Name">Przewidywany czas dostawy</label>
-                <select class="form-control" [(ngModel)]="order.orders_number_delivery_days" formControlName="orders_number_delivery_days">
-                    <option value="1">1 dzień</option>
-                    <option value="2">2 dni</option>
-                    <option value="3">3 dni</option>
-                    <option value="4">4 dni</option>
-                    <option value="5">5 dni</option>
-                    <option value="6">6 dni</option>
-                    <option value="7">7 dni</option>
-                    <option value="8">8 dni</option>
-                    <option value="9">9 dni</option>
-                    <option value="10">10 dni</option>
-                    <option value="11">11 dni</option>
-                    <option value="12">12 dni</option>
-                    <option value="13">13 dni</option>
-                    <option value="14">14 dni</option>
-                </select>
+    </div>
+</div>
 
-                <validation-order-address [control]="orderDetailForm.get('orders_number_delivery_days')"></validation-order-address>
-
-        </div>
-    
-        <div class="form-group">
-            <label for="PhoneNumber">sposób dostawy</label>
-                <select class="form-control" [(ngModel)]="order.orders_delivery_method" formControlName="orders_delivery_method">
-                    <option value="kurier">Dostawa kurierem</option>
-                    <option value="osobisty">Odbiór osobisty</option>
-                </select>
-
-                <validation-order-address [control]="orderDetailForm.get('orders_delivery_method')"></validation-order-address>
-        </div>
-    
-        <div class="form-group">
-            <label for="PhoneNumber">sposób płatności</label>
-            <select class="form-control" [(ngModel)]="order.orders_payments_method" formControlName="orders_payments_method">
-                <option value="przy odbiorze">Przy odbiorze</option>
-                <option value="przelew gotówkowy">Przelew gotówkowy</option>
-            </select>
-
-            <validation-order-address [control]="orderDetailForm.get('orders_payments_method')"></validation-order-address>
-
-        </div>
-        <ng-container *ngIf="!saved">
-            <input type="submit" value="zapisz" class="btn btn-danger">
-        </ng-container>
-        <ng-container *ngIf="saved">
-            <button class="btn btn-success" [routerLink]="['/zamowienie-szczegoly']" [queryParams]="{ order_id: order.orders_id}">powrót</button>
-        </ng-container>
-    </form>
-</ng-container>
 

@@ -1,68 +1,77 @@
-<ng-container *ngIf="order && auth.isAuthenticated && auth.role == 'ADMIN'">
-    <form [formGroup]="orderAddressForm" (submit)="save()">
-        <span class="contact100-form-title">
-            <h4>Edycja danych adresowych zamówienia</h4>
-        </span>
-        <ng-container *ngIf="saved">
-            <div class="alert alert-success" role="alert">
-                Zapisano!!!
-              </div>
-        </ng-container>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wraper">
+                <ng-container *ngIf="order && auth.isAuthenticated && auth.role == 'ADMIN'">
+                    <form [formGroup]="orderAddressForm" (submit)="save()">
+                        <span class="contact100-form-title">
+                            <h4>Edycja danych do wysyłki</h4>
+                        </span>
+                        <ng-container *ngIf="saved">
+                            <div class="alert alert-success" role="alert">
+                                Zapisano!!!
+                              </div>
+                        </ng-container>
+                
+                        <ng-container *ngIf="valid">
+                            <div class="alert alert-danger" role="alert">
+                                Wypełnij poprawnie wszystkie pola
+                              </div>
+                        </ng-container>
+                        
+                        <div class="form-group">
+                            <label for="Name">Imię</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_firstName" formControlName="orders_firstName">
+                            <validation-order-address [control]="orderAddressForm.get('orders_firstName')"></validation-order-address>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="Lastname">Nazwisko</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_lastName" formControlName="orders_lastName">
+                            <validation-order-address [control]="orderAddressForm.get('orders_lastName')"></validation-order-address>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_email" formControlName="orders_email">
+                            <validation-order-address [control]="orderAddressForm.get('orders_email')"></validation-order-address>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="PhoneNumber">telefon</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_phoneNumber" formControlName="orders_phoneNumber">
+                            <validation-order-address [control]="orderAddressForm.get('orders_phoneNumber')"></validation-order-address>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="zipcode">Kod pocztowy</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_zipCode" formControlName="orders_zipCode">
+                            <validation-order-address [control]="orderAddressForm.get('orders_zipCode')"></validation-order-address>
+                        </div>
+                
+                        <div class="form-group">
+                            <label for="city">Miejscowość</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_city" formControlName="orders_city">
+                            <validation-order-address [control]="orderAddressForm.get('orders_city')"></validation-order-address>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Ulica i numer</label>
+                            <input type="text" class="form-control" [(ngModel)]="order.orders_street" formControlName="orders_street">
+                            <validation-order-address [control]="orderAddressForm.get('orders_street')"></validation-order-address>
+                        </div>
+                
+                        <ng-container *ngIf="!saved">
+                            <input type="submit" value="Zapisz" class="btn btn-success">
+                        </ng-container>
+                        <ng-container *ngIf="saved">
+                            <button class="btn btn-success" [routerLink]="['/zamowienie-szczegoly']" [queryParams]="{ order_id: order.orders_id}">Dalej</button>
+                        </ng-container>
+                    </form>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <ng-container *ngIf="valid">
-            <div class="alert alert-danger" role="alert">
-                Wypełnij poprawnie wszystkie pola
-              </div>
-        </ng-container>
-        
-        <div class="form-group">
-            <label for="Name">Imię</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_firstName" formControlName="orders_firstName">
-            <validation-order-address [control]="orderAddressForm.get('orders_firstName')"></validation-order-address>
-        </div>
-        
-        <div class="form-group">
-            <label for="Lastname">Nazwisko</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_lastName" formControlName="orders_lastName">
-            <validation-order-address [control]="orderAddressForm.get('orders_lastName')"></validation-order-address>
-        </div>
-    
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_email" formControlName="orders_email">
-            <validation-order-address [control]="orderAddressForm.get('orders_email')"></validation-order-address>
-        </div>
-    
-        <div class="form-group">
-            <label for="PhoneNumber">telefon</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_phoneNumber" formControlName="orders_phoneNumber">
-            <validation-order-address [control]="orderAddressForm.get('orders_phoneNumber')"></validation-order-address>
-        </div>
-
-        <div class="form-group">
-            <label for="zipcode">Kod pocztowy</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_zipCode" formControlName="orders_zipCode">
-            <validation-order-address [control]="orderAddressForm.get('orders_zipCode')"></validation-order-address>
-        </div>
-
-        <div class="form-group">
-            <label for="city">Miejscowość</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_city" formControlName="orders_city">
-            <validation-order-address [control]="orderAddressForm.get('orders_city')"></validation-order-address>
-        </div>
-        <div class="form-group">
-            <label for="street">Ulica i numer</label>
-            <input type="text" class="form-control" [(ngModel)]="order.orders_street" formControlName="orders_street">
-            <validation-order-address [control]="orderAddressForm.get('orders_street')"></validation-order-address>
-        </div>
-
-        <ng-container *ngIf="!saved">
-            <input type="submit" value="zapisz" class="btn btn-danger">
-        </ng-container>
-        <ng-container *ngIf="saved">
-            <button class="btn btn-success" [routerLink]="['/zamowienie-szczegoly']" [queryParams]="{ order_id: order.orders_id}">powrót</button>
-        </ng-container>
-    </form>
-</ng-container>
 
 

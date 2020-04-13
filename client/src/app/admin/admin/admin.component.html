@@ -1,50 +1,33 @@
-<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-    <h3>Panel administracyjny</h3>
-
-<div class="row">
-    <div class="col-4">
-        <div class="item">
-            <a [routerLink]="['/zamowienia-admin']">
-                <div class="card" style="width: 12rem;">
-                    <img src="../../../assets/img/order.png" class="card-img-top" alt="order">
-                    <div class="card-body my-card-body">
-                        <h4 class="card-title">Zamówienia</h4>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wraper">
+                <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+                    <h3>Panel administracyjny</h3>
+                    <div class="option">
+                        <a [routerLink]="['/zamowienia-admin']">
+                            <span _ngcontent-oye-c197="" class="material-icons">assignment</span>
+                            Zamówienia 
+                        </a>
                     </div>
-                </div>
-            </a>
+                    <div class="option">
+                        <a [routerLink]="['/panel-administracyjny-produkty']">
+                            <span _ngcontent-oye-c197="" class="material-icons">devices_other</span>
+                            Produkty 
+                        </a>
+                    </div>
+                    <div class="option">
+                        <a [routerLink]="['/users']">
+                            <span _ngcontent-oye-c197="" class="material-icons">people</span>
+                            Użytkownicy 
+                        </a>
+                    </div>                
+                </ng-container>
+                
+                <ng-container *ngIf="!auth.isAuthenticated || (auth.isAuthenticated && auth.role != 'ADMIN')">
+                    <h4>Brak uprawnień</h4>
+                </ng-container>
+            </div>
         </div>
     </div>
-
-    <div class="col-4">
-        <div class="item">
-            <a [routerLink]="['/panel-administracyjny-produkty']">
-                <div class="card" style="width: 12rem;">
-                    <img src="../../../assets/img/product.png" class="card-img-top" alt="product">
-                    <div class="card-body my-card-body">
-                        <h4 class="card-title">Produkty</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="col-4">
-        <div class="item">
-            <a [routerLink]="['/users']">
-                <div class="card" style="width: 12rem;">
-                    <img src="../../../assets/img/users.png" class="card-img-top" alt="users">
-                    <div class="card-body my-card-body">
-                        <h4 class="card-title">Użytkownicy</h4>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
 </div>
-
-</ng-container>
-
-<ng-container *ngIf="!auth.isAuthenticated || (auth.isAuthenticated && auth.role != 'ADMIN')">
-    <h4>Brak uprawnień</h4>
-</ng-container>
