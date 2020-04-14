@@ -1,0 +1,50 @@
+.container-fluid{
+    margin-bottom: 60px;
+    border-top: 1px solid  rgba(77, 77, 77, 0.2);
+    border-bottom: 1px solid  rgba(77, 77, 77, 0.2);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.row .col-md-6:first-child{
+    border-right: 1px solid rgba(77, 77, 77, 0.4);
+}
+
+.form-group{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+ input, button {
+    border-radius: 25px;
+}
+
+.btn{
+    width: 70%;
+}
+
+.login{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.wraper-log div a{
+    color: rgba(77, 77, 77);
+}
+
+.wraper-log div a:hover
+{   text-decoration: none;
+    color: green;
+}
+
+@media (max-width: 767px){
+    .row .col-md-6:last-child{
+        margin-top: 60px;
+    }
+}

@@ -12,7 +12,7 @@ import { UsersService } from 'src/app/users/users.service';
 export class EditProfileComponent implements OnInit {
 
 
-  constructor( private http:UsersService, protected auth:AuthService,
+  constructor( private http:UsersService, public auth:AuthService,
      private route:ActivatedRoute) { 
 
     this.auth.state.subscribe()

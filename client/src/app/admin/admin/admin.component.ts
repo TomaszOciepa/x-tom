@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(protected auth:AuthService) { 
+  constructor(public auth:AuthService) { 
     this.auth.state.subscribe()
   }
 

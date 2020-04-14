@@ -1,0 +1,102 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav 
+      #drawer
+      class="sidenav" 
+      
+      fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/products', 'drones']" (click)="drawer.toggle()">Drony</a>
+      <a mat-list-item [routerLink]="['/products', 'laptops']" (click)="drawer.toggle()">Laptopy</a>
+      <a mat-list-item [routerLink]="['/products', 'smartphones']" (click)="drawer.toggle()">Smartphony</a>
+      <div class="log-menu">
+        <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+          <a mat-list-item [routerLink]="['/panel-administracyjny']" (click)="drawer.toggle()">Menedżer</a>
+        </ng-container>
+        <ng-container *ngIf="auth.isAuthenticated">
+          <a mat-list-item [routerLink]="['/moje-zamowienia']" (click)="drawer.toggle()">Kupione</a>
+        </ng-container>
+        <a mat-list-item [routerLink]="['/koszyk']" (click)="drawer.toggle()">Koszyk</a>
+      </div>
+
+      <div>
+        <ng-container *ngIf="auth.isAuthenticated">
+          <a mat-list-item [routerLink]="['/profile']" (click)="drawer.toggle()">Moje konto</a>
+        </ng-container>
+        <ng-container *ngIf="!auth.isAuthenticated">
+          <a mat-list-item [routerLink]="['/logowanie']" (click)="drawer.toggle()">Moje konto</a>
+        </ng-container>
+        <ng-container *ngIf="auth.isAuthenticated">
+          <a mat-list-item (click)="auth.logout()" (click)="drawer.toggle()">Wyloguj</a>
+        </ng-container>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <div class="toogle-menu-text">Menu</div>
+      </button>
+      <div class="logo">
+        <a [routerLink]="['/']">
+          <img src="../../assets/img/logo/logo-nav.jpg" alt="logo">
+        </a>
+      </div>
+      <span class="spacer"></span>
+      <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+        <div class="menu-icon-wraper hidden-menu">
+          <a [routerLink]="['/panel-administracyjny']">
+            <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">settings</mat-icon></div>
+            <div class="menu-text"><span>Menedżer</span></div>
+            </a>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="auth.isAuthenticated">
+        <div class="menu-icon-wraper hidden-menu">
+          <a [routerLink]="['/moje-zamowienia']">
+            <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">assignment</mat-icon></div>
+            <div class="menu-text"><span>Kupione</span></div>
+            </a>
+        </div>
+      </ng-container>
+        <div class="menu-icon-wraper">
+          <ng-container *ngIf="auth.isAuthenticated">
+            <a [routerLink]="['/profile']">
+              <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">perm_identity</mat-icon></div>
+              <div class="menu-text"><span>Moje konto</span></div>
+              </a>
+          </ng-container>
+          <ng-container *ngIf="!auth.isAuthenticated">
+            <a [routerLink]="['/logowanie']">
+              <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">perm_identity</mat-icon></div>
+              <div class="menu-text"><span>Moje konto</span></div>
+              </a>
+          </ng-container>
+        </div>
+        <div class="menu-icon-wraper">
+          <a [routerLink]="['/koszyk']">
+            <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">shopping_cart</mat-icon></div>
+            <div class="menu-text"><span>Koszyk</span></div>
+            </a>
+        </div>
+        <ng-container *ngIf="auth.isAuthenticated">
+          <div class="menu-icon-wraper hidden-min">
+            <a (click)="auth.logout()">
+              <div class="menu-icon"><mat-icon aria-label="Side nav toggle icon">input</mat-icon></div>
+              <div class="menu-text"><span>Wyloguj</span></div>
+              </a>
+          </div>
+          
+        </ng-container>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

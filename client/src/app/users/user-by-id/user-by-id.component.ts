@@ -12,7 +12,7 @@ import { map, switchMap } from 'rxjs/operators';
 export class UserByIdComponent implements OnInit {
 
   
-  constructor(private http:UsersService, protected auth:AuthService, private route:ActivatedRoute) {
+  constructor(private http:UsersService, public auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
    }
 

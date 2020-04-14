@@ -3,6 +3,7 @@ import { ProductsService } from 'src/app/products/products.service';
 import { ProductTestList } from 'src/app/model/productTestList';
 import { AuthService } from 'src/app/auth/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ProductTest } from 'src/app/model/productTest';
 
 @Component({
   selector: 'smartphones',
@@ -11,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SmartphonesComponent implements OnInit {
 
-  constructor(private http:ProductsService, protected auth:AuthService) {
+  constructor(private http:ProductsService, public auth:AuthService) {
     this.auth.state.subscribe()
    } 
 
@@ -20,7 +21,7 @@ export class SmartphonesComponent implements OnInit {
   }
   
   statusError:number
-  smartphones:ProductTestList
+  smartphones:ProductTest[]
 
    getAllProduct(){
     this.http.getByType("smartphone").subscribe(response =>{

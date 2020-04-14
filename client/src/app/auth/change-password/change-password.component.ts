@@ -10,7 +10,7 @@ import { ChangePassword } from 'src/app/model/changePasswordData';
 })
 export class ChangePasswordComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, private auth:AuthService) {
+  constructor(private fb:FormBuilder, public auth:AuthService) {
     auth.state.subscribe()
    }
 

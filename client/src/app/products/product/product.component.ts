@@ -15,7 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class ProductComponent implements OnInit {
   
-  constructor(protected auth:AuthService, private http:ProductsService, private cartService:CartService, private route:ActivatedRoute) {
+  constructor(public auth:AuthService, private http:ProductsService, private cartService:CartService, private route:ActivatedRoute) {
 
     this.route.paramMap.subscribe(params =>{
       this.id = +params.get('product_id')
@@ -23,6 +23,9 @@ export class ProductComponent implements OnInit {
     
     this.http.getById(this.id).subscribe(response =>{
       this.product = response
+
+      this.setLastProduct(response)
+
       this.productType = response.product_type
     },error =>{
       if(error instanceof HttpErrorResponse){
@@ -39,6 +42,7 @@ export class ProductComponent implements OnInit {
     }else{
       this.cartLocalItemList = JSON.parse(localStorage.getItem('products'))  
     }
+
   }
   
   statusError:number
@@ -47,6 +51,7 @@ export class ProductComponent implements OnInit {
   product:ProductTest
   productType:String  
   cartLocalItemList:CartItemLocalStorage[] = []
+  lastProduct:ProductTest[] = []
   
 
   cartUserItem:CartItemUser = {
@@ -71,6 +76,28 @@ export class ProductComponent implements OnInit {
       localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
     }
     
+  }
+
+  setLastProduct(product:ProductTest){
+    var lastProduct:ProductTest[] = []
+    
+    if(localStorage.getItem('lastProduct') == null){
+      lastProduct.push(product)
+      localStorage.setItem('lastProduct', JSON.stringify(lastProduct))
+    }else{
+        lastProduct = JSON.parse(localStorage.getItem('lastProduct'))
+        var newList:ProductTest[] = []
+
+        newList.push(product)
+        for(var i = 0; i <= 5; i++){
+          if(lastProduct[i] != null && newList.length < 6)
+          newList[i+1] = lastProduct[i]
+        }
+          localStorage.setItem('lastProduct', JSON.stringify(newList))
+    }
+
+    
+
   }
 
 }

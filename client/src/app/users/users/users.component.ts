@@ -10,7 +10,7 @@ import { UserList } from 'src/app/model/userList';
 })
 export class UsersComponent implements OnInit {
 
-  constructor(private http:UsersService, protected auth:AuthService) {
+  constructor(private http:UsersService, public auth:AuthService) {
     this.auth.state.subscribe()    
    }
 

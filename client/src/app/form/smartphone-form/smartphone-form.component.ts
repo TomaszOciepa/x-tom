@@ -10,7 +10,7 @@ import { ProductTest } from 'src/app/model/productTest';
 })
 export class SmartphoneFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, protected auth:AuthService) { 
+  constructor(private fb:FormBuilder, public auth:AuthService) { 
     this.auth.state.subscribe()
   }
   

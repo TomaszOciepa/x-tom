@@ -18,6 +18,8 @@ import { LaptopByIdComponent } from './product/laptop-by-id/laptop-by-id.compone
 import { SmartphoneByIdComponent } from './product/smartphone-by-id/smartphone-by-id.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { ErrorModule } from '../error/error.module';
+import { BoxLastProductModule } from '../box-last-product/box-last-product.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [ProductsComponent, ProductComponent, DronesComponent, LaptopsComponent,
@@ -30,6 +32,8 @@ import { ErrorModule } from '../error/error.module';
     AuthModule,
     FormModule,
     ErrorModule,
+    MatSnackBarModule,
+    BoxLastProductModule,
     ProductsRoutingModule
   ]
 })

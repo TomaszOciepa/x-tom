@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AdminProductComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private productsService:ProductsService) { 
+  constructor(public auth:AuthService, private productsService:ProductsService) { 
     this.auth.state.subscribe()
 
       this.productsService.getAll().subscribe(response =>{

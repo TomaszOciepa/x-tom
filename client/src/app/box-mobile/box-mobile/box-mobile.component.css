@@ -1,0 +1,101 @@
+
+.newsletter, .mobile-app, .contact-wraper{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 200px;
+    padding: 30px;
+    background-color: rgb(249, 249, 249);
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 2px 1px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.contact-wraper{
+    width: 95%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.newsletter h4, .mobile-app h4{
+    color: rgb(26, 26, 26);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.newsletter p, .mobile-app p, .contact-wraper p{
+    margin: 0px;
+    font-size: 14px;
+    color: #4d4d4d;
+}
+
+.img-box{
+    margin-top: 8px;
+}
+
+.img-box img{
+    margin-top: 5px;
+}
+
+.img-box:last-child img{
+    margin-left: 4px;
+}
+
+.form-box{
+    width: 90%;
+    margin-top: 12px;
+}
+
+.form-box input {
+    border-radius: 32px;
+    position: absolute;
+    right: 0px;
+}
+
+.form-box button{
+    position: absolute;
+    right: 0px;
+    border-radius: 32px;
+}
+
+.phone a{
+    color: #4d4d4d;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.email a{
+    color: #4d4d4d;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.phone span{
+    font-size: 30px;
+}
+
+.contact-img-wraper{
+    width: 60%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.contact-img{
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 575px){
+    .img{
+        display: none;
+    }
+}
+
+@media (max-width: 991px){
+    .contact-wraper{
+        width: 90%;
+    }
+}

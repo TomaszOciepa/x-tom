@@ -1,98 +1,20 @@
-form .ng-invalid.ng-touched,
-form .ng-invalid.ng-dirty {
-  border: 2px solid red !important;
+.container-fluid{
+  margin-bottom: 60px;
 }
 
-/* form .ng-invalid.ng-touched ~ .validation-feedback,
-form .ng-invalid.ng-dirty ~ .validation-feedback {
-  color: red;
-} */
-/* style */
+.form-wraper{
+  width: 40%;
+  margin: 0 auto;
 
-
-.form{
-    margin: 10px;
+  padding: 20px;
+  -webkit-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+  box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
 }
-.contact100-form {
+
+@media (max-width: 767px){
+  .form-wraper{
     width: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin-top: 40px;
   }
-
-  .contact100-form-title {
-    display: block;
-    width: 100%;
-    font-family: Raleway-Black;
-    font-size: 30px;
-    color: #333333;
-    line-height: 1.2;
-    text-transform: uppercase;
-    text-align: left;
-    padding-bottom: 32px;
-  }
-  
-  .wrap-input100 {
-    width: 100%;
-    position: relative;
-    background-color: transparent;
-    margin-bottom: 35px;
-  }
-
-  .rs1-wrap-input100 {
-    width: calc((100% - 30px) / 2);
-  }
-
-  .label-input100 {
-    font-family: Raleway-SemiBold;
-    font-size: 14px;
-    color: #555555;
-    line-height: 1.5;
-  }
-
-  .input100 {
-    display: block;
-    width: 100%;
-    background: #f2f2f2;
-    border-radius: 2px;
-  
-    font-family: Raleway-SemiBold;
-    font-size: 20px;
-    color: #686868;
-    line-height: 1.2;
-    padding: 0 28px;
-  
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-  
-    margin-top: 10px;
-  }
-
-  .input100-submit {
-    display: block;
-    width: 100%;
-    border-radius: 2px;
-    height: 60px;
-    font-family: Raleway-SemiBold;
-    font-size: 20px;
-    color: #f2f2f2;
-    line-height: 1.2;
-    padding: 0 28px;
-  
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-  
-    margin-top: 10px;
-  }
-
-  .input100-submit:hover{
-    background-color:#e46774;
-  }
+}

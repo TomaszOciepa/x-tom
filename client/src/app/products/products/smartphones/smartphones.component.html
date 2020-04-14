@@ -1,17 +1,21 @@
-<ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-    <a class="btn btn-secondary" [routerLink]="['/add-product']">Dodaj produkt</a>
-</ng-container>
-
-
-<div class="row">
-    <div *ngFor="let smartphone of smartphones">
-        <div class="col-4">
+<div class="container-fluid">
+    <h4>Smartfony</h4>
+    <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+        <a [routerLink]="['/add-product']">
+            <span class="material-icons">add_circle</span>
+            Dodaj produkt
+        </a>
+    </ng-container>
+    <div class="row">
+        <div class="col-ms-3" *ngFor="let smartphone of smartphones">
             <div class="smartphone">
                 <a [routerLink]="['/product', smartphone.product_id]">
                     <div class="card" style="width: 12rem;">
-                        <h5 class="card-title">{{smartphone.product_mark}}</h5>
-                        <img src="../../../assets/img/nokia.jpg" class="card-img-top" alt="smartphone">
+                        <img src="../../../../assets/img/recomend/{{smartphone.product_mark}}-{{smartphone.product_type}}-142-116.jpg" class="card-img-top" alt="smartphone">
                         <div class="card-body my-card-body">
+                            <div class="description">
+                                {{smartphone.product_description}}
+                            </div>
                             <p class="card-text">ekran: {{smartphone.product_screen_diagonal}}"</p>
                             <p class="card-text">system: {{smartphone.product_system}}</p>
                             <p class="card-text">pamięć: {{smartphone.product_disc_size}} GB</p>
@@ -21,7 +25,9 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div>    
 </div>
+
+<box-last-product></box-last-product>
 
 <error-handler [errorHandler]="statusError"></error-handler>

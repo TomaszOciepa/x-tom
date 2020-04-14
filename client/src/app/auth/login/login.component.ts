@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   
-  constructor(private fb:FormBuilder, private auth:AuthService, private route:ActivatedRoute) { 
+  constructor(private fb:FormBuilder, public auth:AuthService, private route:ActivatedRoute) { 
     this.auth.state.subscribe()
     
     this.route.paramMap.subscribe(params =>{
@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
       if(!this.auth.status){
         this.correctData = false
       }
-      
     }else{
       this.valid = true;
     }

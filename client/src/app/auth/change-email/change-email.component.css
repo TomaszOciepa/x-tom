@@ -1,0 +1,16 @@
+.form-wraper{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    -webkit-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+}
+
+@media (max-width: 833px){
+    .form-wraper{
+        width: 100%;
+    }
+}

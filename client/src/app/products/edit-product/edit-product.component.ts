@@ -11,7 +11,7 @@ import { ProductTest } from 'src/app/model/productTest';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor(private http:ProductsService, protected auth:AuthService, private route:ActivatedRoute) {
+  constructor(private http:ProductsService, public auth:AuthService, private route:ActivatedRoute) {
     this.auth.state.subscribe()
 
     this.route.paramMap.subscribe(params =>{

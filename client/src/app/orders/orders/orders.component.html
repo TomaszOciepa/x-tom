@@ -1,27 +1,44 @@
-<h1>Moje zamówienia</h1>
-<ng-container *ngIf="auth.isAuthenticated">
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">lp</th>
-            <th scope="col">numer zamówienia</th>
-            <th scope="col">data zamówienia</th>
-            <th scope="col">status zamówienia</th>
-            <th scope="col">wartość zamówienia</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let order of userOrders let i = index;">
-            <th scope="row">{{i+1}}</th>
-            <td>{{order.orders_number}}</td>
-            <td>{{order.orders_date_time | date: 'yyyy-MM-dd HH:mm'}}</td>
-            <td>{{order.orders_status}}</td>
-            <td>{{order.orders_payments_sum}} zł</td>
-            <td><button class="btn btn-info" (click)="goOrder(order)">szczegóły</button></td>        
-          </tr>
-        </tbody>
-      </table>
-</ng-container>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="wraper">
+              <h4>Twoje zamówienia</h4>
+              <ng-container *ngIf="auth.isAuthenticated">
+                  <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Lp</th>
+                          <th scope="col">Numer</th>
+                          <th scope="col">Data</th>
+                          <th scope="col">Status</th>
+                          <th scope="col">Wartość</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let order of userOrders let i = index;">
+                          <th scope="row">{{i+1}}</th>
+                          <td>
+                            <a (click)="goOrder(order)">
+                              {{order.orders_number}}
+                            </a>
+                          </td>
+                          <td>{{order.orders_date_time | date: 'yyyy-MM-dd HH:mm'}}</td>
+                          <td>{{order.orders_status}}</td>
+                          <td>{{order.orders_payments_sum}} zł</td>
+                          <td class="btn-hover"><a (click)="goOrder(order)">
+                                <span class="material-icons">assignment</span>
+                                szczegóły
+                              </a>
+                          </td>        
+                        </tr>
+                      </tbody>
+                    </table>
+              </ng-container>
+              
+              <error-handler [errorHandler]="statusError"></error-handler>
+            </div>
+        </div>
+    </div>
+</div>
 
-<error-handler [errorHandler]="statusError"></error-handler>

@@ -1,0 +1,89 @@
+
+  
+<error-handler [errorHandler]="statusError"></error-handler>
+<div class="container-fluid slider">
+        <slider></slider>  
+</div>
+    
+<div class="container-fluid">
+    <div class="row cont-r">
+        <div class="col-lg-4 promotion">
+            <div class="promo-wrap">
+                <div class="row promotion-header" style="height: 50px;">
+                    <h4>Promocja</h4>
+                </div>
+                <div class="promo-item" *ngFor="let p of productsPromotion">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <div class="row">
+                            <img class="promotion-img"  src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                        </div>
+                        <div class="row">
+                            <div class="promotion-desc">
+                                {{p.product_description}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="promotion-price">
+                                <span class="before">{{p.product_price + 1000}} zł</span><span class="after"> {{p.product_price}} zł</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 recomend">
+            <div class="row recomend-header" style="height: 50px;">
+                <h4>Polecamy</h4>
+            </div>
+            <div class="row recomend-list1">
+                <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList1">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <div class="wraper">
+                                <div class="img">
+                                    <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                                </div>
+                            <div class="content">
+                                <div class="recomend-description">{{p.product_description}}</div>
+                                <div class="recomend-price">{{p.product_price}} zł</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row recomend-list2">
+                <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList2">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <div class="wraper">
+                                <div class="img">
+                                    <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                                </div>
+                            <div class="content">
+                                <div class="recomend-description">{{p.product_description}}</div>
+                                <div class="recomend-price">{{p.product_price}} zł</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row recomend-list3">
+                <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList3">
+                    <a [routerLink]="['/product', p.product_id]">
+                        <div class="wraper">
+                                <div class="img">
+                                    <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
+                                </div>        
+                            <div class="content">
+                                <div class="recomend-description">{{p.product_description}}</div>
+                                <div class="recomend-price">{{p.product_price}} zł</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<box-drone></box-drone>
+<box-special></box-special>
+<box-last-product></box-last-product>

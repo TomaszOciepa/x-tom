@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class LaptopFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, protected auth:AuthService) { 
+  constructor(private fb:FormBuilder, public auth:AuthService) { 
     this.auth.state.subscribe()
   }
   

@@ -1,6 +1,79 @@
-<h3>Rejstracja</h3>
-<div class="alert alert-danger" *ngIf="message">{{message}}</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-wraper">
+                <h3>Rejestracja</h3>
 
+                <ng-container *ngIf="!checkedEmail">
+                    <div class="form">
+                        <form [formGroup]="emailForm" (submit)="checkEmail()">
+                            <ng-container *ngIf="validEmail">
+                                <div class="alert alert-danger" role="alert">
+                                    Musisz poprawnie wypełnić formularz.
+                                  </div>
+                            </ng-container>
+                
+                            <ng-container *ngIf="emailExists">
+                                <div class="alert alert-danger" role="alert">
+                                    Podany email jest zajęty.
+                                  </div>
+                            </ng-container>
+                    
+                                <div class="form-group">
+                                    <label class="label-input100" for="Email">Podaj Email</label>
+                                    <input class="input100" type="text" class="form-control" formControlName="user_email">
+                                    <validation-feedback [control]="emailForm.get('user_email')"></validation-feedback>
+                                </div>
+                                
+                                <input type="submit" class="btn btn-success input100-submit" value="Dalej">
+                    
+                        </form>
+                    </div>
+                </ng-container>
+                
+                
+                <ng-container *ngIf="checkedEmail">
+                
+                    <ng-container *ngIf="!registerConfirm">
+                        <div class="form">
+                            <form [formGroup]="passwordForm" (submit)="saveAccount()">
+                                <ng-container *ngIf="validPass">
+                                    <div class="alert alert-danger" role="alert">
+                                        Musisz poprawnie wypełnić formularz.
+                                      </div>
+                                </ng-container>
+                                     
+                                    <div class="form-group">
+                                        <label for="Password">Hasło</label>
+                                        <input type="password" class="form-control" formControlName="user_password">
+                                        <validation-feedback [control]="passwordForm.get('user_password')"></validation-feedback>
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label for="Password2">Powtórz hasło</label>
+                                        <input type="password" class="form-control" formControlName="user_repeat_password">
+                                        <validation-feedback [control]="passwordForm" ></validation-feedback>
+                                    </div>
+                            
+                                    <input type="submit" class="btn btn-success input100-submit" value="załóż konto">
+                        
+                            </form>
+                        </div>
+                    </ng-container>
+                
+                    <ng-container *ngIf="registerConfirm">
+                        <div class="alert alert-success" role="alert">
+                            Na podany adres email. Wysłalismy link w celu weryfikacji konta. Link ważny 10min
+                          </div>
+                    </ng-container>
+                
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <h3>Rejstracja</h3>
 
 <ng-container *ngIf="!checkedEmail">
     <div class="form">
@@ -65,7 +138,7 @@
           </div>
     </ng-container>
 
-</ng-container>
+</ng-container> -->
 
 
 

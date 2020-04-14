@@ -1,72 +1,112 @@
 <ng-container *ngIf="product">
-    <h3>Smartphone</h3>
-    <div class="row">
-        <div class="col-4">
-            <img src="../../../assets/img/drone22.png" class="card-img-top" alt="product">
-        </div>
-        <div class="col-8">
-            <div class="mark">
-                <h2>{{product.product_mark}}</h2>
-            </div>
 
-            <div class="row">
-                <div class="col-6">
-                    <div class="parameters">
-                        <p>dostępna ilość: {{product.product_amount_available - product.product_amount_sold}} szt</p>
-                        <p>opis: {{product.product_description}}</p>
-                        <p>kamera: {{product.product_camera}}</p>
-                        <p>zasięg: {{product.product_range}} m</p>
-                        <p>czas pracy: {{product.product_time_work}} min</p>
+    <div class="container-fluid">
+        <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
+            <div class="options">
+                <a [routerLink]="['/edit-product', product.product_id]">
+                    <span class="material-icons">edit</span>
+                    Edytuj
+                </a>
+                <a [routerLink]="['/delete-product', product.product_id]">
+                    <span class="material-icons">delete</span>
+                    Usuń
+                </a>
+            </div>  
+        </ng-container>   
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="img">
+                    <img src="../../../../assets/img/product-full/{{product.product_mark}}-{{product.product_type}}-517-433.jpg" alt="product">
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="description">
+                            {{product.product_description}}
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-6">
-                    <div class="basket">
-
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="spec-short">
+                            <p>Ekran: <span>{{product.product_screen_diagonal}}"</span></p>
+                            <p>System: <span>{{product.product_system}}</span></p>    
+                            <p>Pamięć: <span>{{product.product_disc_size}}GB</span></p>    
+                        </div>
                     </div>
-                   <h3>{{product.product_price}} zł</h3>
+                    <div class="col-md-6">
+                        <div class="cart-box">
+                            <div class="price">
+                                <p>{{product.product_price}} zł</p>
+                            </div>
+                            <div class="form">
+                                 <form [formGroup]="addProductForm">        
+                                     <div class="form-group select-btn">
+                                         <label>Ilość:</label>
+                                         <select class="form-control" [(ngModel)]="amount" formControlName="amount">
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                             <option value="6">6</option>
+                                         </select>
+                                     </div>
+                                        <a  type="button" class="btn btn-success" (click)='addToCart(product)'>
+                                            <span class="material-icons">add_shopping_cart</span> 
+                                            Dodaj do koszyka
+                                        </a>
+                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                   <div class="options">
-                       <ng-container *ngIf="cart">
-                        <form class="contact100-form" [formGroup]="addProductForm">        
-                            <div class="form-group wrap-input100 rs1-wrap-input100">
-                                <label>Ilość:</label>
-                                <select class="form-control" [(ngModel)]="amount" formControlName="amount">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                            </div>
-                            <a  type="button" class="btn btn-secondary" (click)='addToCart(product)'>Dodaj do koszyka</a>
-                        </form>
-                       </ng-container>
-                       <ng-container *ngIf="!cart">
-                            <div class="alert alert-success" role="alert">
-                                dodano!!!
-                              </div>
-                            <a class="btn btn-info" [routerLink]="['/koszyk']">przejdz do koszyka</a>
-                       </ng-container>
-                    
-                   </div>
-
-                   <ng-container *ngIf="auth.isAuthenticated && auth.role == 'ADMIN'">
-                            <div class="options">
-                                <a class="btn btn-info" [routerLink]="['/edit-product', product.product_id]">Edytuj</a>
-                            </div>
-                            <div class="options">
-                                <a class="btn btn-danger" [routerLink]="['/delete-product', product.product_id]">Usuń</a>
-                            </div>
-                   </ng-container>                   
+    <div class="container-fluid">
+        <div class="row spec-wraper">
+            <div class="col-lg-5">
+                <div class="spec">
+                    <h5>Specyfikacja</h5>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>System operacyjny</td>
+                                    <td>{{product.product_system}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Przekątna ekranu</td>
+                                    <td>{{product.product_screen_diagonal}}"</td>
+                                </tr>
+                                <tr>
+                                    <td>Rozmiar dysku</td>
+                                    <td>{{product.product_disc_size}}GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Pamięć RAM</td>
+                                    <td>{{product.product_ram_size}}GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Roździelczość kamery</td>
+                                    <td>{{product.product_camera_resolution}} Mpix</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                </div>  
+            </div>
+            <div class="col-lg-7">
+                <div class="logo">
+                    <img src="../../../../assets/img/logo/{{product.product_mark}}.png">
                 </div>
             </div>
         </div>
     </div>
 </ng-container>
 
-
+<box-last-product></box-last-product>
 
 
 

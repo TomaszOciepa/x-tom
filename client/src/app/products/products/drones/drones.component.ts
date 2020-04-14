@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from 'src/app/auth/auth.service';
-import { ProductTestList } from 'src/app/model/productTestList';
 import { ProductsService } from 'src/app/products/products.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ProductTest } from 'src/app/model/productTest';
 
 
 @Component({
@@ -13,16 +13,17 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DronesComponent implements OnInit {
 
-  constructor(private http:ProductsService, protected auth:AuthService) {
+  constructor(private http:ProductsService, public auth:AuthService) {
     this.auth.state.subscribe()
    }
 
   ngOnInit() {
     this.getAllProduct()
+    document.scrollingElement.scrollTop = 0
   }
 
    statusError:number
-   drones:ProductTestList
+   drones:ProductTest[]
 
    getAllProduct(){
     this.http.getByType("drone").subscribe(response =>{

@@ -1,0 +1,107 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-drawer-container{
+  background-color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar a{
+  display: inline-block;
+  margin: 0 10px;
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+.mat-toolbar a:hover{
+  color: #cccccc;
+}
+
+.hidden {
+  display: none;
+}
+
+.mat-toolbar.mat-primary{
+  background-color: white;
+  color: black;
+}
+
+.toogle-menu-text{
+  margin-top: -24px;
+  font-size: 11px;
+}
+
+.logo{
+  margin-left: 10px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  padding: 0px;
+}
+
+.mat-icon-button .mat-icon, .mat-icon-button i{
+  line-height: 14px;
+}
+
+.material-icons{
+  font-size: 28px;
+}
+
+.menu-icon-wraper{
+  width: 80px;
+  text-align: center;
+  padding-top: 6px;
+}
+.menu-icon .material-icons {
+  margin-left: -16px;
+  font-size: 40px;
+} 
+
+.menu-text{
+  margin-top: -16px;
+  font-size: 12px;
+}
+
+.log-menu{
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #4d4d4d;
+}
+
+@media (max-width: 600px){
+  .mat-toolbar .row a{
+    display: none;
+   
+  }
+}
+
+@media (max-width: 556px){
+  .hidden-menu{
+    display: none;
+   
+  }
+}
+
+@media (max-width: 397px){
+  .hidden-min{
+    display: none;
+   
+  }
+}

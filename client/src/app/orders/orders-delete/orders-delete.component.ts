@@ -10,7 +10,7 @@ import { OrdersService } from '../orders.service';
 })
 export class OrdersDeleteComponent implements OnInit {
 
-  constructor(protected auth:AuthService, private route:ActivatedRoute, private router: Router, private ordersService:OrdersService) {
+  constructor(public auth:AuthService, private route:ActivatedRoute, private router: Router, private ordersService:OrdersService) {
     this.auth.state.subscribe()
 
     this.route.paramMap.subscribe(params =>{

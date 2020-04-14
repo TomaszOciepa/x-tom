@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DeleteUserComponent implements OnInit {
 
-  constructor(private http:UsersService, protected auth:AuthService, private route:ActivatedRoute) { 
+  constructor(private http:UsersService, public auth:AuthService, private route:ActivatedRoute) { 
     this.auth.state.subscribe()
 
     this.route.paramMap.subscribe(params =>{

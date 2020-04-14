@@ -1,0 +1,76 @@
+.container-fluid{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+}
+
+img{
+    width: 30%;
+    height: auto;
+}
+
+tr {
+    border: 1px solid rgba(77, 77, 77, 0.2);
+    margin: 6px;
+    padding: 10px;
+    color: #4d4d4d;
+}
+
+tr td a {
+    color: #999999;
+}
+
+tr td a:hover{
+    text-decoration: none;
+    color: #404040;
+}
+
+td span{
+    margin-left: 10px;
+}
+
+tbody tr:first-child, tbody tr:last-child{
+    border: none;
+}
+
+
+tbody tr h4 {
+    display: inline-block;
+}
+
+tbody tr span{
+    right: 0px;
+}
+
+.delete-item:hover{
+    cursor: pointer;
+}
+
+.sum-wrap{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid rgba(77, 77, 77, 0.2);
+}
+
+.or-btn{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.sum {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sum span{
+    color: black;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+table{
+    margin: 0 auto;
+}

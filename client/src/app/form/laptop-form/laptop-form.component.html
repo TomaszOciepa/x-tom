@@ -295,9 +295,9 @@
 
             </div>
     
-            <input *ngIf="!saved" type="submit" class="btn btn-danger" value="zapisz">
-            <a *ngIf="saved && product" class="btn btn-success" [routerLink]="['/product', product.product_id]">powrót</a>
-            <a *ngIf="saved && !product" class="btn btn-success" [routerLink]="['/products', productType]">powrót</a>
+            <input *ngIf="!saved" type="submit" class="btn btn-success" value="zapisz">
+            <a *ngIf="saved && product" class="btn btn-secondary" [routerLink]="['/product', product.product_id]">powrót</a>
+            <a *ngIf="saved && !product" class="btn btn-secondary" [routerLink]="['/products', productType]">powrót</a>
         </form>
         
     </div>

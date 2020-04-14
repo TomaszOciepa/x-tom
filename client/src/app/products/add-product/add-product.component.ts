@@ -13,7 +13,7 @@ import { ProductsService } from '../products.service';
 export class AddProductComponent implements OnInit {
 
 
-  constructor(private fb:FormBuilder, protected auth:AuthService, private http:ProductsService,) {
+  constructor(private fb:FormBuilder, public auth:AuthService, private http:ProductsService,) {
     this.auth.state.subscribe()
    }
    editedProduct:ProductTest
