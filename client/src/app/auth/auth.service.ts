@@ -7,6 +7,7 @@ import { UserCodeEncryptService } from './user-code-encrypt.service';
 import { PasswrodResetData } from '../model/passwordResetData';
 import { ChangePassword } from '../model/changePasswordData';
 import { ChangeEmail } from '../model/changeEmailData';
+import { Router } from '@angular/router';
 
 
 interface Credentials{
@@ -25,7 +26,7 @@ interface Session{
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http:HttpClient, private userCodeEnctryptService:UserCodeEncryptService) {
+  constructor(private http:HttpClient, private userCodeEnctryptService:UserCodeEncryptService, private router: Router) {
   }
   
   private session = new BehaviorSubject<Session>(null)
@@ -84,7 +85,8 @@ export class AuthService {
       this.clearRole()
       localStorage.removeItem('(O,,O)')
       localStorage.removeItem('x-tom------>____ <o_o> ____<----x-tom')
-      // window.location.reload()      
+      // window.location.reload()
+      this.router.navigate(['/home']);      
     }
     
     getCurrentUser(){

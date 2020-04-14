@@ -45,11 +45,23 @@
         </div>
     </ng-container>
 
+    <ng-container *ngIf="auth.isAuthenticated">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="wraper wraper-log">
+                        <div class="header">
+                            <h4>Jesteś zalogowany</h4>
+                            <p>Przejdź do:</p>
+                        </div>
+                        <div><a [routerLink]="['/moje-zamowienia']">Moje zamówienia</a></div>
+                        <div><a [routerLink]="['/profile']">Moje konto</a></div>
+                        <div><a [routerLink]="['/products/drones']">Drony</a></div>
+                        <div><a [routerLink]="['/products/laptops']">Laptopy</a></div>
+                        <div><a [routerLink]="['/products/smartphones']">Smartfony</a></div>
+                    </div>
+                </div>
+            </div>
+    </ng-container>
 </div>
 
-<ng-container *ngIf="auth.isAuthenticated">
-    <div class="alert alert-success" role="alert">
-        <h3>Zalogowano</h3>
-        <button class="btn btn-info" [routerLink]="['/home']">Przejdz do strony głównej</button>
-      </div>
-</ng-container>
+

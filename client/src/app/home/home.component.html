@@ -15,7 +15,7 @@
                 <div class="promo-item" *ngFor="let p of productsPromotion">
                     <a [routerLink]="['/product', p.product_id]">
                         <div class="row">
-                            <img class="promotion-img" src="../../assets/img/product-min/{{p.product_mark}}-{{p.product_type}}-232-199.jpg" alt="product"> 
+                            <img class="promotion-img"  src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                         </div>
                         <div class="row">
                             <div class="promotion-desc">
@@ -39,17 +39,9 @@
                 <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList1">
                     <a [routerLink]="['/product', p.product_id]">
                         <div class="wraper">
-                            <ng-container *ngIf="p.product_type == 'smartphone'">
-                                <div class="img">
-                                    <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
-                                </div>
-                            </ng-container>
-                            <ng-container *ngIf="p.product_type != 'smartphone'">
                                 <div class="img">
                                     <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                                 </div>
-                            </ng-container>
-        
                             <div class="content">
                                 <div class="recomend-description">{{p.product_description}}</div>
                                 <div class="recomend-price">{{p.product_price}} zł</div>
@@ -62,17 +54,9 @@
                 <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList2">
                     <a [routerLink]="['/product', p.product_id]">
                         <div class="wraper">
-                            <ng-container *ngIf="p.product_type == 'smartphone'">
-                                <div class="img">
-                                    <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
-                                </div>
-                            </ng-container>
-                            <ng-container *ngIf="p.product_type != 'smartphone'">
                                 <div class="img">
                                     <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
                                 </div>
-                            </ng-container>
-        
                             <div class="content">
                                 <div class="recomend-description">{{p.product_description}}</div>
                                 <div class="recomend-price">{{p.product_price}} zł</div>
@@ -85,17 +69,9 @@
                 <div class="col-sm-4 wrap" style="height: 240px;" *ngFor="let p of productsRecomendList3">
                     <a [routerLink]="['/product', p.product_id]">
                         <div class="wraper">
-                            <ng-container *ngIf="p.product_type == 'smartphone'">
-                                <div class="img">
-                                    <img src="../../assets/img/recomend/{{p.product_mark}}-{{p.product_type}}-142-116.jpg" alt="product">
-                                </div>
-                            </ng-container>
-                            <ng-container *ngIf="p.product_type != 'smartphone'">
                                 <div class="img">
                                     <img src="../../assets/img/promotion/{{p.product_mark}}-{{p.product_type}}-221-221.jpg" alt="product">
-                                </div>
-                            </ng-container>
-        
+                                </div>        
                             <div class="content">
                                 <div class="recomend-description">{{p.product_description}}</div>
                                 <div class="recomend-price">{{p.product_price}} zł</div>

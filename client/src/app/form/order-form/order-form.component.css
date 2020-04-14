@@ -26,3 +26,26 @@ form input{
 form input:last-child{
   margin-bottom: 60px;
 }
+
+@media (max-width: 614px){
+  form {
+    width: 100%;
+  }
+
+  .form-wraper{
+    margin-top: 30px;
+  }
+
+  h4{
+    color: black;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  
+  p{
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+}

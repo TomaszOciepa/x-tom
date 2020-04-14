@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
       if(!this.auth.status){
         this.correctData = false
       }
-      
     }else{
       this.valid = true;
     }

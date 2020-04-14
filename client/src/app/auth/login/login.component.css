@@ -34,6 +34,15 @@ button {
     margin-bottom: 16px;
 }
 
+.wraper-log div a{
+    color: rgba(77, 77, 77);
+}
+
+.wraper-log div a:hover
+{   text-decoration: none;
+    color: green;
+}
+
 @media (max-width: 767px){
     .row .col-md-6:last-child{
         margin-top: 60px;

@@ -18,11 +18,15 @@
                       <tbody>
                         <tr *ngFor="let order of userOrders let i = index;">
                           <th scope="row">{{i+1}}</th>
-                          <td>{{order.orders_number}}</td>
+                          <td>
+                            <a (click)="goOrder(order)">
+                              {{order.orders_number}}
+                            </a>
+                          </td>
                           <td>{{order.orders_date_time | date: 'yyyy-MM-dd HH:mm'}}</td>
                           <td>{{order.orders_status}}</td>
                           <td>{{order.orders_payments_sum}} zł</td>
-                          <td><a (click)="goOrder(order)">
+                          <td class="btn-hover"><a (click)="goOrder(order)">
                                 <span class="material-icons">assignment</span>
                                 szczegóły
                               </a>

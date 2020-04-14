@@ -12,7 +12,7 @@
 }
 
 .navigation-bar-menu{
-    min-width: 200px;
+    min-width: 140px;
 }
 
 .navigation-bar-menu a{
@@ -23,7 +23,7 @@
 }
 
 .navigation-bar-item div span {
-    margin-left: -80px;
+    margin-left: -50px;
 }
 
 

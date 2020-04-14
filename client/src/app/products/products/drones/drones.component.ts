@@ -19,10 +19,7 @@ export class DronesComponent implements OnInit {
 
   ngOnInit() {
     this.getAllProduct()
-    console.log("pozycja: "+window.scrollY)
     document.scrollingElement.scrollTop = 0
-    
-    
   }
 
    statusError:number

@@ -40,3 +40,13 @@ td a:hover {
         width: 100%;
     }
 }
+
+@media (max-width: 614px){
+    .wraper{
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        padding: 0px;
+        font-size: 12px;
+    }
+}
