@@ -12,6 +12,7 @@ export class RemindPasswordComponent implements OnInit {
   constructor(private fb:FormBuilder, public auth:AuthService) { }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
   valid:boolean = false;

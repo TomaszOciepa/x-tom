@@ -12,6 +12,7 @@ export class UserFormComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
   
   userForm = this.fb.group({

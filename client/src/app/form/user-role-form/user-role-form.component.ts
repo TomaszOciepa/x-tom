@@ -36,6 +36,7 @@ saveUser(){
 }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
 }

@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
 }

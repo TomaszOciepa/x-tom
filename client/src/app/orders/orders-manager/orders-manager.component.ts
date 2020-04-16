@@ -22,6 +22,7 @@ export class OrdersManagerComponent implements OnInit {
    }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
   orders:Order[]

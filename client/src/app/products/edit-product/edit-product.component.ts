@@ -42,7 +42,7 @@ export class EditProductComponent implements OnInit {
    }
 
   ngOnInit() {
-      
+    document.scrollingElement.scrollTop = 0
   }
 
 }

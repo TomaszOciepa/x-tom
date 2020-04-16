@@ -14,7 +14,9 @@ export class SmartphoneFormComponent implements OnInit {
     this.auth.state.subscribe()
   }
   
-  ngOnInit() {}
+  ngOnInit() {
+    document.scrollingElement.scrollTop = 0
+  }
 
   product
   productType = "smartphones"

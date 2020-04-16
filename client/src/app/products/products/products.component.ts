@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
   productType:String
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
 }

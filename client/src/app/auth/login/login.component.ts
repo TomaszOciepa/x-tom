@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.message =  this.auth.getMessage()
-    
+    document.scrollingElement.scrollTop = 0
    }
 
   message:String

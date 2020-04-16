@@ -15,6 +15,7 @@ export class OrderFormComponent implements OnInit {
   constructor(private fb:FormBuilder, public auth:AuthService, private router: Router) { }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
     this.user = this.auth.getCurrentUser()
   }
 

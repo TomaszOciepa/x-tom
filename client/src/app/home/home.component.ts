@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
   imagesUrl
 
   ngOnInit() {
-
+    document.scrollingElement.scrollTop = 0
+    
     this.productsService.getByStatus("polecamy").subscribe(response =>{
       for(var i = 0; i <= response.length -1; i++){
 

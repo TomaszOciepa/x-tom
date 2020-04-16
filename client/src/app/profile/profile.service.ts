@@ -40,4 +40,9 @@ export class ProfileService {
   //   return this.http.put<User>("https://x-tom-api.herokuapp.com/user/"+id, user)
   // }
 
+    // ----> remote aws
+    // update(id:number, user:Partial<User>){
+    //   return this.http.put<User>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/"+id, user)
+    // }
+
 }

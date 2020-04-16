@@ -33,6 +33,7 @@ export class AddProductComponent implements OnInit {
   }
   
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
 }

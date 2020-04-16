@@ -30,6 +30,7 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
   statusError:number

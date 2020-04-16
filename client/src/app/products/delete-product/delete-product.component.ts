@@ -34,6 +34,7 @@ export class DeleteProductComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
 }

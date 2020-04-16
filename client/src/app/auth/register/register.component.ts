@@ -12,7 +12,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(private fb:FormBuilder, private registerService:RegisterService) { }
   
-  ngOnInit() { }
+  ngOnInit() {
+    document.scrollingElement.scrollTop = 0
+   }
   
   error
   validEmail:boolean = false

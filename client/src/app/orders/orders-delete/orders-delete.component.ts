@@ -20,6 +20,7 @@ export class OrdersDeleteComponent implements OnInit {
    }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
   orderId:number

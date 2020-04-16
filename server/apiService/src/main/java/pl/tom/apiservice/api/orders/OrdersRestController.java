@@ -10,10 +10,10 @@ import pl.tom.apiservice.service.OrdersService;
 import java.util.List;
 
 //---->localhost
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 
 //---->remote
-//@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
+@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
 @RestController
 @RequestMapping("/orders")
 public class OrdersRestController {

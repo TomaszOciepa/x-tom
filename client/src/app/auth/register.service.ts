@@ -19,6 +19,11 @@ export class RegisterService {
   //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/account/check-email", email)
   // }
 
+  // ----> remote aws
+  // checkEmail(email:string){
+  //   return this.http.post<boolean>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/account/check-email", email)
+  // }
+
   // ---> localhost
   saveAccount(account:RegisterData){
     return this.http.post<boolean>("http://localhost:8090/account/save", account)
@@ -27,6 +32,11 @@ export class RegisterService {
   // ----> remote
   // saveAccount(account:RegisterData){
   //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/account/save", account)
+  // }
+
+  // ----> remote aws
+  // saveAccount(account:RegisterData){
+  //   return this.http.post<boolean>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/account/save", account)
   // }
 
   // ---> localhost
@@ -49,5 +59,14 @@ export class RegisterService {
   //   })
   // }
 
+    // ----> remote
+    // confirmAccount(code:string, email:string){
+    //   return this.http.get<boolean>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/account/confirmation",{
+    //     params:{
+    //       code:code,
+    //       email:email
+    //     }
+    //   })
+    // }
 
 }

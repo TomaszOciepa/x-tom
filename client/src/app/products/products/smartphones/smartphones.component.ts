@@ -17,6 +17,8 @@ export class SmartphonesComponent implements OnInit {
    } 
 
    ngOnInit() {
+    document.scrollingElement.scrollTop = 0
+    
     this.getAllProduct()
   }
   

@@ -16,6 +16,7 @@ export class ChangeEmailComponent implements OnInit {
    }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
   passwordConfirm:boolean = false

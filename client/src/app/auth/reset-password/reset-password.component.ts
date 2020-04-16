@@ -15,6 +15,8 @@ export class ResetPasswordComponent implements OnInit {
   constructor(private fb:FormBuilder, public auth:AuthService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
+    
     this.route.queryParams.subscribe(param =>{
       this.passwordResetData.email = param['user']
       this.passwordResetData.code = param['code']

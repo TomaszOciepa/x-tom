@@ -12,7 +12,8 @@ export class ConfirmAccountComponent implements OnInit {
   constructor(private registerService:RegisterService, private route:ActivatedRoute) { }
 
   ngOnInit() {
-
+    document.scrollingElement.scrollTop = 0
+    
     this.route.paramMap.subscribe(params =>{
       this.code = params.get('code'),
       this.email = params.get('email')

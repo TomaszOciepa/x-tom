@@ -10,6 +10,7 @@ export class AddOrderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
 
   pathOrder:boolean = true

@@ -16,7 +16,9 @@ export class DroneByIdComponent implements OnInit {
     this.auth.state.subscribe()
    }
 
-   ngOnInit() {}
+   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
+   }
 
    id:number
    product:ProductTest

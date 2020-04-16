@@ -37,6 +37,8 @@ export class ProductComponent implements OnInit {
    }
 
    ngOnInit() {
+    document.scrollingElement.scrollTop = 0
+    
     if(localStorage.getItem('products') == null){
       localStorage.setItem('products', JSON.stringify(this.cartLocalItemList))
     }else{

@@ -20,6 +20,10 @@ export class ProductsService {
   //   return this.http.get<ProductTest[]>("https://x-tom-auth.herokuapp.com/product/all")
   // }
 
+    // ----> remote aws
+    // getAll(){
+    //   return this.http.get<ProductTest[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/all")
+    // }
 
   // ---> localhost
   create(product:Partial<ProductTest>){
@@ -31,6 +35,11 @@ export class ProductsService {
   //   return this.http.post<ProductTest>("https://x-tom-api.herokuapp.com/product/create", product)
   // }
   
+  // ----> remote aws
+  // create(product:Partial<ProductTest>){
+  //   return this.http.post<ProductTest>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/create", product)
+  // }
+
     // ---> localhost
   getById(id:number){
     return this.http.get<ProductTest>("http://localhost:8090/product/"+id)
@@ -39,6 +48,11 @@ export class ProductsService {
   // ----> remote
   // getById(id:number){
   //   return this.http.get<ProductTest>("https://x-tom-auth.herokuapp.com/product/"+id)
+  // }
+
+  // ----> remote aws
+  // getById(id:number){
+  //   return this.http.get<ProductTest>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/"+id)
   // }
 
    // ---> localhost
@@ -51,6 +65,11 @@ export class ProductsService {
   //   return this.http.put<ProductTest>("https://x-tom-api.herokuapp.com/product/"+id, product)
   // }
 
+  // ----> remote aws
+  // update(id:number, product:Partial<ProductTest>){
+  //   return this.http.put<ProductTest>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/product/"+id, product)
+  // }
+
    // ---> localhost
   delete(id:number){
     return this.http.delete("http://localhost:8080/product/"+id)
@@ -59,6 +78,11 @@ export class ProductsService {
   // ----> remote
   // delete(id:number){
   //   return this.http.delete("https://x-tom-api.herokuapp.com/product/"+id)
+  // }
+
+  // ----> remote aws
+  // delete(id:number){
+  //   return this.http.delete("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/product/"+id)
   // }
 
   // ---> localhost
@@ -72,13 +96,21 @@ export class ProductsService {
 
   // ---> remote
   // getByType(type:string){
-  //   return this.http.get<ProductTestList>("https://x-tom-auth.herokuapp.com/product/type",{
+  //   return this.http.get<ProductTest[]>("https://x-tom-auth.herokuapp.com/product/type",{
   //     params:{
   //       type:type
   //     }
   //   })
   // }
 
+// ---> remote aws
+// getByType(type:string){
+//   return this.http.get<ProductTest[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/type",{
+//     params:{
+//       type:type
+//     }
+//   })
+// }
 
   // ---> localhost
   getByStatus(status:string){
@@ -91,12 +123,20 @@ export class ProductsService {
 
   // ----> remote
   // getByStatus(status:string){
-  //   return this.http.get<ProductTestList>("https://x-tom-auth.herokuapp.com/product/status/",{
+  //   return this.http.get<ProductTest[]>("https://x-tom-auth.herokuapp.com/product/status/",{
   //     params:{
   //       status:status
   //     }
   //   })
   // }
 
+  // ----> remote aws
+  // getByStatus(status:string){
+  //   return this.http.get<ProductTest[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/status/",{
+  //     params:{
+  //       status:status
+  //     }
+  //   })
+  // }
 
 }

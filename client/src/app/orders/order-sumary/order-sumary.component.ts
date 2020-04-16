@@ -24,6 +24,7 @@ export class OrderSumaryComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.scrollingElement.scrollTop = 0
   }
   
   pathOrder:boolean = true

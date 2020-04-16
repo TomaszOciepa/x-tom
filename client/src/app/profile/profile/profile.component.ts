@@ -36,6 +36,7 @@ export class ProfileComponent implements OnInit {
 
   localUrl = "http://localhost:8080/user/"
   // remoteUrl = "https://x-tom-api.herokuapp.com/user/"
+  // remoteUrlAWS = "http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/"
   id:number
   profile:User
   statusError:number

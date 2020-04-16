@@ -15,7 +15,7 @@ export class LaptopFormComponent implements OnInit {
   }
   
   ngOnInit() {
-      console.log(this.productForm)
+    document.scrollingElement.scrollTop = 0
   }
 
   product

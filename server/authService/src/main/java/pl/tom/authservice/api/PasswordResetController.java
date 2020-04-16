@@ -10,10 +10,10 @@ import pl.tom.authservice.service.PasswordResetSevice;
 import pl.tom.authservice.service.UserService;
 
 //---->localhost
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 
 //---->remote
-//@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
+@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
 @RestController
 @RequestMapping("/password-reset")
 public class PasswordResetController {
