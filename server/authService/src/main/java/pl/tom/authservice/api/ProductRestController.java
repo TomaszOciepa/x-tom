@@ -9,11 +9,8 @@ import pl.tom.authservice.service.ProductService;
 
 import java.util.List;
 
-//---->localhost
-@CrossOrigin(origins = "http://localhost:4200")
 
-//---->remote
-//@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/product")
 public class ProductRestController {

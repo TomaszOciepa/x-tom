@@ -8,11 +8,8 @@ import pl.tom.authservice.model.orders.Orders;
 import pl.tom.authservice.service.OrdersService;
 
 
-//---->localhost
-//@CrossOrigin(origins = "http://localhost:4200")
 
-//---->remote
-@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/orders")
 public class OrdersRestController {

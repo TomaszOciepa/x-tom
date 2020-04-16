@@ -12,11 +12,8 @@ import pl.tom.authservice.model.user.User;
 import pl.tom.authservice.service.UserService;
 
 
-//---->localhost
-//@CrossOrigin(origins = "http://localhost:4200")
 
-//---->remote
-@CrossOrigin(origins = "https://x-tom-client.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class LoginController {
 
