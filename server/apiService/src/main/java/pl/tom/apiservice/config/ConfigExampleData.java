@@ -40,7 +40,7 @@ public class ConfigExampleData {
         this.orderItemRepository = orderItemRepository;
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+//    @EventListener(ApplicationReadyEvent.class)
     public void runProducts() {
 
         User root = new User("tom.ociepa@gmail.com", passwordEncoder.encode("Pass123!"), "ADMIN", "Tomasz", "Ociepa", 882945985L, "80-169", "Gdańsk", "Jana Pawła 999");
