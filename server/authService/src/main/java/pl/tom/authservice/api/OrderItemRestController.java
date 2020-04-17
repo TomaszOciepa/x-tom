@@ -9,8 +9,10 @@ import pl.tom.authservice.service.OrderItemService;
 
 import java.util.List;
 
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/order")
 public class OrderItemRestController {

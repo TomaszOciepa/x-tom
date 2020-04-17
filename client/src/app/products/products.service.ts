@@ -11,9 +11,9 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   // ---> localhost
-  getAll(){
-    return this.http.get<ProductTest[]>("http://localhost:8090/product/all")
-  }
+  // getAll(){
+  //   return this.http.get<ProductTest[]>("http://localhost:8090/product/all")
+  // }
 
   // ----> remote
   // getAll(){
@@ -21,14 +21,14 @@ export class ProductsService {
   // }
 
     // ----> remote aws
-    // getAll(){
-    //   return this.http.get<ProductTest[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/all")
-    // }
+    getAll(){
+      return this.http.get<ProductTest[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/all")
+    }
 
   // ---> localhost
-  create(product:Partial<ProductTest>){
-    return this.http.post<ProductTest>("http://localhost:8080/product/create", product)
-  }
+  // create(product:Partial<ProductTest>){
+  //   return this.http.post<ProductTest>("http://localhost:8080/product/create", product)
+  // }
 
   // ----> remote
   // create(product:Partial<ProductTest>){
@@ -36,14 +36,14 @@ export class ProductsService {
   // }
   
   // ----> remote aws
-  // create(product:Partial<ProductTest>){
-  //   return this.http.post<ProductTest>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/create", product)
-  // }
+  create(product:Partial<ProductTest>){
+    return this.http.post<ProductTest>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/create", product)
+  }
 
     // ---> localhost
-  getById(id:number){
-    return this.http.get<ProductTest>("http://localhost:8090/product/"+id)
-  }
+  // getById(id:number){
+  //   return this.http.get<ProductTest>("http://localhost:8090/product/"+id)
+  // }
 
   // ----> remote
   // getById(id:number){
@@ -51,14 +51,14 @@ export class ProductsService {
   // }
 
   // ----> remote aws
-  // getById(id:number){
-  //   return this.http.get<ProductTest>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/"+id)
-  // }
+  getById(id:number){
+    return this.http.get<ProductTest>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/"+id)
+  }
 
    // ---> localhost
-  update(id:number, product:Partial<ProductTest>){
-    return this.http.put<ProductTest>("http://localhost:8080/product/"+id, product)
-  }
+  // update(id:number, product:Partial<ProductTest>){
+  //   return this.http.put<ProductTest>("http://localhost:8080/product/"+id, product)
+  // }
 
   // ----> remote
   // update(id:number, product:Partial<ProductTest>){
@@ -66,14 +66,14 @@ export class ProductsService {
   // }
 
   // ----> remote aws
-  // update(id:number, product:Partial<ProductTest>){
-  //   return this.http.put<ProductTest>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/product/"+id, product)
-  // }
+  update(id:number, product:Partial<ProductTest>){
+    return this.http.put<ProductTest>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/product/"+id, product)
+  }
 
    // ---> localhost
-  delete(id:number){
-    return this.http.delete("http://localhost:8080/product/"+id)
-  }
+  // delete(id:number){
+  //   return this.http.delete("http://localhost:8080/product/"+id)
+  // }
 
   // ----> remote
   // delete(id:number){
@@ -81,18 +81,18 @@ export class ProductsService {
   // }
 
   // ----> remote aws
-  // delete(id:number){
-  //   return this.http.delete("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/product/"+id)
-  // }
+  delete(id:number){
+    return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/product/"+id)
+  }
 
   // ---> localhost
-  getByType(type:string){
-    return this.http.get<ProductTest[]>("http://localhost:8090/product/type",{
-      params:{
-        type:type
-      }
-    })
-  }
+  // getByType(type:string){
+  //   return this.http.get<ProductTest[]>("http://localhost:8090/product/type",{
+  //     params:{
+  //       type:type
+  //     }
+  //   })
+  // }
 
   // ---> remote
   // getByType(type:string){
@@ -104,22 +104,22 @@ export class ProductsService {
   // }
 
 // ---> remote aws
-// getByType(type:string){
-//   return this.http.get<ProductTest[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/type",{
-//     params:{
-//       type:type
-//     }
-//   })
-// }
+getByType(type:string){
+  return this.http.get<ProductTest[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/type",{
+    params:{
+      type:type
+    }
+  })
+}
 
   // ---> localhost
-  getByStatus(status:string){
-    return this.http.get<ProductTest[]>("http://localhost:8090/product/status/",{
-      params:{
-        status:status
-      }
-    })
-  }
+  // getByStatus(status:string){
+  //   return this.http.get<ProductTest[]>("http://localhost:8090/product/status/",{
+  //     params:{
+  //       status:status
+  //     }
+  //   })
+  // }
 
   // ----> remote
   // getByStatus(status:string){
@@ -131,12 +131,12 @@ export class ProductsService {
   // }
 
   // ----> remote aws
-  // getByStatus(status:string){
-  //   return this.http.get<ProductTest[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/product/status/",{
-  //     params:{
-  //       status:status
-  //     }
-  //   })
-  // }
+  getByStatus(status:string){
+    return this.http.get<ProductTest[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/status/",{
+      params:{
+        status:status
+      }
+    })
+  }
 
 }

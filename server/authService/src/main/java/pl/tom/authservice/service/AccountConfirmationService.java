@@ -61,9 +61,9 @@ public class AccountConfirmationService {
             accountConfirmationData.setAccount_confirmation_password(encodePassword);
             accountConfirmationRepository.save(accountConfirmationData);
 
-            emailSender.sendEmail("tomek0290@gmail.com", "x-tom - potwierdzenie rejestracji", "Dziękuję za chęć założenie konta w moim sklepie. Poniższy link służy do aktywacji Twojego konta." +
-                    "Link Jest ważny 10min" +" <br>"+
-                    "Link do weryfikacji: http://localhost:4200/potwierdzenie-rejestracji/" + code + "/" + newEmail);
+            emailSender.sendEmail(newEmail, "x-tom - potwierdzenie rejestracji", "Dziękuję za chęć założenie konta w moim sklepie. Poniższy link służy do aktywacji Twojego konta." +
+                    "Link Jest ważny 10min"+
+                    "Link do weryfikacji: http://x-tom-shop.s3-website.eu-central-1.amazonaws.com/potwierdzenie-rejestracji/" + code + "/" + newEmail);
 
             return true;
         }else {
@@ -91,13 +91,13 @@ public class AccountConfirmationService {
                 User user = new User(accountEmail, accountPassword);
 
                 userService.saveAccount(user);
-                emailSender.sendEmail("tomek0290@gmail.com", "x-tom - Dziękuę za założenie konta", "Bardzo dziękuje za założenie konta w moim sklepie. Możesz się zalogować. " +
-                        " Link do logowania: http://localhost:4200/logowanie ");
+                emailSender.sendEmail(email, "x-tom - Dziękuę za założenie konta", "Bardzo dziękuje za założenie konta w moim sklepie. Możesz się zalogować. " +
+                        " Link do logowania: http://x-tom-shop.s3-website.eu-central-1.amazonaws.com/logowanie ");
                 accountConfirmationRepository.deleteAccountConfirmationByEmail(accountId);
                 return true;
             }else {
-                emailSender.sendEmail("tomek0290@gmail.com", "x-tom - Odmowa weryfikacji", "Nie udało się zweryfikować Twojego konta. Link jest nie aktywny. Spróbuj ponownie " +
-                        "Link do rejestracji: http://localhost:4200/rejestracja ");
+                emailSender.sendEmail(email, "x-tom - Odmowa weryfikacji", "Nie udało się zweryfikować Twojego konta. Link jest nie aktywny. Spróbuj ponownie " +
+                        "Link do rejestracji: http://x-tom-shop.s3-website.eu-central-1.amazonaws.com/rejestracja ");
                 accountConfirmationRepository.deleteAccountConfirmationByEmail(accountId);
                 return false;
             }

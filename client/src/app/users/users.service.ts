@@ -11,9 +11,9 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   // ---> localhost
-  getAll(){
-    return this.http.get<UserList>("http://localhost:8080/user/all")
-  }
+  // getAll(){
+  //   return this.http.get<UserList>("http://localhost:8080/user/all")
+  // }
 
   // ----> remote
   // getAll(){
@@ -21,14 +21,14 @@ export class UsersService {
   // }
   
     // ----> remote aws
-    // getAll(){
-    //   return this.http.get<UserList>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/all")
-    // }
+    getAll(){
+      return this.http.get<UserList>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/all")
+    }
 
 // ---> localhost
-  getById(id:number){
-    return this.http.get<User>("http://localhost:8080/user/"+id)
-  }
+  // getById(id:number){
+  //   return this.http.get<User>("http://localhost:8080/user/"+id)
+  // }
 
 // ----> remote
   // getById(id:number){
@@ -36,14 +36,14 @@ export class UsersService {
   // }
 
 // ----> remote aws
-// getById(id:number){
-//   return this.http.get<User>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/"+id)
-// }
+getById(id:number){
+  return this.http.get<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id)
+}
 
 // ---> localhost
-  update(id:number, user:Partial<User>){
-    return this.http.put<User>("http://localhost:8080/user/"+id, user)
-  }
+  // update(id:number, user:Partial<User>){
+  //   return this.http.put<User>("http://localhost:8080/user/"+id, user)
+  // }
 
 // ----> remote
 // update(id:number, user:Partial<User>){
@@ -51,14 +51,14 @@ export class UsersService {
 // }
 
 // ----> remote aws
-// update(id:number, user:Partial<User>){
-//   return this.http.put<User>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/"+id, user)
-// }
+update(id:number, user:Partial<User>){
+  return this.http.put<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id, user)
+}
 
   // ---> localhost
-  updateRole(id:number, user:Partial<User>){
-    return this.http.put<User>("http://localhost:8080/user/role/"+id, user)
-  }
+  // updateRole(id:number, user:Partial<User>){
+  //   return this.http.put<User>("http://localhost:8080/user/role/"+id, user)
+  // }
 
 // ----> remote
 // updateRole(id:number, user:Partial<User>){
@@ -66,14 +66,14 @@ export class UsersService {
 //   }
 
 // ----> remote aws
-// updateRole(id:number, user:Partial<User>){
-//   return this.http.put<User>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/role/"+id, user)
-// }
+updateRole(id:number, user:Partial<User>){
+  return this.http.put<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/role/"+id, user)
+}
 
 // ---> localhost
-  delete(id:number){
-    return this.http.delete("http://localhost:8080/user/"+id)
-  }
+  // delete(id:number){
+  //   return this.http.delete("http://localhost:8080/user/"+id)
+  // }
 
 // ----> remote
 // delete(id:number){
@@ -81,8 +81,8 @@ export class UsersService {
 // }
 
 // ----> remote aws
-// delete(id:number){
-//   return this.http.delete("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/"+id)
-// }
+delete(id:number){
+  return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id)
+}
 
 }

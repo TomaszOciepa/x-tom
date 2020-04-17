@@ -12,8 +12,10 @@ import pl.tom.apiservice.model.user.User;
 import java.util.List;
 import java.util.Optional;
 
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/user")
 public class UserRestController {

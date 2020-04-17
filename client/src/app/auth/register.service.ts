@@ -10,9 +10,9 @@ export class RegisterService {
   constructor(private http:HttpClient) { }
 
   // ---> localhost
-  checkEmail(email:string){
-    return this.http.post<boolean>("http://localhost:8090/account/check-email", email)
-  }
+  // checkEmail(email:string){
+  //   return this.http.post<boolean>("http://localhost:8090/account/check-email", email)
+  // }
 
   // ----> remote
   // checkEmail(email:string){
@@ -20,14 +20,14 @@ export class RegisterService {
   // }
 
   // ----> remote aws
-  // checkEmail(email:string){
-  //   return this.http.post<boolean>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/account/check-email", email)
-  // }
+  checkEmail(email:string){
+    return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/check-email", email)
+  }
 
   // ---> localhost
-  saveAccount(account:RegisterData){
-    return this.http.post<boolean>("http://localhost:8090/account/save", account)
-  }
+  // saveAccount(account:RegisterData){
+  //   return this.http.post<boolean>("http://localhost:8090/account/save", account)
+  // }
 
   // ----> remote
   // saveAccount(account:RegisterData){
@@ -35,19 +35,19 @@ export class RegisterService {
   // }
 
   // ----> remote aws
-  // saveAccount(account:RegisterData){
-  //   return this.http.post<boolean>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/account/save", account)
-  // }
+  saveAccount(account:RegisterData){
+    return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/save", account)
+  }
 
   // ---> localhost
-  confirmAccount(code:string, email:string){
-    return this.http.get<boolean>("http://localhost:8090/account/confirmation",{
-      params:{
-        code:code,
-        email:email
-      }
-    })
-  }
+  // confirmAccount(code:string, email:string){
+  //   return this.http.get<boolean>("http://localhost:8090/account/confirmation",{
+  //     params:{
+  //       code:code,
+  //       email:email
+  //     }
+  //   })
+  // }
 
   // ----> remote
   // confirmAccount(code:string, email:string){
@@ -59,14 +59,14 @@ export class RegisterService {
   //   })
   // }
 
-    // ----> remote
-    // confirmAccount(code:string, email:string){
-    //   return this.http.get<boolean>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/account/confirmation",{
-    //     params:{
-    //       code:code,
-    //       email:email
-    //     }
-    //   })
-    // }
+    // ----> remote aws
+    confirmAccount(code:string, email:string){
+      return this.http.get<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/confirmation",{
+        params:{
+          code:code,
+          email:email
+        }
+      })
+    }
 
 }

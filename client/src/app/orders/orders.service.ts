@@ -11,9 +11,9 @@ export class OrdersService {
   constructor(private http: HttpClient) { }
 
   // ---> localhost
-  getAllOrders(){
-    return this.http.get<Order[]>("http://localhost:8080/orders/all")
-  }
+  // getAllOrders(){
+  //   return this.http.get<Order[]>("http://localhost:8080/orders/all")
+  // }
 
 // ----> remote
 // getAllOrders(){
@@ -21,14 +21,14 @@ export class OrdersService {
 // }
  
 // ----> remote aws
-// getAllOrders(){
-//   return this.http.get<Order[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/orders/all")
-// }
+getAllOrders(){
+  return this.http.get<Order[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/all")
+}
 
   // ---> localhost
-  getOrdersById(id:number){
-    return this.http.get<Order>("http://localhost:8080/orders/"+id)
-  }
+  // getOrdersById(id:number){
+  //   return this.http.get<Order>("http://localhost:8080/orders/"+id)
+  // }
 
 // ----> remote
 // getOrdersById(id:number){
@@ -36,14 +36,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// getOrdersById(id:number){
-//   return this.http.get<Order>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/orders/"+id)
-// }
+getOrdersById(id:number){
+  return this.http.get<Order>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/"+id)
+}
 
   // ---> localhost
-  getOrdersByUserId(id:number){
-    return this.http.get<Order[]>("http://localhost:8080/orders/user/"+id)
-  }
+  // getOrdersByUserId(id:number){
+  //   return this.http.get<Order[]>("http://localhost:8080/orders/user/"+id)
+  // }
 
 // ----> remote
 // getOrdersByUserId(id:number){
@@ -51,14 +51,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// getOrdersByUserId(id:number){
-//   return this.http.get<Order[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/orders/user/"+id)
-// }
+getOrdersByUserId(id:number){
+  return this.http.get<Order[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/user/"+id)
+}
 
   // ---> localhost
-  getOrderItemByOrderNumber(number:number){
-    return this.http.get<OrderItem[]>("http://localhost:8080/order/number/"+number)
-  }
+  // getOrderItemByOrderNumber(number:number){
+  //   return this.http.get<OrderItem[]>("http://localhost:8080/order/number/"+number)
+  // }
 
 // ----> remote
 // getOrderItemByOrderNumber(number:number){
@@ -66,14 +66,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// getOrderItemByOrderNumber(number:number){
-//   return this.http.get<OrderItem[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/order/number/"+number)
-// }
+getOrderItemByOrderNumber(number:number){
+  return this.http.get<OrderItem[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/order/number/"+number)
+}
 
   // ---> localhost
-  createOrderItem(item:Partial<OrderItem>[]){
-    return this.http.post<Number>("http://localhost:8090/order/create", item)
-  }
+  // createOrderItem(item:Partial<OrderItem>[]){
+  //   return this.http.post<Number>("http://localhost:8090/order/create", item)
+  // }
 
 // ----> remote
 // createOrderItem(item:Partial<OrderItem>[]){
@@ -81,14 +81,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// createOrderItem(item:Partial<OrderItem>[]){
-//   return this.http.post<Number>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/order/create", item)
-// }
+createOrderItem(item:Partial<OrderItem>[]){
+  return this.http.post<Number>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/order/create", item)
+}
 
   // ---> localhost
-  createOrder(order:Partial<Order>){
-    return this.http.post("http://localhost:8090/orders/create", order)
-  }
+  // createOrder(order:Partial<Order>){
+  //   return this.http.post("http://localhost:8090/orders/create", order)
+  // }
 
 // ----> remote
 // createOrder(order:Partial<Order>){
@@ -96,14 +96,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// createOrder(order:Partial<Order>){
-//   return this.http.post("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8090/orders/create", order)
-// }
+createOrder(order:Partial<Order>){
+  return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/orders/create", order)
+}
 
   // ---> localhost
-  editDetail(id:number, order:Partial<Order>){
-    return this.http.put<Order>("http://localhost:8080/orders/detail/"+id, order)// ----> remote
-  }
+  // editDetail(id:number, order:Partial<Order>){
+  //   return this.http.put<Order>("http://localhost:8080/orders/detail/"+id, order)// ----> remote
+  // }
 
 // ----> remote
 // editDetail(id:number, order:Partial<Order>){
@@ -111,14 +111,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// editDetail(id:number, order:Partial<Order>){
-//   return this.http.put<Order>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/orders/detail/"+id, order)// ----> remote
-// }
+editDetail(id:number, order:Partial<Order>){
+  return this.http.put<Order>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/detail/"+id, order)// ----> remote
+}
 
   // ---> localhost
-  editAddress(id:number, order:Partial<Order>){
-    return this.http.put<Order>("http://localhost:8080/orders/address/"+id, order)
-  }
+  // editAddress(id:number, order:Partial<Order>){
+  //   return this.http.put<Order>("http://localhost:8080/orders/address/"+id, order)
+  // }
 
 // ----> remote
 // editAddress(id:number, order:Partial<Order>){
@@ -126,14 +126,14 @@ export class OrdersService {
 // }
 
 // ----> remote aws
-// editAddress(id:number, order:Partial<Order>){
-//   return this.http.put<Order>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/orders/address/"+id, order)
-// }
+editAddress(id:number, order:Partial<Order>){
+  return this.http.put<Order>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/address/"+id, order)
+}
 
   // ---> localhost
-  deleteOrder(id:number){
-    return this.http.delete("http://localhost:8080/orders/"+id)
-  }
+  // deleteOrder(id:number){
+  //   return this.http.delete("http://localhost:8080/orders/"+id)
+  // }
 
   // ----> remote
   // deleteOrder(id:number){
@@ -141,8 +141,8 @@ export class OrdersService {
   // }
 
 // ----> remote aws
-// deleteOrder(id:number){
-//   return this.http.delete("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/orders/"+id)
-// }
+deleteOrder(id:number){
+  return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/"+id)
+}
 
 }

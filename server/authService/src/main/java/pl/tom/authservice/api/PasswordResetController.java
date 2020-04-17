@@ -9,8 +9,10 @@ import pl.tom.authservice.model.passwordResetData.PasswordResetData;
 import pl.tom.authservice.service.PasswordResetSevice;
 import pl.tom.authservice.service.UserService;
 
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/password-reset")
 public class PasswordResetController {

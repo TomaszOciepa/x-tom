@@ -11,9 +11,10 @@ import pl.tom.authservice.model.credentials.Credentials;
 import pl.tom.authservice.model.user.User;
 import pl.tom.authservice.service.UserService;
 
-
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 public class LoginController {
 

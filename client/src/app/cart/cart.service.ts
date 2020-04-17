@@ -11,9 +11,9 @@ export class CartService {
   constructor(private http: HttpClient) { }
 
   // ---> localhost
-  getMyCartItems(id:number){
-    return this.http.get<CartItemLocalStorage[]>("http://localhost:8080/cart/"+id)
-  }
+  // getMyCartItems(id:number){
+  //   return this.http.get<CartItemLocalStorage[]>("http://localhost:8080/cart/"+id)
+  // }
 
   // ----> remote
   // getMyCartItems(id:number){
@@ -21,14 +21,14 @@ export class CartService {
   // }
 
     // ----> remote aws
-    // getMyCartItems(id:number){
-    //   return this.http.get<CartItemLocalStorage[]>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/cart/"+id)
-    // }
+    getMyCartItems(id:number){
+      return this.http.get<CartItemLocalStorage[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/"+id)
+    }
 
   // ---> localhost
-  setMyCartItem(cartItem:Partial<CartItemUser>){
-    return this.http.post<CartItemUser>("http://localhost:8080/cart/create", cartItem)
-  }
+  // setMyCartItem(cartItem:Partial<CartItemUser>){
+  //   return this.http.post<CartItemUser>("http://localhost:8080/cart/create", cartItem)
+  // }
 
   // ----> remote
   // setMyCartItem(cartItem:Partial<CartItemUser>){
@@ -36,14 +36,14 @@ export class CartService {
   // }
 
 // ----> remote aws
-// setMyCartItem(cartItem:Partial<CartItemUser>){
-//   return this.http.post<CartItemUser>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/cart/create", cartItem)
-// }
+setMyCartItem(cartItem:Partial<CartItemUser>){
+  return this.http.post<CartItemUser>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/create", cartItem)
+}
 
   // ---> localhost
-  deleteMyCartItem(id:number){
-    return this.http.delete("http://localhost:8080/cart/"+id)
-  }
+  // deleteMyCartItem(id:number){
+  //   return this.http.delete("http://localhost:8080/cart/"+id)
+  // }
 
   // ----> remote
   // deleteMyCartItem(id:number){
@@ -51,14 +51,14 @@ export class CartService {
   // }
 
   // ----> remote aws
-  // deleteMyCartItem(id:number){
-  //   return this.http.delete("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/cart/"+id)
-  // }
+  deleteMyCartItem(id:number){
+    return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/"+id)
+  }
 
   // ---> localhost
-  deleteMyCart(id:number){
-    return this.http.delete("http://localhost:8080/cart/clear/"+id)
-  }
+  // deleteMyCart(id:number){
+  //   return this.http.delete("http://localhost:8080/cart/clear/"+id)
+  // }
 
   // ----> remote
   // deleteMyCart(id:number){
@@ -66,8 +66,8 @@ export class CartService {
   // }
 
 // ----> remote aws
-// deleteMyCart(id:number){
-//   return this.http.delete("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/cart/clear/"+id)
-// }
+deleteMyCart(id:number){
+  return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/clear/"+id)
+}
 
 }

@@ -63,7 +63,7 @@ public class UserService {
         User user = userRepository.getUserByEmail(email);
         user.setUser_password(passwordEncoder.encode(newPassword));
         userRepository.save(user);
-        emailSender.sendEmail("tomek0290@gmail.com", "x-tom - nowe hasło", "Hasło dla konta: " + email + " zostało zmienione");
+        emailSender.sendEmail(email, "x-tom - nowe hasło", "Hasło dla konta: " + email + " zostało zmienione");
         return true;
     }
 

@@ -31,9 +31,9 @@ export class ProfileService {
   }
 
   // ---> localhost
-  update(id:number, user:Partial<User>){
-    return this.http.put<User>("http://localhost:8080/user/"+id, user)
-  }
+  // update(id:number, user:Partial<User>){
+  //   return this.http.put<User>("http://localhost:8080/user/"+id, user)
+  // }
 
   // ----> remote
   // update(id:number, user:Partial<User>){
@@ -41,8 +41,8 @@ export class ProfileService {
   // }
 
     // ----> remote aws
-    // update(id:number, user:Partial<User>){
-    //   return this.http.put<User>("http://ec2-52-57-86-39.eu-central-1.compute.amazonaws.com:8080/user/"+id, user)
-    // }
+    update(id:number, user:Partial<User>){
+      return this.http.put<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id, user)
+    }
 
 }

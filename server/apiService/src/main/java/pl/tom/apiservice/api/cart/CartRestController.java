@@ -9,8 +9,10 @@ import pl.tom.apiservice.service.CartService;
 
 import java.util.List;
 
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/cart")
 public class CartRestController {

@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import pl.tom.authservice.model.orders.Orders;
 import pl.tom.authservice.service.OrdersService;
 
-
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/orders")
 public class OrdersRestController {

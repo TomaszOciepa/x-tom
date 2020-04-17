@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import pl.tom.apiservice.model.product.Product;
 import pl.tom.apiservice.service.ProductService;
 
-
-@CrossOrigin(origins = "http://localhost:4200")
+//localhost
+//@CrossOrigin(origins = "http://localhost:4200")
+//aws
+@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/product")
 public class ProductRestController {
