@@ -1,67 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RegisterData } from '../model/registerData';
+import { AppService } from '../app.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private appService:AppService) { }
 
-  // ---> localhost
-  // checkEmail(email:string){
-  //   return this.http.post<boolean>("http://localhost:8090/account/check-email", email)
-  // }
-
-  // ----> remote
-  // checkEmail(email:string){
-  //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/account/check-email", email)
-  // }
-
-  // ----> remote aws
   checkEmail(email:string){
-    return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/check-email", email)
+    return this.http.post<boolean>(this.appService.urlAuth+"/account/check-email", email)
   }
 
-  // ---> localhost
-  // saveAccount(account:RegisterData){
-  //   return this.http.post<boolean>("http://localhost:8090/account/save", account)
-  // }
-
-  // ----> remote
-  // saveAccount(account:RegisterData){
-  //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/account/save", account)
-  // }
-
-  // ----> remote aws
   saveAccount(account:RegisterData){
-    return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/save", account)
+    return this.http.post<boolean>(this.appService.urlAuth+"/account/save", account)
   }
 
-  // ---> localhost
-  // confirmAccount(code:string, email:string){
-  //   return this.http.get<boolean>("http://localhost:8090/account/confirmation",{
-  //     params:{
-  //       code:code,
-  //       email:email
-  //     }
-  //   })
-  // }
-
-  // ----> remote
-  // confirmAccount(code:string, email:string){
-  //   return this.http.get<boolean>("https://x-tom-auth.herokuapp.com/account/confirmation",{
-  //     params:{
-  //       code:code,
-  //       email:email
-  //     }
-  //   })
-  // }
-
-    // ----> remote aws
     confirmAccount(code:string, email:string){
-      return this.http.get<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/confirmation",{
+      return this.http.get<boolean>(this.appService.urlAuth+"/account/confirmation",{
         params:{
           code:code,
           email:email

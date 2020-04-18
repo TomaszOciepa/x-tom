@@ -2,87 +2,33 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserList } from '../model/userList';
 import { User } from '../model/user';
+import { AppService } from '../app.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private appService:AppService) {}
 
-  // ---> localhost
-  // getAll(){
-  //   return this.http.get<UserList>("http://localhost:8080/user/all")
-  // }
+  getAll(){
+    return this.http.get<UserList>(this.appService.urlApi+"/user/all")
+  }
 
-  // ----> remote
-  // getAll(){
-  //   return this.http.get<UserList>("https://x-tom-api.herokuapp.com/user/all")
-  // }
-  
-    // ----> remote aws
-    getAll(){
-      return this.http.get<UserList>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/all")
-    }
+  getById(id:number){
+    return this.http.get<User>(this.appService.urlApi+"/user/"+id)
+  }
 
-// ---> localhost
-  // getById(id:number){
-  //   return this.http.get<User>("http://localhost:8080/user/"+id)
-  // }
+  update(id:number, user:Partial<User>){
+    return this.http.put<User>(this.appService.urlApi+"/user/"+id, user)
+  }
 
-// ----> remote
-  // getById(id:number){
-  //   return this.http.get<User>("https://x-tom-api.herokuapp.com/user/"+id)
-  // }
+  updateRole(id:number, user:Partial<User>){
+    return this.http.put<User>(this.appService.urlApi+"/user/role/"+id, user)
+  }
 
-// ----> remote aws
-getById(id:number){
-  return this.http.get<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id)
-}
-
-// ---> localhost
-  // update(id:number, user:Partial<User>){
-  //   return this.http.put<User>("http://localhost:8080/user/"+id, user)
-  // }
-
-// ----> remote
-// update(id:number, user:Partial<User>){
-//   return this.http.put<User>("https://x-tom-api.herokuapp.com/user/"+id, user)
-// }
-
-// ----> remote aws
-update(id:number, user:Partial<User>){
-  return this.http.put<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id, user)
-}
-
-  // ---> localhost
-  // updateRole(id:number, user:Partial<User>){
-  //   return this.http.put<User>("http://localhost:8080/user/role/"+id, user)
-  // }
-
-// ----> remote
-// updateRole(id:number, user:Partial<User>){
-//     return this.http.put<User>("https://x-tom-api.herokuapp.com/user/role/"+id, user)
-//   }
-
-// ----> remote aws
-updateRole(id:number, user:Partial<User>){
-  return this.http.put<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/role/"+id, user)
-}
-
-// ---> localhost
-  // delete(id:number){
-  //   return this.http.delete("http://localhost:8080/user/"+id)
-  // }
-
-// ----> remote
-// delete(id:number){
-//   return this.http.delete("https://x-tom-api.herokuapp.com/user/"+id)
-// }
-
-// ----> remote aws
-delete(id:number){
-  return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+id)
-}
+  delete(id:number){
+    return this.http.delete(this.appService.urlApi+"/user/"+id)
+  }
 
 }

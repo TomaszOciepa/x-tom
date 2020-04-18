@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ProductType } from 'src/app/model/productType';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ProductTest } from 'src/app/model/productTest';
 import { ProductsService } from '../products.service';

@@ -2,72 +2,29 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CartItemUser } from '../model/cartItemUser';
 import { CartItemLocalStorage } from '../model/cartItemLocalStorage';
+import { AppService } from '../app.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  constructor(private http: HttpClient) { }
+constructor(private http: HttpClient, private appService:AppService) { }
 
-  // ---> localhost
-  // getMyCartItems(id:number){
-  //   return this.http.get<CartItemLocalStorage[]>("http://localhost:8080/cart/"+id)
-  // }
-
-  // ----> remote
-  // getMyCartItems(id:number){
-  //   return this.http.get<CartItemLocalStorage[]>("https://x-tom-api.herokuapp.com/cart/"+id)
-  // }
-
-    // ----> remote aws
-    getMyCartItems(id:number){
-      return this.http.get<CartItemLocalStorage[]>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/"+id)
-    }
-
-  // ---> localhost
-  // setMyCartItem(cartItem:Partial<CartItemUser>){
-  //   return this.http.post<CartItemUser>("http://localhost:8080/cart/create", cartItem)
-  // }
-
-  // ----> remote
-  // setMyCartItem(cartItem:Partial<CartItemUser>){
-  //   return this.http.post<CartItemUser>("https://x-tom-api.herokuapp.com/cart/create", cartItem)
-  // }
-
-// ----> remote aws
-setMyCartItem(cartItem:Partial<CartItemUser>){
-  return this.http.post<CartItemUser>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/create", cartItem)
+getMyCartItems(id:number){
+  return this.http.get<CartItemLocalStorage[]>(this.appService.urlApi+"/cart/"+id)
 }
 
-  // ---> localhost
-  // deleteMyCartItem(id:number){
-  //   return this.http.delete("http://localhost:8080/cart/"+id)
-  // }
+setMyCartItem(cartItem:Partial<CartItemUser>){
+  return this.http.post<CartItemUser>(this.appService.urlApi+"/cart/create", cartItem)
+}
 
-  // ----> remote
-  // deleteMyCartItem(id:number){
-  //   return this.http.delete("https://x-tom-api.herokuapp.com/cart/"+id)
-  // }
+deleteMyCartItem(id:number){
+  return this.http.delete(this.appService.urlApi+"/cart/"+id)
+}
 
-  // ----> remote aws
-  deleteMyCartItem(id:number){
-    return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/"+id)
-  }
-
-  // ---> localhost
-  // deleteMyCart(id:number){
-  //   return this.http.delete("http://localhost:8080/cart/clear/"+id)
-  // }
-
-  // ----> remote
-  // deleteMyCart(id:number){
-  //   return this.http.delete("https://x-tom-api.herokuapp.com/cart/clear/"+id)
-  // }
-
-// ----> remote aws
 deleteMyCart(id:number){
-  return this.http.delete("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/clear/"+id)
+  return this.http.delete(this.appService.urlApi+"/cart/clear/"+id)
 }
 
 }

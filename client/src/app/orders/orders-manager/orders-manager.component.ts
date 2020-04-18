@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { OrdersService } from '../orders.service';
 import { Order } from 'src/app/model/order';
-import { ThrowStmt } from '@angular/compiler';
 import { Router } from '@angular/router';
 
 @Component({

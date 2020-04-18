@@ -4,7 +4,6 @@ import { BoxLastProductComponent } from './box-last-product/box-last-product.com
 import { BoxLastProductRoutingModule } from './box-last-product-routing.module';
 
 
-
 @NgModule({
   declarations: [BoxLastProductComponent],
   imports: [

@@ -830,11 +830,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       factory: function AppRoutingModule_Factory(t) {
         return new (t || AppRoutingModule)();
       },
-      imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {// enableTracing: true,
-        // useHash:true,
-        // errorHandler:()=>{},
-        // initialNavigation: true,
-      })], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+      imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {})], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
     });
 
     (function () {
@@ -850,11 +846,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppRoutingModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {// enableTracing: true,
-            // useHash:true,
-            // errorHandler:()=>{},
-            // initialNavigation: true,
-          })],
+          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {})],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         }]
       }], null, null);
@@ -1079,182 +1071,156 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _users_users_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _users_users_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./users/users.module */
     "./src/app/users/users.module.ts");
     /* harmony import */
 
 
-    var _cart_cart_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _cart_cart_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./cart/cart.module */
     "./src/app/cart/cart.module.ts");
     /* harmony import */
 
 
-    var _products_products_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _products_products_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./products/products.module */
     "./src/app/products/products.module.ts");
     /* harmony import */
 
 
-    var _form_form_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    var _form_form_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! ./form/form.module */
     "./src/app/form/form.module.ts");
     /* harmony import */
 
 
-    var _orders_orders_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+    var _orders_orders_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! ./orders/orders.module */
     "./src/app/orders/orders.module.ts");
     /* harmony import */
 
 
-    var _validation_validation_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    var _validation_validation_module__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
     /*! ./validation/validation.module */
     "./src/app/validation/validation.module.ts");
     /* harmony import */
 
 
-    var _admin_admin_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    var _admin_admin_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./admin/admin.module */
     "./src/app/admin/admin.module.ts");
     /* harmony import */
 
 
-    var _error_error_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    var _error_error_module__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
     /*! ./error/error.module */
     "./src/app/error/error.module.ts");
     /* harmony import */
 
 
-    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
     /*! @angular/platform-browser/animations */
     "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/animations.js");
     /* harmony import */
 
 
-    var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+    var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
     /*! ./navigation/navigation.component */
     "./src/app/navigation/navigation.component.ts");
     /* harmony import */
 
 
-    var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    var _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
     /*! @angular/cdk/layout */
     "./node_modules/@angular/cdk/__ivy_ngcc__/fesm2015/layout.js");
     /* harmony import */
 
 
-    var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! @angular/material/toolbar */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/toolbar.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
     /* harmony import */
 
 
-    var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    var _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
     /*! @angular/material/sidenav */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/sidenav.js");
     /* harmony import */
 
 
-    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
     /*! @angular/material/icon */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
     /* harmony import */
 
 
-    var _angular_material_list__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    var _angular_material_list__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
     /*! @angular/material/list */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/list.js");
     /* harmony import */
 
 
-    var _navigation_bar_navigation_bar_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    var _navigation_bar_navigation_bar_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
     /*! ./navigation-bar/navigation-bar.component */
     "./src/app/navigation-bar/navigation-bar.component.ts");
     /* harmony import */
 
 
-    var _home_home_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    var _home_home_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
     /*! ./home/home.component */
     "./src/app/home/home.component.ts");
     /* harmony import */
 
 
-    var _slider_slider_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    var _slider_slider_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
     /*! ./slider/slider.module */
     "./src/app/slider/slider.module.ts");
     /* harmony import */
 
 
-    var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
+    var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
     /*! @ng-bootstrap/ng-bootstrap */
     "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
     /* harmony import */
 
 
-    var _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
+    var _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(
     /*! ./box-drone/box-drone.module */
     "./src/app/box-drone/box-drone.module.ts");
     /* harmony import */
 
 
-    var _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
+    var _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(
     /*! ./box-mobile/box-mobile.module */
     "./src/app/box-mobile/box-mobile.module.ts");
     /* harmony import */
 
 
-    var _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
+    var _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(
     /*! ./box-last-product/box-last-product.module */
     "./src/app/box-last-product/box-last-product.module.ts");
     /* harmony import */
 
 
-    var _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
+    var _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(
     /*! ./box-footer/box-footer.module */
     "./src/app/box-footer/box-footer.module.ts");
     /* harmony import */
 
 
-    var _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
+    var _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(
     /*! ./box-special/box-special.module */
     "./src/app/box-special/box-special.module.ts");
-    /* harmony import */
 
-
-    var _auth_auth_service__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
-    /*! ./auth/auth.service */
-    "./src/app/auth/auth.service.ts");
-
-    var AppModule = function AppModule(auth, router) {
-      var _this2 = this;
-
+    var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
-
-      this.auth = auth;
-      this.router = router;
-      this.auth.state.subscribe(function (state) {
-        if (_this2.auth.isAuthenticated) {// this.router.navigate(['/'])
-        } else {// this.router.navigate(['/login'])
-          }
-      });
-      this.router.events.subscribe(function (event) {
-        if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_8__["NavigationEnd"]) {//...
-        }
-      });
     };
 
     AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
@@ -1263,16 +1229,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     });
     AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
       factory: function AppModule_Factory(t) {
-        return new (t || AppModule)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_34__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]));
+        return new (t || AppModule)();
       },
       providers: [],
-      imports: [[_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_28__["NgbModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_5__["AuthModule"], _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfileModule"], _navi_navi_module__WEBPACK_IMPORTED_MODULE_7__["NaviModule"], _users_users_module__WEBPACK_IMPORTED_MODULE_9__["UsersModule"], _cart_cart_module__WEBPACK_IMPORTED_MODULE_10__["CartModule"], _products_products_module__WEBPACK_IMPORTED_MODULE_11__["ProductsModule"], _form_form_module__WEBPACK_IMPORTED_MODULE_12__["FormModule"], _orders_orders_module__WEBPACK_IMPORTED_MODULE_13__["OrdersModule"], _validation_validation_module__WEBPACK_IMPORTED_MODULE_14__["ValidationModule"], _admin_admin_module__WEBPACK_IMPORTED_MODULE_15__["AdminModule"], _error_error_module__WEBPACK_IMPORTED_MODULE_16__["ErrorModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"], _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_19__["LayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_20__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_21__["MatButtonModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_22__["MatSidenavModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_23__["MatIconModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_24__["MatListModule"], _slider_slider_module__WEBPACK_IMPORTED_MODULE_27__["SliderModule"], _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_29__["BoxDroneModule"], _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_30__["BoxMobileModule"], _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_31__["BoxLastProductModule"], _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_32__["BoxFooterModule"], _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_33__["BoxSpecialModule"]]]
+      imports: [[_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__["NgbModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_5__["AuthModule"], _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfileModule"], _navi_navi_module__WEBPACK_IMPORTED_MODULE_7__["NaviModule"], _users_users_module__WEBPACK_IMPORTED_MODULE_8__["UsersModule"], _cart_cart_module__WEBPACK_IMPORTED_MODULE_9__["CartModule"], _products_products_module__WEBPACK_IMPORTED_MODULE_10__["ProductsModule"], _form_form_module__WEBPACK_IMPORTED_MODULE_11__["FormModule"], _orders_orders_module__WEBPACK_IMPORTED_MODULE_12__["OrdersModule"], _validation_validation_module__WEBPACK_IMPORTED_MODULE_13__["ValidationModule"], _admin_admin_module__WEBPACK_IMPORTED_MODULE_14__["AdminModule"], _error_error_module__WEBPACK_IMPORTED_MODULE_15__["ErrorModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__["BrowserAnimationsModule"], _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_18__["LayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_19__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_20__["MatButtonModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_21__["MatSidenavModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__["MatIconModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _slider_slider_module__WEBPACK_IMPORTED_MODULE_26__["SliderModule"], _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_28__["BoxDroneModule"], _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_29__["BoxMobileModule"], _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_30__["BoxLastProductModule"], _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_31__["BoxFooterModule"], _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_32__["BoxSpecialModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_18__["NavigationComponent"], _navigation_bar_navigation_bar_component__WEBPACK_IMPORTED_MODULE_25__["NavigationBarComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"]],
-        imports: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_28__["NgbModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_5__["AuthModule"], _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfileModule"], _navi_navi_module__WEBPACK_IMPORTED_MODULE_7__["NaviModule"], _users_users_module__WEBPACK_IMPORTED_MODULE_9__["UsersModule"], _cart_cart_module__WEBPACK_IMPORTED_MODULE_10__["CartModule"], _products_products_module__WEBPACK_IMPORTED_MODULE_11__["ProductsModule"], _form_form_module__WEBPACK_IMPORTED_MODULE_12__["FormModule"], _orders_orders_module__WEBPACK_IMPORTED_MODULE_13__["OrdersModule"], _validation_validation_module__WEBPACK_IMPORTED_MODULE_14__["ValidationModule"], _admin_admin_module__WEBPACK_IMPORTED_MODULE_15__["AdminModule"], _error_error_module__WEBPACK_IMPORTED_MODULE_16__["ErrorModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"], _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_19__["LayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_20__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_21__["MatButtonModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_22__["MatSidenavModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_23__["MatIconModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_24__["MatListModule"], _slider_slider_module__WEBPACK_IMPORTED_MODULE_27__["SliderModule"], _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_29__["BoxDroneModule"], _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_30__["BoxMobileModule"], _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_31__["BoxLastProductModule"], _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_32__["BoxFooterModule"], _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_33__["BoxSpecialModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_17__["NavigationComponent"], _navigation_bar_navigation_bar_component__WEBPACK_IMPORTED_MODULE_24__["NavigationBarComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_25__["HomeComponent"]],
+        imports: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__["NgbModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_5__["AuthModule"], _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfileModule"], _navi_navi_module__WEBPACK_IMPORTED_MODULE_7__["NaviModule"], _users_users_module__WEBPACK_IMPORTED_MODULE_8__["UsersModule"], _cart_cart_module__WEBPACK_IMPORTED_MODULE_9__["CartModule"], _products_products_module__WEBPACK_IMPORTED_MODULE_10__["ProductsModule"], _form_form_module__WEBPACK_IMPORTED_MODULE_11__["FormModule"], _orders_orders_module__WEBPACK_IMPORTED_MODULE_12__["OrdersModule"], _validation_validation_module__WEBPACK_IMPORTED_MODULE_13__["ValidationModule"], _admin_admin_module__WEBPACK_IMPORTED_MODULE_14__["AdminModule"], _error_error_module__WEBPACK_IMPORTED_MODULE_15__["ErrorModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__["BrowserAnimationsModule"], _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_18__["LayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_19__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_20__["MatButtonModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_21__["MatSidenavModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__["MatIconModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _slider_slider_module__WEBPACK_IMPORTED_MODULE_26__["SliderModule"], _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_28__["BoxDroneModule"], _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_29__["BoxMobileModule"], _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_30__["BoxLastProductModule"], _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_31__["BoxFooterModule"], _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_32__["BoxSpecialModule"]]
       });
     })();
     /*@__PURE__*/
@@ -1282,17 +1248,71 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_18__["NavigationComponent"], _navigation_bar_navigation_bar_component__WEBPACK_IMPORTED_MODULE_25__["NavigationBarComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_26__["HomeComponent"]],
-          imports: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_28__["NgbModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_5__["AuthModule"], _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfileModule"], _navi_navi_module__WEBPACK_IMPORTED_MODULE_7__["NaviModule"], _users_users_module__WEBPACK_IMPORTED_MODULE_9__["UsersModule"], _cart_cart_module__WEBPACK_IMPORTED_MODULE_10__["CartModule"], _products_products_module__WEBPACK_IMPORTED_MODULE_11__["ProductsModule"], _form_form_module__WEBPACK_IMPORTED_MODULE_12__["FormModule"], _orders_orders_module__WEBPACK_IMPORTED_MODULE_13__["OrdersModule"], _validation_validation_module__WEBPACK_IMPORTED_MODULE_14__["ValidationModule"], _admin_admin_module__WEBPACK_IMPORTED_MODULE_15__["AdminModule"], _error_error_module__WEBPACK_IMPORTED_MODULE_16__["ErrorModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_17__["BrowserAnimationsModule"], _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_19__["LayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_20__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_21__["MatButtonModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_22__["MatSidenavModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_23__["MatIconModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_24__["MatListModule"], _slider_slider_module__WEBPACK_IMPORTED_MODULE_27__["SliderModule"], _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_29__["BoxDroneModule"], _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_30__["BoxMobileModule"], _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_31__["BoxLastProductModule"], _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_32__["BoxFooterModule"], _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_33__["BoxSpecialModule"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_17__["NavigationComponent"], _navigation_bar_navigation_bar_component__WEBPACK_IMPORTED_MODULE_24__["NavigationBarComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_25__["HomeComponent"]],
+          imports: [_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_27__["NgbModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _auth_auth_module__WEBPACK_IMPORTED_MODULE_5__["AuthModule"], _profile_profile_module__WEBPACK_IMPORTED_MODULE_6__["ProfileModule"], _navi_navi_module__WEBPACK_IMPORTED_MODULE_7__["NaviModule"], _users_users_module__WEBPACK_IMPORTED_MODULE_8__["UsersModule"], _cart_cart_module__WEBPACK_IMPORTED_MODULE_9__["CartModule"], _products_products_module__WEBPACK_IMPORTED_MODULE_10__["ProductsModule"], _form_form_module__WEBPACK_IMPORTED_MODULE_11__["FormModule"], _orders_orders_module__WEBPACK_IMPORTED_MODULE_12__["OrdersModule"], _validation_validation_module__WEBPACK_IMPORTED_MODULE_13__["ValidationModule"], _admin_admin_module__WEBPACK_IMPORTED_MODULE_14__["AdminModule"], _error_error_module__WEBPACK_IMPORTED_MODULE_15__["ErrorModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_16__["BrowserAnimationsModule"], _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_18__["LayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_19__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_20__["MatButtonModule"], _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_21__["MatSidenavModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__["MatIconModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _slider_slider_module__WEBPACK_IMPORTED_MODULE_26__["SliderModule"], _box_drone_box_drone_module__WEBPACK_IMPORTED_MODULE_28__["BoxDroneModule"], _box_mobile_box_mobile_module__WEBPACK_IMPORTED_MODULE_29__["BoxMobileModule"], _box_last_product_box_last_product_module__WEBPACK_IMPORTED_MODULE_30__["BoxLastProductModule"], _box_footer_box_footer_module__WEBPACK_IMPORTED_MODULE_31__["BoxFooterModule"], _box_special_box_special_module__WEBPACK_IMPORTED_MODULE_32__["BoxSpecialModule"]],
           providers: [],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         }]
       }], function () {
-        return [{
-          type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_34__["AuthService"]
-        }, {
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"]
-        }];
+        return [];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/app.service.ts":
+  /*!********************************!*\
+    !*** ./src/app/app.service.ts ***!
+    \********************************/
+
+  /*! exports provided: AppService */
+
+  /***/
+  function srcAppAppServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AppService", function () {
+      return AppService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var AppService = function AppService() {
+      _classCallCheck(this, AppService);
+
+      this.urlAuth = "http://ec2-18-197-120-182.eu-central-1.compute.amazonaws.com:8090";
+      this.urlApi = "http://ec2-18-197-120-182.eu-central-1.compute.amazonaws.com:8080";
+    };
+
+    AppService.ɵfac = function AppService_Factory(t) {
+      return new (t || AppService)();
+    };
+
+    AppService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: AppService,
+      factory: AppService.ɵfac,
+      providedIn: 'root'
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+          providedIn: 'root'
+        }]
+      }], function () {
+        return [];
       }, null);
     })();
     /***/
@@ -1342,20 +1362,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthInterceptorService, [{
         key: "intercept",
         value: function intercept(req, next) {
-          return next.handle(this.getAuthorizedRequest(req)); //  return next.handle(this.getAuthorizedRequest(req)).pipe(
-          //     catchError((err, caught)=>{
-          //       if(err instanceof HttpErrorResponse && err.status === 401){
-          //           this.auth.logout('Sesja wygasła! Zaloguj się ponownie!')
-          //           return empty()
-          //       }
-          //       if(err instanceof HttpErrorResponse && err.status === 404){
-          //         console.error(err.error)
-          //         console.log(err.status)
-          //         return empty()
-          //     }
-          //       return Observable.throw(err)
-          //     })
-          //  )
+          return next.handle(this.getAuthorizedRequest(req));
         }
       }, {
         key: "getAuthorizedRequest",
@@ -1514,8 +1521,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _confirm_account_confirm_account_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./confirm-account/confirm-account.component */
-    "./src/app/auth/confirm-account/confirm-account.component.ts"); // import { AuthorizedGuard } from './authorized.guard';
-
+    "./src/app/auth/confirm-account/confirm-account.component.ts");
 
     var AuthModule = function AuthModule() {
       _classCallCheck(this, AuthModule);
@@ -1764,20 +1770,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var AuthService = /*#__PURE__*/function () {
-      function AuthService(http, userCodeEnctryptService, router) {
-        var _this3 = this;
+      function AuthService(http, userCodeEnctryptService, router, appService) {
+        var _this2 = this;
 
         _classCallCheck(this, AuthService);
 
         this.http = http;
         this.userCodeEnctryptService = userCodeEnctryptService;
         this.router = router;
-        this.session = new rxjs_internal_BehaviorSubject__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](null); // urlLocal = "http://localhost:8090/login"
-        // urlRemote = "https://x-tom-auth.herokuapp.com/login"
-
-        this.urlRemoteAWS = "http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/login";
+        this.appService = appService;
+        this.session = new rxjs_internal_BehaviorSubject__WEBPACK_IMPORTED_MODULE_3__["BehaviorSubject"](null);
         this.isAuthenticated = false;
         this.userSession = {
           token: '',
@@ -1787,29 +1797,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.state = this.session.pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (session) {
           return session && !!session.token;
         }), Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (state) {
-          return _this3.isAuthenticated = state;
+          return _this2.isAuthenticated = state;
         }));
         this.checkRole = this.session.pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (role) {
-          return _this3.role = role.user.user_role;
+          return _this2.role = role.user.user_role;
         }));
       }
 
       _createClass(AuthService, [{
         key: "login",
         value: function login(credentials) {
-          var _this4 = this;
+          var _this3 = this;
 
-          return this.http.post(this.urlRemoteAWS, credentials).subscribe(function (session) {
-            _this4.session.next(session);
+          return this.http.post(this.appService.urlAuth, credentials).subscribe(function (session) {
+            _this3.session.next(session);
 
             if (session.status) {
-              _this4.role = session.user.user_role;
-              _this4.name = session.user.user_firstName;
-              _this4.status = session.status;
+              _this3.role = session.user.user_role;
+              _this3.name = session.user.user_firstName;
+              _this3.status = session.status;
 
-              _this4.setTokenInLocalStorage(session.token);
+              _this3.setTokenInLocalStorage(session.token);
 
-              _this4.setUserIdInStorage(session.user.user_id);
+              _this3.setUserIdInStorage(session.user.user_id);
             }
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
@@ -1835,20 +1845,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getCurrentUser() {
           var session = this.session.getValue();
           return session && session.user;
-        } // ---> localhost
-        // checkEmail(email:string){
-        //   return this.http.post<boolean>("http://localhost:8090/check-email", email)
-        // }
-        // ---> remote
-        // checkEmail(email:string){
-        //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/check-email", email)
-        // }
-        // ---> remote aws
-
+        }
       }, {
         key: "checkEmail",
         value: function checkEmail(email) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/check-email", email);
+          return this.http.post(this.appService.urlAuth + "/check-email", email);
         }
       }, {
         key: "clearRole",
@@ -1891,122 +1892,49 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getUserIdInStorage",
         value: function getUserIdInStorage() {
-          var _this5 = this;
+          var _this4 = this;
 
           var code = JSON.parse(localStorage.getItem('x-tom------>____ <o_o> ____<----x-tom'));
           var token = this.getTokenInLocalStorage();
           var userId = this.userCodeEnctryptService.decryptCode(code);
-          this.userSession.token = token; // ---> localhost
-          // this.http.get<User>("http://localhost:8080/user/"+userId).subscribe(
-          //   response =>{
-          //       this.userSession.user = response
-          //       this.role = response.user_role
-          //       this.name = response.user_firstName
-          //       this.session.next(this.userSession)
-          //   }
-          // )
-          // ---->remote
-          // this.http.get<User>("https://x-tom-api.herokuapp.com/user/"+userId).subscribe(
-          //   response =>{
-          //       this.userSession.user = response
-          //       this.role = response.user_role
-          //       this.name = response.user_firstName
-          //       this.session.next(this.userSession)
-          //   }
-          // )
-          // ---->remote aws
+          this.userSession.token = token;
+          this.http.get(this.appService.urlApi + "/user/" + userId).subscribe(function (response) {
+            _this4.userSession.user = response;
+            _this4.role = response.user_role;
+            _this4.name = response.user_firstName;
 
-          this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/" + userId).subscribe(function (response) {
-            _this5.userSession.user = response;
-            _this5.role = response.user_role;
-            _this5.name = response.user_firstName;
-
-            _this5.session.next(_this5.userSession);
+            _this4.session.next(_this4.userSession);
           });
-        } // ---> localhost
-        // passwordResetVerifyUser(email:string){
-        //   return this.http.post<boolean>("http://localhost:8090/password-reset/verify-user", email)
-        // }
-        // ---->remote
-        // passwordResetVerifyUser(email:string){
-        //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/verify-user", email)
-        // }
-        // ---->remote aws
-
+        }
       }, {
         key: "passwordResetVerifyUser",
         value: function passwordResetVerifyUser(email) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/password-reset/verify-user", email);
-        } // ---> localhost
-        // passwordResetCheckCode(passwordResetData:PasswrodResetData){
-        //   return this.http.post<boolean>("http://localhost:8090/password-reset/check-code", passwordResetData)
-        // }
-        // ---->remote
-        // passwordResetCheckCode(passwordResetData:PasswrodResetData){
-        //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/check-code", passwordResetData)
-        // }
-        // ---->remote aws
-
+          return this.http.post(this.appService.urlAuth + "/password-reset/verify-user", email);
+        }
       }, {
         key: "passwordResetCheckCode",
         value: function passwordResetCheckCode(passwordResetData) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/password-reset/check-code", passwordResetData);
-        } // ---> localhost
-        // passwordResetSetNew(passwordResetData:PasswrodResetData){
-        //   return this.http.post<boolean>("http://localhost:8090/password-reset/set-new", passwordResetData)
-        // }
-        // ---->remote
-        // passwordResetSetNew(passwordResetData:PasswrodResetData){
-        //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/set-new", passwordResetData)
-        // }
-        // ---->remote aws
-
+          return this.http.post(this.appService.urlAuth + "/password-reset/check-code", passwordResetData);
+        }
       }, {
         key: "passwordResetSetNew",
         value: function passwordResetSetNew(passwordResetData) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/password-reset/set-new", passwordResetData);
-        } // ---> localhost
-        // changePassword(changePasswordData:ChangePassword){
-        //   return this.http.put<boolean>("http://localhost:8080/user/change-password", changePasswordData)
-        // }
-        // ---->remote
-        // changePassword(changePasswordData:ChangePassword){
-        //   return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-password", changePasswordData)
-        // }
-        // ---->remote aws
-
+          return this.http.post(this.appService.urlAuth + "/password-reset/set-new", passwordResetData);
+        }
       }, {
         key: "changePassword",
         value: function changePassword(changePasswordData) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/change-password", changePasswordData);
-        } // ---> localhost
-        // changeEmail(changeEmailData:ChangeEmail){
-        //   return this.http.put<boolean>("http://localhost:8080/user/change-email", changeEmailData)
-        // }
-        // ---->remote
-        // changeEmail(changeEmailData:ChangeEmail){
-        //   return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-email", changeEmailData)
-        // }
-        // ---->remote aws
-
+          return this.http.put(this.appService.urlApi + "/user/change-password", changePasswordData);
+        }
       }, {
         key: "changeEmail",
         value: function changeEmail(changeEmailData) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/change-email", changeEmailData);
-        } // ---> localhost
-        // confirmPassword(changePasswordData:ChangePassword){
-        //   return this.http.post<boolean>("http://localhost:8080/user/confirm-password", changePasswordData)
-        // }
-        // ---->remote
-        // confirmPassword(changePasswordData:ChangePassword){
-        //   return this.http.post<boolean>("https://x-tom-api.herokuapp.com/user/confirm-password", changePasswordData)
-        // }
-        // ---->remote aws
-
+          return this.http.put(this.appService.urlApi + "/user/change-email", changeEmailData);
+        }
       }, {
         key: "confirmPassword",
         value: function confirmPassword(changePasswordData) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/confirm-password", changePasswordData);
+          return this.http.post(this.appService.urlApi + "/user/confirm-password", changePasswordData);
         }
       }]);
 
@@ -2014,7 +1942,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     AuthService.ɵfac = function AuthService_Factory(t) {
-      return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_user_code_encrypt_service__WEBPACK_IMPORTED_MODULE_4__["UserCodeEncryptService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]));
+      return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_user_code_encrypt_service__WEBPACK_IMPORTED_MODULE_4__["UserCodeEncryptService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_6__["AppService"]));
     };
 
     AuthService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -2037,6 +1965,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: _user_code_encrypt_service__WEBPACK_IMPORTED_MODULE_4__["UserCodeEncryptService"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_6__["AppService"]
         }];
       }, null);
     })();
@@ -2457,7 +2387,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "confirmPassword",
         value: function confirmPassword() {
-          var _this6 = this;
+          var _this5 = this;
 
           if (this.confirmPasswordForm.valid) {
             this.valid = false;
@@ -2465,9 +2395,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.confirmPasswordData.password = this.confirmPasswordForm.get('password').value;
             this.auth.confirmPassword(this.confirmPasswordData).subscribe(function (response) {
               if (response) {
-                _this6.passwordConfirm = response;
+                _this5.passwordConfirm = response;
               } else {
-                _this6.correctPassword = response;
+                _this5.correctPassword = response;
               }
             });
           } else {
@@ -2477,7 +2407,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "changeEmail",
         value: function changeEmail() {
-          var _this7 = this;
+          var _this6 = this;
 
           if (this.changeEmailForm.valid) {
             this.valid = false;
@@ -2485,9 +2415,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.changeEmailData.email = this.changeEmailForm.get('email').value;
             this.auth.changeEmail(this.changeEmailData).subscribe(function (response) {
               if (response) {
-                _this7.saveEmail = true;
+                _this6.saveEmail = true;
               } else {
-                _this7.correctChangeEmail = false;
+                _this6.correctChangeEmail = false;
               }
             });
           } else {
@@ -2978,7 +2908,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "confirmPassword",
         value: function confirmPassword() {
-          var _this8 = this;
+          var _this7 = this;
 
           if (this.confirmPasswordForm.valid) {
             this.valid = false;
@@ -2986,9 +2916,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.confirmPasswordData.password = this.confirmPasswordForm.get('password').value;
             this.auth.confirmPassword(this.confirmPasswordData).subscribe(function (response) {
               if (response) {
-                _this8.passwordConfirm = response;
+                _this7.passwordConfirm = response;
               } else {
-                _this8.correctPassword = response;
+                _this7.correctPassword = response;
               }
             });
           } else {
@@ -3241,15 +3171,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ConfirmAccountComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this9 = this;
+          var _this8 = this;
 
           document.scrollingElement.scrollTop = 0;
           this.route.paramMap.subscribe(function (params) {
-            _this9.code = params.get('code'), _this9.email = params.get('email');
+            _this8.code = params.get('code'), _this8.email = params.get('email');
           });
           this.registerService.confirmAccount(this.code, this.email).subscribe(function (response) {
-            _this9.accountConfirmation = response;
-            _this9.init = true;
+            _this8.accountConfirmation = response;
+            _this8.init = true;
           });
         }
       }]);
@@ -3693,7 +3623,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var LoginComponent = /*#__PURE__*/function () {
       function LoginComponent(fb, auth, route) {
-        var _this10 = this;
+        var _this9 = this;
 
         _classCallCheck(this, LoginComponent);
 
@@ -3709,7 +3639,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this10.options = +params.get('options');
+          _this9.options = +params.get('options');
         });
       }
 
@@ -3827,65 +3757,35 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var RegisterService = /*#__PURE__*/function () {
-      function RegisterService(http) {
+      function RegisterService(http, appService) {
         _classCallCheck(this, RegisterService);
 
         this.http = http;
-      } // ---> localhost
-      // checkEmail(email:string){
-      //   return this.http.post<boolean>("http://localhost:8090/account/check-email", email)
-      // }
-      // ----> remote
-      // checkEmail(email:string){
-      //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/account/check-email", email)
-      // }
-      // ----> remote aws
-
+        this.appService = appService;
+      }
 
       _createClass(RegisterService, [{
         key: "checkEmail",
         value: function checkEmail(email) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/check-email", email);
-        } // ---> localhost
-        // saveAccount(account:RegisterData){
-        //   return this.http.post<boolean>("http://localhost:8090/account/save", account)
-        // }
-        // ----> remote
-        // saveAccount(account:RegisterData){
-        //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/account/save", account)
-        // }
-        // ----> remote aws
-
+          return this.http.post(this.appService.urlAuth + "/account/check-email", email);
+        }
       }, {
         key: "saveAccount",
         value: function saveAccount(account) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/save", account);
-        } // ---> localhost
-        // confirmAccount(code:string, email:string){
-        //   return this.http.get<boolean>("http://localhost:8090/account/confirmation",{
-        //     params:{
-        //       code:code,
-        //       email:email
-        //     }
-        //   })
-        // }
-        // ----> remote
-        // confirmAccount(code:string, email:string){
-        //   return this.http.get<boolean>("https://x-tom-auth.herokuapp.com/account/confirmation",{
-        //     params:{
-        //       code:code,
-        //       email:email
-        //     }
-        //   })
-        // }
-        // ----> remote aws
-
+          return this.http.post(this.appService.urlAuth + "/account/save", account);
+        }
       }, {
         key: "confirmAccount",
         value: function confirmAccount(code, email) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/account/confirmation", {
+          return this.http.get(this.appService.urlAuth + "/account/confirmation", {
             params: {
               code: code,
               email: email
@@ -3898,7 +3798,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     RegisterService.ɵfac = function RegisterService_Factory(t) {
-      return new (t || RegisterService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || RegisterService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]));
     };
 
     RegisterService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -3917,6 +3817,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]
         }];
       }, null);
     })();
@@ -4283,17 +4185,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkEmail",
         value: function checkEmail() {
-          var _this11 = this;
+          var _this10 = this;
 
           if (this.emailForm.valid) {
             this.validEmail = false;
             var email = this.emailForm.get('user_email').value;
             this.registerService.checkEmail(email).subscribe(function (response) {
               if (response) {
-                _this11.emailExists = false;
-                _this11.checkedEmail = true;
+                _this10.emailExists = false;
+                _this10.checkedEmail = true;
               } else {
-                _this11.emailExists = true;
+                _this10.emailExists = true;
               }
             });
           } else {
@@ -4303,7 +4205,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "saveAccount",
         value: function saveAccount() {
-          var _this12 = this;
+          var _this11 = this;
 
           if (this.passwordForm.valid) {
             this.validPass = false;
@@ -4311,7 +4213,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.account.account_confirmation_password = this.passwordForm.get('user_password').value;
             this.registerService.saveAccount(this.account).subscribe(function (response) {
               if (response) {
-                _this12.registerConfirm = true;
+                _this11.registerConfirm = true;
               } else {}
             });
           } else {
@@ -4935,15 +4837,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ResetPasswordComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this13 = this;
+          var _this12 = this;
 
           document.scrollingElement.scrollTop = 0;
           this.route.queryParams.subscribe(function (param) {
-            _this13.passwordResetData.email = param['user'];
-            _this13.passwordResetData.code = param['code'];
+            _this12.passwordResetData.email = param['user'];
+            _this12.passwordResetData.code = param['code'];
           });
           this.auth.passwordResetCheckCode(this.passwordResetData).subscribe(function (response) {
-            _this13.linkIsCorrect = response;
+            _this12.linkIsCorrect = response;
           });
         }
       }, {
@@ -4985,13 +4887,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "resetPassword",
         value: function resetPassword() {
-          var _this14 = this;
+          var _this13 = this;
 
           if (this.resetPasswordForm.valid) {
             this.valid = false;
             this.passwordResetData.password = this.resetPasswordForm.get('password').value;
             this.auth.passwordResetSetNew(this.passwordResetData).subscribe(function (response) {
-              _this14.saveNewPassword = response;
+              _this13.saveNewPassword = response;
             });
           } else {
             this.valid = true;
@@ -5651,24 +5553,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(BoxDroneComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this15 = this;
+          var _this14 = this;
 
           this.productsService.getByType("drone").subscribe(function (response) {
             for (var i = 0; i <= 3; i++) {
               if (i == 0) {
-                _this15.item1 = response[i];
+                _this14.item1 = response[i];
               }
 
               if (i == 1) {
-                _this15.item2 = response[i];
+                _this14.item2 = response[i];
               }
 
               if (i == 2) {
-                _this15.item3 = response[i];
+                _this14.item3 = response[i];
               }
 
               if (i == 3) {
-                _this15.item4 = response[i];
+                _this14.item4 = response[i];
               }
             }
           });
@@ -7770,46 +7672,41 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getMyCartWithDatabase",
         value: function getMyCartWithDatabase() {
-          var _this16 = this;
+          var _this15 = this;
 
           if (this.auth.getCurrentUser()) {
             this.cartService.getMyCartItems(this.auth.getCurrentUser().user_id).subscribe(function (response) {
               response.forEach(function (item) {
-                _this16.cartLocalItemList.push(item);
+                _this15.cartLocalItemList.push(item);
               });
 
-              _this16.cartLocalItemList.forEach(function (i) {});
+              _this15.cartLocalItemList.forEach(function (i) {});
 
-              _this16.checkCartIsEmpty();
+              _this15.checkCartIsEmpty();
 
-              _this16.calculatePrice();
-            } // ,error =>{
-            //   if(error instanceof HttpErrorResponse){
-            //     this.statusError = error.status
-            //   }
-            // } 
-            );
+              _this15.calculatePrice();
+            });
           }
         }
       }, {
         key: "deleteCartItemInDatabase",
         value: function deleteCartItemInDatabase(idInDatabase, idInList) {
-          var _this17 = this;
+          var _this16 = this;
 
           this.cartService.deleteMyCartItem(idInDatabase).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this17.error = err.message;
+            _this16.error = err.message;
           });
           this.deleteCartItemInLocalStorage(idInList);
         }
       }, {
         key: "removeCartInDatabase",
         value: function removeCartInDatabase() {
-          var _this18 = this;
+          var _this17 = this;
 
           this.cartService.deleteMyCart(this.auth.getCurrentUser().user_id).subscribe(function () {}, function (err) {
-            _this18.error = err.message;
+            _this17.error = err.message;
           });
           this.cartLocalItemList = [];
           this.checkCartIsEmpty();
@@ -8105,69 +8002,40 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var CartService = /*#__PURE__*/function () {
-      function CartService(http) {
+      function CartService(http, appService) {
         _classCallCheck(this, CartService);
 
         this.http = http;
-      } // ---> localhost
-      // getMyCartItems(id:number){
-      //   return this.http.get<CartItemLocalStorage[]>("http://localhost:8080/cart/"+id)
-      // }
-      // ----> remote
-      // getMyCartItems(id:number){
-      //   return this.http.get<CartItemLocalStorage[]>("https://x-tom-api.herokuapp.com/cart/"+id)
-      // }
-      // ----> remote aws
-
+        this.appService = appService;
+      }
 
       _createClass(CartService, [{
         key: "getMyCartItems",
         value: function getMyCartItems(id) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/" + id);
-        } // ---> localhost
-        // setMyCartItem(cartItem:Partial<CartItemUser>){
-        //   return this.http.post<CartItemUser>("http://localhost:8080/cart/create", cartItem)
-        // }
-        // ----> remote
-        // setMyCartItem(cartItem:Partial<CartItemUser>){
-        //   return this.http.post<CartItemUser>("https://x-tom-api.herokuapp.com/cart/create", cartItem)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/cart/" + id);
+        }
       }, {
         key: "setMyCartItem",
         value: function setMyCartItem(cartItem) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/create", cartItem);
-        } // ---> localhost
-        // deleteMyCartItem(id:number){
-        //   return this.http.delete("http://localhost:8080/cart/"+id)
-        // }
-        // ----> remote
-        // deleteMyCartItem(id:number){
-        //   return this.http.delete("https://x-tom-api.herokuapp.com/cart/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.post(this.appService.urlApi + "/cart/create", cartItem);
+        }
       }, {
         key: "deleteMyCartItem",
         value: function deleteMyCartItem(id) {
-          return this.http["delete"]("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/" + id);
-        } // ---> localhost
-        // deleteMyCart(id:number){
-        //   return this.http.delete("http://localhost:8080/cart/clear/"+id)
-        // }
-        // ----> remote
-        // deleteMyCart(id:number){
-        //   return this.http.delete("https://x-tom-api.herokuapp.com/cart/clear/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http["delete"](this.appService.urlApi + "/cart/" + id);
+        }
       }, {
         key: "deleteMyCart",
         value: function deleteMyCart(id) {
-          return this.http["delete"]("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/cart/clear/" + id);
+          return this.http["delete"](this.appService.urlApi + "/cart/clear/" + id);
         }
       }]);
 
@@ -8175,7 +8043,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     CartService.ɵfac = function CartService_Factory(t) {
-      return new (t || CartService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || CartService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]));
     };
 
     CartService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -8194,6 +8062,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]
         }];
       }, null);
     })();
@@ -11967,7 +11837,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrderAddressFormComponent = /*#__PURE__*/function () {
       function OrderAddressFormComponent(fb, auth, route, ordersService) {
-        var _this19 = this;
+        var _this18 = this;
 
         _classCallCheck(this, OrderAddressFormComponent);
 
@@ -11988,10 +11858,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this19.orderId = +params.get('order_id');
+          _this18.orderId = +params.get('order_id');
         });
         this.ordersService.getOrdersById(this.orderId).subscribe(function (response) {
-          _this19.order = response;
+          _this18.order = response;
         });
       }
 
@@ -12003,15 +11873,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "save",
         value: function save() {
-          var _this20 = this;
+          var _this19 = this;
 
           if (this.orderAddressForm.valid) {
             this.valid = false;
             this.ordersService.editAddress(this.orderId, this.orderAddressForm.value).subscribe(function () {
               console.log("Success");
             }, function (err) {
-              _this20.error = err.message;
-              console.log("error: " + _this20.error.valueOf);
+              _this19.error = err.message;
+              console.log("error: " + _this19.error.valueOf);
             });
             this.saved = true;
           } else {
@@ -12559,7 +12429,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrderDetailFormComponent = /*#__PURE__*/function () {
       function OrderDetailFormComponent(fb, auth, route, ordersService) {
-        var _this21 = this;
+        var _this20 = this;
 
         _classCallCheck(this, OrderDetailFormComponent);
 
@@ -12577,10 +12447,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         });
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this21.orderId = +params.get('order_id');
+          _this20.orderId = +params.get('order_id');
         });
         this.ordersService.getOrdersById(this.orderId).subscribe(function (response) {
-          _this21.order = response;
+          _this20.order = response;
         });
       }
 
@@ -12592,15 +12462,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "save",
         value: function save() {
-          var _this22 = this;
+          var _this21 = this;
 
           if (this.orderDetailForm.valid) {
             this.valid = false;
             this.ordersService.editDetail(this.orderId, this.orderDetailForm.value).subscribe(function () {
               console.log("Success");
             }, function (err) {
-              _this22.error = err.message;
-              console.log("error: " + _this22.error.valueOf);
+              _this21.error = err.message;
+              console.log("error: " + _this21.error.valueOf);
             });
             this.saved = true;
           } else {
@@ -16320,38 +16190,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(HomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this23 = this;
+          var _this22 = this;
 
           document.scrollingElement.scrollTop = 0;
           this.productsService.getByStatus("polecamy").subscribe(function (response) {
             for (var i = 0; i <= response.length - 1; i++) {
               if (i <= 2) {
-                _this23.productsRecomendList1.push(response[i]);
+                _this22.productsRecomendList1.push(response[i]);
               }
 
               if (i >= 3 && i <= 5) {
-                _this23.productsRecomendList2.push(response[i]);
+                _this22.productsRecomendList2.push(response[i]);
               }
 
               if (i >= 6 && i <= 8) {
-                _this23.productsRecomendList3.push(response[i]);
+                _this22.productsRecomendList3.push(response[i]);
               }
             }
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-              _this23.statusError = error.status;
+              _this22.statusError = error.status;
               console.error(error.error);
             }
           });
           this.productsService.getByStatus("promocja").subscribe(function (response) {
             for (var i = 0; i <= response.length - 1; i++) {
               if (i <= 1) {
-                _this23.productsPromotion.push(response[i]);
+                _this22.productsPromotion.push(response[i]);
               }
             }
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-              _this23.statusError = error.status;
+              _this22.statusError = error.status;
               console.error(error.error);
             }
           });
@@ -18583,7 +18453,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrderSumaryComponent = /*#__PURE__*/function () {
       function OrderSumaryComponent(route, auth, ordersService, cartService) {
-        var _this24 = this;
+        var _this23 = this;
 
         _classCallCheck(this, OrderSumaryComponent);
 
@@ -18596,7 +18466,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.sumOrder = 0;
         this.auth.state.subscribe();
         this.route.queryParams.subscribe(function (param) {
-          _this24.orderData = JSON.parse(param['order_data']);
+          _this23.orderData = JSON.parse(param['order_data']);
         });
       }
 
@@ -18613,20 +18483,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "save",
         value: function save() {
-          var _this25 = this;
+          var _this24 = this;
 
           this.saveOrderItem().subscribe(function (response) {
-            _this25.saveOrder(response);
+            _this24.saveOrder(response);
           });
           this.saved = true;
         }
       }, {
         key: "saveOrderItem",
         value: function saveOrderItem() {
-          var _this26 = this;
+          var _this25 = this;
 
           this.orderItemList.forEach(function (item) {
-            _this26.sumOrder += item.product.product_price * item.order_item_amount;
+            _this25.sumOrder += item.product.product_price * item.order_item_amount;
           });
           return this.ordersService.createOrderItem(this.orderItemList);
         }
@@ -19340,7 +19210,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrderComponent = /*#__PURE__*/function () {
       function OrderComponent(route, ordersService, auth) {
-        var _this27 = this;
+        var _this26 = this;
 
         _classCallCheck(this, OrderComponent);
 
@@ -19349,13 +19219,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.auth = auth;
         this.auth.state.subscribe();
         this.route.queryParams.subscribe(function (param) {
-          _this27.orderId = param['order_id'];
+          _this26.orderId = param['order_id'];
         });
         this.ordersService.getOrdersById(this.orderId).subscribe(function (response) {
-          _this27.order = response;
+          _this26.order = response;
 
-          _this27.ordersService.getOrderItemByOrderNumber(response.orders_number).subscribe(function (items) {
-            _this27.orderItem = items;
+          _this26.ordersService.getOrderItemByOrderNumber(response.orders_number).subscribe(function (items) {
+            _this26.orderItem = items;
           });
         });
       }
@@ -19621,7 +19491,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrdersDeleteComponent = /*#__PURE__*/function () {
       function OrdersDeleteComponent(auth, route, router, ordersService) {
-        var _this28 = this;
+        var _this27 = this;
 
         _classCallCheck(this, OrdersDeleteComponent);
 
@@ -19632,7 +19502,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.remove = false;
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this28.orderId = +params.get('order_id');
+          _this27.orderId = +params.get('order_id');
         });
       }
 
@@ -19951,7 +19821,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrdersManagerComponent = /*#__PURE__*/function () {
       function OrdersManagerComponent(auth, ordersService, router) {
-        var _this29 = this;
+        var _this28 = this;
 
         _classCallCheck(this, OrdersManagerComponent);
 
@@ -19960,7 +19830,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.router = router;
         this.auth.state.subscribe();
         this.ordersService.getAllOrders().subscribe(function (response) {
-          _this29.orders = response;
+          _this28.orders = response;
         });
       }
 
@@ -20343,139 +20213,65 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var OrdersService = /*#__PURE__*/function () {
-      function OrdersService(http) {
+      function OrdersService(http, appService) {
         _classCallCheck(this, OrdersService);
 
         this.http = http;
-      } // ---> localhost
-      // getAllOrders(){
-      //   return this.http.get<Order[]>("http://localhost:8080/orders/all")
-      // }
-      // ----> remote
-      // getAllOrders(){
-      //   return this.http.get<Order[]>("https://x-tom-api.herokuapp.com/orders/all")
-      // }
-      // ----> remote aws
-
+        this.appService = appService;
+      }
 
       _createClass(OrdersService, [{
         key: "getAllOrders",
         value: function getAllOrders() {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/all");
-        } // ---> localhost
-        // getOrdersById(id:number){
-        //   return this.http.get<Order>("http://localhost:8080/orders/"+id)
-        // }
-        // ----> remote
-        // getOrdersById(id:number){
-        //   return this.http.get<Order>("https://x-tom-api.herokuapp.com/orders/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/orders/all");
+        }
       }, {
         key: "getOrdersById",
         value: function getOrdersById(id) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/" + id);
-        } // ---> localhost
-        // getOrdersByUserId(id:number){
-        //   return this.http.get<Order[]>("http://localhost:8080/orders/user/"+id)
-        // }
-        // ----> remote
-        // getOrdersByUserId(id:number){
-        //   return this.http.get<Order[]>("https://x-tom-api.herokuapp.com:8080/orders/user/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/orders/" + id);
+        }
       }, {
         key: "getOrdersByUserId",
         value: function getOrdersByUserId(id) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/user/" + id);
-        } // ---> localhost
-        // getOrderItemByOrderNumber(number:number){
-        //   return this.http.get<OrderItem[]>("http://localhost:8080/order/number/"+number)
-        // }
-        // ----> remote
-        // getOrderItemByOrderNumber(number:number){
-        //   return this.http.get<OrderItem[]>("https://x-tom-api.herokuapp.com/order/number/"+number)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/orders/user/" + id);
+        }
       }, {
         key: "getOrderItemByOrderNumber",
         value: function getOrderItemByOrderNumber(number) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/order/number/" + number);
-        } // ---> localhost
-        // createOrderItem(item:Partial<OrderItem>[]){
-        //   return this.http.post<Number>("http://localhost:8090/order/create", item)
-        // }
-        // ----> remote
-        // createOrderItem(item:Partial<OrderItem>[]){
-        //   return this.http.post<Number>("https://x-tom-auth.herokuapp.com/order/create", item)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/order/number/" + number);
+        }
       }, {
         key: "createOrderItem",
         value: function createOrderItem(item) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/order/create", item);
-        } // ---> localhost
-        // createOrder(order:Partial<Order>){
-        //   return this.http.post("http://localhost:8090/orders/create", order)
-        // }
-        // ----> remote
-        // createOrder(order:Partial<Order>){
-        //   return this.http.post("https://x-tom-auth.herokuapp.com/orders/create", order)
-        // }
-        // ----> remote aws
-
+          return this.http.post(this.appService.urlAuth + "/order/create", item);
+        }
       }, {
         key: "createOrder",
         value: function createOrder(order) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/orders/create", order);
-        } // ---> localhost
-        // editDetail(id:number, order:Partial<Order>){
-        //   return this.http.put<Order>("http://localhost:8080/orders/detail/"+id, order)// ----> remote
-        // }
-        // ----> remote
-        // editDetail(id:number, order:Partial<Order>){
-        //   return this.http.put<Order>("https://x-tom-api.herokuapp.com/orders/detail/"+id, order)// ----> remote
-        // }
-        // ----> remote aws
-
+          return this.http.post(this.appService.urlAuth + "/orders/create", order);
+        }
       }, {
         key: "editDetail",
         value: function editDetail(id, order) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/detail/" + id, order); // ----> remote
-        } // ---> localhost
-        // editAddress(id:number, order:Partial<Order>){
-        //   return this.http.put<Order>("http://localhost:8080/orders/address/"+id, order)
-        // }
-        // ----> remote
-        // editAddress(id:number, order:Partial<Order>){
-        //   return this.http.put<Order>("https://x-tom-api.herokuapp.com/orders/address/"+id, order)
-        // }
-        // ----> remote aws
-
+          return this.http.put(this.appService.urlApi + "/orders/detail/" + id, order); // ----> remote
+        }
       }, {
         key: "editAddress",
         value: function editAddress(id, order) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/address/" + id, order);
-        } // ---> localhost
-        // deleteOrder(id:number){
-        //   return this.http.delete("http://localhost:8080/orders/"+id)
-        // }
-        // ----> remote
-        // deleteOrder(id:number){
-        //   return this.http.delete("https://x-tom-api.herokuapp.com/orders/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.put(this.appService.urlApi + "/orders/address/" + id, order);
+        }
       }, {
         key: "deleteOrder",
         value: function deleteOrder(id) {
-          return this.http["delete"]("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/orders/" + id);
+          return this.http["delete"](this.appService.urlApi + "/orders/" + id);
         }
       }]);
 
@@ -20483,7 +20279,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     OrdersService.ɵfac = function OrdersService_Factory(t) {
-      return new (t || OrdersService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || OrdersService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]));
     };
 
     OrdersService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -20502,6 +20298,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]
         }];
       }, null);
     })();
@@ -20746,7 +20544,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var OrdersComponent = /*#__PURE__*/function () {
       function OrdersComponent(auth, ordersService, router) {
-        var _this30 = this;
+        var _this29 = this;
 
         _classCallCheck(this, OrdersComponent);
 
@@ -20757,10 +20555,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         if (this.auth.isAuthenticated) {
           this.ordersService.getOrdersByUserId(this.auth.getCurrentUser().user_id).subscribe(function (response) {
-            _this30.userOrders = response;
+            _this29.userOrders = response;
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-              _this30.statusError = error.status;
+              _this29.statusError = error.status;
               console.error(error.error);
             }
           });
@@ -21141,12 +20939,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AddProductComponent, [{
         key: "addProduct",
         value: function addProduct(product) {
-          var _this31 = this;
+          var _this30 = this;
 
           this.http.create(product).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this31.error = err.message;
+            _this30.error = err.message;
           });
         }
       }, {
@@ -21417,7 +21215,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var DeleteProductComponent = /*#__PURE__*/function () {
       function DeleteProductComponent(http, auth, route) {
-        var _this32 = this;
+        var _this31 = this;
 
         _classCallCheck(this, DeleteProductComponent);
 
@@ -21427,19 +21225,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.remove = false;
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this32.id = +params.get('product_id');
+          _this31.id = +params.get('product_id');
         });
       }
 
       _createClass(DeleteProductComponent, [{
         key: "delete",
         value: function _delete() {
-          var _this33 = this;
+          var _this32 = this;
 
           this.http["delete"](this.id).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this33.error = err.message;
+            _this32.error = err.message;
           });
           this.remove = true;
         }
@@ -21765,7 +21563,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var EditProductComponent = /*#__PURE__*/function () {
       function EditProductComponent(http, auth, route) {
-        var _this34 = this;
+        var _this33 = this;
 
         _classCallCheck(this, EditProductComponent);
 
@@ -21774,25 +21572,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.route = route;
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this34.id = +params.get('product_id');
+          _this33.id = +params.get('product_id');
         });
         this.http.getById(this.id).subscribe(function (response) {
-          _this34.editedProduct = response;
-          _this34.typeProduct = response.product_type;
+          _this33.editedProduct = response;
+          _this33.typeProduct = response.product_type;
         });
       }
 
       _createClass(EditProductComponent, [{
         key: "updateProduct",
         value: function updateProduct(product) {
-          var _this35 = this;
+          var _this34 = this;
 
           console.log(product);
           this.http.update(this.id, product).subscribe(function (response) {
             console.log("Success " + response);
           }, function (err) {
-            _this35.error = err.message;
-            console.log("error: " + _this35.error);
+            _this34.error = err.message;
+            console.log("error: " + _this34.error);
           });
         }
       }, {
@@ -23058,7 +22856,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       },
       directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _box_last_product_box_last_product_box_last_product_component__WEBPACK_IMPORTED_MODULE_5__["BoxLastProductComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["SelectControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_x"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterLinkWithHref"]],
-      styles: [".mat-snack-bar-container[_ngcontent-%COMP%]{\n    background-color: #28a745 !important;\n}\n\n.img[_ngcontent-%COMP%]{\n    overflow: hidden;\n}\n\n.img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 100%;\n    height: auto;\n}\n\n.description[_ngcontent-%COMP%]{\n    width: 100%;\n    margin: 0 auto;\n    margin-bottom: 30px;\n    text-align: left;\n    color: #000000;\n    font-size: 26px;\n    font-weight: 600;\n    line-height: 40px;\n    text-transform: capitalize;\n}\n\n.spec-short[_ngcontent-%COMP%]{\n    width: 80%;\n    border-top: 1px solid rgba(77, 77, 77, 0.2);\n    padding-top: 10px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    margin: 0px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    color: #000000;\n}\n\n.cart-box[_ngcontent-%COMP%]{\n    width: 80%;\n    border: 1px solid rgba(77, 77, 77, 0.2);\n    border-radius: 15px;\n    padding: 10px;\n}\n\n.price[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: right;\n    margin-bottom: -30px;\n}\n\n.price[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    margin: 0;\n    font-size: 26px;\n    font-weight: 500;\n}\n\n.form[_ngcontent-%COMP%]{\n    width: 100%;\n    overflow: hidden;\n    color: #ffffff;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    border-radius: 666px;\n    margin-left: 5px;\n    width: 80%;\n    height: auto;\n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    text-decoration: none; \n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{\n    color: green;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    line-height: 80%;\n}\n\n.form[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n    width: 60px;\n    border-radius: 80px;\n}\n\n.select-btn[_ngcontent-%COMP%]{\n    display: inline-block;\n}\n\n.spec-wraper[_ngcontent-%COMP%]{\n    border-top: 1px solid  rgba(77, 77, 77, 0.1);\n    \n    margin-top: 40px;\n    \n    padding: 20px;\n    overflow: hidden;\n}\n\n.spec[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:hover{\n    background-color:#e6e6e6;\n}\n\n.spec-wraper[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 40%;\n    height: auto;\n    padding-top: 40px;\n}\n\n.logo[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdHMvcHJvZHVjdC9sYXB0b3AtYnktaWQvbGFwdG9wLWJ5LWlkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFFQTtJQUNJLG9DQUFvQztBQUN4Qzs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksV0FBVztJQUNYLGNBQWM7SUFDZCxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGNBQWM7SUFDZCxlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtJQUNqQiwwQkFBMEI7QUFDOUI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsMkNBQTJDO0lBQzNDLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLHVDQUF1QztJQUN2QyxtQkFBbUI7SUFDbkIsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIsb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksU0FBUztJQUNULGVBQWU7SUFDZixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsZ0JBQWdCO0lBQ2hCLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxvQkFBb0I7SUFDcEIsZ0JBQWdCO0lBQ2hCLFVBQVU7SUFDVixZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksY0FBYztJQUNkLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksNENBQTRDO0lBQzVDLHFEQUFxRDtJQUNyRCxnQkFBZ0I7SUFDaEIseUJBQXlCO0lBQ3pCLGFBQWE7SUFDYixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSx3QkFBd0I7QUFDNUI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsWUFBWTtJQUNaLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3JjL2FwcC9wcm9kdWN0cy9wcm9kdWN0L2xhcHRvcC1ieS1pZC9sYXB0b3AtYnktaWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuXG4ubWF0LXNuYWNrLWJhci1jb250YWluZXJ7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4YTc0NSAhaW1wb3J0YW50O1xufVxuXG4uaW1ne1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5pbWcgaW1nIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IGF1dG87XG59XG5cbi5kZXNjcmlwdGlvbntcbiAgICB3aWR0aDogMTAwJTtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICBtYXJnaW4tYm90dG9tOiAzMHB4O1xuICAgIHRleHQtYWxpZ246IGxlZnQ7XG4gICAgY29sb3I6ICMwMDAwMDA7XG4gICAgZm9udC1zaXplOiAyNnB4O1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgbGluZS1oZWlnaHQ6IDQwcHg7XG4gICAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XG59XG5cbi5zcGVjLXNob3J0e1xuICAgIHdpZHRoOiA4MCU7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoNzcsIDc3LCA3NywgMC4yKTtcbiAgICBwYWRkaW5nLXRvcDogMTBweDtcbn1cblxuLnNwZWMtc2hvcnQgcHtcbiAgICBjb2xvcjogIzRkNGQ0ZDtcbiAgICBtYXJnaW46IDBweDtcbn1cblxuLnNwZWMtc2hvcnQgcCBzcGFue1xuICAgIGNvbG9yOiAjMDAwMDAwO1xufVxuXG4uY2FydC1ib3h7XG4gICAgd2lkdGg6IDgwJTtcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDc3LCA3NywgNzcsIDAuMik7XG4gICAgYm9yZGVyLXJhZGl1czogMTVweDtcbiAgICBwYWRkaW5nOiAxMHB4O1xufVxuXG4ucHJpY2V7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gICAgbWFyZ2luLWJvdHRvbTogLTMwcHg7XG59XG5cbi5wcmljZSBwIHtcbiAgICBtYXJnaW46IDA7XG4gICAgZm9udC1zaXplOiAyNnB4O1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG59XG5cbi5mb3Jte1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG4gICAgY29sb3I6ICNmZmZmZmY7XG59XG5cbi5mb3JtIGEge1xuICAgIGJvcmRlci1yYWRpdXM6IDY2NnB4O1xuICAgIG1hcmdpbi1sZWZ0OiA1cHg7XG4gICAgd2lkdGg6IDgwJTtcbiAgICBoZWlnaHQ6IGF1dG87XG59XG5cbi5vcHRpb25zIGF7XG4gICAgY29sb3I6ICM0ZDRkNGQ7XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBcbn1cblxuLm9wdGlvbnMgYTpob3ZlcntcbiAgICBjb2xvcjogZ3JlZW47XG59XG5cbi5mb3JtIGEgc3BhbntcbiAgICBsaW5lLWhlaWdodDogODAlO1xufVxuXG4uZm9ybSBzZWxlY3Qge1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDgwcHg7XG59XG5cbi5zZWxlY3QtYnRue1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cblxuLnNwZWMtd3JhcGVye1xuICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCAgcmdiYSg3NywgNzcsIDc3LCAwLjEpO1xuICAgIC8qIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAgcmdiYSg3NywgNzcsIDc3LCAwLjIpOyAqL1xuICAgIG1hcmdpbi10b3A6IDQwcHg7XG4gICAgLyogbWFyZ2luLWJvdHRvbTogNDBweDsgKi9cbiAgICBwYWRkaW5nOiAyMHB4O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5zcGVjIHRyOmhvdmVye1xuICAgIGJhY2tncm91bmQtY29sb3I6I2U2ZTZlNjtcbn1cblxuLnNwZWMtd3JhcGVyIGltZ3tcbiAgICB3aWR0aDogNDAlO1xuICAgIGhlaWdodDogYXV0bztcbiAgICBwYWRkaW5nLXRvcDogNDBweDtcbn1cblxuLmxvZ297XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"]
+      styles: [".mat-snack-bar-container[_ngcontent-%COMP%]{\n    background-color: #28a745 !important;\n}\n\n.img[_ngcontent-%COMP%]{\n    overflow: hidden;\n}\n\n.img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 100%;\n    height: auto;\n}\n\n.description[_ngcontent-%COMP%]{\n    width: 100%;\n    margin: 0 auto;\n    margin-bottom: 30px;\n    text-align: left;\n    color: #000000;\n    font-size: 26px;\n    font-weight: 600;\n    line-height: 40px;\n    text-transform: capitalize;\n}\n\n.spec-short[_ngcontent-%COMP%]{\n    width: 80%;\n    border-top: 1px solid rgba(77, 77, 77, 0.2);\n    padding-top: 10px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    margin: 0px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    color: #000000;\n}\n\n.cart-box[_ngcontent-%COMP%]{\n    width: 80%;\n    border: 1px solid rgba(77, 77, 77, 0.2);\n    border-radius: 15px;\n    padding: 10px;\n}\n\n.price[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: right;\n    margin-bottom: -30px;\n}\n\n.price[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    margin: 0;\n    font-size: 26px;\n    font-weight: 500;\n}\n\n.form[_ngcontent-%COMP%]{\n    width: 100%;\n    overflow: hidden;\n    color: #ffffff;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    border-radius: 666px;\n    margin-left: 5px;\n    width: 80%;\n    height: auto;\n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    text-decoration: none; \n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{\n    color: green;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    line-height: 80%;\n}\n\n.form[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n    width: 60px;\n    border-radius: 80px;\n}\n\n.select-btn[_ngcontent-%COMP%]{\n    display: inline-block;\n}\n\n.spec-wraper[_ngcontent-%COMP%]{\n    border-top: 1px solid  rgba(77, 77, 77, 0.1);\n    margin-top: 40px;\n    padding: 20px;\n    overflow: hidden;\n}\n\n.spec[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:hover{\n    background-color:#e6e6e6;\n}\n\n.spec-wraper[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 40%;\n    height: auto;\n    padding-top: 40px;\n}\n\n.logo[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdHMvcHJvZHVjdC9sYXB0b3AtYnktaWQvbGFwdG9wLWJ5LWlkLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxvQ0FBb0M7QUFDeEM7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxjQUFjO0lBQ2QsbUJBQW1CO0lBQ25CLGdCQUFnQjtJQUNoQixjQUFjO0lBQ2QsZUFBZTtJQUNmLGdCQUFnQjtJQUNoQixpQkFBaUI7SUFDakIsMEJBQTBCO0FBQzlCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLDJDQUEyQztJQUMzQyxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxjQUFjO0lBQ2QsV0FBVztBQUNmOztBQUVBO0lBQ0ksY0FBYztBQUNsQjs7QUFFQTtJQUNJLFVBQVU7SUFDVix1Q0FBdUM7SUFDdkMsbUJBQW1CO0lBQ25CLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsaUJBQWlCO0lBQ2pCLG9CQUFvQjtBQUN4Qjs7QUFFQTtJQUNJLFNBQVM7SUFDVCxlQUFlO0lBQ2YsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztJQUNYLGdCQUFnQjtJQUNoQixjQUFjO0FBQ2xCOztBQUVBO0lBQ0ksb0JBQW9CO0lBQ3BCLGdCQUFnQjtJQUNoQixVQUFVO0lBQ1YsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLDRDQUE0QztJQUM1QyxnQkFBZ0I7SUFDaEIsYUFBYTtJQUNiLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLHdCQUF3QjtBQUM1Qjs7QUFFQTtJQUNJLFVBQVU7SUFDVixZQUFZO0lBQ1osaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksV0FBVztJQUNYLGtCQUFrQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3RzL3Byb2R1Y3QvbGFwdG9wLWJ5LWlkL2xhcHRvcC1ieS1pZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1hdC1zbmFjay1iYXItY29udGFpbmVye1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMyOGE3NDUgIWltcG9ydGFudDtcbn1cblxuLmltZ3tcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uaW1nIGltZyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufVxuXG4uZGVzY3JpcHRpb257XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIGNvbG9yOiAjMDAwMDAwO1xuICAgIGZvbnQtc2l6ZTogMjZweDtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIGxpbmUtaGVpZ2h0OiA0MHB4O1xuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xufVxuXG4uc3BlYy1zaG9ydHtcbiAgICB3aWR0aDogODAlO1xuICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCByZ2JhKDc3LCA3NywgNzcsIDAuMik7XG4gICAgcGFkZGluZy10b3A6IDEwcHg7XG59XG5cbi5zcGVjLXNob3J0IHB7XG4gICAgY29sb3I6ICM0ZDRkNGQ7XG4gICAgbWFyZ2luOiAwcHg7XG59XG5cbi5zcGVjLXNob3J0IHAgc3BhbntcbiAgICBjb2xvcjogIzAwMDAwMDtcbn1cblxuLmNhcnQtYm94e1xuICAgIHdpZHRoOiA4MCU7XG4gICAgYm9yZGVyOiAxcHggc29saWQgcmdiYSg3NywgNzcsIDc3LCAwLjIpO1xuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gICAgcGFkZGluZzogMTBweDtcbn1cblxuLnByaWNle1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgIG1hcmdpbi1ib3R0b206IC0zMHB4O1xufVxuXG4ucHJpY2UgcCB7XG4gICAgbWFyZ2luOiAwO1xuICAgIGZvbnQtc2l6ZTogMjZweDtcbiAgICBmb250LXdlaWdodDogNTAwO1xufVxuXG4uZm9ybXtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIGNvbG9yOiAjZmZmZmZmO1xufVxuXG4uZm9ybSBhIHtcbiAgICBib3JkZXItcmFkaXVzOiA2NjZweDtcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xuICAgIHdpZHRoOiA4MCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufVxuXG4ub3B0aW9ucyBhe1xuICAgIGNvbG9yOiAjNGQ0ZDRkO1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsgXG59XG5cbi5vcHRpb25zIGE6aG92ZXJ7XG4gICAgY29sb3I6IGdyZWVuO1xufVxuXG4uZm9ybSBhIHNwYW57XG4gICAgbGluZS1oZWlnaHQ6IDgwJTtcbn1cblxuLmZvcm0gc2VsZWN0IHtcbiAgICB3aWR0aDogNjBweDtcbiAgICBib3JkZXItcmFkaXVzOiA4MHB4O1xufVxuXG4uc2VsZWN0LWJ0bntcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG5cbi5zcGVjLXdyYXBlcntcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgIHJnYmEoNzcsIDc3LCA3NywgMC4xKTtcbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xuICAgIHBhZGRpbmc6IDIwcHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnNwZWMgdHI6aG92ZXJ7XG4gICAgYmFja2dyb3VuZC1jb2xvcjojZTZlNmU2O1xufVxuXG4uc3BlYy13cmFwZXIgaW1ne1xuICAgIHdpZHRoOiA0MCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xuICAgIHBhZGRpbmctdG9wOiA0MHB4O1xufVxuXG4ubG9nb3tcbiAgICB3aWR0aDogMTAwJTtcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59Il19 */"]
     });
     /*@__PURE__*/
 
@@ -23271,7 +23069,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var ProductComponent = /*#__PURE__*/function () {
       function ProductComponent(auth, http, cartService, route) {
-        var _this36 = this;
+        var _this35 = this;
 
         _classCallCheck(this, ProductComponent);
 
@@ -23287,17 +23085,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           user: this.auth.getCurrentUser()
         };
         this.route.paramMap.subscribe(function (params) {
-          _this36.id = +params.get('product_id');
+          _this35.id = +params.get('product_id');
         });
         this.http.getById(this.id).subscribe(function (response) {
-          _this36.product = response;
+          _this35.product = response;
 
-          _this36.setLastProduct(response);
+          _this35.setLastProduct(response);
 
-          _this36.productType = response.product_type;
+          _this35.productType = response.product_type;
         }, function (error) {
           if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-            _this36.statusError = error.status;
+            _this35.statusError = error.status;
             console.error(error.error);
           }
         });
@@ -23317,14 +23115,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addtoCart",
         value: function addtoCart(cartItem) {
-          var _this37 = this;
+          var _this36 = this;
 
           if (this.auth.isAuthenticated) {
             this.cartUserItem.order_item_amount = cartItem.order_item_amount;
             this.cartUserItem.product = cartItem.product;
             this.cartUserItem.user = this.auth.getCurrentUser();
             this.cartService.setMyCartItem(this.cartUserItem).subscribe(function () {}, function (err) {
-              _this37.error = err.message;
+              _this36.error = err.message;
             });
           } else {
             this.cartLocalItemList.push(cartItem);
@@ -23998,7 +23796,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       },
       directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _box_last_product_box_last_product_box_last_product_component__WEBPACK_IMPORTED_MODULE_5__["BoxLastProductComponent"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["SelectControlValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgSelectOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_x"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterLinkWithHref"]],
-      styles: [".options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    text-decoration: none; \n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{\n    color: green;\n}\n\n.mat-snack-bar-container[_ngcontent-%COMP%]{\n    background-color: #28a745 !important;\n}\n\n.img[_ngcontent-%COMP%]{\n    overflow: hidden;\n}\n\n.img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 100%;\n    height: auto;\n}\n\n.description[_ngcontent-%COMP%]{\n    width: 100%;\n    margin: 0 auto;\n    margin-bottom: 30px;\n    text-align: left;\n    color: #000000;\n    font-size: 26px;\n    font-weight: 600;\n    line-height: 40px;\n    text-transform: capitalize;\n}\n\n.spec-short[_ngcontent-%COMP%]{\n    width: 80%;\n    border-top: 1px solid rgba(77, 77, 77, 0.2);\n    padding-top: 10px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    margin: 0px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    color: #000000;\n}\n\n.cart-box[_ngcontent-%COMP%]{\n    width: 80%;\n    border: 1px solid rgba(77, 77, 77, 0.2);\n    border-radius: 15px;\n    padding: 10px;\n}\n\n.price[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: right;\n    margin-bottom: -30px;\n}\n\n.price[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    margin: 0;\n    font-size: 26px;\n    font-weight: 500;\n}\n\n.form[_ngcontent-%COMP%]{\n    width: 100%;\n    overflow: hidden;\n    color: #ffffff;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    border-radius: 666px;\n    margin-left: 5px;\n    width: 80%;\n    height: auto;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    line-height: 80%;\n}\n\n.form[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n    width: 60px;\n    border-radius: 80px;\n}\n\n.select-btn[_ngcontent-%COMP%]{\n    display: inline-block;\n}\n\n.spec-wraper[_ngcontent-%COMP%]{\n    border-top: 1px solid  rgba(77, 77, 77, 0.1);\n    \n    margin-top: 40px;\n    \n    padding: 20px;\n    overflow: hidden;\n}\n\n.spec[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:hover{\n    background-color:#e6e6e6;\n}\n\n.spec-wraper[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 40%;\n    height: auto;\n    padding-top: 40px;\n}\n\n.logo[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdHMvcHJvZHVjdC9zbWFydHBob25lLWJ5LWlkL3NtYXJ0cGhvbmUtYnktaWQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGNBQWM7SUFDZCxxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksb0NBQW9DO0FBQ3hDOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztJQUNYLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsY0FBYztJQUNkLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsY0FBYztJQUNkLGVBQWU7SUFDZixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLDBCQUEwQjtBQUM5Qjs7QUFFQTtJQUNJLFVBQVU7SUFDViwyQ0FBMkM7SUFDM0MsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksY0FBYztJQUNkLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsdUNBQXVDO0lBQ3ZDLG1CQUFtQjtJQUNuQixhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksV0FBVztJQUNYLGlCQUFpQjtJQUNqQixvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxTQUFTO0lBQ1QsZUFBZTtJQUNmLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxnQkFBZ0I7SUFDaEIsY0FBYztBQUNsQjs7QUFFQTtJQUNJLG9CQUFvQjtJQUNwQixnQkFBZ0I7SUFDaEIsVUFBVTtJQUNWLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksNENBQTRDO0lBQzVDLHFEQUFxRDtJQUNyRCxnQkFBZ0I7SUFDaEIseUJBQXlCO0lBQ3pCLGFBQWE7SUFDYixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSx3QkFBd0I7QUFDNUI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsWUFBWTtJQUNaLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3JjL2FwcC9wcm9kdWN0cy9wcm9kdWN0L3NtYXJ0cGhvbmUtYnktaWQvc21hcnRwaG9uZS1ieS1pZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm9wdGlvbnMgYXtcbiAgICBjb2xvcjogIzRkNGQ0ZDtcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7IFxufVxuXG4ub3B0aW9ucyBhOmhvdmVye1xuICAgIGNvbG9yOiBncmVlbjtcbn1cblxuLm1hdC1zbmFjay1iYXItY29udGFpbmVye1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMyOGE3NDUgIWltcG9ydGFudDtcbn1cblxuLmltZ3tcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uaW1nIGltZyB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufVxuXG4uZGVzY3JpcHRpb257XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgbWFyZ2luOiAwIGF1dG87XG4gICAgbWFyZ2luLWJvdHRvbTogMzBweDtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIGNvbG9yOiAjMDAwMDAwO1xuICAgIGZvbnQtc2l6ZTogMjZweDtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIGxpbmUtaGVpZ2h0OiA0MHB4O1xuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xufVxuXG4uc3BlYy1zaG9ydHtcbiAgICB3aWR0aDogODAlO1xuICAgIGJvcmRlci10b3A6IDFweCBzb2xpZCByZ2JhKDc3LCA3NywgNzcsIDAuMik7XG4gICAgcGFkZGluZy10b3A6IDEwcHg7XG59XG5cbi5zcGVjLXNob3J0IHB7XG4gICAgY29sb3I6ICM0ZDRkNGQ7XG4gICAgbWFyZ2luOiAwcHg7XG59XG5cbi5zcGVjLXNob3J0IHAgc3BhbntcbiAgICBjb2xvcjogIzAwMDAwMDtcbn1cblxuLmNhcnQtYm94e1xuICAgIHdpZHRoOiA4MCU7XG4gICAgYm9yZGVyOiAxcHggc29saWQgcmdiYSg3NywgNzcsIDc3LCAwLjIpO1xuICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7XG4gICAgcGFkZGluZzogMTBweDtcbn1cblxuLnByaWNle1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xuICAgIG1hcmdpbi1ib3R0b206IC0zMHB4O1xufVxuXG4ucHJpY2UgcCB7XG4gICAgbWFyZ2luOiAwO1xuICAgIGZvbnQtc2l6ZTogMjZweDtcbiAgICBmb250LXdlaWdodDogNTAwO1xufVxuXG4uZm9ybXtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIGNvbG9yOiAjZmZmZmZmO1xufVxuXG4uZm9ybSBhIHtcbiAgICBib3JkZXItcmFkaXVzOiA2NjZweDtcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xuICAgIHdpZHRoOiA4MCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xufVxuXG4uZm9ybSBhIHNwYW57XG4gICAgbGluZS1oZWlnaHQ6IDgwJTtcbn1cblxuLmZvcm0gc2VsZWN0IHtcbiAgICB3aWR0aDogNjBweDtcbiAgICBib3JkZXItcmFkaXVzOiA4MHB4O1xufVxuXG4uc2VsZWN0LWJ0bntcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG5cbi5zcGVjLXdyYXBlcntcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgIHJnYmEoNzcsIDc3LCA3NywgMC4xKTtcbiAgICAvKiBib3JkZXItYm90dG9tOiAxcHggc29saWQgIHJnYmEoNzcsIDc3LCA3NywgMC4yKTsgKi9cbiAgICBtYXJnaW4tdG9wOiA0MHB4O1xuICAgIC8qIG1hcmdpbi1ib3R0b206IDQwcHg7ICovXG4gICAgcGFkZGluZzogMjBweDtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4uc3BlYyB0cjpob3ZlcntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNlNmU2ZTY7XG59XG5cbi5zcGVjLXdyYXBlciBpbWd7XG4gICAgd2lkdGg6IDQwJTtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgcGFkZGluZy10b3A6IDQwcHg7XG59XG5cbi5sb2dve1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */"]
+      styles: [".options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    text-decoration: none; \n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{\n    color: green;\n}\n\n.mat-snack-bar-container[_ngcontent-%COMP%]{\n    background-color: #28a745 !important;\n}\n\n.img[_ngcontent-%COMP%]{\n    overflow: hidden;\n}\n\n.img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 100%;\n    height: auto;\n}\n\n.description[_ngcontent-%COMP%]{\n    width: 100%;\n    margin: 0 auto;\n    margin-bottom: 30px;\n    text-align: left;\n    color: #000000;\n    font-size: 26px;\n    font-weight: 600;\n    line-height: 40px;\n    text-transform: capitalize;\n}\n\n.spec-short[_ngcontent-%COMP%]{\n    width: 80%;\n    border-top: 1px solid rgba(77, 77, 77, 0.2);\n    padding-top: 10px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{\n    color: #4d4d4d;\n    margin: 0px;\n}\n\n.spec-short[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    color: #000000;\n}\n\n.cart-box[_ngcontent-%COMP%]{\n    width: 80%;\n    border: 1px solid rgba(77, 77, 77, 0.2);\n    border-radius: 15px;\n    padding: 10px;\n}\n\n.price[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: right;\n    margin-bottom: -30px;\n}\n\n.price[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    margin: 0;\n    font-size: 26px;\n    font-weight: 500;\n}\n\n.form[_ngcontent-%COMP%]{\n    width: 100%;\n    overflow: hidden;\n    color: #ffffff;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    border-radius: 666px;\n    margin-left: 5px;\n    width: 80%;\n    height: auto;\n}\n\n.form[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    line-height: 80%;\n}\n\n.form[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n    width: 60px;\n    border-radius: 80px;\n}\n\n.select-btn[_ngcontent-%COMP%]{\n    display: inline-block;\n}\n\n.spec-wraper[_ngcontent-%COMP%]{\n    border-top: 1px solid  rgba(77, 77, 77, 0.1);\n    margin-top: 40px;\n    padding: 20px;\n    overflow: hidden;\n}\n\n.spec[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:hover{\n    background-color:#e6e6e6;\n}\n\n.spec-wraper[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 40%;\n    height: auto;\n    padding-top: 40px;\n}\n\n.logo[_ngcontent-%COMP%]{\n    width: 100%;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdHMvcHJvZHVjdC9zbWFydHBob25lLWJ5LWlkL3NtYXJ0cGhvbmUtYnktaWQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGNBQWM7SUFDZCxxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksb0NBQW9DO0FBQ3hDOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztJQUNYLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsY0FBYztJQUNkLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsY0FBYztJQUNkLGVBQWU7SUFDZixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLDBCQUEwQjtBQUM5Qjs7QUFFQTtJQUNJLFVBQVU7SUFDViwyQ0FBMkM7SUFDM0MsaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksY0FBYztJQUNkLFdBQVc7QUFDZjs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsdUNBQXVDO0lBQ3ZDLG1CQUFtQjtJQUNuQixhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksV0FBVztJQUNYLGlCQUFpQjtJQUNqQixvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxTQUFTO0lBQ1QsZUFBZTtJQUNmLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxnQkFBZ0I7SUFDaEIsY0FBYztBQUNsQjs7QUFFQTtJQUNJLG9CQUFvQjtJQUNwQixnQkFBZ0I7SUFDaEIsVUFBVTtJQUNWLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksNENBQTRDO0lBQzVDLGdCQUFnQjtJQUNoQixhQUFhO0lBQ2IsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksd0JBQXdCO0FBQzVCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLFlBQVk7SUFDWixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsa0JBQWtCO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvcHJvZHVjdHMvcHJvZHVjdC9zbWFydHBob25lLWJ5LWlkL3NtYXJ0cGhvbmUtYnktaWQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5vcHRpb25zIGF7XG4gICAgY29sb3I6ICM0ZDRkNGQ7XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBcbn1cblxuLm9wdGlvbnMgYTpob3ZlcntcbiAgICBjb2xvcjogZ3JlZW47XG59XG5cbi5tYXQtc25hY2stYmFyLWNvbnRhaW5lcntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjhhNzQ1ICFpbXBvcnRhbnQ7XG59XG5cbi5pbWd7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLmltZyBpbWcge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogYXV0bztcbn1cblxuLmRlc2NyaXB0aW9ue1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbjogMCBhdXRvO1xuICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICBjb2xvcjogIzAwMDAwMDtcbiAgICBmb250LXNpemU6IDI2cHg7XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICBsaW5lLWhlaWdodDogNDBweDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcbn1cblxuLnNwZWMtc2hvcnR7XG4gICAgd2lkdGg6IDgwJTtcbiAgICBib3JkZXItdG9wOiAxcHggc29saWQgcmdiYSg3NywgNzcsIDc3LCAwLjIpO1xuICAgIHBhZGRpbmctdG9wOiAxMHB4O1xufVxuXG4uc3BlYy1zaG9ydCBwe1xuICAgIGNvbG9yOiAjNGQ0ZDRkO1xuICAgIG1hcmdpbjogMHB4O1xufVxuXG4uc3BlYy1zaG9ydCBwIHNwYW57XG4gICAgY29sb3I6ICMwMDAwMDA7XG59XG5cbi5jYXJ0LWJveHtcbiAgICB3aWR0aDogODAlO1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHJnYmEoNzcsIDc3LCA3NywgMC4yKTtcbiAgICBib3JkZXItcmFkaXVzOiAxNXB4O1xuICAgIHBhZGRpbmc6IDEwcHg7XG59XG5cbi5wcmljZXtcbiAgICB3aWR0aDogMTAwJTtcbiAgICB0ZXh0LWFsaWduOiByaWdodDtcbiAgICBtYXJnaW4tYm90dG9tOiAtMzBweDtcbn1cblxuLnByaWNlIHAge1xuICAgIG1hcmdpbjogMDtcbiAgICBmb250LXNpemU6IDI2cHg7XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbn1cblxuLmZvcm17XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbn1cblxuLmZvcm0gYSB7XG4gICAgYm9yZGVyLXJhZGl1czogNjY2cHg7XG4gICAgbWFyZ2luLWxlZnQ6IDVweDtcbiAgICB3aWR0aDogODAlO1xuICAgIGhlaWdodDogYXV0bztcbn1cblxuLmZvcm0gYSBzcGFue1xuICAgIGxpbmUtaGVpZ2h0OiA4MCU7XG59XG5cbi5mb3JtIHNlbGVjdCB7XG4gICAgd2lkdGg6IDYwcHg7XG4gICAgYm9yZGVyLXJhZGl1czogODBweDtcbn1cblxuLnNlbGVjdC1idG57XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuXG4uc3BlYy13cmFwZXJ7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICByZ2JhKDc3LCA3NywgNzcsIDAuMSk7XG4gICAgbWFyZ2luLXRvcDogNDBweDtcbiAgICBwYWRkaW5nOiAyMHB4O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5zcGVjIHRyOmhvdmVye1xuICAgIGJhY2tncm91bmQtY29sb3I6I2U2ZTZlNjtcbn1cblxuLnNwZWMtd3JhcGVyIGltZ3tcbiAgICB3aWR0aDogNDAlO1xuICAgIGhlaWdodDogYXV0bztcbiAgICBwYWRkaW5nLXRvcDogNDBweDtcbn1cblxuLmxvZ297XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"]
     });
     /*@__PURE__*/
 
@@ -24361,131 +24159,59 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var ProductsService = /*#__PURE__*/function () {
-      function ProductsService(http) {
+      function ProductsService(http, appService) {
         _classCallCheck(this, ProductsService);
 
         this.http = http;
-      } // ---> localhost
-      // getAll(){
-      //   return this.http.get<ProductTest[]>("http://localhost:8090/product/all")
-      // }
-      // ----> remote
-      // getAll(){
-      //   return this.http.get<ProductTest[]>("https://x-tom-auth.herokuapp.com/product/all")
-      // }
-      // ----> remote aws
-
+        this.appService = appService;
+      }
 
       _createClass(ProductsService, [{
         key: "getAll",
         value: function getAll() {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/all");
-        } // ---> localhost
-        // create(product:Partial<ProductTest>){
-        //   return this.http.post<ProductTest>("http://localhost:8080/product/create", product)
-        // }
-        // ----> remote
-        // create(product:Partial<ProductTest>){
-        //   return this.http.post<ProductTest>("https://x-tom-api.herokuapp.com/product/create", product)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlAuth + "/product/all");
+        }
       }, {
         key: "create",
         value: function create(product) {
-          return this.http.post("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/create", product);
-        } // ---> localhost
-        // getById(id:number){
-        //   return this.http.get<ProductTest>("http://localhost:8090/product/"+id)
-        // }
-        // ----> remote
-        // getById(id:number){
-        //   return this.http.get<ProductTest>("https://x-tom-auth.herokuapp.com/product/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.post(this.appService.urlApi + "/product/create", product);
+        }
       }, {
         key: "getById",
         value: function getById(id) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/" + id);
-        } // ---> localhost
-        // update(id:number, product:Partial<ProductTest>){
-        //   return this.http.put<ProductTest>("http://localhost:8080/product/"+id, product)
-        // }
-        // ----> remote
-        // update(id:number, product:Partial<ProductTest>){
-        //   return this.http.put<ProductTest>("https://x-tom-api.herokuapp.com/product/"+id, product)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlAuth + "/product/" + id);
+        }
       }, {
         key: "update",
         value: function update(id, product) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/product/" + id, product);
-        } // ---> localhost
-        // delete(id:number){
-        //   return this.http.delete("http://localhost:8080/product/"+id)
-        // }
-        // ----> remote
-        // delete(id:number){
-        //   return this.http.delete("https://x-tom-api.herokuapp.com/product/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.put(this.appService.urlApi + "/product/" + id, product);
+        }
       }, {
         key: "delete",
         value: function _delete(id) {
-          return this.http["delete"]("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/product/" + id);
-        } // ---> localhost
-        // getByType(type:string){
-        //   return this.http.get<ProductTest[]>("http://localhost:8090/product/type",{
-        //     params:{
-        //       type:type
-        //     }
-        //   })
-        // }
-        // ---> remote
-        // getByType(type:string){
-        //   return this.http.get<ProductTest[]>("https://x-tom-auth.herokuapp.com/product/type",{
-        //     params:{
-        //       type:type
-        //     }
-        //   })
-        // }
-        // ---> remote aws
-
+          return this.http["delete"](this.appService.urlApi + "/product/" + id);
+        }
       }, {
         key: "getByType",
         value: function getByType(type) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/type", {
+          return this.http.get(this.appService.urlAuth + "/product/type", {
             params: {
               type: type
             }
           });
-        } // ---> localhost
-        // getByStatus(status:string){
-        //   return this.http.get<ProductTest[]>("http://localhost:8090/product/status/",{
-        //     params:{
-        //       status:status
-        //     }
-        //   })
-        // }
-        // ----> remote
-        // getByStatus(status:string){
-        //   return this.http.get<ProductTest[]>("https://x-tom-auth.herokuapp.com/product/status/",{
-        //     params:{
-        //       status:status
-        //     }
-        //   })
-        // }
-        // ----> remote aws
-
+        }
       }, {
         key: "getByStatus",
         value: function getByStatus(status) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/product/status/", {
+          return this.http.get(this.appService.urlAuth + "/product/status/", {
             params: {
               status: status
             }
@@ -24497,7 +24223,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     ProductsService.ɵfac = function ProductsService_Factory(t) {
-      return new (t || ProductsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || ProductsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]));
     };
 
     ProductsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -24516,6 +24242,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]
         }];
       }, null);
     })();
@@ -24731,13 +24459,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllProduct",
         value: function getAllProduct() {
-          var _this38 = this;
+          var _this37 = this;
 
           this.http.getByType("drone").subscribe(function (response) {
-            _this38.drones = response;
+            _this37.drones = response;
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-              _this38.statusError = error.status;
+              _this37.statusError = error.status;
               console.error(error.error);
             }
           });
@@ -25029,13 +24757,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllProduct",
         value: function getAllProduct() {
-          var _this39 = this;
+          var _this38 = this;
 
           this.http.getByType("laptop").subscribe(function (response) {
-            _this39.laptops = response;
+            _this38.laptops = response;
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-              _this39.statusError = error.status;
+              _this38.statusError = error.status;
               console.error(error.error);
             }
           });
@@ -25207,13 +24935,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var ProductsComponent = /*#__PURE__*/function () {
       function ProductsComponent(route) {
-        var _this40 = this;
+        var _this39 = this;
 
         _classCallCheck(this, ProductsComponent);
 
         this.route = route;
         this.route.paramMap.subscribe(function (params) {
-          _this40.productType = params.get('product_type');
+          _this39.productType = params.get('product_type');
         });
       }
 
@@ -25489,13 +25217,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllProduct",
         value: function getAllProduct() {
-          var _this41 = this;
+          var _this40 = this;
 
           this.http.getByType("smartphone").subscribe(function (response) {
-            _this41.smartphones = response;
+            _this40.smartphones = response;
           }, function (error) {
             if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-              _this41.statusError = error.status;
+              _this40.statusError = error.status;
               console.error(error.error);
             }
           });
@@ -25701,7 +25429,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var EditProfileComponent = /*#__PURE__*/function () {
       function EditProfileComponent(http, auth, route) {
-        var _this42 = this;
+        var _this41 = this;
 
         _classCallCheck(this, EditProfileComponent);
 
@@ -25711,24 +25439,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.returnPath = 'profile';
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this42.id = +params.get('user_id');
+          _this41.id = +params.get('user_id');
         });
         this.http.getById(this.id).subscribe(function (response) {
-          _this42.editedUser = response;
+          _this41.editedUser = response;
         });
       }
 
       _createClass(EditProfileComponent, [{
         key: "updateUser",
         value: function updateUser(user) {
-          var _this43 = this;
+          var _this42 = this;
 
           console.log(user);
           this.http.update(this.id, user).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this43.error = err.message;
-            console.log("error: " + _this43.error.valueOf);
+            _this42.error = err.message;
+            console.log("error: " + _this42.error.valueOf);
           });
         }
       }, {
@@ -26209,25 +25937,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _auth_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../auth/auth.service */
     "./src/app/auth/auth.service.ts");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var ProfileService = /*#__PURE__*/function () {
-      function ProfileService(http, auth) {
+      function ProfileService(http, auth, appService) {
         _classCallCheck(this, ProfileService);
 
         this.http = http;
         this.auth = auth;
+        this.appService = appService;
       }
 
       _createClass(ProfileService, [{
         key: "getUserProfile",
         value: function getUserProfile() {
-          var _this44 = this;
+          var _this43 = this;
 
           if (!this.user_request) {
             this.user_request = this.auth.state.pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1__["filter"])(function () {
-              return _this44.auth.isAuthenticated;
+              return _this43.auth.isAuthenticated;
             }), Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function () {
-              return _this44.auth.getCurrentUser();
+              return _this43.auth.getCurrentUser();
             }));
           }
 
@@ -26237,20 +25972,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "clearCache",
         value: function clearCache() {
           this.user_request = null;
-        } // ---> localhost
-        // update(id:number, user:Partial<User>){
-        //   return this.http.put<User>("http://localhost:8080/user/"+id, user)
-        // }
-        // ----> remote
-        // update(id:number, user:Partial<User>){
-        //   return this.http.put<User>("https://x-tom-api.herokuapp.com/user/"+id, user)
-        // }
-        // ----> remote aws
-
+        }
       }, {
         key: "update",
         value: function update(id, user) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/" + id, user);
+          return this.http.put(this.appService.urlApi + "/user/" + id, user);
         }
       }]);
 
@@ -26258,7 +25984,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     ProfileService.ɵfac = function ProfileService_Factory(t) {
-      return new (t || ProfileService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]));
+      return new (t || ProfileService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_4__["AppService"]));
     };
 
     ProfileService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -26279,6 +26005,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
         }, {
           type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_3__["AuthService"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_4__["AppService"]
         }];
       }, null);
     })();
@@ -26326,19 +26054,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_app_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/app.service */
+    "./src/app/app.service.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _error_error_handler_error_handler_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _error_error_handler_error_handler_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../error/error-handler/error-handler.component */
     "./src/app/error/error-handler/error-handler.component.ts");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
@@ -26563,29 +26297,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }
 
     var ProfileComponent = /*#__PURE__*/function () {
-      function ProfileComponent(auth, http) {
+      function ProfileComponent(auth, http, appService) {
         _classCallCheck(this, ProfileComponent);
 
         this.auth = auth;
-        this.http = http; // localUrl = "http://localhost:8080/user/"
-        // remoteUrl = "https://x-tom-api.herokuapp.com/user/"
-
-        this.remoteUrlAWS = "http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/";
+        this.http = http;
+        this.appService = appService;
         this.auth.state.subscribe();
       }
 
       _createClass(ProfileComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this45 = this;
+          var _this44 = this;
 
           if (this.auth.isAuthenticated) {
             this.id = this.auth.getCurrentUser().user_id;
-            this.http.get(this.remoteUrlAWS + this.id).subscribe(function (response) {
-              _this45.profile = response;
+            this.http.get(this.appService.urlApi + this.id).subscribe(function (response) {
+              _this44.profile = response;
             }), function (error) {
               if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {
-                _this45.statusError = error.status;
+                _this44.statusError = error.status;
                 console.error(error.error);
               }
             };
@@ -26597,7 +26329,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     ProfileComponent.ɵfac = function ProfileComponent_Factory(t) {
-      return new (t || ProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || ProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"]));
     };
 
     ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -26641,7 +26373,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("errorHandler", ctx.statusError);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _error_error_handler_error_handler_component__WEBPACK_IMPORTED_MODULE_4__["ErrorHandlerComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterLink"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"], _error_error_handler_error_handler_component__WEBPACK_IMPORTED_MODULE_5__["ErrorHandlerComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterLink"]],
       styles: [".options[_ngcontent-%COMP%] {\n    width: 100%;\n    margin-bottom: 20px;\n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]{\n    margin-right: 16px;\n    color: #4d4d4d;\n    text-decoration: none;  \n}\n\n.options[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover{\n    color: green;\n}\n\n.wraper[_ngcontent-%COMP%]{\n    width: 50%;\n    margin: 0 auto;\n    margin-top: 30px;\n    margin-bottom: 30px;\n    padding: 20px;\n    border: 1px solid rgba(77, 77, 77, 0.2);\n    border-radius: 6px;\n    box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);\n}\n\n.wraper[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]{\n    margin: 0px;\n    color: #4d4d4d;\n    font-size: 18px;\n    font-weight: 400;\n}\n\n.wraper[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]:first-child{\n    color: black;\n    font-size: 20px;\n    font-weight: 700;\n}\n\n.wraper[_ngcontent-%COMP%]   p[_ngcontent-%COMP%]   span[_ngcontent-%COMP%]{\n    margin: 0px;\n    color: black;\n    font-size: 18px;\n    font-weight: 700;\n}\n\n@media (max-width: 833px){\n    .wraper[_ngcontent-%COMP%]{\n        width: 100%;\n    }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZmlsZS9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxrQkFBa0I7SUFDbEIsY0FBYztJQUNkLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsY0FBYztJQUNkLGdCQUFnQjtJQUNoQixtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLHVDQUF1QztJQUN2QyxrQkFBa0I7SUFHbEIsNENBQTRDO0FBQ2hEOztBQUVBO0lBQ0ksV0FBVztJQUNYLGNBQWM7SUFDZCxlQUFlO0lBQ2YsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksWUFBWTtJQUNaLGVBQWU7SUFDZixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGVBQWU7SUFDZixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSTtRQUNJLFdBQVc7SUFDZjtBQUNKIiwiZmlsZSI6InNyYy9hcHAvcHJvZmlsZS9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5vcHRpb25zIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuXG4ub3B0aW9ucyBhe1xuICAgIG1hcmdpbi1yaWdodDogMTZweDtcbiAgICBjb2xvcjogIzRkNGQ0ZDtcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7ICBcbn1cblxuLm9wdGlvbnMgYTpob3ZlcntcbiAgICBjb2xvcjogZ3JlZW47XG59XG5cbi53cmFwZXJ7XG4gICAgd2lkdGg6IDUwJTtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gICAgcGFkZGluZzogMjBweDtcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2JhKDc3LCA3NywgNzcsIDAuMik7XG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgIC13ZWJraXQtYm94LXNoYWRvdzogMXB4IDJweCA1cHggMXB4IHJnYmEoMCwwLDAsMC43NSk7XG4gICAgLW1vei1ib3gtc2hhZG93OiAxcHggMnB4IDVweCAxcHggcmdiYSgwLDAsMCwwLjc1KTtcbiAgICBib3gtc2hhZG93OiAxcHggMnB4IDVweCAxcHggcmdiYSgwLDAsMCwwLjc1KTtcbn1cblxuLndyYXBlciBwe1xuICAgIG1hcmdpbjogMHB4O1xuICAgIGNvbG9yOiAjNGQ0ZDRkO1xuICAgIGZvbnQtc2l6ZTogMThweDtcbiAgICBmb250LXdlaWdodDogNDAwO1xufVxuXG4ud3JhcGVyIHA6Zmlyc3QtY2hpbGR7XG4gICAgY29sb3I6IGJsYWNrO1xuICAgIGZvbnQtc2l6ZTogMjBweDtcbiAgICBmb250LXdlaWdodDogNzAwO1xufVxuXG4ud3JhcGVyIHAgc3BhbntcbiAgICBtYXJnaW46IDBweDtcbiAgICBjb2xvcjogYmxhY2s7XG4gICAgZm9udC1zaXplOiAxOHB4O1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG59XG5cbkBtZWRpYSAobWF4LXdpZHRoOiA4MzNweCl7XG4gICAgLndyYXBlcntcbiAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgfVxufSJdfQ== */"]
     });
     /*@__PURE__*/
@@ -26659,6 +26391,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: src_app_auth_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]
         }, {
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }, {
+          type: src_app_app_service__WEBPACK_IMPORTED_MODULE_3__["AppService"]
         }];
       }, null);
     })();
@@ -27079,7 +26813,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var DeleteUserComponent = /*#__PURE__*/function () {
       function DeleteUserComponent(http, auth, route) {
-        var _this46 = this;
+        var _this45 = this;
 
         _classCallCheck(this, DeleteUserComponent);
 
@@ -27089,19 +26823,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.remove = false;
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this46.id = +params.get('user_id');
+          _this45.id = +params.get('user_id');
         });
       }
 
       _createClass(DeleteUserComponent, [{
         key: "delete",
         value: function _delete() {
-          var _this47 = this;
+          var _this46 = this;
 
           this.http["delete"](this.id).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this47.error = err.message;
+            _this46.error = err.message;
           });
           this.remove = true;
         }
@@ -27305,7 +27039,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var EditUserComponent = /*#__PURE__*/function () {
       function EditUserComponent(http, auth, route) {
-        var _this48 = this;
+        var _this47 = this;
 
         _classCallCheck(this, EditUserComponent);
 
@@ -27315,24 +27049,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.returnPath = 'user';
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this48.id = +params.get('user_id');
+          _this47.id = +params.get('user_id');
         });
         this.http.getById(this.id).subscribe(function (response) {
-          _this48.editedUser = response;
+          _this47.editedUser = response;
         });
       }
 
       _createClass(EditUserComponent, [{
         key: "updateUser",
         value: function updateUser(user) {
-          var _this49 = this;
+          var _this48 = this;
 
           console.log(user);
           this.http.update(this.id, user).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this49.error = err.message;
-            console.log("error: " + _this49.error.valueOf);
+            _this48.error = err.message;
+            console.log("error: " + _this48.error.valueOf);
           });
         }
       }, {
@@ -27535,7 +27269,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var RoleUserComponent = /*#__PURE__*/function () {
       function RoleUserComponent(http, auth, route) {
-        var _this50 = this;
+        var _this49 = this;
 
         _classCallCheck(this, RoleUserComponent);
 
@@ -27545,24 +27279,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.returnPath = 'user';
         this.auth.state.subscribe();
         this.route.paramMap.subscribe(function (params) {
-          _this50.id = +params.get('user_id');
+          _this49.id = +params.get('user_id');
         });
         this.http.getById(this.id).subscribe(function (response) {
-          _this50.editedUser = response;
+          _this49.editedUser = response;
         });
       }
 
       _createClass(RoleUserComponent, [{
         key: "updateUser",
         value: function updateUser(user) {
-          var _this51 = this;
+          var _this50 = this;
 
           console.log(user);
           this.http.updateRole(this.id, user).subscribe(function () {
             console.log("Success");
           }, function (err) {
-            _this51.error = err.message;
-            console.log("error: " + _this51.error.valueOf);
+            _this50.error = err.message;
+            console.log("error: " + _this50.error.valueOf);
           });
         }
       }, {
@@ -27953,7 +27687,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var UserByIdComponent = /*#__PURE__*/function () {
       function UserByIdComponent(http, auth, route) {
-        var _this52 = this;
+        var _this51 = this;
 
         _classCallCheck(this, UserByIdComponent);
 
@@ -27963,7 +27697,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.user = this.route.paramMap.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (params) {
           return +params.get('user_id');
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["switchMap"])(function (id) {
-          return _this52.http.getById(id);
+          return _this51.http.getById(id);
         }));
         this.auth.state.subscribe();
       }
@@ -28311,83 +28045,45 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../app.service */
+    "./src/app/app.service.ts");
 
     var UsersService = /*#__PURE__*/function () {
-      function UsersService(http) {
+      function UsersService(http, appService) {
         _classCallCheck(this, UsersService);
 
         this.http = http;
-      } // ---> localhost
-      // getAll(){
-      //   return this.http.get<UserList>("http://localhost:8080/user/all")
-      // }
-      // ----> remote
-      // getAll(){
-      //   return this.http.get<UserList>("https://x-tom-api.herokuapp.com/user/all")
-      // }
-      // ----> remote aws
-
+        this.appService = appService;
+      }
 
       _createClass(UsersService, [{
         key: "getAll",
         value: function getAll() {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/all");
-        } // ---> localhost
-        // getById(id:number){
-        //   return this.http.get<User>("http://localhost:8080/user/"+id)
-        // }
-        // ----> remote
-        // getById(id:number){
-        //   return this.http.get<User>("https://x-tom-api.herokuapp.com/user/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/user/all");
+        }
       }, {
         key: "getById",
         value: function getById(id) {
-          return this.http.get("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/" + id);
-        } // ---> localhost
-        // update(id:number, user:Partial<User>){
-        //   return this.http.put<User>("http://localhost:8080/user/"+id, user)
-        // }
-        // ----> remote
-        // update(id:number, user:Partial<User>){
-        //   return this.http.put<User>("https://x-tom-api.herokuapp.com/user/"+id, user)
-        // }
-        // ----> remote aws
-
+          return this.http.get(this.appService.urlApi + "/user/" + id);
+        }
       }, {
         key: "update",
         value: function update(id, user) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/" + id, user);
-        } // ---> localhost
-        // updateRole(id:number, user:Partial<User>){
-        //   return this.http.put<User>("http://localhost:8080/user/role/"+id, user)
-        // }
-        // ----> remote
-        // updateRole(id:number, user:Partial<User>){
-        //     return this.http.put<User>("https://x-tom-api.herokuapp.com/user/role/"+id, user)
-        //   }
-        // ----> remote aws
-
+          return this.http.put(this.appService.urlApi + "/user/" + id, user);
+        }
       }, {
         key: "updateRole",
         value: function updateRole(id, user) {
-          return this.http.put("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/role/" + id, user);
-        } // ---> localhost
-        // delete(id:number){
-        //   return this.http.delete("http://localhost:8080/user/"+id)
-        // }
-        // ----> remote
-        // delete(id:number){
-        //   return this.http.delete("https://x-tom-api.herokuapp.com/user/"+id)
-        // }
-        // ----> remote aws
-
+          return this.http.put(this.appService.urlApi + "/user/role/" + id, user);
+        }
       }, {
         key: "delete",
         value: function _delete(id) {
-          return this.http["delete"]("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/" + id);
+          return this.http["delete"](this.appService.urlApi + "/user/" + id);
         }
       }]);
 
@@ -28395,7 +28091,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     UsersService.ɵfac = function UsersService_Factory(t) {
-      return new (t || UsersService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      return new (t || UsersService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]));
     };
 
     UsersService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
@@ -28414,6 +28110,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }, {
+          type: _app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"]
         }];
       }, null);
     })();
@@ -28634,10 +28332,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(UsersComponent, [{
         key: "getAllUsers",
         value: function getAllUsers() {
-          var _this53 = this;
+          var _this52 = this;
 
           this.http.getAll().subscribe(function (response) {
-            _this53.usersList = response;
+            _this52.usersList = response;
           });
         }
       }, {

@@ -13,9 +13,6 @@ import { OrdersDeleteComponent } from './orders-delete/orders-delete.component';
 import { ErrorModule } from '../error/error.module';
 
 
-
-
-
 @NgModule({
   declarations: [OrdersComponent, OrderComponent, AddOrderComponent, OrderSumaryComponent, OrdersManagerComponent, OrdersDeleteComponent,],
   imports: [

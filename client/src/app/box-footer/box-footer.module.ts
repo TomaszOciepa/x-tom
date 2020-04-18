@@ -4,7 +4,6 @@ import { BoxFooterRoutingModule } from './box-footer-routing.module';
 import { BoxFooterComponent } from './box-footer/box-footer.component';
 
 
-
 @NgModule({
   declarations: [BoxFooterComponent],
   imports: [

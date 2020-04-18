@@ -6,7 +6,6 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthRoutingModule } from './auth.routing.module';
-// import { AuthorizedGuard } from './authorized.guard';
 import { RegisterComponent } from './register/register.component';
 import { ValidationModule } from '../validation/validation.module';
 import { RemindPasswordComponent } from './remind-password/remind-password.component';
@@ -31,7 +30,7 @@ import { ConfirmAccountComponent } from './confirm-account/confirm-account.compo
       useClass: AuthInterceptorService,
       multi: true
     },
-    // AuthorizedGuard
+    
   ],
   exports: [LoginComponent, RegisterComponent]
 })

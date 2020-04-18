@@ -8,6 +8,7 @@ import { PasswrodResetData } from '../model/passwordResetData';
 import { ChangePassword } from '../model/changePasswordData';
 import { ChangeEmail } from '../model/changeEmailData';
 import { Router } from '@angular/router';
+import { AppService } from '../app.service';
 
 
 interface Credentials{
@@ -26,14 +27,12 @@ interface Session{
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http:HttpClient, private userCodeEnctryptService:UserCodeEncryptService, private router: Router) {
+  constructor(private http:HttpClient, private userCodeEnctryptService:UserCodeEncryptService, private router: Router,
+    private appService:AppService) {
   }
   
   private session = new BehaviorSubject<Session>(null)
 
-  // urlLocal = "http://localhost:8090/login"
-  // urlRemote = "https://x-tom-auth.herokuapp.com/login"
-  urlRemoteAWS = "http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/login"
   isAuthenticated = false
   role:string
   name:String
@@ -57,7 +56,7 @@ export class AuthService {
     
     login(credentials:Credentials){
       
-    return this.http.post(this.urlRemoteAWS, credentials)
+    return this.http.post(this.appService.urlAuth, credentials)
       .subscribe((session:Session) =>{
         this.session.next(session)
         if(session.status){
@@ -95,19 +94,8 @@ export class AuthService {
       return session && session.user;
     }
 
-    // ---> localhost
-    // checkEmail(email:string){
-    //   return this.http.post<boolean>("http://localhost:8090/check-email", email)
-    // }
-
-    // ---> remote
-    // checkEmail(email:string){
-    //   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/check-email", email)
-    // }
-    
-    // ---> remote aws
     checkEmail(email:string){
-      return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/check-email", email)
+      return this.http.post<boolean>(this.appService.urlAuth+"/check-email", email)
     }
     
     clearRole(){
@@ -149,28 +137,7 @@ export class AuthService {
     var userId:number  = this.userCodeEnctryptService.decryptCode(code)
     this.userSession.token = token
 
-    // ---> localhost
-    // this.http.get<User>("http://localhost:8080/user/"+userId).subscribe(
-    //   response =>{
-    //       this.userSession.user = response
-    //       this.role = response.user_role
-    //       this.name = response.user_firstName
-    //       this.session.next(this.userSession)
-    //   }
-    // )
-
-    // ---->remote
-    // this.http.get<User>("https://x-tom-api.herokuapp.com/user/"+userId).subscribe(
-    //   response =>{
-    //       this.userSession.user = response
-    //       this.role = response.user_role
-    //       this.name = response.user_firstName
-    //       this.session.next(this.userSession)
-    //   }
-    // )
-
-      // ---->remote aws
-      this.http.get<User>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/"+userId).subscribe(
+      this.http.get<User>(this.appService.urlApi+"/user/"+userId).subscribe(
         response =>{
             this.userSession.user = response
             this.role = response.user_role
@@ -181,95 +148,28 @@ export class AuthService {
 
   }
 
-
-  // ---> localhost
-  // passwordResetVerifyUser(email:string){
-  //   return this.http.post<boolean>("http://localhost:8090/password-reset/verify-user", email)
-  // }
-
-// ---->remote
-// passwordResetVerifyUser(email:string){
-//   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/verify-user", email)
-// }
-
-// ---->remote aws
 passwordResetVerifyUser(email:string){
-  return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/password-reset/verify-user", email)
+  return this.http.post<boolean>(this.appService.urlAuth+"/password-reset/verify-user", email)
 }
 
-  // ---> localhost
-  // passwordResetCheckCode(passwordResetData:PasswrodResetData){
-  //   return this.http.post<boolean>("http://localhost:8090/password-reset/check-code", passwordResetData)
-  // }
-
-// ---->remote
-// passwordResetCheckCode(passwordResetData:PasswrodResetData){
-//   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/check-code", passwordResetData)
-// }
-
-// ---->remote aws
 passwordResetCheckCode(passwordResetData:PasswrodResetData){
-  return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/password-reset/check-code", passwordResetData)
+  return this.http.post<boolean>(this.appService.urlAuth+"/password-reset/check-code", passwordResetData)
 }
 
-  // ---> localhost
-  // passwordResetSetNew(passwordResetData:PasswrodResetData){
-  //   return this.http.post<boolean>("http://localhost:8090/password-reset/set-new", passwordResetData)
-  // }
-
-// ---->remote
-// passwordResetSetNew(passwordResetData:PasswrodResetData){
-//   return this.http.post<boolean>("https://x-tom-auth.herokuapp.com/password-reset/set-new", passwordResetData)
-// }
-
-// ---->remote aws
 passwordResetSetNew(passwordResetData:PasswrodResetData){
-  return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8090/password-reset/set-new", passwordResetData)
+  return this.http.post<boolean>(this.appService.urlAuth+"/password-reset/set-new", passwordResetData)
 }
 
-  // ---> localhost
-  // changePassword(changePasswordData:ChangePassword){
-  //   return this.http.put<boolean>("http://localhost:8080/user/change-password", changePasswordData)
-  // }
-
-// ---->remote
-// changePassword(changePasswordData:ChangePassword){
-//   return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-password", changePasswordData)
-// }
-
-// ---->remote aws
 changePassword(changePasswordData:ChangePassword){
-  return this.http.put<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/change-password", changePasswordData)
+  return this.http.put<boolean>(this.appService.urlApi+"/user/change-password", changePasswordData)
 }
 
-// ---> localhost
-  // changeEmail(changeEmailData:ChangeEmail){
-  //   return this.http.put<boolean>("http://localhost:8080/user/change-email", changeEmailData)
-  // }
-
-// ---->remote
-// changeEmail(changeEmailData:ChangeEmail){
-//   return this.http.put<boolean>("https://x-tom-api.herokuapp.com/user/change-email", changeEmailData)
-// }
-
-// ---->remote aws
 changeEmail(changeEmailData:ChangeEmail){
-  return this.http.put<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/change-email", changeEmailData)
+  return this.http.put<boolean>(this.appService.urlApi+"/user/change-email", changeEmailData)
 }
 
-  // ---> localhost
-  // confirmPassword(changePasswordData:ChangePassword){
-  //   return this.http.post<boolean>("http://localhost:8080/user/confirm-password", changePasswordData)
-  // }
-
-  // ---->remote
-  // confirmPassword(changePasswordData:ChangePassword){
-  //   return this.http.post<boolean>("https://x-tom-api.herokuapp.com/user/confirm-password", changePasswordData)
-  // }
-
-    // ---->remote aws
-    confirmPassword(changePasswordData:ChangePassword){
-      return this.http.post<boolean>("http://ec2-3-127-233-248.eu-central-1.compute.amazonaws.com:8080/user/confirm-password", changePasswordData)
-    }
+confirmPassword(changePasswordData:ChangePassword){
+  return this.http.post<boolean>(this.appService.urlApi+"/user/confirm-password", changePasswordData)
+}
 
 }

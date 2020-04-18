@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { CartService } from './cart.service';
 import { CartItemLocalStorage } from '../model/cartItemLocalStorage';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'cart',
@@ -114,12 +113,6 @@ export class CartComponent implements OnInit {
             this.calculatePrice()
             
         }
-        // ,error =>{
-        //   if(error instanceof HttpErrorResponse){
-        //     this.statusError = error.status
-            
-        //   }
-        // } 
       )
     }    
 

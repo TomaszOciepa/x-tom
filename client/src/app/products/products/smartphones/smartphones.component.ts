@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/products/products.service';
-import { ProductTestList } from 'src/app/model/productTestList';
 import { AuthService } from 'src/app/auth/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ProductTest } from 'src/app/model/productTest';
