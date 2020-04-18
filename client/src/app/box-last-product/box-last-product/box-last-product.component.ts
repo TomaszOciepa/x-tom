@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductTest } from 'src/app/model/productTest';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'box-last-product',
@@ -8,7 +9,7 @@ import { ProductTest } from 'src/app/model/productTest';
 })
 export class BoxLastProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -28,8 +29,17 @@ export class BoxLastProductComponent implements OnInit {
     }else{
       this.lastProductList = lastProduct
     }
-    
+  }
 
+  
+
+  reload(id:number){
+    this.router.navigate(['/product', id]);
+
+    setTimeout(function(){
+      window.location.reload()
+    },300);
+  
   }
 
 }

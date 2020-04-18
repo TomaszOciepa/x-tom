@@ -6,7 +6,7 @@
                 Brak ostatnio przeglądanych produktów
             </ng-container>
             <div class="col-lg-2 item" *ngFor="let p of lastProductList">
-                <a [routerLink]="['/product', p.product_id]">
+                <a (click)="reload(p.product_id)">
                     <div class="wraper">
                         <div class="img">
                             <img  src="../../../assets/img/last-watched/{{p.product_mark}}-{{p.product_type}}-127-106.jpg">

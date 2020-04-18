@@ -13,9 +13,9 @@ import java.util.List;
 import java.util.Optional;
 
 //localhost
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 //aws
-@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
+//@CrossOrigin(origins = "http://x-tom-shop.s3-website.eu-central-1.amazonaws.com")
 @RestController
 @RequestMapping("/user")
 public class UserRestController {

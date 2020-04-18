@@ -12,6 +12,7 @@
 
 .last-product-wraper a:hover{
     color: #404040;
+    cursor: pointer;
 }
 
 .wraper{
