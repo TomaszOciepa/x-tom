@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
     if(this.auth.isAuthenticated){
       this.id = this.auth.getCurrentUser().user_id  
 
-      this.http.get<User>(this.appService.urlApi+this.id).subscribe(
+      this.http.get<User>(this.appService.urlApi+"/user/"+this.id).subscribe(
         response =>{
           this.profile = response
         }

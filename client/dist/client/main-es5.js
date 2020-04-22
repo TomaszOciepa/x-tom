@@ -1290,8 +1290,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var AppService = function AppService() {
       _classCallCheck(this, AppService);
 
-      this.urlAuth = "http://ec2-18-197-120-182.eu-central-1.compute.amazonaws.com:8090";
-      this.urlApi = "http://ec2-18-197-120-182.eu-central-1.compute.amazonaws.com:8080";
+      this.urlAuth = "http://ec2-18-185-136-158.eu-central-1.compute.amazonaws.com:8090";
+      this.urlApi = "http://ec2-18-185-136-158.eu-central-1.compute.amazonaws.com:8080";
     };
 
     AppService.ɵfac = function AppService_Factory(t) {
@@ -1809,7 +1809,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function login(credentials) {
           var _this3 = this;
 
-          return this.http.post(this.appService.urlAuth, credentials).subscribe(function (session) {
+          return this.http.post(this.appService.urlAuth + "/login", credentials).subscribe(function (session) {
             _this3.session.next(session);
 
             if (session.status) {
@@ -26328,7 +26328,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (this.auth.isAuthenticated) {
             this.id = this.auth.getCurrentUser().user_id;
-            this.http.get(this.appService.urlApi + this.id).subscribe(function (response) {
+            this.http.get(this.appService.urlApi + "/user/" + this.id).subscribe(function (response) {
               _this44.profile = response;
             }), function (error) {
               if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {

@@ -706,8 +706,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class AppService {
     constructor() {
-        this.urlAuth = "http://ec2-18-197-120-182.eu-central-1.compute.amazonaws.com:8090";
-        this.urlApi = "http://ec2-18-197-120-182.eu-central-1.compute.amazonaws.com:8080";
+        this.urlAuth = "http://ec2-18-185-136-158.eu-central-1.compute.amazonaws.com:8090";
+        this.urlApi = "http://ec2-18-185-136-158.eu-central-1.compute.amazonaws.com:8080";
     }
 }
 AppService.ɵfac = function AppService_Factory(t) { return new (t || AppService)(); };
@@ -992,7 +992,7 @@ class AuthService {
         this.checkRole = this.session.pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(role => this.role = role.user.user_role));
     }
     login(credentials) {
-        return this.http.post(this.appService.urlAuth, credentials)
+        return this.http.post(this.appService.urlAuth + "/login", credentials)
             .subscribe((session) => {
             this.session.next(session);
             if (session.status) {
@@ -13258,7 +13258,7 @@ class ProfileComponent {
     ngOnInit() {
         if (this.auth.isAuthenticated) {
             this.id = this.auth.getCurrentUser().user_id;
-            this.http.get(this.appService.urlApi + this.id).subscribe(response => {
+            this.http.get(this.appService.urlApi + "/user/" + this.id).subscribe(response => {
                 this.profile = response;
             }), error => {
                 if (error instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpErrorResponse"]) {

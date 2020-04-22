@@ -56,7 +56,7 @@ export class AuthService {
     
     login(credentials:Credentials){
       
-    return this.http.post(this.appService.urlAuth, credentials)
+    return this.http.post(this.appService.urlAuth+"/login", credentials)
       .subscribe((session:Session) =>{
         this.session.next(session)
         if(session.status){
