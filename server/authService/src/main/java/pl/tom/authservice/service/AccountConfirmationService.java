@@ -63,7 +63,7 @@ public class AccountConfirmationService {
 
             emailSender.sendEmail(newEmail, "x-tom - potwierdzenie rejestracji", "Dziękuję za chęć założenie konta w moim sklepie. Poniższy link służy do aktywacji Twojego konta." +
                     "Link Jest ważny 10min"+
-                    "Link do weryfikacji: http://x-tom-shop.s3-website.eu-central-1.amazonaws.com/potwierdzenie-rejestracji/" + code + "/" + newEmail);
+                    "Link do weryfikacji: http://localhost:4200/potwierdzenie-rejestracji/" + code + "/" + newEmail);
 
             return true;
         }else {
